@@ -59,8 +59,7 @@ enum {
     kCCBToolGrab
 };
 
-@interface CocosScene : CCNode
-{
+@interface CocosScene : CCNode {
     CCNode* bgLayer;
     CCNode* stageBgLayer;
     CCNode* contentLayer;

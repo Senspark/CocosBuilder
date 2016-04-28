@@ -22,16 +22,18 @@
  * THE SOFTWARE.
  */
 
+#import <AppKit/AppKitErrors.h>
+
 #import "SavePanelLimiter.h"
 #import "ResourceManager.h"
-#import <AppKit/AppKitErrors.h>
 
 @implementation SavePanelLimiter
 
-- (id) initWithPanel:(NSSavePanel*)savePanel resManager:(ResourceManager*)rm
-{
+- (id) initWithPanel:(NSSavePanel*) savePanel resManager:(ResourceManager*) rm {
     self = [super init];
-    if (!self) return NULL;
+    if (self == nil) {
+        return self;
+    }
     
     resManager = [rm retain];
     [savePanel setDelegate:self];
@@ -39,32 +41,33 @@
     return self;
 }
 
-- (void) dealloc
-{
+- (void) dealloc {
     [resManager release];
     [super dealloc];
 }
 
-
-- (BOOL)panel:(id)sender validateURL:(NSURL *)url error:(NSError **)outError
-{
+- (BOOL) panel:(id) sender validateURL:(NSURL*) url error:(NSError**) outError {
     NSString *path = [url path];
     
-    NSArray* activeDirs = resManager.activeDirectories;
+    NSArray* activeDirs = [resManager activeDirectories];
     BOOL inProjectPath = NO;
-    for (RMDirectory* dir in activeDirs)
-    {
-        if ([path hasPrefix:dir.dirPath])
-        {
+    for (RMDirectory* dir in activeDirs) {
+        if ([path hasPrefix:[dir dirPath]]) {
             inProjectPath = YES;
             break;
         }
     }
     
-    if (!inProjectPath)
-    {
-        if (outError) *outError = [NSError errorWithDomain:NSCocoaErrorDomain code: NSServiceMiscellaneousError userInfo:[NSDictionary dictionaryWithObject:NSLocalizedString(@"You need to save the ccb-file in a directory that is among your projects resource paths. (You can configure the paths in Project Settings).", @"") forKey:NSLocalizedDescriptionKey]];
-        return NO;    
+    if (inProjectPath == NO) {
+        if (outError != nil) {
+            NSDictionary* dict = [NSDictionary dictionaryWithObject:NSLocalizedString(@"You need to save the ccb-file in a directory that is among your projects resource paths. (You can configure the paths in Project Settings).",
+                                                                                      @"")
+                                                             forKey:NSLocalizedDescriptionKey];
+            *outError = [NSError errorWithDomain:NSCocoaErrorDomain
+                                            code:NSServiceMiscellaneousError
+                                        userInfo:dict];
+        }
+        return NO;
     }
     return YES;
 }

@@ -100,9 +100,7 @@ enum {
 @class CCBSplitHorizontalView;
 @class AboutWindow;
 
-@interface CocosBuilderAppDelegate : NSObject <NSApplicationDelegate, NSWindowDelegate>
-{
-    
+@interface CocosBuilderAppDelegate : NSObject<NSApplicationDelegate, NSWindowDelegate> {
     // Panel Views
     IBOutlet NSView* leftPanel;
     IBOutlet NSView* rightPanel;

@@ -23,10 +23,10 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "cocos2d.h"
 
-enum
-{
+#import <cocos2d.h>
+
+enum {
     kCCBPositionTypeRelativeBottomLeft,
     kCCBPositionTypeRelativeTopLeft,
     kCCBPositionTypeRelativeTopRight,
@@ -35,8 +35,7 @@ enum
     kCCBPositionTypeMultiplyResolution,
 };
 
-enum
-{
+enum {
     kCCBSizeTypeAbsolute,
     kCCBSizeTypePercent,
     kCCBSizeTypeRelativeContainer,
@@ -45,8 +44,7 @@ enum
     kCCBSizeTypeMultiplyResolution,
 };
 
-enum
-{
+enum {
     kCCBScaleTypeAbsolute,
     kCCBScaleTypeMultiplyResolution
 };

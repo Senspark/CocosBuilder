@@ -100,8 +100,8 @@
     zoom = zm;
     
     // Resize backrounds
-    [bgHorizontal setPreferedSize:CGSizeMake(winSize.width, kCCBRulerWidth)];
-    [bgVertical setPreferedSize:CGSizeMake(kCCBRulerWidth, winSize.height)];
+    [bgHorizontal setContentSize:CGSizeMake(winSize.width, kCCBRulerWidth)];
+    [bgVertical setContentSize:CGSizeMake(kCCBRulerWidth, winSize.height)];
     
     // Add marks and numbers
     [marksVertical removeAllChildrenWithCleanup:YES];
