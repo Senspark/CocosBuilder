@@ -1,6 +1,6 @@
 [submodule "CocosBuilder/libs/cocos2d-iphone"]
 	path = CocosBuilder/libs/cocos2d-iphone
-	url = https://github.com/cocos2d/cocos2d-iphone.git
+url=https://github.com/cocos2d/cocos2d-objc.git
 [submodule "CocosBuilder/libs/ssziparchive"]
 	path = CocosBuilder/libs/ssziparchive
 	url = https://github.com/vlidholt/ssziparchive
