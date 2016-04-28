@@ -23,7 +23,10 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "cocos2d.h"
+
+#import <cocos2d.h>
+#import <cocos2d-ui.h>
+#import <CCParticleSystemBase.h>
 
 enum {
     kCCBMemberVarAssignmentTypeNone = 0,
@@ -34,18 +37,23 @@ enum {
 // CCBReader
 @interface CCBReaderInternalV1 : NSObject {
 @private
-    
 }
+
 + (CCScene*) sceneWithNodeGraphFromFile:(NSString*) file;
-+ (CCScene*) sceneWithNodeGraphFromFile:(NSString *)file owner:(id)owner;
++ (CCScene*) sceneWithNodeGraphFromFile:(NSString*) file owner:(id) owner;
 
 + (CCNode*) nodeGraphFromFile:(NSString*) file;
-+ (CCNode*) nodeGraphFromFile:(NSString*) file owner:(id)owner;
++ (CCNode*) nodeGraphFromFile:(NSString*) file owner:(id) owner;
 
 + (CCNode*) nodeGraphFromDictionary:(NSDictionary*) dict;
 + (CCNode*) nodeGraphFromDictionary:(NSDictionary*) dict owner:(NSObject*) owner;
 
++ (CCNode*) nodeGraphFromDictionary:(NSDictionary*) dict
+                          assetsDir:(NSString*) path
+                              owner:(NSObject*) owner;
 
-+ (CCNode*) nodeGraphFromDictionary:(NSDictionary*) dict assetsDir:(NSString*)path owner:(NSObject*)owner;
-+ (CCNode*) ccObjectFromDictionary: (NSDictionary *)dict assetsDir:(NSString*)path owner:(NSObject*)owner;
++ (CCNode*) ccObjectFromDictionary:(NSDictionary*) dict
+                         assetsDir:(NSString*) path
+                             owner:(NSObject*) owner;
+
 @end

@@ -23,7 +23,8 @@
  * THE SOFTWARE.
  */
 
-#import "cocos2d.h"
+#import <cocos2d.h>
+
 @class CocosBuilderAppDelegate;
 @class CCBTemplateNode;
 @class RulersLayer;
@@ -58,13 +59,13 @@ enum {
     kCCBToolGrab
 };
 
-@interface CocosScene : CCLayer
+@interface CocosScene : CCNode
 {
-    CCLayerColor* bgLayer;
-    CCLayerColor* stageBgLayer;
-    CCLayer* contentLayer;
-    CCLayer* selectionLayer;
-    CCLayer* borderLayer;
+    CCNode* bgLayer;
+    CCNode* stageBgLayer;
+    CCNode* contentLayer;
+    CCNode* selectionLayer;
+    CCNode* borderLayer;
     RulersLayer* rulerLayer;
     GuidesLayer* guideLayer;
     NotesLayer* notesLayer;
@@ -97,10 +98,10 @@ enum {
     NSMutableArray* nodesAtSelectionPt;
     int currentNodeAtSelectionPtIdx;
     
-    CCLayerColor* borderBottom;
-    CCLayerColor* borderTop;
-    CCLayerColor* borderLeft;
-    CCLayerColor* borderRight;
+    CCNode* borderBottom;
+    CCNode* borderTop;
+    CCNode* borderLeft;
+    CCNode* borderRight;
     CCSprite* borderDevice;
     
     int stageBorderType;

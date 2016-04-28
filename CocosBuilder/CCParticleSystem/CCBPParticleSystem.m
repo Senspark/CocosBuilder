@@ -26,184 +26,203 @@
 
 @implementation CCBPParticleSystem
 
-- (id) init
-{
+- (id) init {
     self = [super init];
-    if (!self) return NULL;
-    
-    self.positionType = kCCPositionTypeGrouped;
-    
+    if (self != nil) {
+        self.particlePositionType = CCParticleSystemPositionTypeGrouped;
+    }
     return self;
 }
 
 #pragma mark Gravity mode
 
-- (CGPoint) gravity
-{
-    if (_emitterMode == kCCParticleModeGravity) return [super gravity];
-    else return ccp(0,0);
+- (CGPoint) gravity {
+    if (_emitterMode == CCParticleSystemModeGravity) {
+        return [super gravity];
+    }
+    return ccp(0, 0);
 }
 
-- (void) setGravity:(CGPoint)gravity
-{
-    if (_emitterMode == kCCParticleModeGravity) [super setGravity:gravity];
+- (void) setGravity:(CGPoint) gravity {
+    if (_emitterMode == CCParticleSystemModeGravity) {
+        [super setGravity:gravity];
+    }
 }
 
-- (float) speed
-{
-    if (_emitterMode == kCCParticleModeGravity) return [super speed];
-    else return 0;
+- (float) speed {
+    if (_emitterMode == CCParticleSystemModeGravity) {
+        return [super speed];
+    }
+    return 0;
 }
 
-- (void) setSpeed:(float)speed
-{
-    if (_emitterMode == kCCParticleModeGravity) [super setSpeed:speed];
+- (void) setSpeed:(float) speed {
+    if (_emitterMode == CCParticleSystemModeGravity) {
+        [super setSpeed:speed];
+    }
 }
 
-- (float) speedVar
-{
-    if (_emitterMode == kCCParticleModeGravity) return [super speedVar];
-    else return 0;
+- (float) speedVar {
+    if (_emitterMode == CCParticleSystemModeGravity) {
+        return [super speedVar];
+    }
+    return 0;
 }
 
-- (void) setSpeedVar:(float)speedVar
-{
-    if (_emitterMode == kCCParticleModeGravity) [super setSpeedVar:speedVar];
+- (void) setSpeedVar:(float) speedVar {
+    if (_emitterMode == CCParticleSystemModeGravity) {
+        [super setSpeedVar:speedVar];
+    }
 }
 
-- (float) tangentialAccel
-{
-    if (_emitterMode == kCCParticleModeGravity) return [super tangentialAccel];
-    else return 0;
+- (float) tangentialAccel {
+    if (_emitterMode == CCParticleSystemModeGravity) {
+        return [super tangentialAccel];
+    }
+    return 0;
 }
 
-- (void) setTangentialAccel:(float)tangentialAccel
-{
-    if (_emitterMode == kCCParticleModeGravity) [super setTangentialAccel:tangentialAccel];
+- (void) setTangentialAccel:(float) tangentialAccel {
+    if (_emitterMode == CCParticleSystemModeGravity) {
+        [super setTangentialAccel:tangentialAccel];
+    }
 }
 
-- (float) tangentialAccelVar
-{
-    if (_emitterMode == kCCParticleModeGravity) return [super tangentialAccelVar];
-    else return 0;
+- (float) tangentialAccelVar {
+    if (_emitterMode == CCParticleSystemModeGravity) {
+        return [super tangentialAccelVar];
+    }
+    return 0;
 }
 
-- (void) setTangentialAccelVar:(float)tangentialAccelVar
-{
-    if (_emitterMode == kCCParticleModeGravity) [super setTangentialAccelVar:tangentialAccelVar];
+- (void) setTangentialAccelVar:(float) tangentialAccelVar {
+    if (_emitterMode == CCParticleSystemModeGravity) {
+        [super setTangentialAccelVar:tangentialAccelVar];
+    }
 }
 
-- (float) radialAccel
-{
-    if (_emitterMode == kCCParticleModeGravity) return [super radialAccel];
-    else return 0;
+- (float) radialAccel {
+    if (_emitterMode == CCParticleSystemModeGravity) {
+        return [super radialAccel];
+    }
+    return 0;
 }
 
-- (void) setRadialAccel:(float)radialAccel
-{
-    if (_emitterMode == kCCParticleModeGravity) [super setRadialAccel:radialAccel];
+- (void) setRadialAccel:(float) radialAccel {
+    if (_emitterMode == CCParticleSystemModeGravity) {
+        [super setRadialAccel:radialAccel];
+    }
 }
 
-- (float) radialAccelVar
-{
-    if (_emitterMode == kCCParticleModeGravity) return [super radialAccelVar];
-    else return 0;
+- (float) radialAccelVar {
+    if (_emitterMode == CCParticleSystemModeGravity) {
+        return [super radialAccelVar];
+    }
+    return 0;
 }
 
-- (void) setRadialAccelVar:(float)radialAccelVar
-{
-    if (_emitterMode == kCCParticleModeGravity) [super setRadialAccelVar:radialAccelVar];
+- (void) setRadialAccelVar:(float) radialAccelVar {
+    if (_emitterMode == CCParticleSystemModeGravity) {
+        [super setRadialAccelVar:radialAccelVar];
+    }
 }
 
 #pragma mark Radial mode
 
-- (float) startRadius
-{
-    if (_emitterMode == kCCParticleModeRadius) return [super startRadius];
-    else return 0;
+- (float) startRadius {
+    if (_emitterMode == CCParticleSystemModeRadius) {
+        return [super startRadius];
+    }
+    return 0;
 }
 
-- (void) setStartRadius:(float)startRadius
-{
-    if (_emitterMode == kCCParticleModeRadius) [super setStartRadius:startRadius];
+- (void) setStartRadius:(float) startRadius {
+    if (_emitterMode == CCParticleSystemModeRadius) {
+        [super setStartRadius:startRadius];
+    }
 }
 
-- (float) startRadiusVar
-{
-    if (_emitterMode == kCCParticleModeRadius) return [super startRadiusVar];
-    else return 0;
+- (float) startRadiusVar {
+    if (_emitterMode == CCParticleSystemModeRadius) {
+        return [super startRadiusVar];
+    }
+    return 0;
 }
 
-- (void) setStartRadiusVar:(float)startRadiusVar
-{
-    if (_emitterMode == kCCParticleModeRadius) [super setStartRadiusVar:startRadiusVar];
+- (void) setStartRadiusVar:(float) startRadiusVar {
+    if (_emitterMode == CCParticleSystemModeRadius) {
+        [super setStartRadiusVar:startRadiusVar];
+    }
 }
 
-- (float) endRadius
-{
-    if (_emitterMode == kCCParticleModeRadius) return [super endRadius];
-    else return 0;
+- (float) endRadius {
+    if (_emitterMode == CCParticleSystemModeRadius) {
+        return [super endRadius];
+    }
+    return 0;
 }
 
-- (void) setEndRadius:(float)endRadius
-{
-    if (_emitterMode == kCCParticleModeRadius) [super setEndRadius:endRadius];
+- (void) setEndRadius:(float) endRadius {
+    if (_emitterMode == CCParticleSystemModeRadius) {
+        [super setEndRadius:endRadius];
+    }
 }
 
-- (float) endRadiusVar
-{
-    if (_emitterMode == kCCParticleModeRadius) return [super endRadiusVar];
-    else return 0;
+- (float) endRadiusVar {
+    if (_emitterMode == CCParticleSystemModeRadius) {
+        return [super endRadiusVar];
+    }
+    return 0;
 }
 
-- (void) setEndRadiusVar:(float)endRadiusVar
-{
-    if (_emitterMode == kCCParticleModeRadius) [super setEndRadiusVar:endRadiusVar];
+- (void) setEndRadiusVar:(float) endRadiusVar {
+    if (_emitterMode == CCParticleSystemModeRadius) {
+        [super setEndRadiusVar:endRadiusVar];
+    }
 }
 
-- (float) rotatePerSecond
-{
-    if (_emitterMode == kCCParticleModeRadius) return [super rotatePerSecond];
-    else return 0;
+- (float) rotatePerSecond {
+    if (_emitterMode == CCParticleSystemModeRadius) {
+        return [super rotatePerSecond];
+    }
+    return 0;
 }
 
-- (void) setRotatePerSecond:(float)rotatePerSecond
-{
-    if (_emitterMode == kCCParticleModeRadius) [super setRotatePerSecond:rotatePerSecond];
+- (void) setRotatePerSecond:(float) rotatePerSecond {
+    if (_emitterMode == CCParticleSystemModeRadius) {
+        [super setRotatePerSecond:rotatePerSecond];
+    }
 }
 
-- (float) rotatePerSecondVar
-{
-    if (_emitterMode == kCCParticleModeRadius) return [super rotatePerSecondVar];
-    else return 0;
+- (float) rotatePerSecondVar {
+    if (_emitterMode == CCParticleSystemModeRadius) {
+        return [super rotatePerSecondVar];
+    }
+    return 0;
 }
 
-- (void) setRotatePerSecondVar:(float)rotatePerSecondVar
-{
-    if (_emitterMode == kCCParticleModeRadius) [super setRotatePerSecondVar:rotatePerSecondVar];
+- (void) setRotatePerSecondVar:(float) rotatePerSecondVar {
+    if (_emitterMode == CCParticleSystemModeRadius) {
+        [super setRotatePerSecondVar:rotatePerSecondVar];
+    }
 }
 
-- (NSArray*) ccbExcludePropertiesForSave
-{
-    if (_emitterMode == kCCParticleModeGravity)
-    {
+- (NSArray*) ccbExcludePropertiesForSave {
+    if (_emitterMode == CCParticleSystemModeGravity) {
         return [NSArray arrayWithObjects:
                 @"startRadius",
                 @"endRadius",
                 @"rotatePerSecond",
                 nil];
-    }
-    else
-    {
+    } else {
         return [NSArray arrayWithObjects:
                 @"gravity",
                 @"speed",
                 @"tangentialAccel",
                 @"radialAccel",
                 nil];
-    }
-    
-    return NULL;
+    }    
+    return nil;
 }
 
 @end

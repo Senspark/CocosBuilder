@@ -22,10 +22,10 @@
  * THE SOFTWARE.
  */
 
-#import "CCMenu.h"
+#import <CCButton.h>
 
-@interface CCBPMenu : CCMenu
+@interface CCBPMenu : CCButton
 
-@property (nonatomic,assign) BOOL isMouseEnabled;
+@property (nonatomic, assign) BOOL isMouseEnabled;
 
 @end

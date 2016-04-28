@@ -22,13 +22,11 @@
  * THE SOFTWARE.
  */
 
-#import "cocos2d.h"
-#import "CCScale9Sprite.h"
+#import <cocos2d.h>
 
-@interface RulersLayer : CCLayer
-{
-    CCScale9Sprite* bgHorizontal;
-    CCScale9Sprite* bgVertical;
+@interface RulersLayer : CCNode {
+    CCSprite9Slice* bgHorizontal;
+    CCSprite9Slice* bgVertical;
     
     CCNode* marksVertical;
     CCNode* marksHorizontal;
@@ -40,16 +38,18 @@
     CGPoint stageOrigin;
     float zoom;
     
-    CCLabelAtlas* lblX;
-    CCLabelAtlas* lblY;
+    CCLabelBMFont* lblX;
+    CCLabelBMFont* lblY;
 }
 
-- (void) updateWithSize:(CGSize)winSize stageOrigin:(CGPoint)stageOrigin zoom:(float)zoom;
+- (void) updateWithSize:(CGSize) winSize
+            stageOrigin:(CGPoint) stageOrigin
+                   zoom:(float) zoom;
 
-- (void)mouseEntered:(NSEvent *)event;
+- (void) mouseEntered:(NSEvent*) event;
 
-- (void)mouseExited:(NSEvent *)event;
+- (void) mouseExited:(NSEvent*) event;
 
-- (void)updateMousePos:(CGPoint)pos;
+- (void) updateMousePos:(CGPoint) pos;
 
 @end

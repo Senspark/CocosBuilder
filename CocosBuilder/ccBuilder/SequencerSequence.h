@@ -30,8 +30,7 @@
 @class SequencerCallbackChannel;
 @class SequencerSoundChannel;
 
-@interface SequencerSequence : NSObject
-{
+@interface SequencerSequence : NSObject {
     float timelineScale;
     float timelineOffset;
     float timelineLength;
@@ -50,37 +49,37 @@
     SequencerSettingsWindow* settingsWindow;
 }
 
-@property (nonatomic,assign) float timelineScale;
-@property (nonatomic,assign) float timelineOffset;
-@property (nonatomic,assign) float timelineLength;
-@property (nonatomic,assign) float timelinePosition;
-@property (nonatomic,assign) float timelineResolution;
-@property (nonatomic,copy) NSString* name;
-@property (nonatomic,assign) int sequenceId;
-@property (nonatomic,assign) int chainedSequenceId;
-@property (nonatomic,readonly) SequencerCallbackChannel* callbackChannel;
-@property (nonatomic,readonly) SequencerSoundChannel* soundChannel;
+@property (nonatomic, assign) float timelineScale;
+@property (nonatomic, assign) float timelineOffset;
+@property (nonatomic, assign) float timelineLength;
+@property (nonatomic, assign) float timelinePosition;
+@property (nonatomic, assign) float timelineResolution;
+@property (nonatomic, copy) NSString* name;
+@property (nonatomic, assign) int sequenceId;
+@property (nonatomic, assign) int chainedSequenceId;
+@property (nonatomic, readonly) SequencerCallbackChannel* callbackChannel;
+@property (nonatomic, readonly) SequencerSoundChannel* soundChannel;
 
 
-@property (nonatomic,readonly) NSString* currentDisplayTime;
-@property (nonatomic,readonly) NSString* lengthDisplayTime;
+@property (nonatomic, readonly) NSString* currentDisplayTime;
+@property (nonatomic, readonly) NSString* lengthDisplayTime;
 
-@property (nonatomic,assign) BOOL autoPlay;
+@property (nonatomic, assign) BOOL autoPlay;
 
-@property (nonatomic,assign) SequencerSettingsWindow* settingsWindow;
+@property (nonatomic, assign) SequencerSettingsWindow* settingsWindow;
 
 // Convert between actual time and position in sequence view
-- (float) timeToPosition:(float)time;
-- (float) positionToTime:(float)pos;
+- (float) timeToPosition:(float) time;
+- (float) positionToTime:(float) pos;
 
-- (void) stepForward:(int)numSteps;
-- (void) stepBack:(int)numSteps;
+- (void) stepForward:(int) numSteps;
+- (void) stepBack:(int) numSteps;
 
-- (id) initWithSerialization:(id)ser;
+- (id) initWithSerialization:(id) ser;
 - (id) serialize;
 
-- (SequencerSequence*) duplicateWithNewId:(int)seqId;
+- (SequencerSequence*) duplicateWithNewId:(int) seqId;
 
-- (float) alignTimeToResolution:(float)time;
+- (float) alignTimeToResolution:(float) time;
 
 @end

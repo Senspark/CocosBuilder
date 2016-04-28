@@ -23,32 +23,33 @@
  */
 
 #import "StickyNote.h"
-#import "CCScale9Sprite.h"
 #import "CCBGlobals.h"
 
 @implementation StickyNote
 
 @synthesize docPos, noteText;
 
-- (id) init
-{
+- (id) init {
     self = [super init];
-    if (!self) return NULL;
+    if (self == nil) {
+        return self;
+    }
     
-    self.anchorPoint = ccp(0,1);
-    self.ignoreAnchorPointForPosition = NO;
+    [self setAnchorPoint:CGPointMake(0,1)];
     
-    bg = [CCScale9Sprite spriteWithFile:@"notes-bg.png"];
-    bg.anchorPoint = ccp(0,0);
-    bg.position = ccp(0,0);
+    bg = [CCSprite9Slice spriteWithImageNamed:@"notes-bg.png"];
+    [bg setAnchorPoint:CGPointZero];
+    [bg setPosition:CGPointZero];
     [self addChild:bg z:0];
     
-    lbl = [CCLabelTTF labelWithString:@"Double click to edit" fontName:@"MarkerFelt-Thin" fontSize:14];
-    lbl.anchorPoint = ccp(0,0);
-    lbl.position = ccp(kCCBNoteLblInsetH, kCCBNoteLblInsetBot);
-    lbl.verticalAlignment = kCCVerticalTextAlignmentTop;
-    lbl.horizontalAlignment = kCCTextAlignmentLeft;
-    lbl.color = ccc3(67, 49, 33);
+    lbl = [CCLabelTTF labelWithString:@"Double click to edit"
+                             fontName:@"MarkerFelt-Thin"
+                             fontSize:14];
+    [lbl setAnchorPoint:CGPointZero];
+    [lbl setPosition:CGPointMake(kCCBNoteLblInsetH, kCCBNoteLblInsetBot)];
+    lbl.verticalAlignment = CCVerticalTextAlignmentTop;
+    lbl.horizontalAlignment = CCTextAlignmentLeft;
+    lbl.color = [CCColor colorWithCcColor3b:ccc3(67, 49, 33)];
     
     [self addChild:lbl z:1];
     
@@ -57,13 +58,15 @@
     return self;
 }
 
-- (void) setContentSize:(CGSize)contentSize
-{
-    bg.preferedSize = contentSize;
+- (void) setContentSize:(CGSize) contentSize {
+    [bg setContentSize:contentSize];
     
-    NSLog(@"set lbl.dimensions: (%f,%f)", contentSize.width - (2*kCCBNoteLblInsetH), contentSize.height -kCCBNoteLblInsetTop - kCCBNoteLblInsetBot);
+    NSLog(@"set lbl.dimensions: (%f,%f)",
+          contentSize.width - (2*kCCBNoteLblInsetH),
+          contentSize.height -kCCBNoteLblInsetTop - kCCBNoteLblInsetBot);
     
-    lbl.dimensions = CGSizeMake(contentSize.width - (2*kCCBNoteLblInsetH), contentSize.height -kCCBNoteLblInsetTop - kCCBNoteLblInsetBot);
+    lbl.dimensions = CGSizeMake(contentSize.width - (2*kCCBNoteLblInsetH),
+                                contentSize.height -kCCBNoteLblInsetTop - kCCBNoteLblInsetBot);
     
     [super setContentSize:contentSize];
 }

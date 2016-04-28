@@ -43,7 +43,8 @@
 #import "SequencerSequence.h"
 #import "SequencerNodeProperty.h"
 #import "SequencerKeyframe.h"
-#import "CCScale9Sprite.h"
+
+#import <CCTextureCache.h>
 
 #define kCCBSelectionOutset 3
 #define kCCBSinglePointSelectionRadius 23
@@ -98,19 +99,19 @@ static CocosScene* sharedCocosScene;
     [self addChild:notesLayer z:5];
     
     // Selection layer
-    selectionLayer = [CCLayer node];
+    selectionLayer = [CCNode node];
     [self addChild:selectionLayer z:4];
     
     // Border layer
-    borderLayer = [CCLayer node];
+    borderLayer = [CCNode node];
     [self addChild:borderLayer z:1];
     
-    ccColor4B borderColor = ccc4(128, 128, 128, 180);
+    CCColor* borderColor = [CCColor colorWithRed:128 green:128 blue:128 alpha:180];
     
-    borderBottom = [CCLayerColor layerWithColor:borderColor];
-    borderTop = [CCLayerColor layerWithColor:borderColor];
-    borderLeft = [CCLayerColor layerWithColor:borderColor];
-    borderRight = [CCLayerColor layerWithColor:borderColor];
+    borderBottom = [CCNodeColor nodeWithColor:borderColor];
+    borderTop = [CCNodeColor nodeWithColor:borderColor];
+    borderLeft = [CCNodeColor nodeWithColor:borderColor];
+    borderRight = [CCNodeColor nodeWithColor:borderColor];
     
     [borderLayer addChild:borderBottom];
     [borderLayer addChild:borderTop];
@@ -121,18 +122,21 @@ static CocosScene* sharedCocosScene;
     [borderLayer addChild:borderDevice z:1];
     
     // Gray background
-    bgLayer = [CCLayerColor layerWithColor:ccc4(128, 128, 128, 255) width:4096 height:4096];
+    bgLayer = [CCNodeColor nodeWithColor:[CCColor colorWithRed:128 green:128 blue:128 alpha:255]
+                                   width:4096
+                                  height:4096];
     bgLayer.position = ccp(0,0);
     bgLayer.anchorPoint = ccp(0,0);
     [self addChild:bgLayer z:-1];
     
     // Black content layer
-    stageBgLayer = [CCLayerColor layerWithColor:ccc4(0, 0, 0, 255) width:0 height:0];
-    stageBgLayer.anchorPoint = ccp(0.5,0.5);
-    stageBgLayer.ignoreAnchorPointForPosition = NO;
+    stageBgLayer = [CCNodeColor nodeWithColor:[CCColor colorWithRed:0 green:0 blue:0 alpha:255]
+                                        width:0
+                                       height:0];
+    stageBgLayer.anchorPoint = ccp(0.5, 0.5);
     [self addChild:stageBgLayer z:0];
     
-    contentLayer = [CCLayer node];
+    contentLayer = [CCNode node];
     [stageBgLayer addChild:contentLayer];
 }
 
@@ -157,7 +161,7 @@ static CocosScene* sharedCocosScene;
         [borderLeft setOpacity:255];
         [borderRight setOpacity:255];
         
-        CCTexture2D* deviceTexture = NULL;
+        CCTexture* deviceTexture = nil;
         BOOL rotateDevice = NO;
         
         int devType = [appDelegate orientedDeviceTypeForSize:stageBgLayer.contentSize];
@@ -391,14 +395,15 @@ static CocosScene* sharedCocosScene;
             
             CGPoint anchorPointPos = [node convertToWorldSpace:localAnchor];
             
-            CCSprite* anchorPointSprite = [CCSprite spriteWithFile:@"select-pt.png"];
-            anchorPointSprite.position = anchorPointPos;
+            CCSprite* anchorPointSprite = [CCSprite spriteWithImageNamed:@"select-pt.png"];
+            [anchorPointSprite setPosition:anchorPointPos];
             [selectionLayer addChild:anchorPointSprite z:1];
             
-            if (node.ignoreAnchorPointForPosition)
-            {
-                anchorPointSprite.opacity = 127;
-            }
+            // FIXME
+//            if (node.ignoreAnchorPointForPosition)
+//            {
+//                anchorPointSprite.opacity = 127;
+//            }
             
             //CGPoint minCorner = center;
             
@@ -431,11 +436,13 @@ static CocosScene* sharedCocosScene;
                 }
                 
                 // Create a sprite for the selection
-                CCScale9Sprite* sel = [CCScale9Sprite spriteWithFile:@"sel-frame.png" capInsets:CGRectMake(8, 8, 8, 8)];
-                sel.anchorPoint = ccp(0,0);
-                sel.rotation = angle;
-                sel.position = pos;
-                sel.preferedSize = CGSizeMake(width + kCCBSelectionOutset * 2, height + kCCBSelectionOutset * 2);
+                CCSprite9Slice* sel = [CCSprite9Slice spriteWithImageNamed:@"sel-frame.png"];
+                [sel setMargin:0.25f];
+                [sel setAnchorPoint:CGPointZero];
+                [sel setRotation:angle];
+                [sel setPosition:pos];
+                [sel setContentSize:CGSizeMake(width + kCCBSelectionOutset * 2,
+                                               height + kCCBSelectionOutset * 2)];
                 [selectionLayer addChild:sel];
                 
                 /*
@@ -1143,11 +1150,10 @@ static CocosScene* sharedCocosScene;
 
 #pragma mark Updates every frame
 
-- (void) nextFrame:(ccTime) time
-{
+- (void) update:(CCTime) time {
     // Recenter the content layer
-    BOOL winSizeChanged = !CGSizeEqualToSize(winSize, [[CCDirector sharedDirector] winSize]);
-    winSize = [[CCDirector sharedDirector] winSize];
+    BOOL winSizeChanged = !CGSizeEqualToSize(winSize, [[CCDirector sharedDirector] viewSize]);
+    winSize = [[CCDirector sharedDirector] viewSize];
     CGPoint stageCenter = ccp((int)(winSize.width/2+scrollOffset.x) , (int)(winSize.height/2+scrollOffset.y));
     
     self.contentSize = winSize;
@@ -1160,10 +1166,8 @@ static CocosScene* sharedCocosScene;
         // Use normal rendering
         stageBgLayer.visible = YES;
         renderedScene.visible = NO;
-        [[borderDevice texture] setAntiAliasTexParameters];
-    }
-    else
-    {
+        [[borderDevice texture] setAntialiased:YES];
+    } else {
         // Render with render-texture
         stageBgLayer.visible = NO;
         renderedScene.visible = YES;
@@ -1171,7 +1175,7 @@ static CocosScene* sharedCocosScene;
         [renderedScene beginWithClear:0 g:0 b:0 a:1];
         [contentLayer visit];
         [renderedScene end];
-        [[borderDevice texture] setAliasTexParameters];
+        [[borderDevice texture] setAntialiased:NO];
     }
     
     [self updateSelection];
@@ -1238,13 +1242,12 @@ static CocosScene* sharedCocosScene;
         [self setupEditorNodes];
         [self setupDefaultNodes];
         
-        [self schedule:@selector(nextFrame:)];
-        
-        self.mouseEnabled = YES;
+        // FIXME.
+//        self.mouseEnabled = YES;
         
         stageZoom = 1;
         
-        [self nextFrame:0];
+        [self update:0];
 	}
 	return self;
 }

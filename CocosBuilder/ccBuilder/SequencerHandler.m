@@ -133,7 +133,7 @@ static SequencerHandler* sharedSequencerHandler;
 - (float) maxTimelineOffset
 {
     float visibleTime = [self visibleTimeArea];
-    return max(currentSequence.timelineLength - visibleTime, 0);
+    return fmax(currentSequence.timelineLength - visibleTime, 0);
 }
 
 - (void) updateScroller
@@ -266,7 +266,7 @@ static SequencerHandler* sharedSequencerHandler;
     if (item == nil) return 3;
     
     CCNode* node = (CCNode*)item;
-    CCArray* arr = [node children];
+    NSArray* arr = [node children];
     
     return [arr count];
 }
@@ -283,7 +283,7 @@ static SequencerHandler* sharedSequencerHandler;
     }
     
     CCNode* node = (CCNode*)item;
-    CCArray* arr = [node children];
+    NSArray* arr = [node children];
     NodeInfo* info = node.userObject;
     PlugInNode* plugIn = info.plugIn;
     
@@ -318,7 +318,7 @@ static SequencerHandler* sharedSequencerHandler;
     }
     
     CCNode* node = (CCNode*)item;
-    CCArray* arr = [node children];
+    NSArray* arr = [node children];
     return [arr objectAtIndex:index];
 }
 
@@ -590,7 +590,7 @@ static SequencerHandler* sharedSequencerHandler;
         if (expanded) [outlineHierarchy expandItem:node];
         else [outlineHierarchy collapseItem:node];
         
-        CCArray* childs = [node children];
+        NSArray* childs = [node children];
         for (int i = 0; i < [childs count]; i++)
         {
             CCNode* child = [childs objectAtIndex:i];
@@ -659,15 +659,13 @@ static SequencerHandler* sharedSequencerHandler;
     [[CocosBuilderAppDelegate appDelegate] updateTimelineMenu];
 }
 
-- (void) deselectKeyframesForNode:(CCNode*)node
-{
+- (void) deselectKeyframesForNode:(CCNode*) node {
     [node deselectAllKeyframes];
     
     // Also deselect keyframes of children
-    CCArray* children = [node children];
-    CCNode* child = NULL;
-    CCARRAY_FOREACH(children, child)
-    {
+    NSArray* children = [node children];
+    for (NSUInteger i = 0; i < [children count]; ++i) {
+        CCNode* child = [children objectAtIndex:i];
         [self deselectKeyframesForNode:child];
     }
 }
@@ -725,21 +723,17 @@ static SequencerHandler* sharedSequencerHandler;
     }
 }
 
-- (void) addSelectedKeyframesForNode:(CCNode*)node toArray:(NSMutableArray*)keyframes
-{
+- (void) addSelectedKeyframesForNode:(CCNode*) node toArray:(NSMutableArray*) keyframes {
     [node addSelectedKeyframesToArray:keyframes];
     
     // Also add selected keyframes of children
-    CCArray* children = [node children];
-    CCNode* child = NULL;
-    CCARRAY_FOREACH(children, child)
-    {
+    NSArray* children = [node children];
+    for (CCNode* child in children) {
         [self addSelectedKeyframesForNode:child toArray:keyframes];
     }
 }
 
-- (NSArray*) selectedKeyframesForCurrentSequence
-{
+- (NSArray*) selectedKeyframesForCurrentSequence {
     NSMutableArray* keyframes = [NSMutableArray array];
     [self addSelectedKeyframesForNode:[[CocosScene cocosScene] rootNode] toArray:keyframes];
     [self addSelectedKeyframesForChannel:currentSequence.callbackChannel ToArray:keyframes];
@@ -747,24 +741,21 @@ static SequencerHandler* sharedSequencerHandler;
     return keyframes;
 }
 
-- (SequencerSequence*) seqId:(int)seqId inArray:(NSArray*)array
-{
-    for (SequencerSequence* seq in array)
-    {
-        if (seq.sequenceId == seqId) return seq;
+- (SequencerSequence*) seqId:(int) seqId inArray:(NSArray*) array {
+    for (SequencerSequence* seq in array) {
+        if ([seq sequenceId] == seqId) {
+            return seq;
+        }
     }
-    return NULL;
+    return nil;
 }
 
-- (void) updatePropertiesToTimelinePositionForNode:(CCNode*)node sequenceId:(int)seqId localTime:(float)time
-{
+- (void) updatePropertiesToTimelinePositionForNode:(CCNode*) node sequenceId:(int) seqId localTime:(float) time {
     [node updatePropertiesTime:time sequenceId:seqId];
     
     // Also deselect keyframes of children
-    CCArray* children = [node children];
-    CCNode* child = NULL;
-    CCARRAY_FOREACH(children, child)
-    {
+    NSArray* children = [node children];
+    for (CCNode* child in children) {
         int childSeqId = seqId;
         float localTime = time;
         
@@ -788,15 +779,14 @@ static SequencerHandler* sharedSequencerHandler;
     }
 }
 
-- (void) updatePropertiesToTimelinePosition
-{
-    [self updatePropertiesToTimelinePositionForNode:[[CocosScene cocosScene] rootNode] sequenceId:currentSequence.sequenceId localTime:currentSequence.timelinePosition];
+- (void) updatePropertiesToTimelinePosition {
+    [self updatePropertiesToTimelinePositionForNode:[[CocosScene cocosScene] rootNode]
+                                         sequenceId:[currentSequence sequenceId]
+                                          localTime:[currentSequence timelinePosition]];
 }
 
-- (void) setCurrentSequence:(SequencerSequence *)seq
-{
-    if (seq != currentSequence)
-    {
+- (void) setCurrentSequence:(SequencerSequence*) seq {
+    if (seq != currentSequence) {
         [currentSequence release];
         currentSequence = [seq retain];
         
@@ -809,40 +799,38 @@ static SequencerHandler* sharedSequencerHandler;
     }
 }
 
-- (void) menuSetSequence:(id)sender
-{
+- (void) menuSetSequence:(id) sender {
     int seqId = [sender tag];
     
-    SequencerSequence* seqSet = NULL;
-    for (SequencerSequence* seq in [CocosBuilderAppDelegate appDelegate].currentDocument.sequences)
-    {
-        if (seq.sequenceId == seqId)
-        {
+    SequencerSequence* seqSet = nil;
+    for (SequencerSequence* seq in [CocosBuilderAppDelegate appDelegate].currentDocument.sequences) {
+        if (seq.sequenceId == seqId) {
             seqSet = seq;
             break;
         }
     }
     
-    self.currentSequence = seqSet;
+    [self setCurrentSequence:seqSet];
 }
 
-- (void) menuSetChainedSequence:(id)sender
-{
+- (void) menuSetChainedSequence:(id) sender {
     int seqId = [sender tag];
-    if (seqId != self.currentSequence.chainedSequenceId)
-    {
+    if (seqId != [[self currentSequence] chainedSequenceId]) {
         [[CocosBuilderAppDelegate appDelegate] saveUndoStateWillChangeProperty:@"*chainedseqid"];
-        self.currentSequence.chainedSequenceId = [sender tag];
+        [[self currentSequence] setChainedSequenceId:[sender tag]];
         [[CocosBuilderAppDelegate appDelegate] updateTimelineMenu];
     }
 }
 
 #pragma mark Easings
 
-- (void) setContextKeyframeEasingType:(int) type
-{
-    if (!contextKeyframe) return;
-    if (contextKeyframe.easing.type == type) return;
+- (void) setContextKeyframeEasingType:(int) type {
+    if (contextKeyframe == nil) {
+        return;
+    }
+    if (contextKeyframe.easing.type == type) {
+        return;
+    }
     
     [[CocosBuilderAppDelegate appDelegate] saveUndoStateWillChangeProperty:@"*keyframeeasing"];
     
@@ -852,12 +840,13 @@ static SequencerHandler* sharedSequencerHandler;
 
 #pragma mark Adding keyframes
 
-- (void) menuAddKeyframeNamed:(NSString*)prop
-{
+- (void) menuAddKeyframeNamed:(NSString*) prop {
     CCNode* node = [CocosBuilderAppDelegate appDelegate].selectedNode;
-    if (!node) return;
+    if (node == nil) {
+        return;
+    }
     
-    SequencerSequence* seq = self.currentSequence;
+    SequencerSequence* seq = [self currentSequence];
     
     [node addDefaultKeyframeForProperty:prop atTime: seq.timelinePosition sequenceId:seq.sequenceId];
     [self deleteDuplicateKeyframesForCurrentSequence];

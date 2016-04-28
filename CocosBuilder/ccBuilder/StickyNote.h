@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  */
 
-#import "cocos2d.h"
+#import <cocos2d.h>
 
 #define kCCBNoteDefaultWidth 150
 #define kCCBNoteDefaultHeight 150
@@ -30,18 +30,16 @@
 #define kCCBNoteLblInsetTop 10
 #define kCCBNoteLblInsetBot 20
 
-@class CCScale9Sprite;
+@class CCSprite9Slice;
 
-enum
-{
+enum {
     kCCBStickyNoteHitNone,
     kCCBStickyNoteHitNote,
     kCCBStickyNoteHitResize
 };
 
-@interface StickyNote : CCNode
-{
-    CCScale9Sprite* bg;
+@interface StickyNote : CCNode {
+    CCSprite9Slice* bg;
     CCLabelTTF* lbl;
     CGPoint docPos;
     NSString* noteText;
@@ -51,7 +49,7 @@ enum
 @property (nonatomic,copy) NSString* noteText;
 @property (nonatomic,assign) BOOL labelVisible;
 
-- (int) hitAreaFromPt:(CGPoint)pt;
+- (int) hitAreaFromPt:(CGPoint) pt;
 - (void) updatePos;
 
 @end

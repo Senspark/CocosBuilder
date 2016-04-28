@@ -28,6 +28,8 @@
 #import "CCBWriterInternal.h"
 #import "ResourceManager.h"
 
+#import <CCAnimationCache.h>
+
 @implementation AnimationPropertySetter
 
 + (void) setAnimationForNode:(CCNode *)node andProperty:(NSString *)prop withName:(NSString *)animation andFile:(NSString *)animationFile

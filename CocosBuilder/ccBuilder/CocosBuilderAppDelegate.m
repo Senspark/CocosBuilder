@@ -97,6 +97,8 @@
 
 #import <ExceptionHandling/NSExceptionHandler.h>
 
+#import <CCTextureCache.h>
+
 
 @implementation CocosBuilderAppDelegate
 
@@ -152,7 +154,7 @@ static CocosBuilderAppDelegate* sharedAppDelegate;
     CCDirectorMac *director = (CCDirectorMac*) [CCDirector sharedDirector];
 	
 	[director setDisplayStats:NO];
-	[director setProjection:kCCDirectorProjection2D];
+	[director setProjection:CCDirectorProjection2D];
     //[cocosView openGLContext];
     
 	[director setView:cocosView];
@@ -1673,10 +1675,8 @@ static BOOL hideAllToNextSeparator;
     else
     {
         // Update zValues of children after this node
-        CCArray* children = parent.children;
-        for (int i = index; i < [children count]; i++)
-        {
-            CCNode* child = [children objectAtIndex:i];
+        NSArray* children = [parent children];
+        for (CCNode* child in children) {
             child.zOrder += 1;
         }
         [parent addChild:obj z:index];
@@ -1983,30 +1983,32 @@ static BOOL hideAllToNextSeparator;
     [self doPasteAsChild:YES];
 }
 
-- (void) deleteNode:(CCNode*)node
-{
+- (void) deleteNode:(CCNode*) node {
     CCBGlobals* g = [CCBGlobals globals];
     
-    if (node == g.rootNode) return;
-    if (!node) return;
+    if (node == [g rootNode]) {
+        return;
+    }
+    if (node == nil) {
+        return;
+    }
     
     [self saveUndoState];
     
     // Change zOrder of nodes after this one
-    int zOrder = node.zOrder;
-    CCArray* siblings = [node.parent children];
-    for (int i = zOrder+1; i < [siblings count]; i++)
-    {
+    int zOrder = [node zOrder];
+    NSArray* siblings = [[node parent] children];
+    for (int i = zOrder + 1; i < [siblings count]; i++) {
         CCNode* sibling = [siblings objectAtIndex:i];
         sibling.zOrder -= 1;
     }
     
     [node removeFromParentAndCleanup:YES];
     
-    [node.parent sortAllChildren];
+    [[node parent] sortAllChildren];
     [outlineHierarchy reloadData];
     
-    self.selectedNodes = NULL;
+    [self setSelectedNodes:nil];
     [sequenceHandler updateOutlineViewSelection];
 }
 
@@ -3274,10 +3276,10 @@ static BOOL hideAllToNextSeparator;
 {
     int type = [sender tag];
     
-    CCNode* node = self.selectedNode;
-    CCNode* parent = node.parent;
+    CCNode* node = [self selectedNode];
+    CCNode* parent = [node parent];
     
-    CCArray* siblings = [node.parent children];
+    NSArray* siblings = [parent children];
     
     // Check bounds
     if ((type == kCCBArrangeSendToBack || type == kCCBArrangeSendBackward)

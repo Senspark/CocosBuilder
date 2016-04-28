@@ -24,7 +24,6 @@
 
 #import "GuidesLayer.h"
 #import "CCBGlobals.h"
-#import "CCScale9Sprite.h"
 #import "CocosBuilderAppDelegate.h"
 
 #define kCCBGuideGrabAreaWidth 15
@@ -32,12 +31,13 @@
 #define kCCBGuideSnapDistance 4
 
 #pragma mark Guide
-@interface Guide : NSObject
-{
-    @public
+
+@interface Guide : NSObject {
+@public
     float position;
     int orientation;
 }
+
 @end
 
 @implementation Guide
@@ -47,10 +47,11 @@
 
 @implementation GuidesLayer
 
-- (id)init
-{
+- (id) init {
     self = [super init];
-    if (!self) return NULL;
+    if (self == nil) {
+        return self;
+    }
     
     draggingGuide = kCCBGuideNone;
     guides = [[NSMutableArray alloc] init];
@@ -58,14 +59,12 @@
     return self;
 }
 
-- (void) dealloc
-{
+- (void) dealloc {
     [guides release];
     [super dealloc];
 }
 
-- (void) updateGuides
-{
+- (void) updateGuides {
     CocosScene* cs = [CocosScene cocosScene];
     
     [self removeAllChildrenWithCleanup:YES];
@@ -73,31 +72,25 @@
     CGRect viewRect = CGRectZero;
     viewRect.size = winSize;
     
-    for (Guide* g in guides)
-    {
-        if (g->orientation == kCCBGuideOrientationHorizontal)
-        {
-            CGPoint viewPos = [cs convertToViewSpace:ccp(0,g->position)];
+    for (Guide* g in guides) {
+        if (g->orientation == kCCBGuideOrientationHorizontal) {
+            CGPoint viewPos = [cs convertToViewSpace:ccp(0, g->position)];
             viewPos.x = 0;
             
-            if (CGRectContainsPoint(viewRect, viewPos))
-            {
-                CCScale9Sprite* sprtGuide = [CCScale9Sprite spriteWithFile:@"ruler-guide.png"];
-                sprtGuide.preferedSize = CGSizeMake(winSize.width, 2);
-                sprtGuide.anchorPoint = ccp(0, 0.5f);
-                sprtGuide.position = viewPos;
+            if (CGRectContainsPoint(viewRect, viewPos)) {
+                CCSprite9Slice* sprtGuide = [CCSprite9Slice spriteWithImageNamed:@"ruler-guide.png"];
+                [sprtGuide setContentSize:CGSizeMake(winSize.width, 2)];
+                [sprtGuide setAnchorPoint:CGPointMake(0, 0.5f)];
+                [sprtGuide setPosition:viewPos];
                 [self addChild:sprtGuide];
             }
-        }
-        else
-        {
-            CGPoint viewPos = [cs convertToViewSpace:ccp(g->position,0)];
+        } else {
+            CGPoint viewPos = [cs convertToViewSpace:ccp(g->position, 0)];
             viewPos.y = 0;
             
-            if (CGRectContainsPoint(viewRect, viewPos))
-            {
-                CCScale9Sprite* sprtGuide = [CCScale9Sprite spriteWithFile:@"ruler-guide.png"];
-                sprtGuide.preferedSize = CGSizeMake(winSize.height, 2);
+            if (CGRectContainsPoint(viewRect, viewPos)) {
+                CCSprite9Slice* sprtGuide = [CCSprite9Slice spriteWithImageNamed:@"ruler-guide.png"];
+                [sprtGuide setContentSize:CGSizeMake(winSize.height, 2)];
                 sprtGuide.anchorPoint = ccp(0, 0.5f);
                 sprtGuide.rotation = -90;
                 sprtGuide.position = viewPos;
@@ -107,8 +100,7 @@
     }
 }
 
-- (int) addGuideWithOrientation:(int)orientation
-{
+- (int) addGuideWithOrientation:(int) orientation {
     Guide* g = [[[Guide alloc] init] autorelease];
     g->orientation = orientation;
     

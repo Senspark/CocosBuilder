@@ -30,6 +30,8 @@
 #import "CCBFileUtil.h"
 #import "CCNode+NodeInfo.h"
 
+#import <CCTextureCache.h>
+
 @implementation TexturePropertySetter
 
 + (void) setSpriteFrameForNode:(CCNode*)node andProperty:(NSString*) prop withFile:(NSString*)spriteFile andSheetFile:(NSString*)spriteSheetFile
@@ -63,8 +65,8 @@
         
         @try
         {
-            fileName = [CCBFileUtil toResolutionIndependentFile:fileName];
-            CCTexture2D* texture = [[CCTextureCache sharedTextureCache] addImage:fileName];
+            fileName = [CCBFileUtil toResolutionIndependentFile:fileName]; 
+            CCTexture* texture = [[CCTextureCache sharedTextureCache] addImage:fileName];
             
             if (texture)
             {
@@ -81,7 +83,7 @@
     if (!spriteFrame)
     {
         // Texture is missing
-        CCTexture2D* texture = [[CCTextureCache sharedTextureCache] addImage:@"missing-texture.png"];
+        CCTexture* texture = [[CCTextureCache sharedTextureCache] addImage:@"missing-texture.png"];
         CGRect bounds = CGRectMake(0, 0, texture.contentSize.width, texture.contentSize.height);
         
         spriteFrame = [CCSpriteFrame frameWithTexture:texture rect:bounds] ;
@@ -93,7 +95,7 @@
 
 + (void) setTextureForNode:(CCNode*)node andProperty:(NSString*) prop withFile:(NSString*) spriteFile
 {
-    CCTexture2D* texture = NULL;
+    CCTexture* texture = NULL;
     
     if (spriteFile && ![spriteFile isEqualToString:@""])
     {

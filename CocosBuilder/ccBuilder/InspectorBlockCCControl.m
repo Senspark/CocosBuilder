@@ -32,31 +32,33 @@
 {
     btns = [[NSMutableDictionary alloc] init];
     
-    selectedEvents = [[selection extraPropForKey:[NSString stringWithFormat:@"%@CtrlEvts", propertyName]] intValue];
-    
-    [btns setObject:btnDown forKey:[NSNumber numberWithInt:CCControlEventTouchDown]];
-    [btns setObject:btnDragInside forKey:[NSNumber numberWithInt:CCControlEventTouchDragInside]];
-    [btns setObject:btnDragOutside forKey:[NSNumber numberWithInt:CCControlEventTouchDragOutside]];
-    [btns setObject:btnDragEnter forKey:[NSNumber numberWithInt:CCControlEventTouchDragEnter]];
-    [btns setObject:btnDragExit forKey:[NSNumber numberWithInt:CCControlEventTouchDragExit]];
-    [btns setObject:btnUpInside forKey:[NSNumber numberWithInt:CCControlEventTouchUpInside]];
-    [btns setObject:btnUpOutside forKey:[NSNumber numberWithInt:CCControlEventTouchUpOutside]];
-    [btns setObject:btnCancel forKey:[NSNumber numberWithInt:CCControlEventTouchCancel]];
-    [btns setObject:btnValueChanged forKey:[NSNumber numberWithInt:CCControlEventValueChanged]];
+    // FIXME
+//    selectedEvents = [[selection extraPropForKey:[NSString stringWithFormat:@"%@CtrlEvts", propertyName]] intValue];
+//    
+//    [btns setObject:btnDown forKey:[NSNumber numberWithInt:CCControlEventTouchDown]];
+//    [btns setObject:btnDragInside forKey:[NSNumber numberWithInt:CCControlEventTouchDragInside]];
+//    [btns setObject:btnDragOutside forKey:[NSNumber numberWithInt:CCControlEventTouchDragOutside]];
+//    [btns setObject:btnDragEnter forKey:[NSNumber numberWithInt:CCControlEventTouchDragEnter]];
+//    [btns setObject:btnDragExit forKey:[NSNumber numberWithInt:CCControlEventTouchDragExit]];
+//    [btns setObject:btnUpInside forKey:[NSNumber numberWithInt:CCControlEventTouchUpInside]];
+//    [btns setObject:btnUpOutside forKey:[NSNumber numberWithInt:CCControlEventTouchUpOutside]];
+//    [btns setObject:btnCancel forKey:[NSNumber numberWithInt:CCControlEventTouchCancel]];
+//    [btns setObject:btnValueChanged forKey:[NSNumber numberWithInt:CCControlEventValueChanged]];
     
     for (NSNumber* evtVal in btns)
     {
         int evt = [evtVal intValue];
         NSButton* btn = [btns objectForKey:evtVal];
         
-        if (selectedEvents & evt)
-        {
-            [btn setState:NSOnState];
-        }
-        else
-        {
-            [btn setState:NSOffState];
-        }
+        // FIXME
+//        if (selectedEvents & evt)
+//        {
+//            [btn setState:NSOnState];
+//        }
+//        else
+//        {
+//            [btn setState:NSOffState];
+//        }
         
         [btn setTarget:self];
         [btn setAction:@selector(toggledCheck:)];
@@ -97,18 +99,19 @@
 {
     NSButton* btn = sender;
     
-    CCControlEvent evt = [btn tag];
-    
-    if ([btn state] == NSOnState)
-    {
-        selectedEvents |= evt;
-    }
-    else
-    {
-        selectedEvents &= ~evt;
-    }
-    
-    [selection setExtraProp:[NSNumber numberWithInt:selectedEvents] forKey:[NSString stringWithFormat:@"%@CtrlEvts", propertyName]];
+    // FIXME.
+//    CCControlEvent evt = [btn tag];
+//    
+//    if ([btn state] == NSOnState)
+//    {
+//        selectedEvents |= evt;
+//    }
+//    else
+//    {
+//        selectedEvents &= ~evt;
+//    }
+//    
+//    [selection setExtraProp:[NSNumber numberWithInt:selectedEvents] forKey:[NSString stringWithFormat:@"%@CtrlEvts", propertyName]];
 }
 
 @end

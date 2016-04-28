@@ -22,8 +22,8 @@
  * THE SOFTWARE.
  */
 
-#import "cocos2d.h"
+#import <CCParticleSystem.h>
 
-@interface CCBPParticleSystem : CCParticleSystemQuad
+@interface CCBPParticleSystem : CCParticleSystem
 
 @end

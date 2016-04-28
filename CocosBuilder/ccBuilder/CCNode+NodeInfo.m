@@ -200,30 +200,24 @@
     [self addKeyframe:keyframe forProperty:name atTime:time sequenceId:seqId];
 }
 
-- (void) duplicateKeyframesFromSequenceId:(int)fromSeqId toSequenceId:(int)toSeqId
-{
-    NodeInfo* info = self.userObject;
+- (void) duplicateKeyframesFromSequenceId:(int) fromSeqId toSequenceId:(int) toSeqId {
+    NodeInfo* info = [self userObject];
     
-    NSMutableDictionary* fromNodeProps = [info.animatableProperties objectForKey:[NSNumber numberWithInt:fromSeqId]];
-    if (fromNodeProps)
-    {
-        for (NSString* propName in fromNodeProps)
-        {
+    NSMutableDictionary* fromNodeProps = [[info animatableProperties] objectForKey:[NSNumber numberWithInt:fromSeqId]];
+    if (fromNodeProps) {
+        for (NSString* propName in fromNodeProps) {
             SequencerNodeProperty* fromSeqNodeProp = [fromNodeProps objectForKey:propName];
             SequencerNodeProperty* toSeqNodeProp = [fromSeqNodeProp duplicate];
             
             [self enableSequenceNodeProperty:propName sequenceId:toSeqId];
             
-            NSMutableDictionary* toNodeProps = [info.animatableProperties objectForKey:[NSNumber numberWithInt:toSeqId]];
+            NSMutableDictionary* toNodeProps = [[info animatableProperties] objectForKey:[NSNumber numberWithInt:toSeqId]];
             [toNodeProps setObject:toSeqNodeProp forKey:propName];
         }
     }
     
-    
     // Also do for children
-    CCNode* child = NULL;
-    CCARRAY_FOREACH([self children], child)
-    {
+    for (CCNode* child in [self children]) {
         [child duplicateKeyframesFromSequenceId:fromSeqId toSequenceId:toSeqId];
     }
 }
@@ -419,34 +413,28 @@
 
 - (void) deleteSequenceId:(int) seqId
 {
-    NodeInfo* info = self.userObject;
-    [info.animatableProperties removeObjectForKey:[NSNumber numberWithInt:seqId]];
+    NodeInfo* info = [self userObject];
+    [[info animatableProperties] removeObjectForKey:[NSNumber numberWithInt:seqId]];
     
     // Also remove for children
-    CCNode* child = NULL;
-    CCARRAY_FOREACH([self children], child)
-    {
+    for (CCNode* child in [self children]) {
         [child deleteSequenceId:seqId];
     }
 }
 
-- (BOOL) deleteSelectedKeyframesForSequenceId:(int)seqId
-{
+- (BOOL) deleteSelectedKeyframesForSequenceId:(int) seqId {
     [[CocosBuilderAppDelegate appDelegate] saveUndoStateWillChangeProperty:@"*deletekeyframes"];
     
     BOOL deletedKeyframe = NO;
     
-    NodeInfo* info = self.userObject;
-    NSMutableDictionary* seq = [info.animatableProperties objectForKey:[NSNumber numberWithInt:seqId]];
-    if (seq)
-    {
+    NodeInfo* info = [self userObject];
+    NSMutableDictionary* seq = [[info animatableProperties] objectForKey:[NSNumber numberWithInt:seqId]];
+    if (seq != nil) {
         NSEnumerator* seqEnum = [seq objectEnumerator];
         SequencerNodeProperty* prop;
         NSMutableArray* emptyProps = [NSMutableArray array];
-        while ((prop = [seqEnum nextObject]))
-        {
-            for (int i = prop.keyframes.count - 1; i >= 0; i--)
-            {
+        while ((prop = [seqEnum nextObject])) {
+            for (int i = prop.keyframes.count - 1; i >= 0; i--) {
                 SequencerKeyframe* keyframe = [prop.keyframes objectAtIndex:i];
                 if (keyframe.selected)
                 {
@@ -468,9 +456,7 @@
     }
     
     // Also remove keyframes for children
-    CCNode* child = NULL;
-    CCARRAY_FOREACH([self children], child)
-    {
+    for (CCNode* child in [self children]) {
         if ([child deleteSelectedKeyframesForSequenceId:seqId])
         {
             deletedKeyframe = YES;
@@ -499,23 +485,18 @@
     }
     
     // Also remove keyframes for children
-    CCNode* child = NULL;
-    CCARRAY_FOREACH([self children], child)
-    {
-        if ([child deleteDuplicateKeyframesForSequenceId:seqId])
-        {
+    for (CCNode* child in [self children]) {
+        if ([child deleteDuplicateKeyframesForSequenceId:seqId]) {
             deletedKeyframe = YES;
         }
     }
     return deletedKeyframe;
 }
 
-- (void) deleteKeyframesAfterTime:(float)time sequenceId:(int)seqId
-{
+- (void) deleteKeyframesAfterTime:(float) time sequenceId:(int) seqId {
     NodeInfo* info = self.userObject;
     NSMutableDictionary* seq = [info.animatableProperties objectForKey:[NSNumber numberWithInt:seqId]];
-    if (seq)
-    {
+    if (seq != nil) {
         NSEnumerator* seqEnum = [seq objectEnumerator];
         SequencerNodeProperty* seqNodeProp;
         while ((seqNodeProp = [seqEnum nextObject]))
@@ -524,9 +505,7 @@
         }
     }
     // Also remove keyframes for children
-    CCNode* child = NULL;
-    CCARRAY_FOREACH([self children], child)
-    {
+    for (CCNode* child in [self children]) {
         [child deleteKeyframesAfterTime:time sequenceId:seqId];
     }
 }

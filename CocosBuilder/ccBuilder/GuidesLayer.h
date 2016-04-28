@@ -22,18 +22,16 @@
  * THE SOFTWARE.
  */
 
-#import "cocos2d.h"
+#import <cocos2d.h>
 
 #define kCCBGuideNone -1
 
-enum
-{
+enum {
     kCCBGuideOrientationHorizontal,
     kCCBGuideOrientationVertical
 };
 
-@interface GuidesLayer : CCLayer
-{
+@interface GuidesLayer : CCNode {
     NSMutableArray* guides;
     int draggingGuide;
     
@@ -42,15 +40,16 @@ enum
     float zoom;
 }
 
-- (BOOL) mouseDown:(CGPoint)pt event:(NSEvent*)event;
-- (BOOL) mouseDragged:(CGPoint)pt event:(NSEvent*)event;
-- (BOOL) mouseUp:(CGPoint)pt event:(NSEvent*)event;
-- (void) updateWithSize:(CGSize)ws stageOrigin:(CGPoint)so zoom:(float)zm;
+- (BOOL) mouseDown:(CGPoint) pt event:(NSEvent*) event;
+- (BOOL) mouseDragged:(CGPoint) pt event:(NSEvent*) event;
+- (BOOL) mouseUp:(CGPoint) pt event:(NSEvent*) event;
+- (void) updateWithSize:(CGSize) ws stageOrigin:(CGPoint) so zoom:(float) zm;
 
 - (id) serializeGuides;
-- (void) loadSerializedGuides:(id)ser;
+- (void) loadSerializedGuides:(id) ser;
 - (void) removeAllGuides;
 
 // Snaps to a point in view coordinates
-- (CGPoint) snapPoint:(CGPoint)pt;
+- (CGPoint) snapPoint:(CGPoint) pt;
+
 @end

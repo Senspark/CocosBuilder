@@ -33,7 +33,7 @@
 #import "SequencerSoundChannel.h"
 #import "SequencerNodeProperty.h"
 #import "SequencerKeyframe.h"
-#import "SimpleAudioEngine.h"
+#import "OALSimpleAudio.h"
 #import "ResourceManager.h"
 
 @implementation SequencerSequence
@@ -51,10 +51,11 @@
 @synthesize soundChannel;
 @synthesize callbackChannel;
 
-- (id) init
-{
+- (id) init {
     self = [super init];
-    if (!self) return NULL;
+    if (self == nil) {
+        return self;
+    }
     
     timelineScale = kCCBDefaultTimelineScale;
     timelineOffset = 0;
@@ -179,16 +180,14 @@
     [[SequencerHandler sharedHandler] redrawTimeline];
 }
 
-- (float) timeToPosition:(float)time
-{
-    return roundf((time - timelineOffset)*timelineScale)+TIMELINE_PAD_PIXELS;
+- (float) timeToPosition:(float) time {
+    return roundf((time - timelineOffset) * timelineScale)+TIMELINE_PAD_PIXELS;
 }
 
-- (float) positionToTime:(float)pos
-{
+- (float) positionToTime:(float) pos {
     float rawTime = ((pos-TIMELINE_PAD_PIXELS)/timelineScale)+timelineOffset;
-    float capped = max(roundf(rawTime * timelineResolution)/timelineResolution, 0);
-    return min(capped, timelineLength);
+    float capped = fmax(roundf(rawTime * timelineResolution) / timelineResolution, 0);
+    return fmin(capped, timelineLength);
 }
 
 - (NSString*) formatTime:(float)time
@@ -239,12 +238,11 @@
         NSString* soundFile = [keyframe.value objectAtIndex:0];
         float pitch = [[keyframe.value objectAtIndex:1] floatValue];
         float pan = [[keyframe.value objectAtIndex:2] floatValue];
-        float gain = [[keyframe.value objectAtIndex:3] floatValue];
+//        float gain = [[keyframe.value objectAtIndex:3] floatValue];
         
         NSString* absFile = [[CocosBuilderAppDelegate appDelegate].resManager toAbsolutePath:soundFile];
-        if ([[NSFileManager defaultManager] fileExistsAtPath:absFile])
-        {
-            [[SimpleAudioEngine sharedEngine] playEffect:absFile pitch:pitch pan:pan gain:gain];
+        if ([[NSFileManager defaultManager] fileExistsAtPath:absFile]) {
+            [[OALSimpleAudio sharedInstance] playEffect:absFile volume:1.0f pitch:pitch pan:pan loop:NO];
         }
     }
     

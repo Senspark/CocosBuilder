@@ -6,10 +6,13 @@
 //
 //
 
-#import "CCScale9Sprite.h"
+#import <CCSprite9Slice.h>
 
-@interface CCBScale9Sprite : CCScale9Sprite
-{
-    float iLeft, iRight, iTop, iBot;
+@interface CCBScale9Sprite : CCSprite9Slice {
+    float iLeft;
+    float iRight;
+    float iTop;
+    float iBot;
 }
+
 @end

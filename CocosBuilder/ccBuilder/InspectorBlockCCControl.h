@@ -39,7 +39,7 @@
     
     NSMutableDictionary* btns;
     
-    CCControlEvent selectedEvents;
+//    CCControlEvent selectedEvents;
 }
 
 

@@ -27,13 +27,11 @@
 
 @implementation CCBPMenu
 
-- (id) init
-{
+- (id) init {
     self = [super init];
-    if (!self) return NULL;
-    
-    self.mouseEnabled = NO;
-    
+    if (self != nil) {
+        [self setIsMouseEnabled:NO];
+    }
     return self;
 }
 
