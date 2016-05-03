@@ -564,6 +564,10 @@ static CocosScene* sharedCocosScene;
     PlugInNode* parentPlugIn = parentInfo.plugIn;
     if (parentPlugIn && !parentPlugIn.canHaveChildren) return;
     
+    if ([node zOrder] < 0) {
+        return;
+    }
+    
     if (node.contentSize.width == 0 || node.contentSize.height == 0)
     {
         CGPoint worldPos = [node.parent convertToWorldSpace:node.position];

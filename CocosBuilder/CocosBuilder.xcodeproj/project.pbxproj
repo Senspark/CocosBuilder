@@ -15,6 +15,7 @@
 		6F879D751CD740C200116A8B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3A4747B16D43BF300DB0D61 /* AVFoundation.framework */; };
 		6F879D9C1CD744CF00116A8B /* libcocos2d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F879D851CD7446300116A8B /* libcocos2d.a */; };
 		6F879D9D1CD744CF00116A8B /* libCocosDenshion.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F879D8B1CD7446300116A8B /* libCocosDenshion.a */; };
+		6F879DB61CD7BFAF00116A8B /* UiButton.ccbPlugNode in Copy PlugIns */ = {isa = PBXBuildFile; fileRef = 6F879DB31CD7B9C500116A8B /* UiButton.ccbPlugNode */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		77055FB513D0E5CA009DD63A /* logo-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 77055FB313D0E5CA009DD63A /* logo-icon.png */; };
 		77055FB613D0E5CA009DD63A /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 77055FB413D0E5CA009DD63A /* logo.png */; };
 		77156DB1137F0351005EF746 /* CCBSpriteSheetParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 77156DB0137F0351005EF746 /* CCBSpriteSheetParser.m */; };
@@ -640,6 +641,20 @@
 			remoteGlobalIDString = 4AD3B7DD159A5415002E68D1;
 			remoteInfo = CocosDenshion;
 		};
+		6F879DB21CD7B9C500116A8B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6F879DAE1CD7B9C500116A8B /* UiButton.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E3DEFB1014FFD66C00B98586;
+			remoteInfo = UiButton;
+		};
+		6F879DB41CD7B9D200116A8B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6F879DAE1CD7B9C500116A8B /* UiButton.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E3DEFB0F14FFD66C00B98586;
+			remoteInfo = UiButton;
+		};
 		E325F66814F6611300D29BCF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7789ABB5133AA82000CEFCC7 /* Project object */;
@@ -801,6 +816,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				6F879DB61CD7BFAF00116A8B /* UiButton.ccbPlugNode in Copy PlugIns */,
 				E3FCE874152485A20028E8E7 /* CCScrollView.ccbPlugNode in Copy PlugIns */,
 				E3C65124151BB8DF00D639C0 /* CCControl.ccbPlugNode in Copy PlugIns */,
 				E3B84C48151A2C93004B743C /* CCControlButton.ccbPlugNode in Copy PlugIns */,
@@ -842,6 +858,7 @@
 		58FA2032162D73F3006B8856 /* TB_leftPanel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TB_leftPanel.png; sourceTree = "<group>"; };
 		58FA2033162D73F3006B8856 /* TB_rightPanel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TB_rightPanel.png; sourceTree = "<group>"; };
 		6F879D771CD7446300116A8B /* cocos2d-osx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "cocos2d-osx.xcodeproj"; path = "../../../../../CocosBuilder-3.0.alpha5-src/CocosBuilder/libs/cocos2d-iphone/cocos2d-osx.xcodeproj"; sourceTree = "<group>"; };
+		6F879DAE1CD7B9C500116A8B /* UiButton.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UiButton.xcodeproj; path = "../PlugIn Nodes/UiButton/UiButton.xcodeproj"; sourceTree = "<group>"; };
 		77055FB313D0E5CA009DD63A /* logo-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-icon.png"; sourceTree = "<group>"; };
 		77055FB413D0E5CA009DD63A /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		77156DAF137F0351005EF746 /* CCBSpriteSheetParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBSpriteSheetParser.h; sourceTree = "<group>"; };
@@ -1824,6 +1841,30 @@
 				6F879D911CD7446300116A8B /* libchipmunk.a */,
 				6F879D931CD7446300116A8B /* libjsbindings.a */,
 				6F879D951CD7446300116A8B /* libkazmath.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6F879DA61CD7B96300116A8B /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				6F879DA71CD7B9B000116A8B /* Button */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		6F879DA71CD7B9B000116A8B /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				6F879DAE1CD7B9C500116A8B /* UiButton.xcodeproj */,
+			);
+			name = Button;
+			sourceTree = "<group>";
+		};
+		6F879DAF1CD7B9C500116A8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6F879DB31CD7B9C500116A8B /* UiButton.ccbPlugNode */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -3113,6 +3154,7 @@
 			children = (
 				E35392461518AD0A00471721 /* Core */,
 				E35392481518AD4100471721 /* Extensions */,
+				6F879DA61CD7B96300116A8B /* UI */,
 			);
 			name = "PlugIns (Nodes)";
 			sourceTree = "<group>";
@@ -3525,6 +3567,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				6F879DB51CD7B9D200116A8B /* PBXTargetDependency */,
 				6F879D991CD744C000116A8B /* PBXTargetDependency */,
 				6F879D9B1CD744C000116A8B /* PBXTargetDependency */,
 				E3F541CE15AED85800EAAFBD /* PBXTargetDependency */,
@@ -3866,6 +3909,10 @@
 					ProductGroup = E3F541BD15AED68500EAAFBD /* Products */;
 					ProjectRef = E3F541BC15AED68500EAAFBD /* Fragaria.xcodeproj */;
 				},
+				{
+					ProductGroup = 6F879DAF1CD7B9C500116A8B /* Products */;
+					ProjectRef = 6F879DAE1CD7B9C500116A8B /* UiButton.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -3953,6 +4000,13 @@
 			fileType = archive.ar;
 			path = libkazmath.a;
 			remoteRef = 6F879D941CD7446300116A8B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6F879DB31CD7B9C500116A8B /* UiButton.ccbPlugNode */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UiButton.ccbPlugNode;
+			remoteRef = 6F879DB21CD7B9C500116A8B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		E3F541C815AED68500EAAFBD /* Fragaria Document Based App.app */ = {
@@ -4754,6 +4808,11 @@
 			name = CocosDenshion;
 			targetProxy = 6F879D9A1CD744C000116A8B /* PBXContainerItemProxy */;
 		};
+		6F879DB51CD7B9D200116A8B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = UiButton;
+			targetProxy = 6F879DB41CD7B9D200116A8B /* PBXContainerItemProxy */;
+		};
 		E325F66914F6611300D29BCF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E325F65914F65C8E00D29BCF /* CCMenuItemImage */;
@@ -5009,10 +5068,14 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/libs/cocos2d-iphone/cocos2d/**",
+					"$(SRCROOT)/libs/cocos2d-iphone/CocosDenshion",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "libs/cocos2d-iphone/external/kazmath/include";
+				USER_HEADER_SEARCH_PATHS = "libs/cocos2d-iphone/external/kazmath/include/**";
 			};
 			name = Debug;
 		};
@@ -5026,10 +5089,14 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)/libs/cocos2d-iphone/cocos2d/**",
+					"$(SRCROOT)/libs/cocos2d-iphone/CocosDenshion",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
-				USER_HEADER_SEARCH_PATHS = "libs/cocos2d-iphone/external/kazmath/include";
+				USER_HEADER_SEARCH_PATHS = "libs/cocos2d-iphone/external/kazmath/include/**";
 			};
 			name = Release;
 		};
@@ -5037,6 +5104,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5054,6 +5122,7 @@
 					DEBUG,
 				);
 				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
 					libs/Fragaria,
 					"../Examples/CocosBuilderExample/libs/CCBReader/**",
 				);
@@ -5073,6 +5142,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -5090,6 +5160,7 @@
 					"CC_ENABLE_GL_STATE_CACHE=1",
 				);
 				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
 					libs/Fragaria,
 					"../Examples/CocosBuilderExample/libs/CCBReader/**",
 				);

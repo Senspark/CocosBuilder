@@ -445,11 +445,12 @@
     NSMutableArray* children = [NSMutableArray array];
     
     // Visit all children of this node
-    if (plugIn.canHaveChildren)
-    {
-        for (int i = 0; i < [[node children] count]; i++)
-        {
-            [children addObject:[CCBWriterInternal dictionaryFromCCObject:[[node children] objectAtIndex:i]]];
+    if (plugIn.canHaveChildren) {
+        for (CCNode* child in [node children]) {
+            if ([child zOrder] >= 0) {
+                // Only process children with non-negative z-order.
+                [children addObject:[CCBWriterInternal dictionaryFromCCObject:child]];
+            }
         }
     }
     

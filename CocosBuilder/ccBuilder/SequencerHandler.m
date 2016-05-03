@@ -266,9 +266,15 @@ static SequencerHandler* sharedSequencerHandler;
     if (item == nil) return 3;
     
     CCNode* node = (CCNode*)item;
-    CCArray* arr = [node children];
     
-    return [arr count];
+    NSInteger result = 0;
+    for (CCNode* child in [node children]) {
+        if ([child zOrder] >= 0) {
+            // Only process children with non-negative z-order.
+            ++result;
+        }
+    }
+    return result;
 }
 
 
@@ -289,6 +295,17 @@ static SequencerHandler* sharedSequencerHandler;
     
     if ([arr count] == 0) return NO;
     if (!plugIn.canHaveChildren) return NO;
+    
+    int maxZOrder = INT_MIN;
+    for (CCNode* child in [node children]) {
+        if ([child zOrder] > maxZOrder) {
+            maxZOrder = [child zOrder];
+        }
+    }
+    if (maxZOrder < 0) {
+        /// All children have negative z-orders.
+        return NO;
+    }
     
     return YES;
 }
@@ -318,8 +335,18 @@ static SequencerHandler* sharedSequencerHandler;
     }
     
     CCNode* node = (CCNode*)item;
-    CCArray* arr = [node children];
-    return [arr objectAtIndex:index];
+    for (CCNode* child in [node children]) {
+        if ([child zOrder] >= 0) {
+            // Only process children with non-negative z-order.
+            if (index == 0) {
+                return child;
+            }
+            --index;
+        }
+    }
+    
+    NSAssert(NO, @"Child not found!");
+    return nil;
 }
 
 - (void)outlineViewSelectionDidChange:(NSNotification *)notification
@@ -590,11 +617,11 @@ static SequencerHandler* sharedSequencerHandler;
         if (expanded) [outlineHierarchy expandItem:node];
         else [outlineHierarchy collapseItem:node];
         
-        CCArray* childs = [node children];
-        for (int i = 0; i < [childs count]; i++)
-        {
-            CCNode* child = [childs objectAtIndex:i];
-            [self updateExpandedForNode:child];
+        for (CCNode* child in [node children]) {
+            if ([child zOrder] >= 0) {
+                // Only process children with non-negative z-order.
+                [self updateExpandedForNode:child];
+            }
         }
     }
 }

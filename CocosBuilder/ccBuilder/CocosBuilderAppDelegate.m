@@ -1697,6 +1697,9 @@ static BOOL hideAllToNextSeparator;
         for (int i = index; i < [children count]; i++)
         {
             CCNode* child = [children objectAtIndex:i];
+            if ([child zOrder] < 0) {
+                continue;
+            }
             child.zOrder += 1;
         }
         [parent addChild:obj z:index];

@@ -72,6 +72,12 @@
     for (int i = 0; i < [children count]; i++)
     {
         CCNode* child = [children objectAtIndex:i];
+        
+        if ([child zOrder] < 0) {
+            continue;
+        }
+        // Only process children with non-negative z-order.
+        
         NodeInfo* info = child.userObject;
         PlugInNode* plugIn = info.plugIn;
         
