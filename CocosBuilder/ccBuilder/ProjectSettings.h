@@ -56,7 +56,6 @@
 @interface ProjectSettings : NSObject
 {
     NSString* projectPath;
-    NSMutableArray* resourcePaths;
     NSMutableDictionary* generatedSpriteSheets;
     NSMutableDictionary* breakpoints;
     
@@ -139,6 +138,7 @@
 @property (nonatomic, assign) BOOL javascriptBased;
 @property (nonatomic, assign) BOOL onlyPublishCCBs;
 @property (nonatomic, readonly) NSArray* absoluteResourcePaths;
+@property (nonatomic, readonly) NSArray* publishAbsoluteResourcePaths;
 @property (nonatomic, copy) NSString* exporter;
 @property (nonatomic, retain) NSMutableArray* availableExporters;
 @property (nonatomic, readonly) NSString* displayCacheDirectory;

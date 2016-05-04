@@ -112,7 +112,6 @@
 @implementation ProjectSettings
 
 @synthesize projectPath;
-@synthesize resourcePaths;
 @synthesize publishDirectory;
 @synthesize publishDirectoryAndroid;
 @synthesize publishDirectoryHTML5;
@@ -156,8 +155,10 @@
     self = [super init];
     if (!self) return NULL;
     
-    resourcePaths = [[NSMutableArray alloc] init];
-    [resourcePaths addObject:[NSMutableDictionary dictionaryWithObject:@"Resources" forKey:@"path"]];
+    [self setResourcePaths:[NSMutableArray array]];
+    [[self resourcePaths] addObject:[NSMutableDictionary dictionaryWithObjects:@[@"Resources", @"YES"]
+                                                                       forKeys:@[@"path", @"publish"]]];
+    
     self.publishDirectory = @"Published-iOS";
     self.publishDirectoryAndroid = @"Published-Android";
     self.publishDirectoryHTML5 = @"Published-HTML5";
@@ -220,7 +221,8 @@
     }
     
     // Read settings
-    self.resourcePaths = [dict objectForKey:@"resourcePaths"];
+    [self setResourcePaths:[dict objectForKey:@"resourcePaths"]];
+    
     self.publishDirectory = [dict objectForKey:@"publishDirectory"];
     self.publishDirectoryAndroid = [dict objectForKey:@"publishDirectoryAndroid"];
     self.publishDirectoryHTML5 = [dict objectForKey:@"publishDirectoryHTML5"];
@@ -304,7 +306,7 @@
 - (void) dealloc
 {
     self.versionStr = NULL;
-    self.resourcePaths = NULL;
+    [self setResourcePaths:nil];
     self.projectPath = NULL;
     self.publishDirectory = NULL;
     self.exporter = NULL;
@@ -326,7 +328,7 @@
     
     [dict setObject:@"CocosBuilderProject" forKey:@"fileType"];
     [dict setObject:[NSNumber numberWithInt:kCCBProjectSettingsVersion] forKey:@"fileVersion"];
-    [dict setObject:resourcePaths forKey:@"resourcePaths"];
+    [dict setObject:[self resourcePaths] forKey:@"resourcePaths"];
     
     [dict setObject:publishDirectory forKey:@"publishDirectory"];
     [dict setObject:publishDirectoryAndroid forKey:@"publishDirectoryAndroid"];
@@ -387,22 +389,36 @@
     return dict;
 }
 
-- (NSArray*) absoluteResourcePaths
-{
-    NSString* projectDirectory = [self.projectPath stringByDeletingLastPathComponent];
+- (NSArray*) absoluteResourcePaths {
+    NSString* projectDirectory = [[self projectPath] stringByDeletingLastPathComponent];
     
     NSMutableArray* paths = [NSMutableArray array];
     
-    for (NSDictionary* dict in resourcePaths)
-    {
+    for (NSDictionary* dict in [self resourcePaths]) {
         NSString* path = [dict objectForKey:@"path"];
         NSString* absPath = [path absolutePathFromBaseDirPath:projectDirectory];
         [paths addObject:absPath];
     }
     
-    if ([paths count] == 0)
-    {
+    if ([paths count] == 0) {
         [paths addObject:projectDirectory];
+    }
+    
+    return paths;
+}
+
+- (NSArray*) publishAbsoluteResourcePaths {
+    NSString* projectDirectory = [[self projectPath] stringByDeletingLastPathComponent];
+    
+    NSMutableArray* paths = [NSMutableArray array];
+    
+    for (NSDictionary* dict in [self resourcePaths]) {
+        NSNumber* publish = [dict objectForKey:@"publish"];
+        if ([publish boolValue]) {
+            NSString* path = [dict objectForKey:@"path"];
+            NSString* absPath = [path absolutePathFromBaseDirPath:projectDirectory];
+            [paths addObject:absPath];
+        }
     }
     
     return paths;

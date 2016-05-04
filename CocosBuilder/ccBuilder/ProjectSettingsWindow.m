@@ -58,36 +58,33 @@
 }
 
 
-- (IBAction)addResourceDirectory:(id)sender
-{
+- (IBAction) addResourceDirectory:(id) sender {
     NSOpenPanel* openDlg = [NSOpenPanel openPanel];
     [openDlg setCanChooseFiles:NO];
     [openDlg setCanChooseDirectories:YES];
     
-    [openDlg beginSheetModalForWindow:self.window completionHandler:^(NSInteger result){
-        if (result == NSOKButton)
-        {
+    [openDlg beginSheetModalForWindow:self.window completionHandler:^(NSInteger result) {
+        if (result == NSOKButton) {
             [[[CCDirector sharedDirector] view] lockOpenGLContext];
             
             NSArray* files = [openDlg URLs];
-            
-            for (int i = 0; i < [files count]; i++)
-            {
-                NSString* dirName = [[files objectAtIndex:i] path];
-                NSString* projectDir = [projectSettings.projectPath stringByDeletingLastPathComponent];
+            for (NSURL* file in files) {
+                NSString* dirName = [file path];
+                NSString* projectDir = [[projectSettings projectPath] stringByDeletingLastPathComponent];
                 NSString* relDirName = [dirName relativePathFromBaseDirPath:projectDir];
                 
                 // Check for duplicate
                 BOOL isDuplicate = NO;
-                for (NSDictionary* row in projectSettings.resourcePaths)
-                {
+                for (NSDictionary* row in [projectSettings resourcePaths]) {
                     NSString* path = [row objectForKey:@"path"];
-                    if ([path isEqualToString:relDirName]) isDuplicate = YES;
+                    if ([path isEqualToString:relDirName]) {
+                        isDuplicate = YES;
+                    }
                 }
                 
-                if (!isDuplicate)
-                {
-                    [resDirArrayController addObject:[NSMutableDictionary dictionaryWithObject:relDirName forKey:@"path"]];
+                if (!isDuplicate) {
+                    [resDirArrayController addObject:[NSMutableDictionary dictionaryWithObjects:@[relDirName, @(YES)]
+                                                                                        forKeys:@[@"path", @"publish"]]];
                 }
             }
             

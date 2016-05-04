@@ -824,7 +824,7 @@
     }
     
     // Publish resources and ccb-files
-    for (NSString* dir in projectSettings.absoluteResourcePaths)
+    for (NSString* dir in [projectSettings publishAbsoluteResourcePaths])
     {
         if (![self publishDirectory:dir subPath:NULL]) return NO;
     }
