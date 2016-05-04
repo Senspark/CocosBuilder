@@ -156,6 +156,8 @@
 @property (nonatomic, copy) NSString* versionStr;
 @property (nonatomic, assign) BOOL needRepublish;
 
+@property (nonatomic, copy) NSString* contentProtectionKey;
+
 - (id) initWithSerialization:(id)dict;
 - (BOOL) store;
 - (id) serialize;

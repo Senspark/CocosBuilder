@@ -33,6 +33,8 @@
 #import "PlayerConnection.h"
 #import "PlayerDeviceInfo.h"
 
+#import <ZipUtils.h>
+
 #import <ApplicationServices/ApplicationServices.h>
 
 @implementation ProjectSettingsGeneratedSpriteSheet
@@ -186,6 +188,8 @@
     self.publishResolutionHTML5_height = 320;
     self.publishResolutionHTML5_scale = 1;
     
+    [self setContentProtectionKey:@""];
+    
     breakpoints = [[NSMutableDictionary dictionary] retain];
     
     generatedSpriteSheets = [[NSMutableDictionary dictionary] retain];
@@ -257,6 +261,8 @@
     self.deviceOrientationLandscapeRight = [[dict objectForKey:@"deviceOrientationLandscapeRight"] boolValue];
     self.resourceAutoScaleFactor = [[dict objectForKey:@"resourceAutoScaleFactor"]intValue];
     if (resourceAutoScaleFactor == 0) self.resourceAutoScaleFactor = 4;
+    
+    [self setContentProtectionKey:[dict objectForKey:@"contentProtectionKey"]];
     
     // Load generated sprite sheet settings
     NSDictionary* generatedSpriteSheetsDict = [dict objectForKey:@"generatedSpriteSheets"];
@@ -356,6 +362,8 @@
     [dict setObject:[NSNumber numberWithBool:deviceOrientationLandscapeLeft] forKey:@"deviceOrientationLandscapeLeft"];
     [dict setObject:[NSNumber numberWithBool:deviceOrientationLandscapeRight] forKey:@"deviceOrientationLandscapeRight"];
     [dict setObject:[NSNumber numberWithInt:resourceAutoScaleFactor] forKey:@"resourceAutoScaleFactor"];
+    
+    [dict setObject:[self contentProtectionKey] forKey:@"contentProtectionKey"];
     
     if (!javascriptMainCCB) self.javascriptMainCCB = @"";
     if (!javascriptBased) self.javascriptMainCCB = @"";
@@ -541,4 +549,35 @@
     NSString* version = [NSString stringWithContentsOfFile:versionPath encoding:NSUTF8StringEncoding error:NULL];
     return version;
 }
+
+- (uint32_t) stringToHex:(NSString*) str {
+    uint32_t result;
+    NSScanner* scanner = [NSScanner scannerWithString:str];
+    [scanner scanHexInt:&result];
+    return result;
+}
+
+- (void) setContentProtectionKey:(NSString*) contentProtectionKey {
+    if ([contentProtectionKey length] != 32) {
+        // Content protection key must have 32 characters.
+        // Reset content protection key.
+        caw_setkey_part(0, 0x00000000);
+        caw_setkey_part(1, 0x00000000);
+        caw_setkey_part(2, 0x00000000);
+        caw_setkey_part(3, 0x00000000);
+        _contentProtectionKey = @"";
+        return;
+    }
+    uint32_t part0 = [self stringToHex:[contentProtectionKey substringWithRange:NSMakeRange(0, 8)]];
+    uint32_t part1 = [self stringToHex:[contentProtectionKey substringWithRange:NSMakeRange(8, 8)]];
+    uint32_t part2 = [self stringToHex:[contentProtectionKey substringWithRange:NSMakeRange(16, 8)]];
+    uint32_t part3 = [self stringToHex:[contentProtectionKey substringWithRange:NSMakeRange(24, 8)]];
+    
+    caw_setkey_part(0, part0);
+    caw_setkey_part(1, part1);
+    caw_setkey_part(2, part2);
+    caw_setkey_part(3, part3);
+    _contentProtectionKey = [contentProtectionKey copy];
+}
+
 @end
