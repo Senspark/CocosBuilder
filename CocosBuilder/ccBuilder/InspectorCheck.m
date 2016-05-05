@@ -36,4 +36,9 @@
     return [[self propertyForSelection] boolValue];
 }
 
+- (void) refresh {
+    [self willChangeValueForKey:@"boolean"];
+    [self didChangeValueForKey:@"boolean"];
+}
+
 @end
