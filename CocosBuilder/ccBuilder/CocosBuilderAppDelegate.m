@@ -572,9 +572,10 @@ static CocosBuilderAppDelegate* sharedAppDelegate;
     if (!self.selectedNode) return;
     
     InspectorValue* inspectorValue = [currentInspectorValues objectForKey:name];
-    if (inspectorValue)
-    {
+    if (inspectorValue) {
         [inspectorValue refresh];
+    } else {
+        NSAssert(NO, @"property not found!");
     }
 }
 

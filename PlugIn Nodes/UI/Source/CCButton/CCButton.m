@@ -44,10 +44,12 @@ const NSInteger TitleZOrder = -1;
         return self;
     }
     
+    prevIgnoreSize_ = NO;
+    
     [self initRenderer];
     [self createTitleRenderer];
     
-    [self setAnchorPoint:CGPointMake(0.5, 0.5)];
+    [self setScale9Enabled:YES];
     
     return self;
 }
@@ -61,17 +63,34 @@ const NSInteger TitleZOrder = -1;
 }
 
 - (void) createTitleRenderer {
-    titleRenderer_ = [CCLabelTTF labelWithString:@""
+    titleRenderer_ = [CCLabelTTF labelWithString:@"Title"
                                         fontName:@"Helvetica"
                                         fontSize:12];
     [titleRenderer_ setAnchorPoint:CGPointMake(0.5, 0.5)];
     [self addChild:titleRenderer_ z:TitleZOrder];
 }
 
+//- (void) loadTextureNormal {
+//    if ([self ignoreContentAdaptWithSize] == NO &&
+//        CGSizeEqualToSize([self customSize], CGSizeZero)) {
+//        customSize_ = [[buttonRenderers_ objectForKey:CCButtonStateNormal] contentSize];
+//    }
+//    [self setupNormalTexture];
+//}
+//
+//- (void) setupNormalTexture {
+//    
+//}
+
 - (void) updateTitleLocation {
     CGFloat width = [self contentSize].width;
     CGFloat height = [self contentSize].height;
     [titleRenderer_ setPosition:CGPointMake(width / 2, height / 2)];
+}
+
+- (void) onSizeChanged {
+    [super onSizeChanged];
+    [self updateTitleLocation];
 }
 
 - (void) setContentSize:(CGSize) contentSize {
@@ -80,12 +99,14 @@ const NSInteger TitleZOrder = -1;
     for (CCScale9Sprite* sprite in [buttonRenderers_ allValues]) {
         [sprite setPreferedSize:contentSize];
     }
-    
-    [self updateTitleLocation];
 }
 
 - (void) setTitleText:(NSString*) text {
+//    if ([text isEqualToString:[titleRenderer_ string]]) {
+//        return;
+//    }
     [titleRenderer_ setString:text];
+    [self updateTitleLocation];
 }
 
 - (NSString*) titleText {
@@ -116,31 +137,24 @@ const NSInteger TitleZOrder = -1;
     return [titleRenderer_ fontName];
 }
 
-//- (void) setHorizontalAlignment:(CCTextAlignment) horizontalAlignment {
-//    [titleRenderer_ setHorizontalAlignment:horizontalAlignment];
-//}
+- (void) setIgnoreContentAdaptWithSize:(BOOL) ignore {
+    if ([self scale9Enabled] == NO || ([self scale9Enabled] && ignore == NO)) {
+        [super setIgnoreContentAdaptWithSize:ignore];
+        prevIgnoreSize_ = ignore;
+    }
+}
 
-//- (CCTextAlignment) horizontalAlignment {
-//    return [titleRenderer_ horizontalAlignment];
-//}
-//
-//- (void) setVerticalAlignment:(CCVerticalTextAlignment) verticalAlignment {
-//    [titleRenderer_ setVerticalAlignment:verticalAlignment];
-//}
-//
-//- (CCVerticalTextAlignment) verticalAlignment {
-//    return [titleRenderer_ verticalAlignment];
-//}
-//
-//- (void) setTitleAlignment:(CCTextAlignment) hAlignment {
-//    [self setHorizontalAlignment:hAlignment];
-//}
-
-//- (void) setTitleAlignment:(CCTextAlignment) hAlignment
-//                       and:(CCVerticalTextAlignment) vAlignment {
-//    [self setHorizontalAlignment:hAlignment];
-//    [self setVerticalAlignment:vAlignment];
-//}
+- (void) setScale9Enabled:(BOOL) enabled {
+    _scale9Enabled = enabled;
+    if (_scale9Enabled) {
+        BOOL ignoreBefore = [self ignoreContentAdaptWithSize];
+        [self setIgnoreContentAdaptWithSize:NO];
+        prevIgnoreSize_ = ignoreBefore;
+    } else {
+        [self setIgnoreContentAdaptWithSize:prevIgnoreSize_];
+    }
+    [self setBright:[self bright]];
+}
 
 - (void) setBackgroundSpriteEnabled:(BOOL) enabled
                            forState:(CCButtonState) state {

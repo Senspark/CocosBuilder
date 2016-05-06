@@ -9,62 +9,22 @@
 	<key>editorClassName</key>
 	<string>CCButton</string>
 	<key>inheritsFrom</key>
-	<string>CCNode</string>
+	<string>CCWidget</string>
 	<key>properties</key>
 	<array>
 		<dict>
+			<key>name</key>
+			<string>CCButton</string>
 			<key>displayName</key>
 			<string>CCButton</string>
-			<key>dontSetInEditor</key>
-			<true/>
-			<key>name</key>
-			<string>UiButton</string>
 			<key>type</key>
 			<string>Separator</string>
 		</dict>
 		<dict>
 			<key>displayName</key>
-			<string>Touch listener</string>
+			<string>Touch animation</string>
 			<key>type</key>
 			<string>SeparatorSub</string>
-		</dict>
-		<dict>
-			<key>displayName</key>
-			<string>Selector</string>
-			<key>name</key>
-			<string>block</string>
-			<key>type</key>
-			<string>Block</string>
-		</dict>
-		<dict>
-			<key>default</key>
-			<string>YES</string>
-			<key>displayName</key>
-			<string>Touch enabled</string>
-			<key>name</key>
-			<string>touchEnabled</string>
-			<key>type</key>
-			<string>Check</string>
-		</dict>
-		<dict>
-			<key>default</key>
-			<string>YES</string>
-			<key>displayName</key>
-			<string>Swallow touches</string>
-			<key>name</key>
-			<string>swallowTouches</string>
-			<key>type</key>
-			<string>Check</string>
-		</dict>
-		<dict>
-			<key>default</key>
-			<string>YES</string>
-			<key>displayName</key>
-			<string>Propagate touch events</string>
-			<key>name</key>
-			<string>propagateTouchEvents</string>
-			<key>type</key>
-			<string>Check</string>
 		</dict>
 		<dict>
 			<key>displayName</key>
@@ -91,8 +51,6 @@
 			<string>SeparatorSub</string>
 		</dict>
 		<dict>
-			<key>default</key>
-			<string>Title</string>
 			<key>displayName</key>
 			<string>Title text</string>
 			<key>name</key>
@@ -101,12 +59,6 @@
 			<string>String</string>
 		</dict>
 		<dict>
-			<key>affectsProperties</key>
-			<array>
-				<string>titleFontSIze</string>
-			</array>
-			<key>default</key>
-			<string>Helvetica</string>
 			<key>displayName</key>
 			<string>Title font name</string>
 			<key>name</key>
@@ -115,8 +67,6 @@
 			<string>FontTTF</string>
 		</dict>
 		<dict>
-			<key>default</key>
-			<integer>12</integer>
 			<key>displayName</key>
 			<string>Title font size</string>
 			<key>name</key>
@@ -133,6 +83,20 @@
 			<string>Color3</string>
 		</dict>
 		<dict>
+			<key>readOnly</key>
+			<string>YES</string>
+			<key>affectsProperties</key>
+			<array>
+				<string>ignoreContentAdaptWithSize</string>
+			</array>
+			<key>displayName</key>
+			<string>Scale9 enabled</string>
+			<key>name</key>
+			<string>scale9Enabled</string>
+			<key>type</key>
+			<string>Check</string>
+		</dict>
+		<dict>
 			<key>displayName</key>
 			<string>Normal state</string>
 			<key>type</key>
@@ -147,10 +111,6 @@
 			<string>Check</string>
 		</dict>
 		<dict>
-			<key>affectsProperties</key>
-			<array>
-				<string>contentSize</string>
-			</array>
 			<key>default</key>
 			<array>
 				<string>ccbResources/ccbDefaultImages.plist</string>
@@ -178,10 +138,6 @@
 			<string>Check</string>
 		</dict>
 		<dict>
-			<key>affectsProperties</key>
-			<array>
-				<string>contentSize</string>
-			</array>
 			<key>default</key>
 			<array>
 				<string>ccbResources/ccbDefaultImages.plist</string>
@@ -209,10 +165,6 @@
 			<string>Check</string>
 		</dict>
 		<dict>
-			<key>affectsProperties</key>
-			<array>
-				<string>contentSize</string>
-			</array>
 			<key>default</key>
 			<array>
 				<string>ccbResources/ccbDefaultImages.plist</string>

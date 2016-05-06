@@ -1,7 +1,7 @@
 /*
- * CocosBuilder: http://www.cocosbuilder.com
+ * cocos2d for iPhone: http://www.cocos2d-iphone.org
  *
- * Copyright (c) 2012 Zynga Inc.
+ * Copyright (c) 2013 Apportable Inc.
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,21 +22,36 @@
  * THE SOFTWARE.
  */
 
-#import "InspectorCheck.h"
+#import "CCNode.h"
 
-@implementation InspectorCheck
-
-- (void) setBoolean:(BOOL) boolean {
-    [self setPropertyForSelection:[NSNumber numberWithBool:boolean]];
+@interface CCWidget : CCNode {
+    CGSize customSize_;
 }
 
-- (BOOL) boolean {
-    return [[self propertyForSelection] boolValue];
-}
+@property (nonatomic, assign) BOOL enabled;
+@property (nonatomic, assign) BOOL highlighted;
+@property (nonatomic, assign) BOOL bright;
+@property (nonatomic, assign) BOOL ignoreContentAdaptWithSize;
+@property (nonatomic, assign) BOOL touchEnabled;
+@property (nonatomic, assign) BOOL swallowTouches;
+@property (nonatomic, assign) BOOL propagateTouchEvents;
 
-- (void) refresh {
-    [self willChangeValueForKey:@"boolean"];
-    [self didChangeValueForKey:@"boolean"];
-}
+//@property (nonatomic, assign) CGSize sizePercent;
+
+@property (nonatomic, readonly) CGSize customSize;
+
+- (CCWidget*) getWidgetParent;
+
+- (void) initRenderer;
+
+- (void) updateSizeAndPosition;
+- (void) updateSizeAndPositionWithParentSize:(CGSize) parentSize;
+
+- (void) adaptRenderers;
+
+- (void) updateContentSizeWithTextureSize:(CGSize) size;
+- (void) onSizeChanged;
+
+@property (nonatomic, readonly) CGSize virtualRendererSize;
 
 @end

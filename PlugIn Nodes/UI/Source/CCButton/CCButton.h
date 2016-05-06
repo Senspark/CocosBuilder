@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  */
 
-#import "CCNode.h"
+#import "CCWidget.h"
 
 @class CCScale9Sprite;
 @class CCLabelTTF;
@@ -34,31 +34,24 @@ typedef NS_ENUM(NSInteger, CCButtonState) {
     CCButtonStateDisabled   = 1 << 3
 };
 
-@interface CCButton : CCNode {
+@interface CCButton : CCWidget {
     NSMutableDictionary*    buttonRenderers_;
     CCLabelTTF*             titleRenderer_;
     
     NSMutableDictionary*    buttonRenderersEnabled_;
+    
+    BOOL prevIgnoreSize_;
 }
 
 @property (nonatomic, assign) BOOL pressedActionEnabled;
 @property (nonatomic, assign) CGFloat zoomScale;
 
-@property (nonatomic, assign) BOOL touchEnabled;
-@property (nonatomic, assign) BOOL swallowTouches;
-@property (nonatomic, assign) BOOL propagateTouchEvents;
-
 @property (nonatomic, assign) NSString* titleText;
 @property (nonatomic, assign) ccColor3B titleColor;
 @property (nonatomic, assign) CGFloat titleFontSize;
 @property (nonatomic, assign) NSString* fontName;
-//@property (nonatomic, assign) CCTextAlignment horizontalAlignment;
-//@property (nonatomic, assign) CCVerticalTextAlignment verticalAlignment;
 
-//- (void) setTitleAlignment:(CCTextAlignment) hAlignment;
-//
-//- (void) setTitleAlignment:(CCTextAlignment) hAlignment
-//                       and:(CCVerticalTextAlignment) vAlignment;
+@property (nonatomic, assign) BOOL scale9Enabled;
 
 - (void) setBackgroundSpriteEnabled:(BOOL) enabled
                            forState:(CCButtonState) state;

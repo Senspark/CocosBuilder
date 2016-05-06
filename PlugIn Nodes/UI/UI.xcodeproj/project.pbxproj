@@ -7,21 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6F6170FC1CD8858C00E5D6F7 /* CCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E3DEFC5514FFD9E900B98586 /* CCButton.m */; };
+		6F843E511CDB994C008B2EC4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3DEFB1314FFD66C00B98586 /* Cocoa.framework */; };
+		6F843E531CDB994C008B2EC4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6FC2419E1CDB5922009A3AAD /* Info.plist */; };
+		6F843E551CDB994C008B2EC4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FC2419C1CDB5922009A3AAD /* InfoPlist.strings */; };
+		6F843E5D1CDB996B008B2EC4 /* CCBPProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F843E4A1CDB9940008B2EC4 /* CCBPProperties.plist */; };
+		6F843E7C1CDBCBC1008B2EC4 /* CCText.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F843E7B1CDBCBC1008B2EC4 /* CCText.m */; };
+		6F843E7F1CDBCBC9008B2EC4 /* CCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F843E7E1CDBCBC9008B2EC4 /* CCButton.m */; };
+		6F843E831CDBCBD6008B2EC4 /* CCWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F843E811CDBCBD0008B2EC4 /* CCWidget.m */; };
+		6F843E841CDBCBD7008B2EC4 /* CCWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F843E811CDBCBD0008B2EC4 /* CCWidget.m */; };
+		6F843E851CDBCBD7008B2EC4 /* CCWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F843E811CDBCBD0008B2EC4 /* CCWidget.m */; };
+		6FC241891CDB58D5009A3AAD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3DEFB1314FFD66C00B98586 /* Cocoa.framework */; };
+		6FC241A11CDB5922009A3AAD /* CCBPProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6FC241941CDB5922009A3AAD /* CCBPProperties.plist */; };
+		6FC241A41CDB5922009A3AAD /* CCBPProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6FC241981CDB5922009A3AAD /* CCBPProperties.plist */; };
+		6FC241A81CDB5922009A3AAD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FC2419C1CDB5922009A3AAD /* InfoPlist.strings */; };
+		6FC241A91CDB5922009A3AAD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FC2419C1CDB5922009A3AAD /* InfoPlist.strings */; };
+		6FC241AA1CDB5922009A3AAD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6FC2419E1CDB5922009A3AAD /* Info.plist */; };
+		6FC241AB1CDB5922009A3AAD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6FC2419E1CDB5922009A3AAD /* Info.plist */; };
 		E3DEFB1414FFD66C00B98586 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3DEFB1314FFD66C00B98586 /* Cocoa.framework */; };
-		E3DEFB1E14FFD66C00B98586 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E3DEFB1C14FFD66C00B98586 /* InfoPlist.strings */; };
-		E3DEFC5814FFDB7E00B98586 /* CCBPProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3DEFC5714FFDB7E00B98586 /* CCBPProperties.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E3DEFB1014FFD66C00B98586 /* UiButton.ccbPlugNode */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UiButton.ccbPlugNode; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F843E4A1CDB9940008B2EC4 /* CCBPProperties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CCBPProperties.plist; path = CCText/CCBPProperties.plist; sourceTree = "<group>"; };
+		6F843E5A1CDB994C008B2EC4 /* CCText.ccbPlugNode */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CCText.ccbPlugNode; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F843E7A1CDBCBC1008B2EC4 /* CCText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCText.h; path = CCText/CCText.h; sourceTree = "<group>"; };
+		6F843E7B1CDBCBC1008B2EC4 /* CCText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCText.m; path = CCText/CCText.m; sourceTree = "<group>"; };
+		6F843E7D1CDBCBC9008B2EC4 /* CCButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCButton.h; sourceTree = "<group>"; };
+		6F843E7E1CDBCBC9008B2EC4 /* CCButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCButton.m; sourceTree = "<group>"; };
+		6F843E801CDBCBD0008B2EC4 /* CCWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCWidget.h; sourceTree = "<group>"; };
+		6F843E811CDBCBD0008B2EC4 /* CCWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWidget.m; sourceTree = "<group>"; };
+		6FC241911CDB58D5009A3AAD /* CCButton.ccbPlugNode */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CCButton.ccbPlugNode; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FC241941CDB5922009A3AAD /* CCBPProperties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CCBPProperties.plist; sourceTree = "<group>"; };
+		6FC241981CDB5922009A3AAD /* CCBPProperties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CCBPProperties.plist; sourceTree = "<group>"; };
+		6FC2419D1CDB5922009A3AAD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
+		6FC2419E1CDB5922009A3AAD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FC2419F1CDB5922009A3AAD /* PlugIn-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PlugIn-Prefix.pch"; sourceTree = "<group>"; };
+		E3DEFB1014FFD66C00B98586 /* CCWidget.ccbPlugNode */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CCWidget.ccbPlugNode; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3DEFB1314FFD66C00B98586 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E3DEFB1614FFD66C00B98586 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		E3DEFB1714FFD66C00B98586 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		E3DEFB1814FFD66C00B98586 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		E3DEFB1B14FFD66C00B98586 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E3DEFB1D14FFD66C00B98586 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		E3DEFB1F14FFD66C00B98586 /* PlugIn-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PlugIn-Prefix.pch"; sourceTree = "<group>"; };
 		E3DEFB2814FFD74500B98586 /* CCAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAction.h; sourceTree = "<group>"; };
 		E3DEFB2A14FFD74500B98586 /* CCActionCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCActionCamera.h; sourceTree = "<group>"; };
 		E3DEFB2C14FFD74500B98586 /* CCActionEase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCActionEase.h; sourceTree = "<group>"; };
@@ -67,7 +91,7 @@
 		E3DEFB7914FFD74500B98586 /* CCScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCScene.h; sourceTree = "<group>"; };
 		E3DEFB7B14FFD74500B98586 /* CCScheduler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCScheduler.h; sourceTree = "<group>"; };
 		E3DEFB7D14FFD74500B98586 /* CCShaderCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCShaderCache.h; sourceTree = "<group>"; };
-		E3DEFB7F14FFD74500B98586 /* CCSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSprite.h; sourceTree = "<group>"; };
+		E3DEFB7F14FFD74500B98586 /* CCSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSprite.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		E3DEFB8114FFD74500B98586 /* CCSpriteBatchNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSpriteBatchNode.h; sourceTree = "<group>"; };
 		E3DEFB8314FFD74500B98586 /* CCSpriteFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSpriteFrame.h; sourceTree = "<group>"; };
 		E3DEFB8514FFD74500B98586 /* CCSpriteFrameCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCSpriteFrameCache.h; sourceTree = "<group>"; };
@@ -126,12 +150,25 @@
 		E3DEFBE314FFD74500B98586 /* vec2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vec2.h; sourceTree = "<group>"; };
 		E3DEFBE414FFD74500B98586 /* vec3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vec3.h; sourceTree = "<group>"; };
 		E3DEFBE514FFD74500B98586 /* vec4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vec4.h; sourceTree = "<group>"; };
-		E3DEFC5414FFD9E900B98586 /* CCButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCButton.h; sourceTree = "<group>"; };
-		E3DEFC5514FFD9E900B98586 /* CCButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCButton.m; sourceTree = "<group>"; };
-		E3DEFC5714FFDB7E00B98586 /* CCBPProperties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CCBPProperties.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6F843E501CDB994C008B2EC4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F843E511CDB994C008B2EC4 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FC241881CDB58D5009A3AAD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FC241891CDB58D5009A3AAD /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E3DEFB0D14FFD66C00B98586 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -143,6 +180,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F843E471CDB98FC008B2EC4 /* CCText */ = {
+			isa = PBXGroup;
+			children = (
+				6F843E7A1CDBCBC1008B2EC4 /* CCText.h */,
+				6F843E7B1CDBCBC1008B2EC4 /* CCText.m */,
+				6F843E4A1CDB9940008B2EC4 /* CCBPProperties.plist */,
+			);
+			name = CCText;
+			sourceTree = "<group>";
+		};
+		6FC241931CDB5922009A3AAD /* CCButton */ = {
+			isa = PBXGroup;
+			children = (
+				6F843E7D1CDBCBC9008B2EC4 /* CCButton.h */,
+				6F843E7E1CDBCBC9008B2EC4 /* CCButton.m */,
+				6FC241941CDB5922009A3AAD /* CCBPProperties.plist */,
+			);
+			path = CCButton;
+			sourceTree = "<group>";
+		};
+		6FC241971CDB5922009A3AAD /* CCWidget */ = {
+			isa = PBXGroup;
+			children = (
+				6F843E801CDBCBD0008B2EC4 /* CCWidget.h */,
+				6F843E811CDBCBD0008B2EC4 /* CCWidget.m */,
+				6FC241981CDB5922009A3AAD /* CCBPProperties.plist */,
+			);
+			path = CCWidget;
+			sourceTree = "<group>";
+		};
+		6FC2419B1CDB5922009A3AAD /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				6FC2419C1CDB5922009A3AAD /* InfoPlist.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
 		E3DEFB0514FFD66C00B98586 = {
 			isa = PBXGroup;
 			children = (
@@ -156,7 +231,9 @@
 		E3DEFB1114FFD66C00B98586 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E3DEFB1014FFD66C00B98586 /* UiButton.ccbPlugNode */,
+				E3DEFB1014FFD66C00B98586 /* CCWidget.ccbPlugNode */,
+				6FC241911CDB58D5009A3AAD /* CCButton.ccbPlugNode */,
+				6F843E5A1CDB994C008B2EC4 /* CCText.ccbPlugNode */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -183,22 +260,14 @@
 		E3DEFB1914FFD66C00B98586 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				E3DEFB1A14FFD66C00B98586 /* Supporting Files */,
-				E3DEFC5414FFD9E900B98586 /* CCButton.h */,
-				E3DEFC5514FFD9E900B98586 /* CCButton.m */,
+				6F843E471CDB98FC008B2EC4 /* CCText */,
+				6FC241931CDB5922009A3AAD /* CCButton */,
+				6FC241971CDB5922009A3AAD /* CCWidget */,
+				6FC2419B1CDB5922009A3AAD /* en.lproj */,
+				6FC2419E1CDB5922009A3AAD /* Info.plist */,
+				6FC2419F1CDB5922009A3AAD /* PlugIn-Prefix.pch */,
 			);
 			path = Source;
-			sourceTree = "<group>";
-		};
-		E3DEFB1A14FFD66C00B98586 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				E3DEFC5714FFDB7E00B98586 /* CCBPProperties.plist */,
-				E3DEFB1B14FFD66C00B98586 /* Info.plist */,
-				E3DEFB1C14FFD66C00B98586 /* InfoPlist.strings */,
-				E3DEFB1F14FFD66C00B98586 /* PlugIn-Prefix.pch */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		E3DEFB2614FFD74500B98586 /* libs */ = {
@@ -387,9 +456,45 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E3DEFB0F14FFD66C00B98586 /* UiButton */ = {
+		6F843E4C1CDB994C008B2EC4 /* CCText */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E3DEFB2214FFD66C00B98586 /* Build configuration list for PBXNativeTarget "UiButton" */;
+			buildConfigurationList = 6F843E571CDB994C008B2EC4 /* Build configuration list for PBXNativeTarget "CCText" */;
+			buildPhases = (
+				6F843E4D1CDB994C008B2EC4 /* Sources */,
+				6F843E501CDB994C008B2EC4 /* Frameworks */,
+				6F843E521CDB994C008B2EC4 /* Resources */,
+				6F843E561CDB994C008B2EC4 /* Copy Plug-in to CocosBuilder's PlugIns folder */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CCText;
+			productName = CCRotatingSprite;
+			productReference = 6F843E5A1CDB994C008B2EC4 /* CCText.ccbPlugNode */;
+			productType = "com.apple.product-type.bundle";
+		};
+		6FC241851CDB58D5009A3AAD /* CCButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6FC2418E1CDB58D5009A3AAD /* Build configuration list for PBXNativeTarget "CCButton" */;
+			buildPhases = (
+				6FC241861CDB58D5009A3AAD /* Sources */,
+				6FC241881CDB58D5009A3AAD /* Frameworks */,
+				6FC2418A1CDB58D5009A3AAD /* Resources */,
+				6FC2418D1CDB58D5009A3AAD /* Copy Plug-in to CocosBuilder's PlugIns folder */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CCButton;
+			productName = CCRotatingSprite;
+			productReference = 6FC241911CDB58D5009A3AAD /* CCButton.ccbPlugNode */;
+			productType = "com.apple.product-type.bundle";
+		};
+		E3DEFB0F14FFD66C00B98586 /* CCWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3DEFB2214FFD66C00B98586 /* Build configuration list for PBXNativeTarget "CCWidget" */;
 			buildPhases = (
 				E3DEFB0C14FFD66C00B98586 /* Sources */,
 				E3DEFB0D14FFD66C00B98586 /* Frameworks */,
@@ -400,9 +505,9 @@
 			);
 			dependencies = (
 			);
-			name = UiButton;
+			name = CCWidget;
 			productName = CCRotatingSprite;
-			productReference = E3DEFB1014FFD66C00B98586 /* UiButton.ccbPlugNode */;
+			productReference = E3DEFB1014FFD66C00B98586 /* CCWidget.ccbPlugNode */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -413,7 +518,7 @@
 			attributes = {
 				LastUpgradeCheck = 0420;
 			};
-			buildConfigurationList = E3DEFB0A14FFD66C00B98586 /* Build configuration list for PBXProject "UiButton" */;
+			buildConfigurationList = E3DEFB0A14FFD66C00B98586 /* Build configuration list for PBXProject "UI" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -425,24 +530,75 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E3DEFB0F14FFD66C00B98586 /* UiButton */,
+				E3DEFB0F14FFD66C00B98586 /* CCWidget */,
+				6FC241851CDB58D5009A3AAD /* CCButton */,
+				6F843E4C1CDB994C008B2EC4 /* CCText */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6F843E521CDB994C008B2EC4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F843E531CDB994C008B2EC4 /* Info.plist in Resources */,
+				6F843E5D1CDB996B008B2EC4 /* CCBPProperties.plist in Resources */,
+				6F843E551CDB994C008B2EC4 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FC2418A1CDB58D5009A3AAD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FC241AB1CDB5922009A3AAD /* Info.plist in Resources */,
+				6FC241A11CDB5922009A3AAD /* CCBPProperties.plist in Resources */,
+				6FC241A91CDB5922009A3AAD /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E3DEFB0E14FFD66C00B98586 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3DEFB1E14FFD66C00B98586 /* InfoPlist.strings in Resources */,
-				E3DEFC5814FFDB7E00B98586 /* CCBPProperties.plist in Resources */,
+				6FC241AA1CDB5922009A3AAD /* Info.plist in Resources */,
+				6FC241A41CDB5922009A3AAD /* CCBPProperties.plist in Resources */,
+				6FC241A81CDB5922009A3AAD /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		6F843E561CDB994C008B2EC4 /* Copy Plug-in to CocosBuilder's PlugIns folder */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Plug-in to CocosBuilder's PlugIns folder";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./../../scripts/CopyBuiltProduct.sh \"$CONFIGURATION_BUILD_DIR/\" \"$SRCROOT/../../build/CocosBuilder.app/Contents/PlugIns/\" \"$PRODUCT_NAME.ccbPlugNode\" 0";
+		};
+		6FC2418D1CDB58D5009A3AAD /* Copy Plug-in to CocosBuilder's PlugIns folder */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Plug-in to CocosBuilder's PlugIns folder";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./../../scripts/CopyBuiltProduct.sh \"$CONFIGURATION_BUILD_DIR/\" \"$SRCROOT/../../build/CocosBuilder.app/Contents/PlugIns/\" \"$PRODUCT_NAME.ccbPlugNode\" 0";
+		};
 		E33BC1A51510CA52009AE29A /* Copy Plug-in to CocosBuilder's PlugIns folder */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -460,21 +616,39 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6F843E4D1CDB994C008B2EC4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F843E7C1CDBCBC1008B2EC4 /* CCText.m in Sources */,
+				6F843E831CDBCBD6008B2EC4 /* CCWidget.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FC241861CDB58D5009A3AAD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F843E7F1CDBCBC9008B2EC4 /* CCButton.m in Sources */,
+				6F843E851CDBCBD7008B2EC4 /* CCWidget.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E3DEFB0C14FFD66C00B98586 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F6170FC1CD8858C00E5D6F7 /* CCButton.m in Sources */,
+				6F843E841CDBCBD7008B2EC4 /* CCWidget.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E3DEFB1C14FFD66C00B98586 /* InfoPlist.strings */ = {
+		6FC2419C1CDB5922009A3AAD /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				E3DEFB1D14FFD66C00B98586 /* en */,
+				6FC2419D1CDB5922009A3AAD /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -482,6 +656,72 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6F843E581CDB994C008B2EC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Source/PlugIn-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../Examples/CocosBuilderExample/libs/CCBReader/**";
+				INFOPLIST_FILE = Source/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = ccbPlugNode;
+			};
+			name = Debug;
+		};
+		6F843E591CDB994C008B2EC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Source/PlugIn-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../Examples/CocosBuilderExample/libs/CCBReader/**";
+				INFOPLIST_FILE = Source/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = ccbPlugNode;
+			};
+			name = Release;
+		};
+		6FC2418F1CDB58D5009A3AAD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Source/PlugIn-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../Examples/CocosBuilderExample/libs/CCBReader/**";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = ccbPlugNode;
+			};
+			name = Debug;
+		};
+		6FC241901CDB58D5009A3AAD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Source/PlugIn-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../Examples/CocosBuilderExample/libs/CCBReader/**";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = ccbPlugNode;
+			};
+			name = Release;
+		};
 		E3DEFB2014FFD66C00B98586 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -502,6 +742,8 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Source/**";
+				INFOPLIST_FILE = Source/Info.plist;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -523,6 +765,8 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Source/**";
+				INFOPLIST_FILE = Source/Info.plist;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				SDKROOT = macosx;
 				USER_HEADER_SEARCH_PATHS = libs/kazmath/include;
@@ -535,13 +779,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Source/PlugIn-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../Examples/CocosBuilderExample/libs/CCBReader/**";
-				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
 				);
-				PRODUCT_NAME = UiButton;
+				PRODUCT_NAME = CCWidget;
 				WRAPPER_EXTENSION = ccbPlugNode;
 			};
 			name = Debug;
@@ -552,13 +795,12 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Source/PlugIn-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../Examples/CocosBuilderExample/libs/CCBReader/**";
-				INFOPLIST_FILE = Source/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
 				);
-				PRODUCT_NAME = UiButton;
+				PRODUCT_NAME = CCWidget;
 				WRAPPER_EXTENSION = ccbPlugNode;
 			};
 			name = Release;
@@ -566,7 +808,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E3DEFB0A14FFD66C00B98586 /* Build configuration list for PBXProject "UiButton" */ = {
+		6F843E571CDB994C008B2EC4 /* Build configuration list for PBXNativeTarget "CCText" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F843E581CDB994C008B2EC4 /* Debug */,
+				6F843E591CDB994C008B2EC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6FC2418E1CDB58D5009A3AAD /* Build configuration list for PBXNativeTarget "CCButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FC2418F1CDB58D5009A3AAD /* Debug */,
+				6FC241901CDB58D5009A3AAD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3DEFB0A14FFD66C00B98586 /* Build configuration list for PBXProject "UI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E3DEFB2014FFD66C00B98586 /* Debug */,
@@ -575,7 +835,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E3DEFB2214FFD66C00B98586 /* Build configuration list for PBXNativeTarget "UiButton" */ = {
+		E3DEFB2214FFD66C00B98586 /* Build configuration list for PBXNativeTarget "CCWidget" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E3DEFB2314FFD66C00B98586 /* Debug */,

@@ -12,10 +12,12 @@
 		58FA2034162D73F3006B8856 /* TB_bottomPanel.png in Resources */ = {isa = PBXBuildFile; fileRef = 58FA2031162D73F3006B8856 /* TB_bottomPanel.png */; };
 		58FA2035162D73F3006B8856 /* TB_leftPanel.png in Resources */ = {isa = PBXBuildFile; fileRef = 58FA2032162D73F3006B8856 /* TB_leftPanel.png */; };
 		58FA2036162D73F3006B8856 /* TB_rightPanel.png in Resources */ = {isa = PBXBuildFile; fileRef = 58FA2033162D73F3006B8856 /* TB_rightPanel.png */; };
+		6F843E611CDB99C2008B2EC4 /* CCText.ccbPlugNode in Copy PlugIns */ = {isa = PBXBuildFile; fileRef = 6F843E601CDB99C2008B2EC4 /* CCText.ccbPlugNode */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6F879D751CD740C200116A8B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3A4747B16D43BF300DB0D61 /* AVFoundation.framework */; };
-		6F879DB61CD7BFAF00116A8B /* UiButton.ccbPlugNode in Copy PlugIns */ = {isa = PBXBuildFile; fileRef = 6F879DB31CD7B9C500116A8B /* UiButton.ccbPlugNode */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		6FC1BD981CD9AD5700DE717C /* libcocos2d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FC1BD851CD9AD4400DE717C /* libcocos2d.a */; };
 		6FC1BD9B1CD9AD6E00DE717C /* libCocosDenshion.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FC1BD8B1CD9AD4400DE717C /* libCocosDenshion.a */; };
+		6FC241D21CDB5BB4009A3AAD /* CCWidget.ccbPlugNode in Copy PlugIns */ = {isa = PBXBuildFile; fileRef = 6FC241BD1CDB5A7F009A3AAD /* CCWidget.ccbPlugNode */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6FC241D31CDB5BB4009A3AAD /* CCButton.ccbPlugNode in Copy PlugIns */ = {isa = PBXBuildFile; fileRef = 6FC241BF1CDB5A7F009A3AAD /* CCButton.ccbPlugNode */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		77055FB513D0E5CA009DD63A /* logo-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 77055FB313D0E5CA009DD63A /* logo-icon.png */; };
 		77055FB613D0E5CA009DD63A /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 77055FB413D0E5CA009DD63A /* logo.png */; };
 		77156DB1137F0351005EF746 /* CCBSpriteSheetParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 77156DB0137F0351005EF746 /* CCBSpriteSheetParser.m */; };
@@ -564,19 +566,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6F879DB21CD7B9C500116A8B /* PBXContainerItemProxy */ = {
+		6F843E5F1CDB99C2008B2EC4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 6F879DAE1CD7B9C500116A8B /* UiButton.xcodeproj */;
+			containerPortal = 6FC2417F1CDB5896009A3AAD /* UI.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = E3DEFB1014FFD66C00B98586;
-			remoteInfo = UiButton;
+			remoteGlobalIDString = 6F843E5A1CDB994C008B2EC4;
+			remoteInfo = CCText;
 		};
-		6F879DB41CD7B9D200116A8B /* PBXContainerItemProxy */ = {
+		6F843E6C1CDB99CC008B2EC4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 6F879DAE1CD7B9C500116A8B /* UiButton.xcodeproj */;
+			containerPortal = 6FC2417F1CDB5896009A3AAD /* UI.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = E3DEFB0F14FFD66C00B98586;
-			remoteInfo = UiButton;
+			remoteGlobalIDString = 6F843E4C1CDB994C008B2EC4;
+			remoteInfo = CCText;
 		};
 		6FC1BD841CD9AD4400DE717C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -654,6 +656,34 @@
 			proxyType = 1;
 			remoteGlobalIDString = 4AD3B7DD159A5415002E68D1;
 			remoteInfo = CocosDenshion;
+		};
+		6FC241BC1CDB5A7F009A3AAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6FC2417F1CDB5896009A3AAD /* UI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E3DEFB1014FFD66C00B98586;
+			remoteInfo = CCWidget;
+		};
+		6FC241BE1CDB5A7F009A3AAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6FC2417F1CDB5896009A3AAD /* UI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6FC241911CDB58D5009A3AAD;
+			remoteInfo = CCButton;
+		};
+		6FC241CE1CDB5B9E009A3AAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6FC2417F1CDB5896009A3AAD /* UI.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = E3DEFB0F14FFD66C00B98586;
+			remoteInfo = CCWidget;
+		};
+		6FC241D01CDB5B9E009A3AAD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6FC2417F1CDB5896009A3AAD /* UI.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6FC241851CDB58D5009A3AAD;
+			remoteInfo = CCButton;
 		};
 		E325F66814F6611300D29BCF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -816,7 +846,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				6F879DB61CD7BFAF00116A8B /* UiButton.ccbPlugNode in Copy PlugIns */,
+				6F843E611CDB99C2008B2EC4 /* CCText.ccbPlugNode in Copy PlugIns */,
+				6FC241D21CDB5BB4009A3AAD /* CCWidget.ccbPlugNode in Copy PlugIns */,
+				6FC241D31CDB5BB4009A3AAD /* CCButton.ccbPlugNode in Copy PlugIns */,
 				E3FCE874152485A20028E8E7 /* CCScrollView.ccbPlugNode in Copy PlugIns */,
 				E3C65124151BB8DF00D639C0 /* CCControl.ccbPlugNode in Copy PlugIns */,
 				E3B84C48151A2C93004B743C /* CCControlButton.ccbPlugNode in Copy PlugIns */,
@@ -857,8 +889,8 @@
 		58FA2031162D73F3006B8856 /* TB_bottomPanel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TB_bottomPanel.png; sourceTree = "<group>"; };
 		58FA2032162D73F3006B8856 /* TB_leftPanel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TB_leftPanel.png; sourceTree = "<group>"; };
 		58FA2033162D73F3006B8856 /* TB_rightPanel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TB_rightPanel.png; sourceTree = "<group>"; };
-		6F879DAE1CD7B9C500116A8B /* UiButton.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UiButton.xcodeproj; path = "../PlugIn Nodes/UiButton/UiButton.xcodeproj"; sourceTree = "<group>"; };
 		6FC1BD771CD9AD4400DE717C /* cocos2d-osx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "cocos2d-osx.xcodeproj"; path = "libs/cocos2d-iphone/cocos2d-osx.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		6FC2417F1CDB5896009A3AAD /* UI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UI.xcodeproj; path = "../PlugIn Nodes/UI/UI.xcodeproj"; sourceTree = "<group>"; };
 		77055FB313D0E5CA009DD63A /* logo-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-icon.png"; sourceTree = "<group>"; };
 		77055FB413D0E5CA009DD63A /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		77156DAF137F0351005EF746 /* CCBSpriteSheetParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBSpriteSheetParser.h; sourceTree = "<group>"; };
@@ -1829,30 +1861,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6F879DA61CD7B96300116A8B /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				6F879DA71CD7B9B000116A8B /* Button */,
-			);
-			name = UI;
-			sourceTree = "<group>";
-		};
-		6F879DA71CD7B9B000116A8B /* Button */ = {
-			isa = PBXGroup;
-			children = (
-				6F879DAE1CD7B9C500116A8B /* UiButton.xcodeproj */,
-			);
-			name = Button;
-			sourceTree = "<group>";
-		};
-		6F879DAF1CD7B9C500116A8B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				6F879DB31CD7B9C500116A8B /* UiButton.ccbPlugNode */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		6FC1BD781CD9AD4400DE717C /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -1865,6 +1873,24 @@
 				6FC1BD911CD9AD4400DE717C /* libchipmunk.a */,
 				6FC1BD931CD9AD4400DE717C /* libjsbindings.a */,
 				6FC1BD951CD9AD4400DE717C /* libkazmath.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6FC2417E1CDB5891009A3AAD /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				6FC2417F1CDB5896009A3AAD /* UI.xcodeproj */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		6FC241AE1CDB5A7F009A3AAD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6FC241BD1CDB5A7F009A3AAD /* CCWidget.ccbPlugNode */,
+				6FC241BF1CDB5A7F009A3AAD /* CCButton.ccbPlugNode */,
+				6F843E601CDB99C2008B2EC4 /* CCText.ccbPlugNode */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -3154,7 +3180,7 @@
 			children = (
 				E35392461518AD0A00471721 /* Core */,
 				E35392481518AD4100471721 /* Extensions */,
-				6F879DA61CD7B96300116A8B /* UI */,
+				6FC2417E1CDB5891009A3AAD /* UI */,
 			);
 			name = "PlugIns (Nodes)";
 			sourceTree = "<group>";
@@ -3567,9 +3593,11 @@
 			buildRules = (
 			);
 			dependencies = (
+				6F843E6D1CDB99CC008B2EC4 /* PBXTargetDependency */,
+				6FC241CF1CDB5B9E009A3AAD /* PBXTargetDependency */,
+				6FC241D11CDB5B9E009A3AAD /* PBXTargetDependency */,
 				6FC1BD9A1CD9AD6B00DE717C /* PBXTargetDependency */,
 				6FC1BD971CD9AD4F00DE717C /* PBXTargetDependency */,
-				6F879DB51CD7B9D200116A8B /* PBXTargetDependency */,
 				E3F541CE15AED85800EAAFBD /* PBXTargetDependency */,
 				E398C02F14FB82090078E771 /* PBXTargetDependency */,
 				E3B7AED314E31AEF00DFD402 /* PBXTargetDependency */,
@@ -3910,8 +3938,8 @@
 					ProjectRef = E3F541BC15AED68500EAAFBD /* Fragaria.xcodeproj */;
 				},
 				{
-					ProductGroup = 6F879DAF1CD7B9C500116A8B /* Products */;
-					ProjectRef = 6F879DAE1CD7B9C500116A8B /* UiButton.xcodeproj */;
+					ProductGroup = 6FC241AE1CDB5A7F009A3AAD /* Products */;
+					ProjectRef = 6FC2417F1CDB5896009A3AAD /* UI.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -3939,11 +3967,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		6F879DB31CD7B9C500116A8B /* UiButton.ccbPlugNode */ = {
+		6F843E601CDB99C2008B2EC4 /* CCText.ccbPlugNode */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			path = UiButton.ccbPlugNode;
-			remoteRef = 6F879DB21CD7B9C500116A8B /* PBXContainerItemProxy */;
+			path = CCText.ccbPlugNode;
+			remoteRef = 6F843E5F1CDB99C2008B2EC4 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		6FC1BD851CD9AD4400DE717C /* libcocos2d.a */ = {
@@ -4007,6 +4035,20 @@
 			fileType = archive.ar;
 			path = libkazmath.a;
 			remoteRef = 6FC1BD941CD9AD4400DE717C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6FC241BD1CDB5A7F009A3AAD /* CCWidget.ccbPlugNode */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CCWidget.ccbPlugNode;
+			remoteRef = 6FC241BC1CDB5A7F009A3AAD /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6FC241BF1CDB5A7F009A3AAD /* CCButton.ccbPlugNode */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CCButton.ccbPlugNode;
+			remoteRef = 6FC241BE1CDB5A7F009A3AAD /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		E3F541C815AED68500EAAFBD /* Fragaria Document Based App.app */ = {
@@ -4798,10 +4840,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		6F879DB51CD7B9D200116A8B /* PBXTargetDependency */ = {
+		6F843E6D1CDB99CC008B2EC4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = UiButton;
-			targetProxy = 6F879DB41CD7B9D200116A8B /* PBXContainerItemProxy */;
+			name = CCText;
+			targetProxy = 6F843E6C1CDB99CC008B2EC4 /* PBXContainerItemProxy */;
 		};
 		6FC1BD971CD9AD4F00DE717C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -4812,6 +4854,16 @@
 			isa = PBXTargetDependency;
 			name = CocosDenshion;
 			targetProxy = 6FC1BD991CD9AD6B00DE717C /* PBXContainerItemProxy */;
+		};
+		6FC241CF1CDB5B9E009A3AAD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CCWidget;
+			targetProxy = 6FC241CE1CDB5B9E009A3AAD /* PBXContainerItemProxy */;
+		};
+		6FC241D11CDB5B9E009A3AAD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CCButton;
+			targetProxy = 6FC241D01CDB5B9E009A3AAD /* PBXContainerItemProxy */;
 		};
 		E325F66914F6611300D29BCF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
