@@ -19,7 +19,8 @@
 		6FC241D21CDB5BB4009A3AAD /* CCWidget.ccbPlugNode in Copy PlugIns */ = {isa = PBXBuildFile; fileRef = 6FC241BD1CDB5A7F009A3AAD /* CCWidget.ccbPlugNode */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6FC241D31CDB5BB4009A3AAD /* CCButton.ccbPlugNode in Copy PlugIns */ = {isa = PBXBuildFile; fileRef = 6FC241BF1CDB5A7F009A3AAD /* CCButton.ccbPlugNode */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6FD294701CE1B901009ECBFA /* libcocos2d-ui.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FD2944B1CE1B8B8009ECBFA /* libcocos2d-ui.a */; };
-		6FD294731CE1BAAD009ECBFA /* CCNodeV3.ccbPlugNode in Copy PlugIns */ = {isa = PBXBuildFile; fileRef = 6FD294331CE1A131009ECBFA /* CCNodeV3.ccbPlugNode */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6FD294731CE1BAAD009ECBFA /* CCNodeV3.ccbPlugNode in Copy PlugIns */ = {isa = PBXBuildFile; fileRef = 6FD294331CE1A131009ECBFA /* CCNodeV3.ccbPlugNode */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6FD2948D1CE1D242009ECBFA /* CCLayout.ccbPlugNode in Copy PlugIns */ = {isa = PBXBuildFile; fileRef = 6FD2942F1CE1A131009ECBFA /* CCLayout.ccbPlugNode */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		77055FB513D0E5CA009DD63A /* logo-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 77055FB313D0E5CA009DD63A /* logo-icon.png */; };
 		77055FB613D0E5CA009DD63A /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 77055FB413D0E5CA009DD63A /* logo.png */; };
 		77156DB1137F0351005EF746 /* CCBSpriteSheetParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 77156DB0137F0351005EF746 /* CCBSpriteSheetParser.m */; };
@@ -729,6 +730,13 @@
 			remoteGlobalIDString = 6FD2943F1CE1B8A2009ECBFA;
 			remoteInfo = "cocos2d-ui";
 		};
+		6FD2947F1CE1D1F3009ECBFA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6FC2417F1CDB5896009A3AAD /* UI.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6F77526F1CDC9A8800BF74AF;
+			remoteInfo = CCLayout;
+		};
 		E325F66814F6611300D29BCF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7789ABB5133AA82000CEFCC7 /* Project object */;
@@ -890,6 +898,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				6FD2948D1CE1D242009ECBFA /* CCLayout.ccbPlugNode in Copy PlugIns */,
 				6FD294731CE1BAAD009ECBFA /* CCNodeV3.ccbPlugNode in Copy PlugIns */,
 				6F843E611CDB99C2008B2EC4 /* CCText.ccbPlugNode in Copy PlugIns */,
 				6FC241D21CDB5BB4009A3AAD /* CCWidget.ccbPlugNode in Copy PlugIns */,
@@ -3644,10 +3653,11 @@
 			);
 			dependencies = (
 				6FD294721CE1BA95009ECBFA /* PBXTargetDependency */,
-				6FD294201CE1A130009ECBFA /* PBXTargetDependency */,
 				6F843E6D1CDB99CC008B2EC4 /* PBXTargetDependency */,
-				6FC241CF1CDB5B9E009A3AAD /* PBXTargetDependency */,
 				6FC241D11CDB5B9E009A3AAD /* PBXTargetDependency */,
+				6FD294801CE1D1F3009ECBFA /* PBXTargetDependency */,
+				6FC241CF1CDB5B9E009A3AAD /* PBXTargetDependency */,
+				6FD294201CE1A130009ECBFA /* PBXTargetDependency */,
 				6FC1BD9A1CD9AD6B00DE717C /* PBXTargetDependency */,
 				6FC1BD971CD9AD4F00DE717C /* PBXTargetDependency */,
 				E3F541CE15AED85800EAAFBD /* PBXTargetDependency */,
@@ -4954,6 +4964,11 @@
 			isa = PBXTargetDependency;
 			name = "cocos2d-ui";
 			targetProxy = 6FD294711CE1BA95009ECBFA /* PBXContainerItemProxy */;
+		};
+		6FD294801CE1D1F3009ECBFA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CCLayout;
+			targetProxy = 6FD2947F1CE1D1F3009ECBFA /* PBXContainerItemProxy */;
 		};
 		E325F66914F6611300D29BCF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

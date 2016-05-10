@@ -26,6 +26,4 @@
 
 @interface CCNodeV3 : CCNodeRGBA
 
-@property (nonatomic, assign) NSInteger localZOrder;
-
 @end

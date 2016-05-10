@@ -35,7 +35,6 @@
     if (self == nil) {
         return self;
     }
-    
     return self;
 }
 

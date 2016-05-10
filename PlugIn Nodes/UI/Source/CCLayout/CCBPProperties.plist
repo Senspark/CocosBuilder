@@ -5,52 +5,36 @@
 	<key>canHaveChildren</key>
 	<string>YES</string>
 	<key>className</key>
-	<string>CCNodeV3</string>
+	<string>CCLayout</string>
 	<key>editorClassName</key>
-	<string>CCNodeV3</string>
+	<string>CCLayout</string>
 	<key>inheritsFrom</key>
-	<string>CCNode</string>
+	<string>CCWidget</string>
 	<key>properties</key>
 	<array>
 		<dict>
 			<key>name</key>
-			<string>CCNodeV3</string>
+			<string>CCLayout</string>
 			<key>displayName</key>
-			<string>CCNodeV3</string>
+			<string>CCLayout</string>
 			<key>type</key>
 			<string>Separator</string>
 		</dict>
 		<dict>
 			<key>displayName</key>
-			<string>Color</string>
+			<string>Background color</string>
 			<key>name</key>
-			<string>color</string>
+			<string>backgroundColor</string>
 			<key>type</key>
 			<string>Color3</string>
 		</dict>
 		<dict>
 			<key>displayName</key>
-			<string>Opacity</string>
+			<string>Background opacity</string>
 			<key>name</key>
-			<string>opacity</string>
+			<string>backgroundColorOpacity</string>
 			<key>type</key>
 			<string>Byte</string>
-		</dict>
-		<dict>
-			<key>displayName</key>
-			<string>Cascade color enabled</string>
-			<key>name</key>
-			<string>cascadeColorEnabled</string>
-			<key>type</key>
-			<string>Check</string>
-		</dict>
-		<dict>
-			<key>displayName</key>
-			<string>Cascade opacity enabled</string>
-			<key>name</key>
-			<string>cascadeOpacityEnabled</string>
-			<key>type</key>
-			<string>Check</string>
 		</dict>
 	</array>
 	<key>propertiesOverridden</key>
