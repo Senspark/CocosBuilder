@@ -24,34 +24,27 @@
 
 #import "CCNodeV3.h"
 
-@interface CCWidget : CCNodeV3 {
-    CGSize customSize_;
+@implementation CCNodeV3
+
+- (void) dealloc {
+    [super dealloc];
 }
 
-@property (nonatomic, assign) BOOL enabled;
-@property (nonatomic, assign) BOOL highlighted;
-@property (nonatomic, assign) BOOL bright;
-@property (nonatomic, assign) BOOL ignoreContentAdaptWithSize;
-@property (nonatomic, assign) BOOL touchEnabled;
-@property (nonatomic, assign) BOOL swallowTouches;
-@property (nonatomic, assign) BOOL propagateTouchEvents;
+- (id) init {
+    self = [super init];
+    if (self == nil) {
+        return self;
+    }
+    
+    return self;
+}
 
-//@property (nonatomic, assign) CGSize sizePercent;
+- (void) setValue:(id) value forUndefinedKey:(NSString*) key {
+    [super setValue:value forKey:key];
+}
 
-@property (nonatomic, readonly) CGSize customSize;
-
-- (CCWidget*) getWidgetParent;
-
-- (void) initRenderer;
-
-- (void) updateSizeAndPosition;
-- (void) updateSizeAndPositionWithParentSize:(CGSize) parentSize;
-
-- (void) adaptRenderers;
-
-- (void) updateContentSizeWithTextureSize:(CGSize) size;
-- (void) onSizeChanged;
-
-@property (nonatomic, readonly) CGSize virtualRendererSize;
+- (id) valueForUndefinedKey:(NSString*) key {
+    return [super valueForUndefinedKey:key];
+}
 
 @end

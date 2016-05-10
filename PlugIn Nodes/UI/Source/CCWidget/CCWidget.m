@@ -44,7 +44,7 @@
     
     [self setEnabled:YES];
     [self setBright:YES];
-    [self setIgnoreContentAdaptWithSize:NO];
+    [self setIgnoreContentAdaptWithSize:YES];
     [self setTouchEnabled:YES];
     [self setHighlighted:NO];
     [self setPropagateTouchEvents:YES];

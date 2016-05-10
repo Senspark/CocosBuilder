@@ -9,7 +9,7 @@
 	<key>editorClassName</key>
 	<string>CCWidget</string>
 	<key>inheritsFrom</key>
-	<string>CCNode</string>
+	<string>CCNodeV3</string>
 	<key>properties</key>
 	<array>
 		<dict>
@@ -55,8 +55,10 @@
 			<string>Check</string>
 		</dict>
 		<dict>
-			<key>readOnly</key>
-			<string>YES</string>
+			<key>affectsProperties</key>
+			<array>
+				<string>contentSize</string>
+			</array>
 			<key>displayName</key>
 			<string>Ignore content adapt with size</string>
 			<key>name</key>

@@ -34,13 +34,13 @@
 @property (nonatomic, readonly) CGSize autoRenderSize;
 
 @property (nonatomic, assign) BOOL shadowEnabled;
-@property (nonatomic, assign) NSInteger shadowOpacity;
+@property (nonatomic, assign) GLubyte shadowOpacity;
 @property (nonatomic, assign) ccColor3B shadowColor;
 @property (nonatomic, assign) CGSize shadowOffset;
 @property (nonatomic, assign) NSInteger shadowBlurRadius;
 
 @property (nonatomic, assign) BOOL outlineEnabled;
-@property (nonatomic, assign) NSInteger outlineOpacity;
+@property (nonatomic, assign) GLubyte outlineOpacity;
 @property (nonatomic, assign) ccColor3B outlineColor;
 @property (nonatomic, assign) NSInteger outlineSize;
 

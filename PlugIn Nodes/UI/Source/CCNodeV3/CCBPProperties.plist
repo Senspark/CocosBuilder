@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>canHaveChildren</key>
+	<string>YES</string>
+	<key>className</key>
+	<string>CCNodeV3</string>
+	<key>editorClassName</key>
+	<string>CCNodeV3</string>
+	<key>inheritsFrom</key>
+	<string>CCNode</string>
+	<key>properties</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>CCNodeV3</string>
+			<key>displayName</key>
+			<string>CCNodeV3</string>
+			<key>type</key>
+			<string>Separator</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>localZOrder</string>
+			<key>displayName</key>
+			<string>Local z-order</string>
+			<key>type</key>
+			<string>Integer</string>
+		</dict>
+		<dict>
+			<key>displayName</key>
+			<string>Color</string>
+			<key>name</key>
+			<string>color</string>
+			<key>type</key>
+			<string>Color3</string>
+		</dict>
+		<dict>
+			<key>displayName</key>
+			<string>Opacity</string>
+			<key>name</key>
+			<string>opacity</string>
+			<key>type</key>
+			<string>Byte</string>
+		</dict>
+		<dict>
+			<key>displayName</key>
+			<string>Cascade color enabled</string>
+			<key>name</key>
+			<string>cascadeColorEnabled</string>
+			<key>type</key>
+			<string>Check</string>
+		</dict>
+		<dict>
+			<key>displayName</key>
+			<string>Cascade opacity enabled</string>
+			<key>name</key>
+			<string>cascadeOpacityEnabled</string>
+			<key>type</key>
+			<string>Check</string>
+		</dict>
+	</array>
+	<key>propertiesOverridden</key>
+	<array/>
+</dict>
+</plist>

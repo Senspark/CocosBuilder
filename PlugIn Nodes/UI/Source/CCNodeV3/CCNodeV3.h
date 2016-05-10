@@ -22,36 +22,10 @@
  * THE SOFTWARE.
  */
 
-#import "CCNodeV3.h"
+#import "CCNode.h"
 
-@interface CCWidget : CCNodeV3 {
-    CGSize customSize_;
-}
+@interface CCNodeV3 : CCNodeRGBA
 
-@property (nonatomic, assign) BOOL enabled;
-@property (nonatomic, assign) BOOL highlighted;
-@property (nonatomic, assign) BOOL bright;
-@property (nonatomic, assign) BOOL ignoreContentAdaptWithSize;
-@property (nonatomic, assign) BOOL touchEnabled;
-@property (nonatomic, assign) BOOL swallowTouches;
-@property (nonatomic, assign) BOOL propagateTouchEvents;
-
-//@property (nonatomic, assign) CGSize sizePercent;
-
-@property (nonatomic, readonly) CGSize customSize;
-
-- (CCWidget*) getWidgetParent;
-
-- (void) initRenderer;
-
-- (void) updateSizeAndPosition;
-- (void) updateSizeAndPositionWithParentSize:(CGSize) parentSize;
-
-- (void) adaptRenderers;
-
-- (void) updateContentSizeWithTextureSize:(CGSize) size;
-- (void) onSizeChanged;
-
-@property (nonatomic, readonly) CGSize virtualRendererSize;
+@property (nonatomic, assign) NSInteger localZOrder;
 
 @end

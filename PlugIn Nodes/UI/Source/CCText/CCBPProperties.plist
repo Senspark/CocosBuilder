@@ -113,6 +113,10 @@
 			<string>SeparatorSub</string>
 		</dict>
 		<dict>
+			<key>affectsProperties</key>
+			<array>
+				<string>contentSize</string>
+			</array>
 			<key>displayName</key>
 			<string>Enabled</string>
 			<key>name</key>
@@ -137,6 +141,10 @@
 			<string>Color3</string>
 		</dict>
 		<dict>
+			<key>affectsProperties</key>
+			<array>
+				<string>contentSize</string>
+			</array>
 			<key>displayName</key>
 			<string>Offset</string>
 			<key>name</key>
@@ -145,6 +153,10 @@
 			<string>Point</string>
 		</dict>
 		<dict>
+			<key>affectsProperties</key>
+			<array>
+				<string>contentSize</string>
+			</array>
 			<key>displayName</key>
 			<string>Blur radius</string>
 			<key>name</key>
@@ -159,6 +171,10 @@
 			<string>SeparatorSub</string>
 		</dict>
 		<dict>
+			<key>affectsProperties</key>
+			<array>
+				<string>contentSize</string>
+			</array>
 			<key>displayName</key>
 			<string>Enabled</string>
 			<key>name</key>
@@ -183,6 +199,10 @@
 			<string>Color3</string>
 		</dict>
 		<dict>
+			<key>affectsProperties</key>
+			<array>
+				<string>contentSize</string>
+			</array>
 			<key>displayName</key>
 			<string>Size</string>
 			<key>name</key>
@@ -209,8 +229,6 @@
 				<string>textAreaSize</string>
 				<string>contentSize</string>
 			</array>
-			<key>readOnly</key>
-			<string>NO</string>
 			<key>displayName</key>
 			<string>Ignore content adapt with size</string>
 			<key>name</key>

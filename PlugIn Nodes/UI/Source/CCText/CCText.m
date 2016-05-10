@@ -22,7 +22,7 @@
         return self;
     }
     
-    [self setIgnoreContentAdaptWithSize:YES];
+    [self setTextColor:ccWHITE];
     
     [self setShadowEnabled:NO];
     [self setShadowOpacity:255];
@@ -69,9 +69,11 @@
 }
 
 - (void) setFontName:(NSString*) fontName {
-    [labelRenderer_ setFontName:fontName];
-    [self updateContentSizeWithTextureSize:[labelRenderer_ contentSize]];
-    labelRendererAdaptDirty_ = YES;
+    if ([fontName length] > 0) {
+        [labelRenderer_ setFontName:fontName];
+        [self updateContentSizeWithTextureSize:[labelRenderer_ contentSize]];
+        labelRendererAdaptDirty_ = YES;
+    }
 }
 
 - (NSString*) fontName {
@@ -191,7 +193,7 @@
     [self updateShadowState];
 }
 
-- (void) setShadowOpacity:(NSInteger) opacity {
+- (void) setShadowOpacity:(GLubyte) opacity {
     _shadowOpacity = opacity;
     [self updateShadowState];
 }
@@ -225,7 +227,7 @@
     [self updateOutlineState];
 }
 
-- (void) setOutlineOpacity:(NSInteger) opacity {
+- (void) setOutlineOpacity:(GLubyte) opacity {
     _outlineOpacity = opacity;
     [self updateOutlineState];
 }
