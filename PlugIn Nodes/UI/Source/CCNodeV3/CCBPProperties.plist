@@ -22,6 +22,22 @@
 		</dict>
 		<dict>
 			<key>displayName</key>
+			<string>Local z-order overrode</string>
+			<key>name</key>
+			<string>localZOrderOverrode</string>
+			<key>type</key>
+			<string>Check</string>
+		</dict>
+		<dict>
+			<key>displayName</key>
+			<string>Local z-order</string>
+			<key>name</key>
+			<string>localZOrder</string>
+			<key>type</key>
+			<string>Integer</string>
+		</dict>
+		<dict>
+			<key>displayName</key>
 			<string>Color</string>
 			<key>name</key>
 			<string>color</string>

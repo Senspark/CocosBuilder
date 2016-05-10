@@ -35,6 +35,10 @@
     if (self == nil) {
         return self;
     }
+    
+    [self setLocalZOrderOverrode:NO];
+    [self setLocalZOrder:0];
+    
     return self;
 }
 
