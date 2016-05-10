@@ -83,8 +83,6 @@
 			<string>Color3</string>
 		</dict>
 		<dict>
-			<key>readOnly</key>
-			<string>YES</string>
 			<key>affectsProperties</key>
 			<array>
 				<string>ignoreContentAdaptWithSize</string>

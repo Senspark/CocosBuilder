@@ -130,7 +130,9 @@ const NSInteger TitleZOrder = -1;
 }
 
 - (void) setTitleFontName:(NSString*) fontName {
-    [titleRenderer_ setFontName:fontName];
+    if ([fontName length] > 0) {
+        [titleRenderer_ setFontName:fontName];
+    }
 }
 
 - (NSString*) titleFontName {
@@ -170,6 +172,11 @@ const NSInteger TitleZOrder = -1;
 
 - (void) setBackgroundSprite:(CCScale9Sprite*) sprite
                     forState:(CCButtonState) state {
+    if ([self backgroundSpriteEnabledForState:state] == NO) {
+        // Not enabled.
+        return;
+    }
+    
     CCScale9Sprite* current = [self backgroundSpriteForState:state];
     [self removeChild:current];
     
@@ -194,8 +201,10 @@ const NSInteger TitleZOrder = -1;
 
 - (void) setBackgroundSpriteFrame:(CCSpriteFrame*) spriteFrame
                          forState:(CCButtonState) state {
-    CCScale9Sprite* sprite = [CCScale9Sprite spriteWithSpriteFrame:spriteFrame];
-    [self setBackgroundSprite:sprite forState:state];
+    if ([self backgroundSpriteEnabledForState:state]) {
+        CCScale9Sprite* sprite = [CCScale9Sprite spriteWithSpriteFrame:spriteFrame];
+        [self setBackgroundSprite:sprite forState:state];
+    }
 }
 
 - (CCScale9Sprite*) backgroundSpriteForState:(CCButtonState) state {
