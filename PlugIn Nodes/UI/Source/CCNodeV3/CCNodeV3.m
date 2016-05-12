@@ -36,7 +36,7 @@
         return self;
     }
     
-    [self setLocalZOrderOverrode:NO];
+    [self setLocalZOrderOverridden:NO];
     [self setLocalZOrder:0];
     
     return self;

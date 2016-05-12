@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>canBeRootNode</key>
+	<true/>
 	<key>canHaveChildren</key>
 	<string>YES</string>
 	<key>className</key>
@@ -22,9 +24,9 @@
 		</dict>
 		<dict>
 			<key>displayName</key>
-			<string>Local z-order overrode</string>
+			<string>Local z-order overridden</string>
 			<key>name</key>
-			<string>localZOrderOverrode</string>
+			<string>localZOrderOverridden</string>
 			<key>type</key>
 			<string>Check</string>
 		</dict>
