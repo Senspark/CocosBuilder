@@ -51,6 +51,8 @@
 		6F8F5BEA1CF2E8950023C07F /* SlotData.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F8F5BCE1CF2E8950023C07F /* SlotData.c */; };
 		6F8F5BEB1CF2E8950023C07F /* TransformConstraint.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F8F5BCF1CF2E8950023C07F /* TransformConstraint.c */; };
 		6F8F5BEC1CF2E8950023C07F /* TransformConstraintData.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F8F5BD01CF2E8950023C07F /* TransformConstraintData.c */; };
+		6F8F5BF21CF2F6AD0023C07F /* InspectorListBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F8F5BF01CF2F6AD0023C07F /* InspectorListBox.m */; };
+		6F8F5BF31CF2F6AD0023C07F /* InspectorListBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F8F5BF11CF2F6AD0023C07F /* InspectorListBox.xib */; };
 		6FC1BD981CD9AD5700DE717C /* libcocos2d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FC1BD851CD9AD4400DE717C /* libcocos2d.a */; };
 		6FC1BD9B1CD9AD6E00DE717C /* libCocosDenshion.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FC1BD8B1CD9AD4400DE717C /* libCocosDenshion.a */; };
 		6FC241D21CDB5BB4009A3AAD /* CCWidget.ccbPlugNode in Copy PlugIns */ = {isa = PBXBuildFile; fileRef = 6FC241BD1CDB5A7F009A3AAD /* CCWidget.ccbPlugNode */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -1066,6 +1068,9 @@
 		6F8F5BD01CF2E8950023C07F /* TransformConstraintData.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = TransformConstraintData.c; path = "spine-c/src/spine/TransformConstraintData.c"; sourceTree = "<group>"; };
 		6F8F5BED1CF2E8B40023C07F /* Json.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Json.h; path = "spine-c/include/spine/Json.h"; sourceTree = "<group>"; };
 		6F8F5BEE1CF2E8BC0023C07F /* SkinnedMeshAttachment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SkinnedMeshAttachment.h; path = "spine-c/include/spine/SkinnedMeshAttachment.h"; sourceTree = "<group>"; };
+		6F8F5BEF1CF2F6AD0023C07F /* InspectorListBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectorListBox.h; sourceTree = "<group>"; };
+		6F8F5BF01CF2F6AD0023C07F /* InspectorListBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectorListBox.m; sourceTree = "<group>"; };
+		6F8F5BF11CF2F6AD0023C07F /* InspectorListBox.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InspectorListBox.xib; sourceTree = "<group>"; };
 		6FC1BD771CD9AD4400DE717C /* cocos2d-osx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "cocos2d-osx.xcodeproj"; path = "libs/cocos2d-iphone/cocos2d-osx.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		6FC2417F1CDB5896009A3AAD /* UI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UI.xcodeproj; path = "../PlugIn Nodes/UI/UI.xcodeproj"; sourceTree = "<group>"; };
 		77055FB313D0E5CA009DD63A /* logo-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-icon.png"; sourceTree = "<group>"; };
@@ -3607,6 +3612,9 @@
 				6F17FB491CF2B9FF00CFCD14 /* InspectorJsonFile.h */,
 				6F17FB4A1CF2B9FF00CFCD14 /* InspectorJsonFile.m */,
 				6F17FB4B1CF2B9FF00CFCD14 /* InspectorJsonFile.xib */,
+				6F8F5BEF1CF2F6AD0023C07F /* InspectorListBox.h */,
+				6F8F5BF01CF2F6AD0023C07F /* InspectorListBox.m */,
+				6F8F5BF11CF2F6AD0023C07F /* InspectorListBox.xib */,
 				E35DBC1A14F4DED00070A6E4 /* InspectorStartStop.xib */,
 				E35DBC1C14F4DF030070A6E4 /* InspectorStartStop.h */,
 				E35DBC1D14F4DF040070A6E4 /* InspectorStartStop.m */,
@@ -4528,6 +4536,7 @@
 				E3EDBC1615483EE000EEF1F3 /* ResolutionSettingsWindow.xib in Resources */,
 				E370BA0C1549B2460048ED73 /* scale-0.png in Resources */,
 				E370BA0D1549B2460048ED73 /* scale-1.png in Resources */,
+				6F8F5BF31CF2F6AD0023C07F /* InspectorListBox.xib in Resources */,
 				E3DC1B8C154F18660087724C /* size-3.png in Resources */,
 				E3DC1B8D154F18660087724C /* size-4.png in Resources */,
 				E334069715517225000FBD0B /* InspectorFloatScale.xib in Resources */,
@@ -4971,6 +4980,7 @@
 				E3F3F843153C7700005443EE /* StickyNote.m in Sources */,
 				E35A2D9C1540207000F78B72 /* PositionPropertySetter.m in Sources */,
 				E3EDBC101546D23000EEF1F3 /* ResolutionSetting.m in Sources */,
+				6F8F5BF21CF2F6AD0023C07F /* InspectorListBox.m in Sources */,
 				E3EDBC1415483E3200EEF1F3 /* ResolutionSettingsWindow.m in Sources */,
 				E3EDBC251549971000EEF1F3 /* CCBFileUtil.m in Sources */,
 				E334069B1551725F000FBD0B /* InspectorFloatScale.m in Sources */,

@@ -412,11 +412,9 @@
             serializedValue = spriteFile;
         }
         else if ([type isEqualToString:@"JsonFile"] ||
-                 [type isEqualToString:@"AtlasFile"]) {
+                 [type isEqualToString:@"AtlasFile"] ||
+                 [type isEqualToString:@"ListBox"]) {
             NSString* str = [node valueForKey:name];
-            if (str == nil) {
-//                str = @"";
-            }
             serializedValue = str;
         }
         else

@@ -38,9 +38,9 @@
 
 /* Begin PBXFileReference section */
 		6F17FABC1CF2A52000CFCD14 /* CCSkeletonAnimation.ccbPlugNode */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CCSkeletonAnimation.ccbPlugNode; sourceTree = BUILT_PRODUCTS_DIR; };
-		6F17FABE1CF2A54C00CFCD14 /* CCBPProperties.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = CCBPProperties.plist; path = SkeletonAnimation/CCBPProperties.plist; sourceTree = "<group>"; };
-		6F17FABF1CF2A54C00CFCD14 /* CCSkeletonAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCSkeletonAnimation.h; path = SkeletonAnimation/CCSkeletonAnimation.h; sourceTree = "<group>"; };
-		6F17FAC01CF2A54C00CFCD14 /* CCSkeletonAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CCSkeletonAnimation.m; path = SkeletonAnimation/CCSkeletonAnimation.m; sourceTree = "<group>"; };
+		6F17FABE1CF2A54C00CFCD14 /* CCBPProperties.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = CCBPProperties.plist; path = CCSkeletonAnimation/CCBPProperties.plist; sourceTree = "<group>"; };
+		6F17FABF1CF2A54C00CFCD14 /* CCSkeletonAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCSkeletonAnimation.h; path = CCSkeletonAnimation/CCSkeletonAnimation.h; sourceTree = "<group>"; };
+		6F17FAC01CF2A54C00CFCD14 /* CCSkeletonAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CCSkeletonAnimation.m; path = CCSkeletonAnimation/CCSkeletonAnimation.m; sourceTree = "<group>"; };
 		6F375FB11CDCAF9F00D17533 /* CCBPProperties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CCBPProperties.plist; path = CCLayout/CCBPProperties.plist; sourceTree = "<group>"; };
 		6F77526E1CDC9A8200BF74AF /* CCLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CCLayout.m; path = CCLayout/CCLayout.m; sourceTree = "<group>"; };
 		6F77527D1CDC9A8800BF74AF /* CCLayout.ccbPlugNode */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CCLayout.ccbPlugNode; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,14 +245,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6F17FAB01CF2A4EA00CFCD14 /* SkeletonAnimation */ = {
+		6F17FAB01CF2A4EA00CFCD14 /* CCSkeletonAnimation */ = {
 			isa = PBXGroup;
 			children = (
 				6F17FABE1CF2A54C00CFCD14 /* CCBPProperties.plist */,
 				6F17FABF1CF2A54C00CFCD14 /* CCSkeletonAnimation.h */,
 				6F17FAC01CF2A54C00CFCD14 /* CCSkeletonAnimation.m */,
 			);
-			name = SkeletonAnimation;
+			name = CCSkeletonAnimation;
 			sourceTree = "<group>";
 		};
 		6F77526D1CDC9A6A00BF74AF /* CCLayout */ = {
@@ -369,7 +369,7 @@
 		E3DEFB1914FFD66C00B98586 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				6F17FAB01CF2A4EA00CFCD14 /* SkeletonAnimation */,
+				6F17FAB01CF2A4EA00CFCD14 /* CCSkeletonAnimation */,
 				6FD294051CE19DED009ECBFA /* CCNodeV3 */,
 				6F7752901CDC9FC700BF74AF /* CCUIScrollView */,
 				6F77526D1CDC9A6A00BF74AF /* CCLayout */,
@@ -1240,6 +1240,8 @@
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/Source/**",
 					"$(SRCROOT)/../../Examples/CocosBuilderExample/libs/CCBReader/**",
+					"$(SRCROOT)/../../CocosBuilder/libs/spine-cocos2d-iphone/2/src",
+					"$(SRCROOT)/../../CocosBuilder/libs/spine-c/include",
 				);
 				INFOPLIST_FILE = Source/Info.plist;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
@@ -1270,6 +1272,8 @@
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/Source/**",
 					"$(SRCROOT)/../../Examples/CocosBuilderExample/libs/CCBReader/**",
+					"$(SRCROOT)/../../CocosBuilder/libs/spine-cocos2d-iphone/2/src",
+					"$(SRCROOT)/../../CocosBuilder/libs/spine-c/include",
 				);
 				INFOPLIST_FILE = Source/Info.plist;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;

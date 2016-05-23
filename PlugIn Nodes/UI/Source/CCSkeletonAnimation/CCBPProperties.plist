@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>canBeRootNode</key>
+	<false/>
+	<key>canHaveChildren</key>
+	<string>NO</string>
+	<key>className</key>
+	<string>CCSkeletonAnimation</string>
+	<key>editorClassName</key>
+	<string>CCSkeletonAnimation</string>
+	<key>inheritsFrom</key>
+	<string>CCNodeV3</string>
+	<key>properties</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>CCSkeletonAnimation</string>
+			<key>displayName</key>
+			<string>CCSkeletonAnimation</string>
+			<key>type</key>
+			<string>Separator</string>
+		</dict>
+		<dict>
+			<key>affectsProperties</key>
+			<array>
+				<string>animation</string>
+				<string>skin</string>
+			</array>
+			<key>displayName</key>
+			<string>Data file</string>
+			<key>name</key>
+			<string>dataFile</string>
+			<key>type</key>
+			<string>JsonFile</string>
+		</dict>
+		<dict>
+			<key>affectsProperties</key>
+			<array>
+				<string>animation</string>
+				<string>skin</string>
+			</array>
+			<key>displayName</key>
+			<string>Atlas file</string>
+			<key>name</key>
+			<string>atlasFile</string>
+			<key>type</key>
+			<string>AtlasFile</string>
+		</dict>
+		<dict>
+			<key>displayName</key>
+			<string>Scale</string>
+			<key>name</key>
+			<string>animationScale</string>
+			<key>type</key>
+			<string>FloatScale</string>
+		</dict>
+		<dict>
+			<key>displayName</key>
+			<string>Animation name</string>
+			<key>name</key>
+			<string>animation</string>
+			<key>type</key>
+			<string>ListBox</string>
+		</dict>
+		<dict>
+			<key>displayName</key>
+			<string>Skin name</string>
+			<key>name</key>
+			<string>skin</string>
+			<key>type</key>
+			<string>ListBox</string>
+		</dict>
+		<dict>
+			<key>displayName</key>
+			<string>Loop</string>
+			<key>name</key>
+			<string>loop</string>
+			<key>type</key>
+			<string>Check</string>
+		</dict>
+		<dict>
+			<key>displayName</key>
+			<string>Time scale</string>
+			<key>name</key>
+			<string>timeScale</string>
+			<key>type</key>
+			<string>Float</string>
+		</dict>
+	</array>
+	<key>propertiesOverridden</key>
+	<array>
+		<dict>
+			<key>readOnly</key>
+			<string>YES</string>
+			<key>type</key>
+			<string>Point</string>
+			<key>name</key>
+			<string>anchorPoint</string>
+			<key>displayName</key>
+			<string>Anchor point</string>
+		</dict>
+		<dict>
+			<key>readOnly</key>
+			<string>YES</string>
+			<key>defaultSerialization</key>
+			<array>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>0</integer>
+			</array>
+			<key>default</key>
+			<array>
+				<string>0</string>
+				<integer>0</integer>
+			</array>
+			<key>type</key>
+			<string>Size</string>
+			<key>name</key>
+			<string>contentSize</string>
+			<key>displayName</key>
+			<string>Content size</string>
+		</dict>
+	</array>
+</dict>
+</plist>
