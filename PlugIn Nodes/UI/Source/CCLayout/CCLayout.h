@@ -29,9 +29,9 @@ typedef NS_ENUM(NSInteger, CCLayoutBackgroundColor) {
     CCLayerColor*   colorRender_;
 }
 
-@property (nonatomic, assign) CCLayoutBackgroundColor backgroundColorType;
-@property (nonatomic, assign) ccColor3B backgroundColor;
-@property (nonatomic, assign) GLubyte backgroundColorOpacity;
+@property (nonatomic) CCLayoutBackgroundColor backgroundColorType;
+@property (nonatomic) ccColor3B backgroundColor;
+@property (nonatomic) GLubyte backgroundColorOpacity;
 
 //@property (nonatomic, assign) BOOL backgroundImageScale9Enabled;
 //@property (nonatomic, assign) ccColor3B backgroundImageColor;

@@ -20,29 +20,29 @@
 }
 
 @property (nonatomic, assign) NSString* string;
-@property (nonatomic, assign) CGFloat fontSize;
+@property (nonatomic) CGFloat fontSize;
 @property (nonatomic, assign) NSString* fontName;
 
-@property (nonatomic, assign) BOOL touchScaleChangeEnabled;
-@property (nonatomic, assign) CGSize textAreaSize;
+@property (nonatomic) BOOL touchScaleChangeEnabled;
+@property (nonatomic) CGSize textAreaSize;
 
-@property (nonatomic, assign) CCTextAlignment textHorizontalAlignment;
-@property (nonatomic, assign) CCVerticalTextAlignment textVerticalAlignment;
+@property (nonatomic) CCTextAlignment textHorizontalAlignment;
+@property (nonatomic) CCVerticalTextAlignment textVerticalAlignment;
 
-@property (nonatomic, assign) ccColor3B textColor;
+@property (nonatomic) ccColor3B textColor;
 
 @property (nonatomic, readonly) CGSize autoRenderSize;
 
-@property (nonatomic, assign) BOOL shadowEnabled;
-@property (nonatomic, assign) GLubyte shadowOpacity;
-@property (nonatomic, assign) ccColor3B shadowColor;
-@property (nonatomic, assign) CGSize shadowOffset;
-@property (nonatomic, assign) NSInteger shadowBlurRadius;
+@property (nonatomic) BOOL shadowEnabled;
+@property (nonatomic) GLubyte shadowOpacity;
+@property (nonatomic) ccColor3B shadowColor;
+@property (nonatomic) CGSize shadowOffset;
+@property (nonatomic) NSInteger shadowBlurRadius;
 
-@property (nonatomic, assign) BOOL outlineEnabled;
-@property (nonatomic, assign) GLubyte outlineOpacity;
-@property (nonatomic, assign) ccColor3B outlineColor;
-@property (nonatomic, assign) NSInteger outlineSize;
+@property (nonatomic) BOOL outlineEnabled;
+@property (nonatomic) GLubyte outlineOpacity;
+@property (nonatomic) ccColor3B outlineColor;
+@property (nonatomic) NSInteger outlineSize;
 
 @end
 

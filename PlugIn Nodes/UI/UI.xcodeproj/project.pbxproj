@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F17FAB41CF2A52000CFCD14 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3DEFB1314FFD66C00B98586 /* Cocoa.framework */; };
+		6F17FAB71CF2A52000CFCD14 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FC2419C1CDB5922009A3AAD /* InfoPlist.strings */; };
+		6F17FAC21CF2A56600CFCD14 /* CCBPProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F17FABE1CF2A54C00CFCD14 /* CCBPProperties.plist */; };
+		6F17FB421CF2A9E300CFCD14 /* CCSkeletonAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F17FAC01CF2A54C00CFCD14 /* CCSkeletonAnimation.m */; };
 		6F7752741CDC9A8800BF74AF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3DEFB1314FFD66C00B98586 /* Cocoa.framework */; };
 		6F7752781CDC9A8800BF74AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FC2419C1CDB5922009A3AAD /* InfoPlist.strings */; };
 		6F7752841CDC9A9B00BF74AF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3DEFB1314FFD66C00B98586 /* Cocoa.framework */; };
@@ -33,6 +37,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F17FABC1CF2A52000CFCD14 /* CCSkeletonAnimation.ccbPlugNode */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CCSkeletonAnimation.ccbPlugNode; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F17FABE1CF2A54C00CFCD14 /* CCBPProperties.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = CCBPProperties.plist; path = SkeletonAnimation/CCBPProperties.plist; sourceTree = "<group>"; };
+		6F17FABF1CF2A54C00CFCD14 /* CCSkeletonAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCSkeletonAnimation.h; path = SkeletonAnimation/CCSkeletonAnimation.h; sourceTree = "<group>"; };
+		6F17FAC01CF2A54C00CFCD14 /* CCSkeletonAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CCSkeletonAnimation.m; path = SkeletonAnimation/CCSkeletonAnimation.m; sourceTree = "<group>"; };
 		6F375FB11CDCAF9F00D17533 /* CCBPProperties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CCBPProperties.plist; path = CCLayout/CCBPProperties.plist; sourceTree = "<group>"; };
 		6F77526E1CDC9A8200BF74AF /* CCLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CCLayout.m; path = CCLayout/CCLayout.m; sourceTree = "<group>"; };
 		6F77527D1CDC9A8800BF74AF /* CCLayout.ccbPlugNode */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CCLayout.ccbPlugNode; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +179,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6F17FAB31CF2A52000CFCD14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F17FAB41CF2A52000CFCD14 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6F7752731CDC9A8800BF74AF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -229,6 +245,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F17FAB01CF2A4EA00CFCD14 /* SkeletonAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				6F17FABE1CF2A54C00CFCD14 /* CCBPProperties.plist */,
+				6F17FABF1CF2A54C00CFCD14 /* CCSkeletonAnimation.h */,
+				6F17FAC01CF2A54C00CFCD14 /* CCSkeletonAnimation.m */,
+			);
+			name = SkeletonAnimation;
+			sourceTree = "<group>";
+		};
 		6F77526D1CDC9A6A00BF74AF /* CCLayout */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,6 +342,7 @@
 				6F77528D1CDC9A9B00BF74AF /* CCScrollView.ccbPlugNode */,
 				6FD2941D1CE1A10F009ECBFA /* CCNodeV3.ccbPlugNode */,
 				6FD294401CE1B8A2009ECBFA /* libcocos2d-ui.a */,
+				6F17FABC1CF2A52000CFCD14 /* CCSkeletonAnimation.ccbPlugNode */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -342,6 +369,7 @@
 		E3DEFB1914FFD66C00B98586 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				6F17FAB01CF2A4EA00CFCD14 /* SkeletonAnimation */,
 				6FD294051CE19DED009ECBFA /* CCNodeV3 */,
 				6F7752901CDC9FC700BF74AF /* CCUIScrollView */,
 				6F77526D1CDC9A6A00BF74AF /* CCLayout */,
@@ -551,6 +579,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		6F17FAB11CF2A52000CFCD14 /* CCSkeletonAnimation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6F17FAB91CF2A52000CFCD14 /* Build configuration list for PBXNativeTarget "CCSkeletonAnimation" */;
+			buildPhases = (
+				6F17FAB21CF2A52000CFCD14 /* Sources */,
+				6F17FAB31CF2A52000CFCD14 /* Frameworks */,
+				6F17FAB51CF2A52000CFCD14 /* Resources */,
+				6F17FAB81CF2A52000CFCD14 /* Copy Plug-in to CocosBuilder's PlugIns folder */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CCSkeletonAnimation;
+			productName = CCRotatingSprite;
+			productReference = 6F17FABC1CF2A52000CFCD14 /* CCSkeletonAnimation.ccbPlugNode */;
+			productType = "com.apple.product-type.bundle";
+		};
 		6F77526F1CDC9A8800BF74AF /* CCLayout */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6F77527A1CDC9A8800BF74AF /* Build configuration list for PBXNativeTarget "CCLayout" */;
@@ -707,12 +753,22 @@
 				6F77526F1CDC9A8800BF74AF /* CCLayout */,
 				6F77527F1CDC9A9B00BF74AF /* CCScrollView */,
 				6FD2940F1CE1A10F009ECBFA /* CCNodeV3 */,
+				6F17FAB11CF2A52000CFCD14 /* CCSkeletonAnimation */,
 				6FD2943F1CE1B8A2009ECBFA /* cocos2d-ui */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6F17FAB51CF2A52000CFCD14 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F17FAB71CF2A52000CFCD14 /* InfoPlist.strings in Resources */,
+				6F17FAC21CF2A56600CFCD14 /* CCBPProperties.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6F7752751CDC9A8800BF74AF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -769,6 +825,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		6F17FAB81CF2A52000CFCD14 /* Copy Plug-in to CocosBuilder's PlugIns folder */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Plug-in to CocosBuilder's PlugIns folder";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./../../scripts/CopyBuiltProduct.sh \"$CONFIGURATION_BUILD_DIR/\" \"$SRCROOT/../../build/CocosBuilder.app/Contents/PlugIns/\" \"$PRODUCT_NAME.ccbPlugNode\" 0";
+		};
 		6F7752791CDC9A8800BF74AF /* Copy Plug-in to CocosBuilder's PlugIns folder */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -856,6 +926,13 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6F17FAB21CF2A52000CFCD14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6F7752701CDC9A8800BF74AF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -898,6 +975,7 @@
 				6FD2944D1CE1B8E2009ECBFA /* CCUIScrollView.m in Sources */,
 				6FD294501CE1B8E2009ECBFA /* CCButton.m in Sources */,
 				6FD2944E1CE1B8E2009ECBFA /* CCLayout.m in Sources */,
+				6F17FB421CF2A9E300CFCD14 /* CCSkeletonAnimation.m in Sources */,
 				6FD2944C1CE1B8E2009ECBFA /* CCNodeV3.m in Sources */,
 				6FD294511CE1B8E2009ECBFA /* CCWidget.m in Sources */,
 				6FD2944F1CE1B8E2009ECBFA /* CCText.m in Sources */,
@@ -925,6 +1003,30 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6F17FABA1CF2A52000CFCD14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Source/PlugIn-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../Examples/CocosBuilderExample/libs/CCBReader/**";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = ccbPlugNode;
+			};
+			name = Debug;
+		};
+		6F17FABB1CF2A52000CFCD14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Source/PlugIn-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../Examples/CocosBuilderExample/libs/CCBReader/**";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = ccbPlugNode;
+			};
+			name = Release;
+		};
 		6F77527B1CDC9A8800BF74AF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1207,6 +1309,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6F17FAB91CF2A52000CFCD14 /* Build configuration list for PBXNativeTarget "CCSkeletonAnimation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F17FABA1CF2A52000CFCD14 /* Debug */,
+				6F17FABB1CF2A52000CFCD14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6F77527A1CDC9A8800BF74AF /* Build configuration list for PBXNativeTarget "CCLayout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -28,13 +28,13 @@
     CGSize customSize_;
 }
 
-@property (nonatomic, assign) BOOL enabled;
-@property (nonatomic, assign) BOOL highlighted;
-@property (nonatomic, assign) BOOL bright;
-@property (nonatomic, assign) BOOL ignoreContentAdaptWithSize;
-@property (nonatomic, assign) BOOL touchEnabled;
-@property (nonatomic, assign) BOOL swallowTouches;
-@property (nonatomic, assign) BOOL propagateTouchEvents;
+@property (nonatomic) BOOL enabled;
+@property (nonatomic) BOOL highlighted;
+@property (nonatomic) BOOL bright;
+@property (nonatomic) BOOL ignoreContentAdaptWithSize;
+@property (nonatomic) BOOL touchEnabled;
+@property (nonatomic) BOOL swallowTouches;
+@property (nonatomic) BOOL propagateTouchEvents;
 
 //@property (nonatomic, assign) CGSize sizePercent;
 

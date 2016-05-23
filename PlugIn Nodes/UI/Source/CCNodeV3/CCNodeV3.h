@@ -26,7 +26,7 @@
 
 @interface CCNodeV3 : CCNodeRGBA
 
-@property (nonatomic, assign) BOOL localZOrderOverridden;
-@property (nonatomic, assign) NSInteger localZOrder;
+@property (nonatomic) BOOL localZOrderOverridden;
+@property (nonatomic) NSInteger localZOrder;
 
 @end

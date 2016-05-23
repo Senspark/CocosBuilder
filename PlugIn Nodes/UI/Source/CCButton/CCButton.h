@@ -43,15 +43,15 @@ typedef NS_ENUM(NSInteger, CCButtonState) {
     BOOL prevIgnoreSize_;
 }
 
-@property (nonatomic, assign) BOOL pressedActionEnabled;
-@property (nonatomic, assign) CGFloat zoomScale;
+@property (nonatomic) BOOL pressedActionEnabled;
+@property (nonatomic) CGFloat zoomScale;
 
 @property (nonatomic, assign) NSString* titleText;
-@property (nonatomic, assign) ccColor3B titleColor;
-@property (nonatomic, assign) CGFloat titleFontSize;
+@property (nonatomic) ccColor3B titleColor;
+@property (nonatomic) CGFloat titleFontSize;
 @property (nonatomic, assign) NSString* fontName;
 
-@property (nonatomic, assign) BOOL scale9Enabled;
+@property (nonatomic) BOOL scale9Enabled;
 
 - (void) setBackgroundSpriteEnabled:(BOOL) enabled
                            forState:(CCButtonState) state;
