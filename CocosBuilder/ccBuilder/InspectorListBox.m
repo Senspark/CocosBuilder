@@ -41,21 +41,23 @@
 - (void) selectedResource:(id) sender {
     NSString* itemName = [sender title];
     
+    NSString* propName = [[propertyName componentsSeparatedByString:@"|"] objectAtIndex:0];
     if (itemName != nil) {
-        [selection setExtraProp:itemName forKey:propertyName];
-        [selection setValue:itemName forKey:propertyName];
+        [selection setExtraProp:itemName forKey:propName];
+        [selection setValue:itemName forKey:propName];
     }
     
     [self updateAffectedProperties];
 }
 
 - (void) refresh {
-    NSString* listPropertyName = [NSString stringWithFormat:@"%sList", [propertyName UTF8String]];
+    NSString* propName = [[propertyName componentsSeparatedByString:@"|"] objectAtIndex:0];
+    NSString* listPropName = [[propertyName componentsSeparatedByString:@"|"] objectAtIndex:1];
     
     NSMenu* menu = [popup menu];
     [menu removeAllItems];
     
-    NSArray<NSString*>* list = [selection valueForKey:listPropertyName];
+    NSArray<NSString*>* list = [selection valueForKey:listPropName];
     for (NSString* itemName in list) {
         NSMenuItem* menuItem = [[NSMenuItem alloc] initWithTitle:itemName
                                                           action:@selector(selectedResource:)
@@ -64,7 +66,7 @@
         [menu addItem:menuItem];
     }
     
-    NSString* selected = [selection valueForKey:propertyName];
+    NSString* selected = [selection valueForKey:propName];
     [popup setTitle:selected];
 }
 

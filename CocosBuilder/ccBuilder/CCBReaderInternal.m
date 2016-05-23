@@ -304,6 +304,18 @@ NSDictionary* renamedProperties = NULL;
         [NodeGraphPropertySetter setNodeGraphForNode:node andProperty:name withFile:ccbFile parentSize:parentSize];
         [extraProps setObject:ccbFile forKey:name];
     }
+    else if ([type isEqualToString:@"JsonFile"] ||
+             [type isEqualToString:@"AtlasFile"]) {
+        NSString* str = serializedValue;
+        [node setExtraProp:str forKey:name];
+        
+        NSString* path = [[ResourceManager sharedManager] toAbsolutePath:str];
+        [node setValue:path forKey:name];
+    } else if ([type isEqualToString:@"ListBox"]) {
+        NSString* str = serializedValue;
+        NSString* propName = [[name componentsSeparatedByString:@"|"] objectAtIndex:0];
+        [node setValue:str forKey:propName];
+    }
     else
     {
         NSLog(@"WARNING Unrecognized property type: %@", type);

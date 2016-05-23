@@ -92,6 +92,13 @@
 - (int) propTypeIdForName:(NSString*)prop
 {
     NSInteger propType = [propTypes indexOfObject:prop];
+    
+    if ([prop isEqualToString:@"JsonFile"] ||
+        [prop isEqualToString:@"AtlasFile"] ||
+        [prop isEqualToString:@"ListBox"]) {
+        propType = [propTypes indexOfObject:@"FontTTF"];
+    }
+    
     if (propType == NSNotFound) return -1;
     return (int)propType;
 }

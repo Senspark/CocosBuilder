@@ -25,8 +25,8 @@
 		<dict>
 			<key>affectsProperties</key>
 			<array>
-				<string>animation</string>
-				<string>skin</string>
+				<string>animation|animationList</string>
+				<string>skin|skinList</string>
 			</array>
 			<key>displayName</key>
 			<string>Data file</string>
@@ -38,8 +38,8 @@
 		<dict>
 			<key>affectsProperties</key>
 			<array>
-				<string>animation</string>
-				<string>skin</string>
+				<string>animation|animationList</string>
+				<string>skin|skinList</string>
 			</array>
 			<key>displayName</key>
 			<string>Atlas file</string>
@@ -60,7 +60,7 @@
 			<key>displayName</key>
 			<string>Animation name</string>
 			<key>name</key>
-			<string>animation</string>
+			<string>animation|animationList</string>
 			<key>type</key>
 			<string>ListBox</string>
 		</dict>
@@ -68,7 +68,7 @@
 			<key>displayName</key>
 			<string>Skin name</string>
 			<key>name</key>
-			<string>skin</string>
+			<string>skin|skinList</string>
 			<key>type</key>
 			<string>ListBox</string>
 		</dict>

@@ -414,7 +414,7 @@
         else if ([type isEqualToString:@"JsonFile"] ||
                  [type isEqualToString:@"AtlasFile"] ||
                  [type isEqualToString:@"ListBox"]) {
-            NSString* str = [node valueForKey:name];
+            NSString* str = [node extraPropForKey:name];
             serializedValue = str;
         }
         else
