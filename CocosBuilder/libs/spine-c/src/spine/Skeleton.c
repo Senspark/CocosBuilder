@@ -33,20 +33,12 @@
 #include <string.h>
 #include <spine/extension.h>
 
-typedef enum {
-	SP_UPDATE_BONE, SP_UPDATE_IK_CONSTRAINT, SP_UPDATE_TRANSFORM_CONSTRAINT
-} _spUpdateType;
-
-typedef struct {
-	_spUpdateType type;
-	void* object;
-} _spUpdate;
-
 typedef struct {
 	spSkeleton super;
 
-	int updateCacheCount;
-	_spUpdate* updateCache;
+	int boneCacheCount;
+	int* boneCacheCounts;
+	spBone*** boneCache;
 } _spSkeleton;
 
 spSkeleton* spSkeleton_create (spSkeletonData* data) {
@@ -104,11 +96,6 @@ spSkeleton* spSkeleton_create (spSkeletonData* data) {
 	for (i = 0; i < self->data->ikConstraintsCount; ++i)
 		self->ikConstraints[i] = spIkConstraint_create(self->data->ikConstraints[i], self);
 
-	self->transformConstraintsCount = data->transformConstraintsCount;
-	self->transformConstraints = MALLOC(spTransformConstraint*, self->transformConstraintsCount);
-	for (i = 0; i < self->data->transformConstraintsCount; ++i)
-		self->transformConstraints[i] = spTransformConstraint_create(self->data->transformConstraints[i], self);
-
 	spSkeleton_updateCache(self);
 
 	return self;
@@ -118,7 +105,10 @@ void spSkeleton_dispose (spSkeleton* self) {
 	int i;
 	_spSkeleton* internal = SUB_CAST(_spSkeleton, self);
 
-	FREE(internal->updateCache);
+	for (i = 0; i < internal->boneCacheCount; ++i)
+		FREE(internal->boneCache[i]);
+	FREE(internal->boneCache);
+	FREE(internal->boneCacheCounts);
 
 	for (i = 0; i < self->bonesCount; ++i)
 		spBone_dispose(self->bones[i]);
@@ -132,74 +122,92 @@ void spSkeleton_dispose (spSkeleton* self) {
 		spIkConstraint_dispose(self->ikConstraints[i]);
 	FREE(self->ikConstraints);
 
-	for (i = 0; i < self->transformConstraintsCount; ++i)
-		spTransformConstraint_dispose(self->transformConstraints[i]);
-	FREE(self->transformConstraints);
-
 	FREE(self->drawOrder);
 	FREE(self);
 }
 
 void spSkeleton_updateCache (const spSkeleton* self) {
 	int i, ii;
-	_spUpdate* update;
 	_spSkeleton* internal = SUB_CAST(_spSkeleton, self);
-	int capacity = self->bonesCount + self->transformConstraintsCount + self->ikConstraintsCount;
 
-	FREE(internal->updateCache);
-	internal->updateCache = MALLOC(_spUpdate, capacity);
-	internal->updateCacheCount = 0;
+	for (i = 0; i < internal->boneCacheCount; ++i)
+		FREE(internal->boneCache[i]);
+	FREE(internal->boneCache);
+	FREE(internal->boneCacheCounts);
 
+	internal->boneCacheCount = self->ikConstraintsCount + 1;
+	internal->boneCache = MALLOC(spBone**, internal->boneCacheCount);
+	internal->boneCacheCounts = CALLOC(int, internal->boneCacheCount);
+
+	/* Compute array sizes. */
 	for (i = 0; i < self->bonesCount; ++i) {
-		spBone* bone = self->bones[i];
-		update = internal->updateCache + internal->updateCacheCount++;
-		update->type = SP_UPDATE_BONE;
-		update->object = bone;
-		for (ii = 0; ii < self->ikConstraintsCount; ++ii) {
-			spIkConstraint* ikConstraint = self->ikConstraints[ii];
-			if (bone == ikConstraint->bones[ikConstraint->bonesCount - 1]) {
-				update = internal->updateCache + internal->updateCacheCount++;
-				update->type = SP_UPDATE_IK_CONSTRAINT;
-				update->object = ikConstraint;
-				break;
+		spBone* current = self->bones[i];
+		do {
+			for (ii = 0; ii < self->ikConstraintsCount; ++ii) {
+				spIkConstraint* ikConstraint = self->ikConstraints[ii];
+				spBone* parent = ikConstraint->bones[0];
+				spBone* child = ikConstraint->bones[ikConstraint->bonesCount - 1];
+				while (1) {
+					if (current == child) {
+						internal->boneCacheCounts[ii]++;
+						internal->boneCacheCounts[ii + 1]++;
+						goto outer1;
+					}
+					if (child == parent) break;
+					child = child->parent;
+				}
 			}
-		}
+			current = current->parent;
+		} while (current);
+		internal->boneCacheCounts[0]++;
+		outer1: {}
 	}
 
-	for (i = 0; i < self->transformConstraintsCount; ++i) {
-		spTransformConstraint* transformConstraint = self->transformConstraints[i];
-		for (ii = internal->updateCacheCount - 1; ii >= 0; --ii) {
-			void* object = internal->updateCache[ii].object;
-			if (object == transformConstraint->bone || object == transformConstraint->target) {
-				int insertIndex = ii + 1;
-				update = internal->updateCache + insertIndex;
-				memmove(update + 1, update, (internal->updateCacheCount - insertIndex) * sizeof(_spUpdate));
-				update->type = SP_UPDATE_TRANSFORM_CONSTRAINT;
-				update->object = transformConstraint;
-				internal->updateCacheCount++;
-				break;
+	for (i = 0; i < internal->boneCacheCount; ++i)
+		internal->boneCache[i] = MALLOC(spBone*, internal->boneCacheCounts[i]);
+	memset(internal->boneCacheCounts, 0, internal->boneCacheCount * sizeof(int));
+
+	/* Populate arrays. */
+	for (i = 0; i < self->bonesCount; ++i) {
+		spBone* bone = self->bones[i];
+		spBone* current = bone;
+		do {
+			for (ii = 0; ii < self->ikConstraintsCount; ++ii) {
+				spIkConstraint* ikConstraint = self->ikConstraints[ii];
+				spBone* parent = ikConstraint->bones[0];
+				spBone* child = ikConstraint->bones[ikConstraint->bonesCount - 1];
+				while (1) {
+					if (current == child) {
+						internal->boneCache[ii][internal->boneCacheCounts[ii]++] = bone;
+						internal->boneCache[ii + 1][internal->boneCacheCounts[ii + 1]++] = bone;
+						goto outer2;
+					}
+					if (child == parent) break;
+					child = child->parent;
+				}
 			}
-		}
+			current = current->parent;
+		} while (current);
+		internal->boneCache[0][internal->boneCacheCounts[0]++] = bone;
+		outer2: {}
 	}
 }
 
 void spSkeleton_updateWorldTransform (const spSkeleton* self) {
-	int i;
+	int i, ii, nn, last;
 	_spSkeleton* internal = SUB_CAST(_spSkeleton, self);
 
-	for (i = 0; i < internal->updateCacheCount; ++i) {
-		_spUpdate* update = internal->updateCache + i;
-		switch (update->type) {
-		case SP_UPDATE_BONE:
-			spBone_updateWorldTransform((spBone*)update->object);
-			break;
-		case SP_UPDATE_IK_CONSTRAINT:
-			spIkConstraint_apply((spIkConstraint*)update->object);
-			break;
-		case SP_UPDATE_TRANSFORM_CONSTRAINT:
-			spTransformConstraint_apply((spTransformConstraint*)update->object);
-			break;
-		}
+	for (i = 0; i < self->bonesCount; ++i)
+		self->bones[i]->rotationIK = self->bones[i]->rotation;
+
+	i = 0;
+	last = internal->boneCacheCount - 1;
+	while (1) {
+		for (ii = 0, nn = internal->boneCacheCounts[i]; ii < nn; ++ii)
+			spBone_updateWorldTransform(internal->boneCache[i][ii]);
+		if (i == last) break;
+		spIkConstraint_apply(self->ikConstraints[i]);
+		i++;
 	}
 }
 
@@ -217,13 +225,6 @@ void spSkeleton_setBonesToSetupPose (const spSkeleton* self) {
 		spIkConstraint* ikConstraint = self->ikConstraints[i];
 		ikConstraint->bendDirection = ikConstraint->data->bendDirection;
 		ikConstraint->mix = ikConstraint->data->mix;
-	}
-
-	for (i = 0; i < self->transformConstraintsCount; ++i) {
-		spTransformConstraint* transformConstraint = self->transformConstraints[i];
-		transformConstraint->translateMix = transformConstraint->data->translateMix;
-		transformConstraint->x = transformConstraint->data->x;
-		transformConstraint->y = transformConstraint->data->y;
 	}
 }
 
@@ -329,17 +330,10 @@ int spSkeleton_setAttachment (spSkeleton* self, const char* slotName, const char
 	return 0;
 }
 
-spIkConstraint* spSkeleton_findIkConstraint (const spSkeleton* self, const char* constraintName) {
+spIkConstraint* spSkeleton_findIkConstraint (const spSkeleton* self, const char* ikConstraintName) {
 	int i;
 	for (i = 0; i < self->ikConstraintsCount; ++i)
-		if (strcmp(self->ikConstraints[i]->data->name, constraintName) == 0) return self->ikConstraints[i];
-	return 0;
-}
-
-spTransformConstraint* spSkeleton_findTransformConstraint (const spSkeleton* self, const char* constraintName) {
-	int i;
-	for (i = 0; i < self->transformConstraintsCount; ++i)
-		if (strcmp(self->transformConstraints[i]->data->name, constraintName) == 0) return self->transformConstraints[i];
+		if (strcmp(self->ikConstraints[i]->data->name, ikConstraintName) == 0) return self->ikConstraints[i];
 	return 0;
 }
 

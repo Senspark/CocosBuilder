@@ -51,7 +51,6 @@ void spSlot_dispose (spSlot* self) {
 }
 
 void spSlot_setAttachment (spSlot* self, spAttachment* attachment) {
-	if (attachment == self->attachment) return;
 	CONST_CAST(spAttachment*, self->attachment) = attachment;
 	SUB_CAST(_spSlot, self)->attachmentTime = self->bone->skeleton->time;
 	self->attachmentVerticesCount = 0;
@@ -73,9 +72,7 @@ void spSlot_setToSetupPose (spSlot* self) {
 	self->b = self->data->b;
 	self->a = self->data->a;
 
-	if (!self->data->attachmentName)
-		spSlot_setAttachment(self, 0);
-	else {
+	if (self->data->attachmentName) {
 		/* Find slot index. */
 		int i;
 		for (i = 0; i < self->bone->skeleton->data->slotsCount; ++i) {
@@ -84,7 +81,6 @@ void spSlot_setToSetupPose (spSlot* self) {
 				break;
 			}
 		}
-		CONST_CAST(spAttachment*, self->attachment) = 0;
-		spSlot_setAttachment(self, attachment);
 	}
+	spSlot_setAttachment(self, attachment);
 }

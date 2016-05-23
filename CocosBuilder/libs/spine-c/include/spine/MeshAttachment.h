@@ -40,8 +40,7 @@
 extern "C" {
 #endif
 
-typedef struct spMeshAttachment spMeshAttachment;
-struct spMeshAttachment {
+typedef struct spMeshAttachment {
 	spAttachment super;
 	const char* path;
 
@@ -53,10 +52,7 @@ struct spMeshAttachment {
 	float* uvs;
 
 	int trianglesCount;
-	unsigned short* triangles;
-
-	spMeshAttachment* const parentMesh;
-	int/*bool*/inheritFFD;
+	int* triangles;
 
 	float r, g, b, a;
 
@@ -71,19 +67,17 @@ struct spMeshAttachment {
 	int edgesCount;
 	int* edges;
 	float width, height;
-};
+} spMeshAttachment;
 
 spMeshAttachment* spMeshAttachment_create (const char* name);
 void spMeshAttachment_updateUVs (spMeshAttachment* self);
 void spMeshAttachment_computeWorldVertices (spMeshAttachment* self, spSlot* slot, float* worldVertices);
-void spMeshAttachment_setParentMesh (spMeshAttachment* self, spMeshAttachment* parentMesh);
 
 #ifdef SPINE_SHORT_NAMES
 typedef spMeshAttachment MeshAttachment;
 #define MeshAttachment_create(...) spMeshAttachment_create(__VA_ARGS__)
 #define MeshAttachment_updateUVs(...) spMeshAttachment_updateUVs(__VA_ARGS__)
 #define MeshAttachment_computeWorldVertices(...) spMeshAttachment_computeWorldVertices(__VA_ARGS__)
-#define MeshAttachment_setParentMesh(...) spMeshAttachment_setParentMesh(__VA_ARGS__)
 #endif
 
 #ifdef __cplusplus

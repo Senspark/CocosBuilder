@@ -29,8 +29,8 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *****************************************************************************/
 
-#ifndef SPINE_WEIGHTEDMESHATTACHMENT_H_
-#define SPINE_WEIGHTEDMESHATTACHMENT_H_
+#ifndef SPINE_SKINNEDMESHATTACHMENT_H_
+#define SPINE_SKINNEDMESHATTACHMENT_H_
 
 #include <spine/Attachment.h>
 #include <spine/Slot.h>
@@ -39,8 +39,7 @@
 extern "C" {
 #endif
 
-typedef struct spWeightedMeshAttachment spWeightedMeshAttachment;
-struct spWeightedMeshAttachment {
+typedef struct spSkinnedMeshAttachment {
 	spAttachment super;
 	const char* path;
 
@@ -51,15 +50,12 @@ struct spWeightedMeshAttachment {
 	float* weights;
 
 	int trianglesCount;
-	unsigned short* triangles;
+	int* triangles;
 
 	int uvsCount;
 	float* regionUVs;
 	float* uvs;
 	int hullLength;
-
-	spWeightedMeshAttachment* const parentMesh;
-	int/*bool*/inheritFFD;
 
 	float r, g, b, a;
 
@@ -74,23 +70,21 @@ struct spWeightedMeshAttachment {
 	int edgesCount;
 	int* edges;
 	float width, height;
-};
+} spSkinnedMeshAttachment;
 
-spWeightedMeshAttachment* spWeightedMeshAttachment_create (const char* name);
-void spWeightedMeshAttachment_updateUVs (spWeightedMeshAttachment* self);
-void spWeightedMeshAttachment_computeWorldVertices (spWeightedMeshAttachment* self, spSlot* slot, float* worldVertices);
-void spWeightedMeshAttachment_setParentMesh (spWeightedMeshAttachment* self, spWeightedMeshAttachment* parentMesh);
+spSkinnedMeshAttachment* spSkinnedMeshAttachment_create (const char* name);
+void spSkinnedMeshAttachment_updateUVs (spSkinnedMeshAttachment* self);
+void spSkinnedMeshAttachment_computeWorldVertices (spSkinnedMeshAttachment* self, spSlot* slot, float* worldVertices);
 
 #ifdef SPINE_SHORT_NAMES
-typedef spWeightedMeshAttachment WeightedMeshAttachment;
-#define WeightedMeshAttachment_create(...) spWeightedMeshAttachment_create(__VA_ARGS__)
-#define WeightedMeshAttachment_updateUVs(...) spWeightedMeshAttachment_updateUVs(__VA_ARGS__)
-#define WeightedMeshAttachment_computeWorldVertices(...) spWeightedMeshAttachment_computeWorldVertices(__VA_ARGS__)
-#define WeightedMeshAttachment_setParentMesh(...) spWeightedMeshAttachment_setParentMesh(__VA_ARGS__)
+typedef spSkinnedMeshAttachment SkinnedMeshAttachment;
+#define SkinnedMeshAttachment_create(...) spSkinnedMeshAttachment_create(__VA_ARGS__)
+#define SkinnedMeshAttachment_updateUVs(...) spSkinnedMeshAttachment_updateUVs(__VA_ARGS__)
+#define SkinnedMeshAttachment_computeWorldVertices(...) spSkinnedMeshAttachment_computeWorldVertices(__VA_ARGS__)
 #endif
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* SPINE_WEIGHTEDMESHATTACHMENT_H_ */
+#endif /* SPINE_SKINNEDMESHATTACHMENT_H_ */

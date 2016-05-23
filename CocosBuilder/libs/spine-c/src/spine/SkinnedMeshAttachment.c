@@ -29,35 +29,33 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *****************************************************************************/
 
-#include <spine/WeightedMeshAttachment.h>
+#include <spine/SkinnedMeshAttachment.h>
 #include <spine/extension.h>
 
-void _spWeightedMeshAttachment_dispose (spAttachment* attachment) {
-	spWeightedMeshAttachment* self = SUB_CAST(spWeightedMeshAttachment, attachment);
+void _spSkinnedMeshAttachment_dispose (spAttachment* attachment) {
+	spSkinnedMeshAttachment* self = SUB_CAST(spSkinnedMeshAttachment, attachment);
 	_spAttachment_deinit(attachment);
 	FREE(self->path);
+	FREE(self->bones);
+	FREE(self->weights);
+	FREE(self->regionUVs);
 	FREE(self->uvs);
-	if (!self->parentMesh) {
-		FREE(self->regionUVs);
-		FREE(self->bones);
-		FREE(self->weights);
-		FREE(self->triangles);
-		FREE(self->edges);
-	}
+	FREE(self->triangles);
+	FREE(self->edges);
 	FREE(self);
 }
 
-spWeightedMeshAttachment* spWeightedMeshAttachment_create (const char* name) {
-	spWeightedMeshAttachment* self = NEW(spWeightedMeshAttachment);
+spSkinnedMeshAttachment* spSkinnedMeshAttachment_create (const char* name) {
+	spSkinnedMeshAttachment* self = NEW(spSkinnedMeshAttachment);
 	self->r = 1;
 	self->g = 1;
 	self->b = 1;
 	self->a = 1;
-	_spAttachment_init(SUPER(self), name, SP_ATTACHMENT_WEIGHTED_MESH, _spWeightedMeshAttachment_dispose);
+	_spAttachment_init(SUPER(self), name, SP_ATTACHMENT_SKINNED_MESH, _spSkinnedMeshAttachment_dispose);
 	return self;
 }
 
-void spWeightedMeshAttachment_updateUVs (spWeightedMeshAttachment* self) {
+void spSkinnedMeshAttachment_updateUVs (spSkinnedMeshAttachment* self) {
 	int i;
 	float width = self->regionU2 - self->regionU, height = self->regionV2 - self->regionV;
 	FREE(self->uvs);
@@ -75,7 +73,7 @@ void spWeightedMeshAttachment_updateUVs (spWeightedMeshAttachment* self) {
 	}
 }
 
-void spWeightedMeshAttachment_computeWorldVertices (spWeightedMeshAttachment* self, spSlot* slot, float* worldVertices) {
+void spSkinnedMeshAttachment_computeWorldVertices (spSkinnedMeshAttachment* self, spSlot* slot, float* worldVertices) {
 	int w = 0, v = 0, b = 0, f = 0;
 	float x = slot->bone->skeleton->x, y = slot->bone->skeleton->y;
 	spBone** skeletonBones = slot->bone->skeleton->bones;
@@ -87,8 +85,8 @@ void spWeightedMeshAttachment_computeWorldVertices (spWeightedMeshAttachment* se
 			for (; v <= nn; v++, b += 3) {
 				const spBone* bone = skeletonBones[self->bones[v]];
 				const float vx = self->weights[b], vy = self->weights[b + 1], weight = self->weights[b + 2];
-				wx += (vx * bone->a + vy * bone->b + bone->worldX) * weight;
-				wy += (vx * bone->c + vy * bone->d + bone->worldY) * weight;
+				wx += (vx * bone->m00 + vy * bone->m01 + bone->worldX) * weight;
+				wy += (vx * bone->m10 + vy * bone->m11 + bone->worldY) * weight;
 			}
 			worldVertices[w] = wx + x;
 			worldVertices[w + 1] = wy + y;
@@ -102,36 +100,11 @@ void spWeightedMeshAttachment_computeWorldVertices (spWeightedMeshAttachment* se
 			for (; v <= nn; v++, b += 3, f += 2) {
 				const spBone* bone = skeletonBones[self->bones[v]];
 				const float vx = self->weights[b] + ffd[f], vy = self->weights[b + 1] + ffd[f + 1], weight = self->weights[b + 2];
-				wx += (vx * bone->a + vy * bone->b + bone->worldX) * weight;
-				wy += (vx * bone->c + vy * bone->d + bone->worldY) * weight;
+				wx += (vx * bone->m00 + vy * bone->m01 + bone->worldX) * weight;
+				wy += (vx * bone->m10 + vy * bone->m11 + bone->worldY) * weight;
 			}
 			worldVertices[w] = wx + x;
 			worldVertices[w + 1] = wy + y;
 		}
-	}
-}
-
-void spWeightedMeshAttachment_setParentMesh (spWeightedMeshAttachment* self, spWeightedMeshAttachment* parentMesh) {
-	CONST_CAST(spWeightedMeshAttachment*, self->parentMesh) = parentMesh;
-	if (parentMesh) {
-		self->bones = parentMesh->bones;
-		self->bonesCount = parentMesh->bonesCount;
-
-		self->weights = parentMesh->weights;
-		self->weightsCount = parentMesh->weightsCount;
-
-		self->regionUVs = parentMesh->regionUVs;
-		self->uvsCount = parentMesh->uvsCount;
-
-		self->triangles = parentMesh->triangles;
-		self->trianglesCount = parentMesh->trianglesCount;
-
-		self->hullLength = parentMesh->hullLength;
-
-		self->edges = parentMesh->edges;
-		self->edgesCount = parentMesh->edgesCount;
-
-		self->width = parentMesh->width;
-		self->height = parentMesh->height;
 	}
 }
