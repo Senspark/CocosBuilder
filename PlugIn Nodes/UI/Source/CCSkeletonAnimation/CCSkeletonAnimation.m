@@ -51,6 +51,8 @@
     [self setAnimationScale:1.0];
     [self setTimeScale:1.0];
     
+    _animation = @"None";
+    
     return self;
 }
 
@@ -84,6 +86,9 @@
         }
     } @catch (NSException* ex) {
         NSLog(@"%@", ex);
+        
+        _animation = @"None";
+        _skin = nil;
         
         [availableSkins_ removeAllObjects];
         [availableAnimations_ removeAllObjects];

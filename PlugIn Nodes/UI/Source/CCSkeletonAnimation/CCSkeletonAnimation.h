@@ -27,7 +27,7 @@
 @class SkeletonAnimation;
 
 @interface CCSkeletonAnimation : CCNodeV3 {
-    SkeletonAnimation* skeleton_;
+    SkeletonAnimation* skeleton_;    
     
     NSMutableArray<NSString*>* availableSkins_;
     NSMutableArray<NSString*>* availableAnimations_;

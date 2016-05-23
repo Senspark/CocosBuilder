@@ -63,6 +63,9 @@
         [menuItem setTarget:self];
         [menu addItem:menuItem];
     }
+    
+    NSString* selected = [selection valueForKey:propertyName];
+    [popup setTitle:selected];
 }
 
 @end
