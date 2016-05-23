@@ -6,9 +6,6 @@
 //
 //
 
-#ifndef CCLayout_h
-#define CCLayout_h
-
 #import "CCWidget.h"
 
 @class CCScale9Sprite;
@@ -45,5 +42,3 @@ typedef NS_ENUM(NSInteger, CCLayoutBackgroundColor) {
 //- (CGSize) backgroundImageTextureSize;
 
 @end
-
-#endif /* CCLayout_h */

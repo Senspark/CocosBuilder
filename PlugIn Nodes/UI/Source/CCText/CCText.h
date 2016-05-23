@@ -6,9 +6,6 @@
 //
 //
 
-#ifndef CCText_h
-#define CCText_h
-
 #import "CCWidget.h"
 
 @class CCLabelTTF;
@@ -45,5 +42,3 @@
 @property (nonatomic) NSInteger outlineSize;
 
 @end
-
-#endif /* CCText_h */
