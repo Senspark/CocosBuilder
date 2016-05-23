@@ -26,7 +26,7 @@
 #import "SCEvents.h"
 #import "SCEvent.h"
 
-#define kCCBMaxTrackedDirectories 50
+#define kCCBMaxTrackedDirectories 100
 
 enum
 {
@@ -42,6 +42,8 @@ enum
     kCCBResTypeJSON,
     kCCBResTypeAudio,
     kCCBResTypeGeneratedSpriteSheetDef,
+    
+    kCCBResTypeAtlas,
 };
 
 
@@ -113,6 +115,10 @@ enum
 @property (nonatomic,readonly) NSMutableArray* ttfFonts;
 @property (nonatomic,readonly) NSMutableArray* ccbFiles;
 @property (nonatomic,readonly) NSMutableArray* audioFiles;
+
+@property (nonatomic, readonly) NSMutableArray* jsonFiles;
+@property (nonatomic, readonly) NSMutableArray* atlasFiles;
+
 - (NSArray*) resourcesForType:(int)type;
 
 @end

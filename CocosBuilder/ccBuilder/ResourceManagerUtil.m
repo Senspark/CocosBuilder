@@ -73,7 +73,9 @@
                 || res.type == kCCBResTypeBMFont
                 || res.type == kCCBResTypeCCBFile
                 || res.type == kCCBResTypeTTF
-                || res.type == kCCBResTypeAudio)
+                || res.type == kCCBResTypeAudio
+                || [res type] == kCCBResTypeJSON
+                || [res type] == kCCBResTypeAtlas)
             {
                 NSString* itemName = [res.filePath lastPathComponent];
                 NSMenuItem* menuItem = [[[NSMenuItem alloc] initWithTitle:itemName action:@selector(selectedResource:) keyEquivalent:@""] autorelease];

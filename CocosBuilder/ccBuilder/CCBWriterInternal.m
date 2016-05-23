@@ -411,6 +411,14 @@
             if (!spriteFile) spriteFile = @"";
             serializedValue = spriteFile;
         }
+        else if ([type isEqualToString:@"JsonFile"] ||
+                 [type isEqualToString:@"AtlasFile"]) {
+            NSString* str = [node valueForKey:name];
+            if (str == nil) {
+//                str = @"";
+            }
+            serializedValue = str;
+        }
         else
         {
             NSLog(@"WARNING Unrecognized property type: %@", type);

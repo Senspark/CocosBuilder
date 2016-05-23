@@ -197,6 +197,9 @@
     ccbFiles = [[NSMutableArray alloc] init];
     audioFiles = [[NSMutableArray alloc] init];
     
+    _jsonFiles = [[NSMutableArray alloc] init];
+    _atlasFiles = [[NSMutableArray alloc] init];
+    
     return self;
 }
 
@@ -209,6 +212,14 @@
     if (type == kCCBResTypeAnimation) return animations;
     if (type == kCCBResTypeCCBFile) return ccbFiles;
     if (type == kCCBResTypeAudio) return audioFiles;
+    
+    if (type == kCCBResTypeJSON) {
+        return _jsonFiles;
+    }
+    if (type == kCCBResTypeAtlas) {
+        return _atlasFiles;
+    }
+    
     return NULL;
 }
 
@@ -271,6 +282,13 @@
     [ccbFiles release];
     [audioFiles release];
     [dirPath release];
+    
+    [_atlasFiles release];
+    _atlasFiles = nil;
+    
+    [_jsonFiles release];
+    _jsonFiles = nil;
+    
     [super dealloc];
 }
 
@@ -489,6 +507,11 @@
     {
         return kCCBResTypeGeneratedSpriteSheetDef;
     }
+    
+    if ([ext isEqualToString:@"atlas"]) {
+        return kCCBResTypeAtlas;
+    }
+    
     return kCCBResTypeNone;
 }
 
@@ -593,6 +616,12 @@
                 {
                     needsUpdate = YES;
                 }
+                
+                if ([res type] == kCCBResTypeJSON ||
+                    [res type] == kCCBResTypeAtlas) {
+                    needsUpdate = YES;
+                }
+                
                 resourcesChanged = YES;
             }
         }
@@ -654,6 +683,9 @@
         [dir.ccbFiles removeAllObjects];
         [dir.audioFiles removeAllObjects];
         
+        [[dir jsonFiles] removeAllObjects];
+        [[dir atlasFiles] removeAllObjects];
+        
         for (NSString* file in resources)
         {
             RMResource* res = [resources objectForKey:file];
@@ -690,6 +722,17 @@
                 [dir.audioFiles addObject:res];
                 
             }
+            
+            if ([res type] == kCCBResTypeJSON ||
+                [res type] == kCCBResTypeDirectory) {
+                [[dir jsonFiles] addObject:res];
+            }
+            
+            if ([res type] == kCCBResTypeAtlas ||
+                [res type] == kCCBResTypeDirectory) {
+                [[dir atlasFiles] addObject:res];
+            }
+            
             if (res.type == kCCBResTypeImage
                 || res.type == kCCBResTypeSpriteSheet
                 || res.type == kCCBResTypeAnimation
@@ -699,7 +742,8 @@
                 || res.type == kCCBResTypeDirectory
                 || res.type == kCCBResTypeJS
                 || res.type == kCCBResTypeJSON
-                || res.type == kCCBResTypeAudio)
+                || res.type == kCCBResTypeAudio
+                || [res type] == kCCBResTypeAtlas)
             {
                 [dir.any addObject:res];
             }
@@ -712,6 +756,9 @@
         [dir.ttfFonts sortUsingSelector:@selector(compare:)];
         [dir.ccbFiles sortUsingSelector:@selector(compare:)];
         [dir.audioFiles sortUsingSelector:@selector(compare:)];
+        
+        [[dir jsonFiles] sortUsingSelector:@selector(compare:)];
+        [[dir atlasFiles] sortUsingSelector:@selector(compare:)];
     }
     
     if (resourcesChanged) [self notifyResourceObserversResourceListUpdated];
