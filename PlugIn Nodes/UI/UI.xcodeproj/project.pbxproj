@@ -837,7 +837,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./../../scripts/CopyBuiltProduct.sh \"$CONFIGURATION_BUILD_DIR/\" \"$SRCROOT/../../build/CocosBuilder.app/Contents/PlugIns/\" \"$PRODUCT_NAME.ccbPlugNode\" 0";
+			shellScript = "";
 		};
 		6F7752791CDC9A8800BF74AF /* Copy Plug-in to CocosBuilder's PlugIns folder */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -851,7 +851,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./../../scripts/CopyBuiltProduct.sh \"$CONFIGURATION_BUILD_DIR/\" \"$SRCROOT/../../build/CocosBuilder.app/Contents/PlugIns/\" \"$PRODUCT_NAME.ccbPlugNode\" 0";
+			shellScript = "";
 		};
 		6F7752891CDC9A9B00BF74AF /* Copy Plug-in to CocosBuilder's PlugIns folder */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -865,7 +865,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./../../scripts/CopyBuiltProduct.sh \"$CONFIGURATION_BUILD_DIR/\" \"$SRCROOT/../../build/CocosBuilder.app/Contents/PlugIns/\" \"$PRODUCT_NAME.ccbPlugNode\" 0";
+			shellScript = "";
 		};
 		6F843E561CDB994C008B2EC4 /* Copy Plug-in to CocosBuilder's PlugIns folder */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -879,7 +879,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./../../scripts/CopyBuiltProduct.sh \"$CONFIGURATION_BUILD_DIR/\" \"$SRCROOT/../../build/CocosBuilder.app/Contents/PlugIns/\" \"$PRODUCT_NAME.ccbPlugNode\" 0";
+			shellScript = "";
 		};
 		6FC2418D1CDB58D5009A3AAD /* Copy Plug-in to CocosBuilder's PlugIns folder */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -893,7 +893,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./../../scripts/CopyBuiltProduct.sh \"$CONFIGURATION_BUILD_DIR/\" \"$SRCROOT/../../build/CocosBuilder.app/Contents/PlugIns/\" \"$PRODUCT_NAME.ccbPlugNode\" 0";
+			shellScript = "";
 		};
 		6FD294191CE1A10F009ECBFA /* Copy Plug-in to CocosBuilder's PlugIns folder */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -907,7 +907,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./../../scripts/CopyBuiltProduct.sh \"$CONFIGURATION_BUILD_DIR/\" \"$SRCROOT/../../build/CocosBuilder.app/Contents/PlugIns/\" \"$PRODUCT_NAME.ccbPlugNode\" 0";
+			shellScript = "";
 		};
 		E33BC1A51510CA52009AE29A /* Copy Plug-in to CocosBuilder's PlugIns folder */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -921,7 +921,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./../../scripts/CopyBuiltProduct.sh \"$CONFIGURATION_BUILD_DIR/\" \"$SRCROOT/../../build/CocosBuilder.app/Contents/PlugIns/\" \"$PRODUCT_NAME.ccbPlugNode\" 0";
+			shellScript = "";
 		};
 /* End PBXShellScriptBuildPhase section */
 
