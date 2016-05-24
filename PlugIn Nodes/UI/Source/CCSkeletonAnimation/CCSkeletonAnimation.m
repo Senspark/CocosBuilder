@@ -26,6 +26,8 @@
 
 #import "spine/spine-cocos2d-iphone.h"
 
+NSString* const kNoAnimation = @"None";
+
 @implementation CCSkeletonAnimation
 
 @synthesize animationList = availableAnimations_;
@@ -51,7 +53,8 @@
     [self setAnimationScale:1.0];
     [self setTimeScale:1.0];
     
-    _animation = @"None";
+    _animation = kNoAnimation;
+    _skin = nil;
     
     return self;
 }
@@ -60,11 +63,7 @@
     [self removeChild:skeleton_];
     skeleton_ = nil;
     
-    if ([[self dataFile] length] == 0) {
-        return;
-    }
-    
-    if ([[self atlasFile] length] == 0) {
+    if ([[self dataFile] length] == 0 || [[self atlasFile] length] == 0) {
         return;
     }
     
@@ -82,12 +81,14 @@
             // Update scale.
             [skeleton_ setSkin:[self skin]];
             [skeleton_ setTimeScale:[self timeScale]];
-            [self updateAnimation];
+            if ([[self animation] isEqualToString:kNoAnimation] == NO) {
+                [self restartAnimation];
+            }
         }
     } @catch (NSException* ex) {
         NSLog(@"%@", ex);
         
-        _animation = @"None";
+        _animation = kNoAnimation;
         _skin = nil;
         
         [availableSkins_ removeAllObjects];
@@ -97,10 +98,11 @@
 
 - (void) updateAnimation {
     if ([[self animation] length] == 0) {
+        NSAssert(NO, @"...");
         return;
     }
     
-    if ([[self animation] isEqualToString:@"None"]) {
+    if ([[self animation] isEqualToString:kNoAnimation]) {
         [self removeChild:skeleton_];
         skeleton_ = [SkeletonAnimation skeletonWithFile:[self dataFile]
                                               atlasFile:[self atlasFile]
@@ -109,17 +111,21 @@
         [skeleton_ setSkin:[self skin]];
         [self addChild:skeleton_];
     } else {
-        [skeleton_ setAnimationForTrack:0
-                                   name:[self animation]
-                                   loop:[self isLoop]];
+        [self restartAnimation];
     }
+}
+
+- (void) restartAnimation {
+    [skeleton_ setAnimationForTrack:0
+                               name:[self animation]
+                               loop:[self isLoop]];
 }
 
 - (void) updateAvailableAnimations {
     [availableAnimations_ release];
     availableAnimations_ = [[NSMutableArray alloc] init];
     
-    [availableAnimations_ addObject:@"None"];
+    [availableAnimations_ addObject:kNoAnimation];
     for (int i = 0; i < [skeleton_ skeleton]->data->animationsCount; ++i) {
         [availableAnimations_ addObject:@([skeleton_ skeleton]->data->animations[i]->name)];
     }

@@ -412,10 +412,13 @@
             serializedValue = spriteFile;
         }
         else if ([type isEqualToString:@"JsonFile"] ||
-                 [type isEqualToString:@"AtlasFile"] ||
-                 [type isEqualToString:@"ListBox"]) {
+                 [type isEqualToString:@"AtlasFile"]) {
             NSString* str = [node extraPropForKey:name];
             serializedValue = str;
+        } else if ([type isEqualToString:@"ListBox"]) {
+            NSString* propName = [[name componentsSeparatedByString:@"|"] objectAtIndex:0];
+            NSString* str = [node valueForKey:propName];
+            serializedValue = str;            
         }
         else
         {
