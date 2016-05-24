@@ -438,7 +438,7 @@
     NSString* ext = [[file pathExtension] lowercaseString];
     NSFileManager* fm = [NSFileManager defaultManager];
     
-    BOOL isDirectory;
+    BOOL isDirectory = NO;
     [fm fileExistsAtPath:file isDirectory:&isDirectory];
     
     if (isDirectory)
