@@ -306,17 +306,21 @@ NSDictionary* renamedProperties = NULL;
     }
     else if ([type isEqualToString:@"JsonFile"] ||
              [type isEqualToString:@"AtlasFile"]) {
-        // Store relative path to extra properties.
         NSString* str = serializedValue;
-        [node setExtraProp:str forKey:name];
-        
-        // Set full path.
-        NSString* path = [[ResourceManager sharedManager] toAbsolutePath:str];
-        [node setValue:path forKey:name];
+        if (str != nil) {
+            // Store relative path to extra properties.
+            [node setExtraProp:str forKey:name];
+            
+            // Set full path.
+            NSString* path = [[ResourceManager sharedManager] toAbsolutePath:str];
+            [node setValue:path forKey:name];
+        }
     } else if ([type isEqualToString:@"ListBox"]) {
         NSString* str = serializedValue;
-        NSString* propName = [[name componentsSeparatedByString:@"|"] objectAtIndex:0];
-        [node setValue:str forKey:propName];
+        if (str != nil) {
+            NSString* propName = [[name componentsSeparatedByString:@"|"] objectAtIndex:0];
+            [node setValue:str forKey:propName];
+        }
     }
     else
     {
