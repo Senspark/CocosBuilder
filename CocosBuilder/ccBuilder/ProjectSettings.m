@@ -593,6 +593,7 @@
     caw_setkey_part(1, part1);
     caw_setkey_part(2, part2);
     caw_setkey_part(3, part3);
+    [_contentProtectionKey autorelease];
     _contentProtectionKey = [contentProtectionKey copy];
 }
 
