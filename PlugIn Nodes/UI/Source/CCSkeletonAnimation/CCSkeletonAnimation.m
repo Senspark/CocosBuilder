@@ -71,6 +71,13 @@ NSString* const kNoAnimation = @"None";
         skeleton_ = [SkeletonAnimation skeletonWithFile:[self dataFile]
                                               atlasFile:[self atlasFile]
                                                   scale:[self animationScale]];
+        
+        if (skeleton_ == nil) {
+            @throw [NSException exceptionWithName:NSInternalInconsistencyException
+                                           reason:@"Error reading data/atlas files."
+                                         userInfo:nil];
+        }
+        
         [self addChild:skeleton_];
         
         if (cleanUp) {
