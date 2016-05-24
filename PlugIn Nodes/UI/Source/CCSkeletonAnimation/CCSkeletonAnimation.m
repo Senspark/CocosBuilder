@@ -72,24 +72,20 @@ NSString* const kNoAnimation = @"None";
                                               atlasFile:[self atlasFile]
                                                   scale:[self animationScale]];
         
-        if (skeleton_ == nil) {
-            @throw [NSException exceptionWithName:NSInternalInconsistencyException
-                                           reason:@"Error reading data/atlas files."
-                                         userInfo:nil];
-        }
-        
-        [self addChild:skeleton_];
-        
-        if (cleanUp) {
-            // Update json or atlas.
-            [self updateAvailableAnimations];
-            [self updateAvailableSkins];
-        } else {
-            // Update scale.
-            [skeleton_ setSkin:[self skin]];
-            [skeleton_ setTimeScale:[self timeScale]];
-            if ([[self animation] isEqualToString:kNoAnimation] == NO) {
-                [self restartAnimation];
+        if (skeleton_ != nil) {
+            [self addChild:skeleton_];
+            
+            if (cleanUp) {
+                // Update json or atlas.
+                [self updateAvailableAnimations];
+                [self updateAvailableSkins];
+            } else {
+                // Update scale.
+                [skeleton_ setSkin:[self skin]];
+                [skeleton_ setTimeScale:[self timeScale]];
+                if ([[self animation] isEqualToString:kNoAnimation] == NO) {
+                    [self restartAnimation];
+                }
             }
         }
     } @catch (NSException* ex) {
