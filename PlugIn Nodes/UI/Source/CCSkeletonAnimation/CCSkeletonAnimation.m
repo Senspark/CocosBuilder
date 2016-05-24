@@ -135,7 +135,13 @@ NSString* const kNoAnimation = @"None";
     [availableSkins_ release];
     availableSkins_ = [[NSMutableArray alloc] init];
     
-    for (int i = 0; i < [skeleton_ skeleton]->data->skinsCount; ++i) {
+    NSInteger skinsCount = [skeleton_ skeleton]->data->skinsCount;
+    BOOL ignoreDefaultSkin = NO;
+    if (skinsCount > 1) {
+        ignoreDefaultSkin = YES;
+    }
+    
+    for (NSInteger i = (ignoreDefaultSkin ? 1 : 0); i < skinsCount; ++i) {
         [availableSkins_ addObject:@([skeleton_ skeleton]->data->skins[i]->name)];
     }
     [self setSkin:[availableSkins_ objectAtIndex:0]];
