@@ -306,9 +306,11 @@ NSDictionary* renamedProperties = NULL;
     }
     else if ([type isEqualToString:@"JsonFile"] ||
              [type isEqualToString:@"AtlasFile"]) {
+        // Store relative path to extra properties.
         NSString* str = serializedValue;
         [node setExtraProp:str forKey:name];
         
+        // Set full path.
         NSString* path = [[ResourceManager sharedManager] toAbsolutePath:str];
         [node setValue:path forKey:name];
     } else if ([type isEqualToString:@"ListBox"]) {

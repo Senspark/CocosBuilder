@@ -89,18 +89,19 @@
     [super dealloc];
 }
 
-- (int) propTypeIdForName:(NSString*)prop
-{
-    NSInteger propType = [propTypes indexOfObject:prop];
-    
+- (int) propTypeIdForName:(NSString*) prop {
     if ([prop isEqualToString:@"JsonFile"] ||
         [prop isEqualToString:@"AtlasFile"] ||
         [prop isEqualToString:@"ListBox"]) {
-        propType = [propTypes indexOfObject:@"FontTTF"];
+        return [self propTypeIdForName:@"String"];
     }
     
-    if (propType == NSNotFound) return -1;
-    return (int)propType;
+    NSInteger propType = [propTypes indexOfObject:prop];
+    
+    if (propType == NSNotFound) {
+        return -1;
+    }
+    return (int) propType;
 }
 
 - (void) addToStringCache:(NSString*) str isPath:(BOOL) isPath
@@ -452,6 +453,11 @@
         int b = [[prop objectAtIndex:1] intValue];
         [self writeInt:a withSign:NO];
         [self writeInt:b withSign:NO];
+    } else if ([type isEqualToString:@"JsonFile"] ||
+               [type isEqualToString:@"AtlasFile"]) {
+        [self writeCachedString:prop isPath:YES];
+    } else if ([type isEqualToString:@"ListBox"]) {
+        [self writeCachedString:prop isPath:NO];
     }
 }
 
@@ -593,6 +599,11 @@
                  || [type isEqualToString:@"FontTTF"]
                  || [type isEqualToString:@"String"])
         {
+            [self addToStringCache:value isPath:NO];
+        } else if ([type isEqualToString:@"JsonFile"] ||
+                   [type isEqualToString:@"AtlasFile"]) {
+            [self addToStringCache:value isPath:YES];
+        } else if ([type isEqualToString:@"ListBox"]) {
             [self addToStringCache:value isPath:NO];
         }
     }

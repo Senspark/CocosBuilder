@@ -413,6 +413,7 @@
         }
         else if ([type isEqualToString:@"JsonFile"] ||
                  [type isEqualToString:@"AtlasFile"]) {
+            // Save the relative path.
             NSString* str = [node extraPropForKey:name];
             serializedValue = str;
         } else if ([type isEqualToString:@"ListBox"]) {
