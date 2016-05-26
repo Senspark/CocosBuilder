@@ -50,8 +50,8 @@ NSString* const kNoAnimation = @"None";
         return self;
     }
     
-    [self setAnimationScale:1.0];
-    [self setTimeScale:1.0];
+    _animationScale = 1.0;
+    _timeScale = 1.0;
     
     _animation = kNoAnimation;
     _skin = nil;
@@ -78,16 +78,20 @@ NSString* const kNoAnimation = @"None";
                                          userInfo:nil];
         }
         
+        // Keep time scale.
+        [skeleton_ setTimeScale:[self timeScale]];
+        
         [self addChild:skeleton_];
         
         if (cleanUp) {
             // Update json or atlas.
+            // Reload animation and skin names.
             [self updateAvailableAnimations];
             [self updateAvailableSkins];
         } else {
             // Update scale.
+            // Keep animation and skin names.
             [skeleton_ setSkin:[self skin]];
-            [skeleton_ setTimeScale:[self timeScale]];
             if ([[self animation] isEqualToString:kNoAnimation] == NO) {
                 [self restartAnimation];
             }
