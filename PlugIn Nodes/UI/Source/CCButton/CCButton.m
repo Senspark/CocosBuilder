@@ -157,6 +157,30 @@ const NSInteger TitleZOrder = -1;
     [self setBright:[self bright]];
 }
 
+- (BOOL) normalSpriteFrameEnabled {
+    return [self backgroundSpriteEnabledForState:CCButtonStateNormal];
+}
+
+- (BOOL) pressedSpriteFrameEnabled {
+    return [self backgroundSpriteEnabledForState:CCButtonStatePressed];
+}
+
+- (BOOL) disabledSpriteFrameEnabled {
+    return [self backgroundSpriteEnabledForState:CCButtonStateDisabled];
+}
+
+- (void) setNormalSpriteFrameEnabled:(BOOL) enabled {
+    [self setBackgroundSpriteEnabled:enabled forState:CCButtonStateNormal];
+}
+
+- (void) setPressedActionEnabled:(BOOL) enabled {
+    [self setBackgroundSpriteEnabled:enabled forState:CCButtonStatePressed];
+}
+
+- (void) setDisabledSpriteFrameEnabled:(BOOL) enabled {
+    [self setBackgroundSpriteEnabled:enabled forState:CCButtonStateDisabled];
+}
+
 - (void) setBackgroundSpriteEnabled:(BOOL) enabled
                            forState:(CCButtonState) state {
     [buttonRenderersEnabled_ setObject:[NSNumber numberWithBool:enabled]
@@ -221,33 +245,10 @@ const NSInteger TitleZOrder = -1;
     if ([key isEqualToString:@"disabledSpriteFrame"]) {
         return [self setBackgroundSpriteFrame:value forState:CCButtonStateDisabled];
     }
-    if ([key isEqualToString:@"normalSpriteFrameEnabled"]) {
-        return [self setBackgroundSpriteEnabled:[value boolValue]
-                                       forState:CCButtonStateNormal];
-    }
-    if ([key isEqualToString:@"pressedSpriteFrameEnabled"]) {
-        return [self setBackgroundSpriteEnabled:[value boolValue]
-                                       forState:CCButtonStatePressed];
-    }
-    if ([key isEqualToString:@"disabledSpriteFrameEnabled"]) {
-        return [self setBackgroundSpriteEnabled:[value boolValue]
-                                       forState:CCButtonStateDisabled];
-    }
-    
     [super setValue:value forUndefinedKey:key];
 }
 
 - (id) valueForUndefinedKey:(NSString*) key {
-    if ([key isEqualToString:@"normalSpriteFrameEnabled"]) {
-        return [NSNumber numberWithBool:[self backgroundSpriteEnabledForState:CCButtonStateNormal]];
-    }
-    if ([key isEqualToString:@"pressedSpriteFrameEnabled"]) {
-        return [NSNumber numberWithBool:[self backgroundSpriteEnabledForState:CCButtonStatePressed]];
-    }
-    if ([key isEqualToString:@"disabledSpriteFrameEnabled"]) {
-        return [NSNumber numberWithBool:[self backgroundSpriteEnabledForState:CCButtonStateDisabled]];
-    }
-    
     return [super valueForUndefinedKey:key];
 }
 

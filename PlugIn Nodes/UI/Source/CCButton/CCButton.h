@@ -53,6 +53,10 @@ typedef NS_ENUM(NSInteger, CCButtonState) {
 
 @property (nonatomic) BOOL scale9Enabled;
 
+@property (nonatomic) BOOL normalSpriteFrameEnabled;
+@property (nonatomic) BOOL pressedSpriteFrameEnabled;
+@property (nonatomic) BOOL disabledSpriteFrameEnabled;
+
 - (void) setBackgroundSpriteEnabled:(BOOL) enabled
                            forState:(CCButtonState) state;
 
