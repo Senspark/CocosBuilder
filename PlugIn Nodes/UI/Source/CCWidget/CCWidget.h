@@ -52,6 +52,8 @@
 - (void) updateContentSizeWithTextureSize:(CGSize) size;
 - (void) onSizeChanged;
 
+- (void) updateChildrenDisplayRGBA;
+
 @property (nonatomic, readonly) CGSize virtualRendererSize;
 
 @end

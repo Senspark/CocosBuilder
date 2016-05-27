@@ -147,6 +147,11 @@
     }
 }
 
+- (void) updateChildrenDisplayRGBA {
+    [self setColor:[self color]];
+    [self setOpacity:[self opacity]];
+}
+
 - (void) adaptRenderers {}
 
 - (void) setValue:(id) value forUndefinedKey:(NSString*) key {
