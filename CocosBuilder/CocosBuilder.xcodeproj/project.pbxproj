@@ -53,6 +53,7 @@
 		6F8F5BEC1CF2E8950023C07F /* TransformConstraintData.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F8F5BD01CF2E8950023C07F /* TransformConstraintData.c */; };
 		6F8F5BF21CF2F6AD0023C07F /* InspectorListBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F8F5BF01CF2F6AD0023C07F /* InspectorListBox.m */; };
 		6F8F5BF31CF2F6AD0023C07F /* InspectorListBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F8F5BF11CF2F6AD0023C07F /* InspectorListBox.xib */; };
+		6FC19AC01CF835790002D68B /* CCCheckBox.ccbPlugNode in Copy PlugIns */ = {isa = PBXBuildFile; fileRef = 6FC19ABF1CF835790002D68B /* CCCheckBox.ccbPlugNode */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6FC1BD981CD9AD5700DE717C /* libcocos2d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FC1BD851CD9AD4400DE717C /* libcocos2d.a */; };
 		6FC1BD9B1CD9AD6E00DE717C /* libCocosDenshion.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FC1BD8B1CD9AD4400DE717C /* libCocosDenshion.a */; };
 		6FC241D21CDB5BB4009A3AAD /* CCWidget.ccbPlugNode in Copy PlugIns */ = {isa = PBXBuildFile; fileRef = 6FC241BD1CDB5A7F009A3AAD /* CCWidget.ccbPlugNode */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -636,6 +637,20 @@
 			remoteGlobalIDString = 6F843E4C1CDB994C008B2EC4;
 			remoteInfo = CCText;
 		};
+		6FC19ABE1CF835790002D68B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6FC2417F1CDB5896009A3AAD /* UI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6FC19AB41CF80BF70002D68B;
+			remoteInfo = CCCheckBox;
+		};
+		6FC19ACB1CF835860002D68B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6FC2417F1CDB5896009A3AAD /* UI.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6FC19AA91CF80BF70002D68B;
+			remoteInfo = CCCheckBox;
+		};
 		6FC1BD841CD9AD4400DE717C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6FC1BD771CD9AD4400DE717C /* cocos2d-osx.xcodeproj */;
@@ -951,6 +966,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				6FC19AC01CF835790002D68B /* CCCheckBox.ccbPlugNode in Copy PlugIns */,
 				6F17FB431CF2AC0B00CFCD14 /* CCSkeletonAnimation.ccbPlugNode in Copy PlugIns */,
 				6FD2948D1CE1D242009ECBFA /* CCLayout.ccbPlugNode in Copy PlugIns */,
 				6FD294731CE1BAAD009ECBFA /* CCNodeV3.ccbPlugNode in Copy PlugIns */,
@@ -2186,6 +2202,7 @@
 				6FC241BD1CDB5A7F009A3AAD /* CCWidget.ccbPlugNode */,
 				6FC241BF1CDB5A7F009A3AAD /* CCButton.ccbPlugNode */,
 				6F843E601CDB99C2008B2EC4 /* CCText.ccbPlugNode */,
+				6FC19ABF1CF835790002D68B /* CCCheckBox.ccbPlugNode */,
 				6FD2942F1CE1A131009ECBFA /* CCLayout.ccbPlugNode */,
 				6FD294311CE1A131009ECBFA /* CCScrollView.ccbPlugNode */,
 				6FD294331CE1A131009ECBFA /* CCNodeV3.ccbPlugNode */,
@@ -3903,13 +3920,14 @@
 			buildRules = (
 			);
 			dependencies = (
-				6FD294721CE1BA95009ECBFA /* PBXTargetDependency */,
+				6FC19ACC1CF835860002D68B /* PBXTargetDependency */,
 				6F17FAC41CF2A5F000CFCD14 /* PBXTargetDependency */,
 				6F843E6D1CDB99CC008B2EC4 /* PBXTargetDependency */,
 				6FC241D11CDB5B9E009A3AAD /* PBXTargetDependency */,
 				6FD294801CE1D1F3009ECBFA /* PBXTargetDependency */,
 				6FC241CF1CDB5B9E009A3AAD /* PBXTargetDependency */,
 				6FD294201CE1A130009ECBFA /* PBXTargetDependency */,
+				6FD294721CE1BA95009ECBFA /* PBXTargetDependency */,
 				6FC1BD9A1CD9AD6B00DE717C /* PBXTargetDependency */,
 				6FC1BD971CD9AD4F00DE717C /* PBXTargetDependency */,
 				E3F541CE15AED85800EAAFBD /* PBXTargetDependency */,
@@ -4293,6 +4311,13 @@
 			fileType = wrapper.cfbundle;
 			path = CCText.ccbPlugNode;
 			remoteRef = 6F843E5F1CDB99C2008B2EC4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6FC19ABF1CF835790002D68B /* CCCheckBox.ccbPlugNode */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CCCheckBox.ccbPlugNode;
+			remoteRef = 6FC19ABE1CF835790002D68B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		6FC1BD851CD9AD4400DE717C /* libcocos2d.a */ = {
@@ -5236,6 +5261,11 @@
 			isa = PBXTargetDependency;
 			name = CCText;
 			targetProxy = 6F843E6C1CDB99CC008B2EC4 /* PBXContainerItemProxy */;
+		};
+		6FC19ACC1CF835860002D68B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CCCheckBox;
+			targetProxy = 6FC19ACB1CF835860002D68B /* PBXContainerItemProxy */;
 		};
 		6FC1BD971CD9AD4F00DE717C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
