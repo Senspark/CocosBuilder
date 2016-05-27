@@ -183,13 +183,13 @@ const NSInteger TitleZOrder = -1;
 
 - (void) setBackgroundSpriteEnabled:(BOOL) enabled
                            forState:(CCButtonState) state {
-    [buttonRenderersEnabled_ setObject:[NSNumber numberWithBool:enabled]
-                                forKey:[NSNumber numberWithInteger:state]];
+    [buttonRenderersEnabled_ setObject:@(enabled)
+                                forKey:@(state)];
     [[self backgroundSpriteForState:state] setVisible:enabled];
 }
 
 - (BOOL) backgroundSpriteEnabledForState:(CCButtonState) state {
-    BOOL enabled = [[buttonRenderersEnabled_ objectForKey:[NSNumber numberWithInteger:state]] boolValue];
+    BOOL enabled = [[buttonRenderersEnabled_ objectForKey:@(state)] boolValue];
     return enabled;
 }
 
@@ -219,7 +219,7 @@ const NSInteger TitleZOrder = -1;
     
     [self addChild:sprite z:zOrder];
     [buttonRenderers_ setObject:sprite
-                         forKey:[NSNumber numberWithInteger:state]];
+                         forKey:@(state)];
 }
 
 - (void) setBackgroundSpriteFrame:(CCSpriteFrame*) spriteFrame
@@ -231,7 +231,7 @@ const NSInteger TitleZOrder = -1;
 }
 
 - (CCScale9Sprite*) backgroundSpriteForState:(CCButtonState) state {
-    CCScale9Sprite* sprite = [buttonRenderers_ objectForKey:[NSNumber numberWithInteger:state]];
+    CCScale9Sprite* sprite = [buttonRenderers_ objectForKey:@(state)];
     return sprite;
 }
 
