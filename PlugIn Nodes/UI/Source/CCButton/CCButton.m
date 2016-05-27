@@ -46,7 +46,6 @@ const NSInteger TitleZOrder = -1;
     
     prevIgnoreSize_ = NO;
     
-    [self initRenderer];
     [self createTitleRenderer];
     
     [self setScale9Enabled:YES];
