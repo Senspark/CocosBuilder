@@ -24,8 +24,25 @@
 
 #import "CCNodeV3.h"
 
+typedef NS_ENUM(NSInteger, CCWidgetPositionType) {
+    CCWidgetPositionTypeAbsolute,
+    CCWidgetPositionTypePercent
+};
+
+typedef NS_ENUM(NSInteger, CCWidgetSizeType) {
+    CCWidgetSizeTypeAbsolute,
+    CCWidgetSizeTypePercent
+};
+
+typedef NS_ENUM(NSInteger, CCWidgetBrightStyle) {
+    CCWidgetBrightStyleNone = -1,
+    CCWidgetBrightStyleNormal,
+    CCWidgetBrightStyleHighlight
+};
+
 @interface CCWidget : CCNodeV3 {
     CGSize customSize_;
+    CCWidgetBrightStyle brightStyle_;
 }
 
 @property (nonatomic) BOOL enabled;
@@ -35,25 +52,38 @@
 @property (nonatomic) BOOL touchEnabled;
 @property (nonatomic) BOOL swallowTouches;
 @property (nonatomic) BOOL propagateTouchEvents;
+@property (nonatomic) BOOL unifySizeEnabled;
+@property (nonatomic) BOOL layoutComponentEnabled;
 
-//@property (nonatomic, assign) CGSize sizePercent;
+@property (nonatomic) CGPoint sizePercent;
+@property (nonatomic) CCWidgetSizeType sizeType;
+
+@property (nonatomic) CGPoint positionPercent;
+@property (nonatomic) CCWidgetPositionType positionType;
 
 @property (nonatomic, readonly) CGSize customSize;
 
+@property (nonatomic, readonly) CCNode* virtualRenderer;
+@property (nonatomic, readonly) CGSize virtualRendererSize;
+
 - (CCWidget*) getWidgetParent;
 
-- (void) initRenderer;
+- (void) setBrightStyle:(CCWidgetBrightStyle) style;
 
 - (void) updateSizeAndPosition;
 - (void) updateSizeAndPositionWithParentSize:(CGSize) parentSize;
 
-- (void) adaptRenderers;
-
 - (void) updateContentSizeWithTextureSize:(CGSize) size;
+
 - (void) onSizeChanged;
 
-- (void) updateChildrenDisplayRGBA;
+- (void) onPressStateChangedToNormal;
+- (void) onPressStateChangedToPressed;
+- (void) onPressStateChangedToDisabled;
 
-@property (nonatomic, readonly) CGSize virtualRendererSize;
+- (void) initRenderer;
+
+- (void) adaptRenderers;
+- (void) updateChildrenDisplayRGBA;
 
 @end
