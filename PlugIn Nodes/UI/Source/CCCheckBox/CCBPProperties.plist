@@ -5,7 +5,7 @@
 	<key>canBeRootNode</key>
 	<true/>
 	<key>canHaveChildren</key>
-	<string>NO</string>
+	<string>YES</string>
 	<key>className</key>
 	<string>CCCheckBox</string>
 	<key>editorClassName</key>

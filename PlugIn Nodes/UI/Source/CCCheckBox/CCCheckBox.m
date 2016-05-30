@@ -55,6 +55,13 @@ const int kCrossLocalZOrder = -1;
     [crossRenderersAdaptDirty_ setObject:@(YES) forKey:@(CCCheckBoxCrossStateDisabled)];
 }
 
+- (void) setEnabled:(BOOL) enabled {
+    [super setEnabled:enabled];
+    
+    [self updateCrossSpriteFrameVisibility];
+    [self updateBackgroundSpriteFrameVisibility];
+}
+
 - (void) setSelected:(BOOL) selected {
     _selected = selected;
     [[self crossSpriteForState:CCCheckBoxCrossStateNormal] setVisible:selected];
