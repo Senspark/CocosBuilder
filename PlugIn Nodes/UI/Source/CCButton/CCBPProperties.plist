@@ -87,6 +87,7 @@
 		<dict>
 			<key>affectsProperties</key>
 			<array>
+				<string>contentSize</string>
 				<string>ignoreContentAdaptWithSize</string>
 			</array>
 			<key>displayName</key>
@@ -103,6 +104,10 @@
 			<string>SeparatorSub</string>
 		</dict>
 		<dict>
+			<key>affectsProperties</key>
+			<array>
+				<string>contentSize</string>
+			</array>
 			<key>displayName</key>
 			<string>Enabled</string>
 			<key>name</key>
@@ -111,6 +116,10 @@
 			<string>Check</string>
 		</dict>
 		<dict>
+			<key>affectsProperties</key>
+			<array>
+				<string>contentSize</string>
+			</array>
 			<key>default</key>
 			<array>
 				<string>ccbResources/ccbDefaultImages.plist</string>
@@ -130,6 +139,10 @@
 			<string>SeparatorSub</string>
 		</dict>
 		<dict>
+			<key>affectsProperties</key>
+			<array>
+				<string>contentSize</string>
+			</array>
 			<key>displayName</key>
 			<string>Enabled</string>
 			<key>name</key>
@@ -138,6 +151,10 @@
 			<string>Check</string>
 		</dict>
 		<dict>
+			<key>affectsProperties</key>
+			<array>
+				<string>contentSize</string>
+			</array>
 			<key>default</key>
 			<array>
 				<string>ccbResources/ccbDefaultImages.plist</string>
@@ -157,6 +174,10 @@
 			<string>SeparatorSub</string>
 		</dict>
 		<dict>
+			<key>affectsProperties</key>
+			<array>
+				<string>contentSize</string>
+			</array>
 			<key>displayName</key>
 			<string>Enabled</string>
 			<key>name</key>
@@ -165,6 +186,10 @@
 			<string>Check</string>
 		</dict>
 		<dict>
+			<key>affectsProperties</key>
+			<array>
+				<string>contentSize</string>
+			</array>
 			<key>default</key>
 			<array>
 				<string>ccbResources/ccbDefaultImages.plist</string>
@@ -179,20 +204,6 @@
 		</dict>
 	</array>
 	<key>propertiesOverridden</key>
-	<array>
-		<dict>
-			<key>default</key>
-			<array>
-				<string>120</string>
-				<integer>40</integer>
-			</array>
-			<key>displayName</key>
-			<string>Content size</string>
-			<key>name</key>
-			<string>contentSize</string>
-			<key>type</key>
-			<string>Size</string>
-		</dict>
-	</array>
+	<array/>
 </dict>
 </plist>

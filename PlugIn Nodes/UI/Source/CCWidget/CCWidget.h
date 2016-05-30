@@ -86,4 +86,6 @@ typedef NS_ENUM(NSInteger, CCWidgetBrightStyle) {
 - (void) adaptRenderers;
 - (void) updateChildrenDisplayRGBA;
 
+- (void) setContentSize_super:(CGSize) size;
+
 @end

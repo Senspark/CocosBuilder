@@ -26,15 +26,16 @@
 #import "CCScale9Sprite.h"
 #import "cocos2d.h"
 
-const NSInteger BackgroundSpriteZOrder = -2;
-const NSInteger TitleZOrder = -1;
+const NSInteger kBackgroundSpriteZOrder = -2;
+const NSInteger kTitleZOrder = -1;
 
 @implementation CCButton
 
+@synthesize normalRenderer = buttonNormalRenderer_;
+@synthesize pressedRenderer = buttonPressedRenderer_;
+@synthesize disabledRenderer = buttonDisabledRenderer_;
+
 - (void) dealloc {
-    [buttonRenderers_ release];
-    [buttonRenderersEnabled_ release];
-    
     [super dealloc];
 }
 
@@ -44,21 +45,35 @@ const NSInteger TitleZOrder = -1;
         return self;
     }
     
-    prevIgnoreSize_ = NO;
+    _zoomScale = 0.1;
+    prevIgnoreSize_ = YES;
+    _scale9Enabled = NO;
+    _pressedActionEnabled = NO;
+    
+    normalTextureAdaptDirty_ = YES;
+    pressedTextureAdaptDirty_ = YES;
+    disabledTextureAdaptDirty_ = YES;
+    
+    normalTextureLoaded_ = NO;
+    pressedTextureLoaded_ = NO;
+    disabledTextureLoaded_ = NO;
+    
+    [self setTouchEnabled:YES];
+    [self setSwallowTouches:YES];
     
     [self createTitleRenderer];
-    
-    [self setScale9Enabled:YES];
     
     return self;
 }
 
 - (void) initRenderer {
-    buttonRenderers_ = [NSMutableDictionary dictionary];
-    buttonRenderersEnabled_ = [NSMutableDictionary dictionary];
+    buttonNormalRenderer_ = [[[CCScale9Sprite alloc] init] autorelease];
+    buttonPressedRenderer_ = [[[CCScale9Sprite alloc] init] autorelease];
+    buttonDisabledRenderer_ = [[[CCScale9Sprite alloc] init] autorelease];
     
-    [buttonRenderers_ retain];
-    [buttonRenderersEnabled_ retain];
+    [self addChild:buttonNormalRenderer_ z:kBackgroundSpriteZOrder];
+    [self addChild:buttonPressedRenderer_ z:kBackgroundSpriteZOrder];
+    [self addChild:buttonDisabledRenderer_ z:kBackgroundSpriteZOrder];
 }
 
 - (void) createTitleRenderer {
@@ -66,20 +81,67 @@ const NSInteger TitleZOrder = -1;
                                         fontName:@"Helvetica"
                                         fontSize:12];
     [titleRenderer_ setAnchorPoint:CGPointMake(0.5, 0.5)];
-    [self addChild:titleRenderer_ z:TitleZOrder];
+    [self addChild:titleRenderer_ z:kTitleZOrder];
 }
 
-//- (void) loadTextureNormal {
-//    if ([self ignoreContentAdaptWithSize] == NO &&
-//        CGSizeEqualToSize([self customSize], CGSizeZero)) {
-//        customSize_ = [[buttonRenderers_ objectForKey:CCButtonStateNormal] contentSize];
-//    }
-//    [self setupNormalTexture];
-//}
-//
-//- (void) setupNormalTexture {
-//    
-//}
+- (void) setupNormalTexture:(BOOL) textureLoaded {
+    normalTextureSize_ = [buttonNormalRenderer_ contentSize];
+    [self updateChildrenDisplayRGBA];
+    if ([self unifySizeEnabled]) {
+        if ([self scale9Enabled] == NO) {
+            [self updateContentSizeWithTextureSize:[self normalSize]];
+        }
+    } else {
+        [self updateContentSizeWithTextureSize:normalTextureSize_];
+    }
+    normalTextureLoaded_ = textureLoaded;
+    normalTextureAdaptDirty_ = YES;
+}
+
+- (void) setupPressedTexture:(BOOL) textureLoaded {
+    pressedTextureSize_ = [buttonPressedRenderer_ contentSize];
+    [self updateChildrenDisplayRGBA];
+    pressedTextureLoaded_ = textureLoaded;
+    pressedTextureAdaptDirty_ = YES;
+}
+
+- (void) setupDisabledTexture:(BOOL) textureLoaded {
+    disabledTextureSize_ = [buttonDisabledRenderer_ contentSize];
+    [self updateChildrenDisplayRGBA];
+    disabledTextureLoaded_ = textureLoaded;
+    disabledTextureAdaptDirty_ = YES;
+}
+
+- (void) onPressStateChangedToNormal {
+    [buttonNormalRenderer_ setVisible:YES];
+    [buttonPressedRenderer_ setVisible:NO];
+    [buttonDisabledRenderer_ setVisible:NO];
+    ///
+}
+
+- (void) onPressStateChangedToPressed {
+    if (pressedTextureLoaded_) {
+        [buttonNormalRenderer_ setVisible:NO];
+        [buttonPressedRenderer_ setVisible:YES];
+        [buttonDisabledRenderer_ setVisible:NO];
+    } else {
+        [buttonNormalRenderer_ setVisible:YES];
+        [buttonPressedRenderer_ setVisible:YES];
+        [buttonDisabledRenderer_ setVisible:NO];
+    }
+}
+
+- (void) onPressStateChangedToDisabled {
+    if (disabledTextureLoaded_ == NO) {
+        if (normalTextureLoaded_) {
+            ///
+        }
+    } else {
+        [buttonNormalRenderer_ setVisible:NO];
+        [buttonDisabledRenderer_ setVisible:YES];
+    }
+    [buttonPressedRenderer_ setVisible:NO];
+}
 
 - (void) updateTitleLocation {
     CGFloat width = [self contentSize].width;
@@ -87,24 +149,58 @@ const NSInteger TitleZOrder = -1;
     [titleRenderer_ setPosition:CGPointMake(width / 2, height / 2)];
 }
 
-- (void) onSizeChanged {
-    [super onSizeChanged];
-    [self updateTitleLocation];
-}
-
-- (void) setContentSize:(CGSize) contentSize {
-    [super setContentSize:contentSize];
-    
-    for (CCScale9Sprite* sprite in [buttonRenderers_ allValues]) {
-        [sprite setPreferedSize:contentSize];
+- (void) updateContentSize {
+    if ([self unifySizeEnabled]) {
+        if ([self scale9Enabled]) {
+            [super setContentSize_super:[self customSize]];
+        } else {
+            CGSize s = [self normalSize];
+            [super setContentSize_super:s];
+        }
+        return [self onSizeChanged];
+    }
+    if ([self ignoreContentAdaptWithSize]) {
+        [self setContentSize:[self virtualRendererSize]];
     }
 }
 
+- (void) onSizeChanged {
+    [super onSizeChanged];
+    [self updateTitleLocation];
+    normalTextureAdaptDirty_ = YES;
+    pressedTextureAdaptDirty_ = YES;
+    disabledTextureAdaptDirty_ = YES;
+    
+    [self textureScaleChangedWithSize:buttonNormalRenderer_];
+}
+
+- (void) adaptRenderers {
+    if (normalTextureAdaptDirty_) {
+        [self textureScaleChangedWithSize:buttonNormalRenderer_];
+        normalTextureAdaptDirty_ = NO;
+    }
+    if (pressedTextureAdaptDirty_) {
+        [self textureScaleChangedWithSize:buttonPressedRenderer_];
+        pressedTextureAdaptDirty_ = NO;
+    }
+    if (disabledTextureAdaptDirty_) {
+        [self textureScaleChangedWithSize:buttonDisabledRenderer_];
+        disabledTextureAdaptDirty_ = NO;
+    }
+}
+
+- (void) textureScaleChangedWithSize:(CCScale9Sprite*) button {
+    [button setPreferedSize:[self contentSize]];
+//    [button setPosition:CGPointMake([self contentSize].width / 2,
+//                                    [self contentSize].height / 2)];
+}
+
 - (void) setTitleText:(NSString*) text {
-//    if ([text isEqualToString:[titleRenderer_ string]]) {
-//        return;
-//    }
+    if ([text isEqualToString:[self titleText]]) {
+        return;
+    }
     [titleRenderer_ setString:text];
+    [self updateContentSize];
     [self updateTitleLocation];
 }
 
@@ -122,6 +218,7 @@ const NSInteger TitleZOrder = -1;
 
 - (void) setTitleFontSize:(CGFloat) size {
     [titleRenderer_ setFontSize:size];
+    [self updateContentSize];
 }
 
 - (CGFloat) titleFontSize {
@@ -131,6 +228,7 @@ const NSInteger TitleZOrder = -1;
 - (void) setTitleFontName:(NSString*) fontName {
     if ([fontName length] > 0) {
         [titleRenderer_ setFontName:fontName];
+        [self updateContentSize];
     }
 }
 
@@ -139,6 +237,9 @@ const NSInteger TitleZOrder = -1;
 }
 
 - (void) setIgnoreContentAdaptWithSize:(BOOL) ignore {
+    if ([self unifySizeEnabled]) {
+        return [self updateContentSize];
+    }
     if ([self scale9Enabled] == NO || ([self scale9Enabled] && ignore == NO)) {
         [super setIgnoreContentAdaptWithSize:ignore];
         prevIgnoreSize_ = ignore;
@@ -146,105 +247,138 @@ const NSInteger TitleZOrder = -1;
 }
 
 - (void) setScale9Enabled:(BOOL) enabled {
+    if ([self scale9Enabled] == enabled) {
+        return;
+    }
     _scale9Enabled = enabled;
-    if (_scale9Enabled) {
+    if ([self scale9Enabled]) {
         BOOL ignoreBefore = [self ignoreContentAdaptWithSize];
         [self setIgnoreContentAdaptWithSize:NO];
         prevIgnoreSize_ = ignoreBefore;
     } else {
         [self setIgnoreContentAdaptWithSize:prevIgnoreSize_];
     }
+    brightStyle_ = CCWidgetBrightStyleNone;
     [self setBright:[self bright]];
+    
+    normalTextureAdaptDirty_ = YES;
+    pressedTextureAdaptDirty_ = YES;
+    disabledTextureAdaptDirty_ = YES;
 }
 
-- (BOOL) normalSpriteFrameEnabled {
-    return [self backgroundSpriteEnabledForState:CCButtonStateNormal];
+- (CCNode*) virtualRenderer {
+    if ([self bright]) {
+        switch (brightStyle_) {
+            case CCWidgetBrightStyleNormal:
+                return [self normalRenderer];
+            case CCWidgetBrightStyleHighlight:
+                return [self pressedRenderer];
+            default:
+                return nil;
+        }
+    }
+    return [self disabledRenderer];
 }
 
-- (BOOL) pressedSpriteFrameEnabled {
-    return [self backgroundSpriteEnabledForState:CCButtonStatePressed];
+- (CGSize) virtualRendererSize {
+    if ([self unifySizeEnabled]) {
+        return [self normalSize];
+    }
+    CGSize titleSize = [titleRenderer_ contentSize];
+    if (normalTextureLoaded_ == NO && [[titleRenderer_ string] length] > 0) {
+        return titleSize;
+    }
+    return normalTextureSize_;
 }
 
-- (BOOL) disabledSpriteFrameEnabled {
-    return [self backgroundSpriteEnabledForState:CCButtonStateDisabled];
+- (void) resetNormalRenderer {
+    normalTextureSize_ = CGSizeZero;
+    normalTextureLoaded_ = NO;
+    normalTextureAdaptDirty_ = NO;
+}
+
+- (void) resetPressedRenderer {
+    pressedTextureSize_ = CGSizeZero;
+    pressedTextureLoaded_ = NO;
+    pressedTextureAdaptDirty_ = NO;
+}
+
+- (void) resetDisabledRenderer {
+    disabledTextureSize_ = CGSizeZero;
+    disabledTextureLoaded_ = NO;
+    disabledTextureAdaptDirty_ = NO;
+}
+
+- (CCLabelTTF*) titleRenderer {
+    return titleRenderer_;
+}
+
+- (CGSize) normalSize {
+    CGSize titleSize = [titleRenderer_ contentSize];
+    CGSize imageSize = [[self normalRenderer] contentSize];
+    return CGSizeMake(max(titleSize.width, imageSize.width),
+                      max(titleSize.height, imageSize.height));
 }
 
 - (void) setNormalSpriteFrameEnabled:(BOOL) enabled {
-    [self setBackgroundSpriteEnabled:enabled forState:CCButtonStateNormal];
+    _normalSpriteFrameEnabled = enabled;
+    [buttonNormalRenderer_ setVisible:enabled];
+    if (enabled) {
+        [self setNormalSpriteFrame:normalFrame_];
+    } else {
+        [self resetNormalRenderer];
+    }
+    [self updateContentSize];
 }
 
-- (void) setPressedActionEnabled:(BOOL) enabled {
-    [self setBackgroundSpriteEnabled:enabled forState:CCButtonStatePressed];
+- (void) setPressedSpriteFrameEnabled:(BOOL) enabled {
+    _pressedSpriteFrameEnabled = enabled;
+    [buttonPressedRenderer_ setVisible:enabled];
+    if (enabled) {
+        [self setPressedSpriteFrame:pressedFrame_];
+    } else {
+        [self resetPressedRenderer];
+    }
 }
 
 - (void) setDisabledSpriteFrameEnabled:(BOOL) enabled {
-    [self setBackgroundSpriteEnabled:enabled forState:CCButtonStateDisabled];
-}
-
-- (void) setBackgroundSpriteEnabled:(BOOL) enabled
-                           forState:(CCButtonState) state {
-    [buttonRenderersEnabled_ setObject:@(enabled)
-                                forKey:@(state)];
-    [[self backgroundSpriteForState:state] setVisible:enabled];
-}
-
-- (BOOL) backgroundSpriteEnabledForState:(CCButtonState) state {
-    BOOL enabled = [[buttonRenderersEnabled_ objectForKey:@(state)] boolValue];
-    return enabled;
-}
-
-- (void) setBackgroundSprite:(CCScale9Sprite*) sprite
-                    forState:(CCButtonState) state {
-    if ([self backgroundSpriteEnabledForState:state] == NO) {
-        // Not enabled.
-        return;
-    }
-    
-    CCScale9Sprite* current = [self backgroundSpriteForState:state];
-    [self removeChild:current];
-    
-    [sprite setVisible:[self backgroundSpriteEnabledForState:state]];
-    [sprite setPreferedSize:[self contentSize]];
-    [sprite setAnchorPoint:CGPointZero];
-    
-    // Normal background sprite has the highest z-order,
-    // then pressed background sprite.
-    NSInteger zOrder = BackgroundSpriteZOrder;
-    if (state == CCButtonStatePressed) {
-        zOrder -= 1;
-    }
-    if (state == CCButtonStateDisabled) {
-        zOrder -= 2;
-    }
-    
-    [self addChild:sprite z:zOrder];
-    [buttonRenderers_ setObject:sprite
-                         forKey:@(state)];
-}
-
-- (void) setBackgroundSpriteFrame:(CCSpriteFrame*) spriteFrame
-                         forState:(CCButtonState) state {
-    if ([self backgroundSpriteEnabledForState:state]) {
-        CCScale9Sprite* sprite = [CCScale9Sprite spriteWithSpriteFrame:spriteFrame];
-        [self setBackgroundSprite:sprite forState:state];
+    _disabledSpriteFrameEnabled = enabled;
+    [buttonDisabledRenderer_ setVisible:enabled];
+    if (enabled) {
+        [self setDisabledSpriteFrame:disabledFrame_];
+    } else {
+        [self resetDisabledRenderer];
     }
 }
 
-- (CCScale9Sprite*) backgroundSpriteForState:(CCButtonState) state {
-    CCScale9Sprite* sprite = [buttonRenderers_ objectForKey:@(state)];
-    return sprite;
+- (void) setNormalSpriteFrame:(CCSpriteFrame*) frame {
+    NSCAssert(frame != nil, @"...");
+    [normalFrame_ autorelease];
+    normalFrame_ = [frame retain];
+    [buttonNormalRenderer_ setSpriteFrame:frame];
+    [buttonNormalRenderer_ setVisible:[self normalSpriteFrameEnabled]];
+    [self setupNormalTexture:YES];
+}
+
+- (void) setPressedSpriteFrame:(CCSpriteFrame*) frame {
+    NSCAssert(frame != nil, @"...");
+    [pressedFrame_ autorelease];
+    pressedFrame_ = [frame retain];
+    [buttonPressedRenderer_ setSpriteFrame:frame];
+    [buttonPressedRenderer_ setVisible:[self pressedSpriteFrameEnabled]];
+    [self setupPressedTexture:YES];
+}
+
+- (void) setDisabledSpriteFrame:(CCSpriteFrame*) frame {
+    NSCAssert(frame != nil, @"...");
+    [disabledFrame_ autorelease];
+    disabledFrame_ = [frame retain];
+    [buttonDisabledRenderer_ setSpriteFrame:frame];
+    [buttonDisabledRenderer_ setVisible:[self disabledSpriteFrameEnabled]];
+    [self setupDisabledTexture:YES];
 }
 
 - (void) setValue:(id) value forUndefinedKey:(NSString*) key {
-    if ([key isEqualToString:@"normalSpriteFrame"]) {
-        return [self setBackgroundSpriteFrame:value forState:CCButtonStateNormal];
-    }
-    if ([key isEqualToString:@"pressedSpriteFrame"]) {
-        return [self setBackgroundSpriteFrame:value forState:CCButtonStatePressed];
-    }
-    if ([key isEqualToString:@"disabledSpriteFrame"]) {
-        return [self setBackgroundSpriteFrame:value forState:CCButtonStateDisabled];
-    }
     [super setValue:value forUndefinedKey:key];
 }
 

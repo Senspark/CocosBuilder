@@ -17,6 +17,7 @@
 }
 
 @property (nonatomic, assign) NSString* string;
+@property (nonatomic, readonly) size_t stringLength;
 @property (nonatomic) CGFloat fontSize;
 @property (nonatomic, assign) NSString* fontName;
 

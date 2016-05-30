@@ -35,10 +35,27 @@ typedef NS_ENUM(NSInteger, CCButtonState) {
 };
 
 @interface CCButton : CCWidget {
-    NSMutableDictionary*    buttonRenderers_;
-    CCLabelTTF*             titleRenderer_;
+    CCLabelTTF* titleRenderer_;
     
-    NSMutableDictionary*    buttonRenderersEnabled_;
+    CCScale9Sprite* buttonNormalRenderer_;
+    CCScale9Sprite* buttonPressedRenderer_;
+    CCScale9Sprite* buttonDisabledRenderer_;
+    
+    CCSpriteFrame* normalFrame_;
+    CCSpriteFrame* pressedFrame_;
+    CCSpriteFrame* disabledFrame_;
+    
+    BOOL normalTextureAdaptDirty_;
+    BOOL pressedTextureAdaptDirty_;
+    BOOL disabledTextureAdaptDirty_;
+    
+    CGSize normalTextureSize_;
+    CGSize pressedTextureSize_;
+    CGSize disabledTextureSize_;
+    
+    BOOL normalTextureLoaded_;
+    BOOL pressedTextureLoaded_;
+    BOOL disabledTextureLoaded_;
     
     BOOL prevIgnoreSize_;
 }
@@ -57,17 +74,11 @@ typedef NS_ENUM(NSInteger, CCButtonState) {
 @property (nonatomic) BOOL pressedSpriteFrameEnabled;
 @property (nonatomic) BOOL disabledSpriteFrameEnabled;
 
-- (void) setBackgroundSpriteEnabled:(BOOL) enabled
-                           forState:(CCButtonState) state;
+@property (nonatomic, readonly) CCLabelTTF* titleRenderer;
+@property (nonatomic, readonly) CCScale9Sprite* normalRenderer;
+@property (nonatomic, readonly) CCScale9Sprite* pressedRenderer;
+@property (nonatomic, readonly) CCScale9Sprite* disabledRenderer;
 
-- (BOOL) backgroundSpriteEnabledForState:(CCButtonState) state;
-
-- (void) setBackgroundSprite:(CCScale9Sprite*) sprite
-                    forState:(CCButtonState) state;
-
-- (void) setBackgroundSpriteFrame:(CCSpriteFrame*) spriteFrame
-                         forState:(CCButtonState) state;
-
-- (CCScale9Sprite*) backgroundSpriteForState:(CCButtonState) state;
+@property (nonatomic, readonly) CGSize normalSize;
 
 @end

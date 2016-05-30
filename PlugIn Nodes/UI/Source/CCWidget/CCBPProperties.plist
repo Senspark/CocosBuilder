@@ -108,6 +108,30 @@
 		</dict>
 	</array>
 	<key>propertiesOverridden</key>
-	<array/>
+	<array>
+		<dict>
+			<key>affectsProperties</key>
+			<array>
+				<string>contentSize</string>
+			</array>
+			<key>defaultSerialization</key>
+			<array>
+				<integer>0</integer>
+				<integer>0</integer>
+				<integer>0</integer>
+			</array>
+			<key>default</key>
+			<array>
+				<string>0</string>
+				<integer>0</integer>
+			</array>
+			<key>type</key>
+			<string>Size</string>
+			<key>name</key>
+			<string>contentSize</string>
+			<key>displayName</key>
+			<string>Content size</string>
+		</dict>
+	</array>
 </dict>
 </plist>

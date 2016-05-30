@@ -26,6 +26,7 @@
 
 @implementation CCWidget
 
+@synthesize swallowTouches = swallowTouches_;
 @synthesize sizePercent = sizePercent_;
 @synthesize positionPercent = positionPercent_;
 @synthesize customSize = customSize_;
@@ -42,12 +43,12 @@
     
     _layoutComponentEnabled = NO;
     _unifySizeEnabled = NO;
-    _enabled = NO;
-    _bright = NO;
+    _enabled = YES;
+    _bright = YES;
     _touchEnabled = NO;
     _highlighted = NO;
     _ignoreContentAdaptWithSize = NO;
-    _propagateTouchEvents = NO;
+    _propagateTouchEvents = YES;
     brightStyle_ = CCWidgetBrightStyleNone;
     _sizeType = CCWidgetSizeTypeAbsolute;
     _positionType = CCWidgetPositionTypeAbsolute;
@@ -59,6 +60,13 @@
     [self setIgnoreContentAdaptWithSize:YES];
     
     return self;
+}
+
+- (void) onEnter {
+    if ([self layoutComponentEnabled] == NO) {
+        [self updateSizeAndPosition];
+    }
+    [super onEnter];
 }
 
 - (void) visit {
@@ -361,6 +369,10 @@
 }
 
 - (void) adaptRenderers {}
+
+- (void) setContentSize_super:(CGSize) size {
+    [super setContentSize:size];
+}
 
 - (void) setValue:(id) value forUndefinedKey:(NSString*) key {
     [super setValue:value forKey:key];
