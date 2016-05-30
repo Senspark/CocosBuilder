@@ -22,6 +22,9 @@
         return self;
     }
     
+    _touchScaleChangeEnabled = NO;
+    labelRendererAdaptDirty_ = YES;
+    
     [self setTextColor:ccWHITE];
     
     [self setShadowEnabled:NO];
@@ -46,9 +49,9 @@
 }
 
 - (void) setString:(NSString*) string {
-//    if ([string isEqualToString:[labelRenderer_ string]]) {
-//        return;
-//    }
+    if ([string isEqualToString:[labelRenderer_ string]]) {
+        return;
+    }
     [labelRenderer_ setString:string];
     [self updateContentSizeWithTextureSize:[labelRenderer_ contentSize]];
     labelRendererAdaptDirty_ = YES;
@@ -56,6 +59,10 @@
 
 - (NSString*) string {
     return [labelRenderer_ string];
+}
+
+- (size_t) stringLength {
+    return [[self string] length];
 }
 
 - (void) setFontSize:(CGFloat) fontSize {
@@ -147,6 +154,10 @@
         [labelRenderer_ setDimensions:[self contentSize]];        
     }
     return virtualSize;
+}
+
+- (CCNode*) virtualRenderer {
+    return labelRenderer_;
 }
 
 - (void) labelScaleChangedWithSize {
