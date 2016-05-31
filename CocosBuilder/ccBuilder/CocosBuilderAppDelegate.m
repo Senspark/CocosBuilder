@@ -2016,12 +2016,11 @@ static BOOL hideAllToNextSeparator;
     [self saveUndoState];
     
     // Change zOrder of nodes after this one
-    int zOrder = node.zOrder;
-    CCArray* siblings = [node.parent children];
-    for (int i = zOrder+1; i < [siblings count]; i++)
-    {
-        CCNode* sibling = [siblings objectAtIndex:i];
-        sibling.zOrder -= 1;
+    CCArray* siblings = [[node parent] children];
+    for (CCNode* sibling in siblings) {
+        if ([sibling zOrder] > [node zOrder]) {
+            sibling.zOrder -= 1;
+        }
     }
     
     [node removeFromParentAndCleanup:YES];
