@@ -36,17 +36,21 @@
 }
 
 - (void) initShader {
-    CCGLProgram* p = [CCGLProgram programWithVertexShaderByteArray:ccPositionTextureColor_vert
-                                           fragmentShaderByteArray:[self fragmentShader]];
-    [p addAttribute:kCCAttributeNamePosition index:kCCVertexAttrib_Position];
-    [p addAttribute:kCCAttributeNameColor index:kCCVertexAttrib_Color];
-    [p addAttribute:kCCAttributeNameTexCoord index:kCCVertexAttrib_TexCoords];
-    [p link];
-    [p updateUniforms];
+    CCGLProgram* p = [[CCShaderCache sharedShaderCache] programForKey:@"hsv_program"];
+    if (p == nil) {
+        p = [CCGLProgram programWithVertexShaderByteArray:ccPositionTextureColor_vert
+                                  fragmentShaderByteArray:[self fragmentShader]];
+        [p addAttribute:kCCAttributeNamePosition index:kCCVertexAttrib_Position];
+        [p addAttribute:kCCAttributeNameColor index:kCCVertexAttrib_Color];
+        [p addAttribute:kCCAttributeNameTexCoord index:kCCVertexAttrib_TexCoords];
+        [p link];
+        [p updateUniforms];
+        [[CCShaderCache sharedShaderCache] addProgram:p forKey:@"hsv_program"];
+    }
     
-    hueLocation_ = glGetUniformLocation([p program], "u_hue");
-    saturationLocation_ = glGetUniformLocation([p program], "u_saturation");
-    brightnessLocation_ = glGetUniformLocation([p program], "u_brightness");
+    hueLocation_ = [p uniformLocationForName:@"u_hue"];
+    saturationLocation_ = [p uniformLocationForName:@"u_saturation"];
+    brightnessLocation_ = [p uniformLocationForName:@"u_brightness"];
     
     [self setShaderProgram:p];
     [self updateColor];
@@ -67,20 +71,26 @@
 - (void) updateHueMatrix {
     kmMat4 mat;
     hueRotation(&mat, [self hue]);
-    glUniformMatrix4fv(hueLocation_, 1, GL_FALSE, mat.mat);
+    [[self shaderProgram] setUniformLocation:hueLocation_
+                               withMatrix4fv:mat.mat
+                                       count:1];
 }
 
 - (void) updateSaturationMatrix {
     kmMat4 mat;
     modifySaturation(&mat, [self saturation] * 0.01);
-    glUniformMatrix4fv(saturationLocation_, 1, GL_FALSE, mat.mat);
+    [[self shaderProgram] setUniformLocation:saturationLocation_
+                               withMatrix4fv:mat.mat
+                                       count:1];
 }
 
 - (void) updateBrightnessMatrix {
     kmMat4 mat;
     CGFloat brightness = [self brightness] * 0.01;
     changeBrightness(&mat, brightness, brightness, brightness);
-    glUniformMatrix4fv(brightnessLocation_, 1, GL_FALSE, mat.mat);
+    [[self shaderProgram] setUniformLocation:brightnessLocation_
+                               withMatrix4fv:mat.mat
+                                       count:1];
 }
 
 - (void) setHue:(CGFloat) hue {
