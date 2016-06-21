@@ -10,6 +10,8 @@
 
 @interface CCSpriteWithHSV : CCSprite {
     GLuint hueLocation_;
+    GLuint saturationLocation_;
+    GLuint brightnessLocation_;
 }
 
 @property (nonatomic) CGFloat hue;

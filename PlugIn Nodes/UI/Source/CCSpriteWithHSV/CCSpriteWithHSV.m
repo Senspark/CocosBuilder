@@ -29,6 +29,8 @@
     }
     
     [self initShader];
+    [self setSaturation:100];
+    [self setBrightness:100];
     
     return self;
 }
@@ -43,6 +45,8 @@
     [p updateUniforms];
     
     hueLocation_ = glGetUniformLocation([p program], "u_hue");
+    saturationLocation_ = glGetUniformLocation([p program], "u_saturation");
+    brightnessLocation_ = glGetUniformLocation([p program], "u_brightness");
     
     [self setShaderProgram:p];
     [self updateColor];
@@ -55,10 +59,28 @@
 
 - (void) updateColorMatrix {
     [[self shaderProgram] use];
-    
+    [self updateHueMatrix];
+    [self updateSaturationMatrix];
+    [self updateBrightnessMatrix];
+}
+
+- (void) updateHueMatrix {
     kmMat4 mat;
     hueRotation(&mat, [self hue]);
     glUniformMatrix4fv(hueLocation_, 1, GL_FALSE, mat.mat);
+}
+
+- (void) updateSaturationMatrix {
+    kmMat4 mat;
+    modifySaturation(&mat, [self saturation] * 0.01);
+    glUniformMatrix4fv(saturationLocation_, 1, GL_FALSE, mat.mat);
+}
+
+- (void) updateBrightnessMatrix {
+    kmMat4 mat;
+    CGFloat brightness = [self brightness] * 0.01;
+    changeBrightness(&mat, brightness, brightness, brightness);
+    glUniformMatrix4fv(brightnessLocation_, 1, GL_FALSE, mat.mat);
 }
 
 - (void) setHue:(CGFloat) hue {
@@ -66,12 +88,16 @@
     [self updateColorMatrix];
 }
 
-- (void) setSaturation:(GLuint) saturation {
-    
+- (void) setSaturation:(CGFloat) saturation {
+    saturation = max(0, saturation);
+    _saturation = saturation;
+    [self updateColorMatrix];
 }
 
-- (void) setBrightness:(GLuint) brightness {
-    
+- (void) setBrightness:(CGFloat) brightness {
+    brightness = max(0, brightness);
+    _brightness = brightness;
+    [self updateColorMatrix];
 }
 
 - (GLchar*) fragmentShader {
@@ -86,10 +112,14 @@
                                                                              \n\
     uniform sampler2D CC_Texture0;                                           \n\
     uniform mat4 u_hue;                                                      \n\
+    uniform mat4 u_saturation;                                               \n\
+    uniform mat4 u_brightness;                                               \n\
                                                                              \n\
     void main() {                                                            \n\
         vec4 pixelColor = texture2D(CC_Texture0, v_texCoord);                \n\
         vec4 fragColor = u_hue * pixelColor;                                 \n\
+        fragColor = u_saturation * fragColor;                                \n\
+        fragColor = u_brightness * fragColor;                                \n\
         gl_FragColor = fragColor * v_fragmentColor;                          \n\
     }                                                                        \n\
     ";

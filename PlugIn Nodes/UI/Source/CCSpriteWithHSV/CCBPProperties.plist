@@ -36,7 +36,7 @@
 			<key>name</key>
 			<string>saturation</string>
 			<key>type</key>
-			<string>Byte</string>
+			<string>Float</string>
 		</dict>
 		<dict>
 			<key>displayName</key>
@@ -44,7 +44,7 @@
 			<key>name</key>
 			<string>brightness</string>
 			<key>type</key>
-			<string>Byte</string>
+			<string>Float</string>
 		</dict>
 	</array>
 	<key>propertiesOverridden</key>

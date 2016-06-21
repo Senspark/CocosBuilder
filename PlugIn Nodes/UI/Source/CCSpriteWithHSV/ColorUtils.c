@@ -92,12 +92,12 @@ kmMat4* hueRotation(kmMat4* m, float r) {
     // Sin = 1/sqrt(2).
     // Cos = 1/sqrt(2).
     kmMat4RotationX(&temp, M_PI_4);
-    kmMat4Multiply(&mat1, &mat0, &temp);
+    kmMat4Multiply(&mat1, &temp, &mat0);
 
     // Sin = -1/sqrt(3).
     // Cos = sqrt(2/3).
     kmMat4RotationY(&temp, -0.615479709);
-    kmMat4Multiply(&mat0, &mat1, &temp);
+    kmMat4Multiply(&mat0, &temp, &mat1);
 
     // Shear the space to make the luminance plane horizontal.
     float lx, ly, lz;
@@ -106,27 +106,27 @@ kmMat4* hueRotation(kmMat4* m, float r) {
     float zsx = lx / lz;
     float zsy = ly / lz;
     shearZMatrix(&temp, zsx, zsy);
-    kmMat4Multiply(&mat1, &mat0, &temp);
+    kmMat4Multiply(&mat1, &temp, &mat0);
 
     // Rotate the hue.
     float rad = r * M_PI / 180;
     kmMat4RotationZ(&temp, rad);
-    kmMat4Multiply(&mat0, &mat1, &temp);
+    kmMat4Multiply(&mat0, &temp, &mat1);
 
     // Unshear the space to put the luminance plane back.
     shearZMatrix(&temp, -zsx, -zsy);
-    kmMat4Multiply(&mat1, &mat0, &temp);
+    kmMat4Multiply(&mat1, &temp, &mat0);
 
     // Rotate the grey vector back into place.
     // Sin = 1/sqrt(3).
     // Cos = sqrt(2/3);
     kmMat4RotationY(&temp, 0.615479709);
-    kmMat4Multiply(&mat0, &mat1, &temp);
+    kmMat4Multiply(&mat0, &temp, &mat1);
 
     // Sin = -1/sqrt(2).
     // Cos = 1/sqrt(2).
     kmMat4RotationX(&temp, -M_PI_4);
-    kmMat4Multiply(&mat1, &mat0, &temp);
+    kmMat4Multiply(&mat1, &temp, &mat0);
 
     kmMat4Fill(m, mat1.mat);
     return m;
