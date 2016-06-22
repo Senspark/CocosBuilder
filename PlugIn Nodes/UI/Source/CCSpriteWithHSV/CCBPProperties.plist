@@ -46,6 +46,14 @@
 			<key>type</key>
 			<string>Float</string>
 		</dict>
+		<dict>
+			<key>displayName</key>
+			<string>Contrast</string>
+			<key>name</key>
+			<string>contrast</string>
+			<key>type</key>
+			<string>Float</string>
+		</dict>
 	</array>
 	<key>propertiesOverridden</key>
 	<array/>

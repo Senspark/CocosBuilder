@@ -29,8 +29,9 @@
     }
     
     [self initShader];
-    [self setSaturation:100];
-    [self setBrightness:100];
+    [self setSaturation:1];
+    [self setBrightness:0];
+    [self setContrast:1];
     
     return self;
 }
@@ -48,9 +49,7 @@
         [[CCShaderCache sharedShaderCache] addProgram:p forKey:@"hsv_program"];
     }
     
-    hueLocation_ = [p uniformLocationForName:@"u_hue"];
-    saturationLocation_ = [p uniformLocationForName:@"u_saturation"];
-    brightnessLocation_ = [p uniformLocationForName:@"u_brightness"];
+    hsvLocation_ = [p uniformLocationForName:@"u_hsv"];
     
     [self setShaderProgram:p];
     [self updateColor];
@@ -63,50 +62,64 @@
 
 - (void) updateColorMatrix {
     [[self shaderProgram] use];
-    [self updateHueMatrix];
-    [self updateSaturationMatrix];
-    [self updateBrightnessMatrix];
+    kmMat4 mat0, mat1;
+    kmMat4Identity(&mat0);
+    kmMat4Multiply(&mat1, &hueMatrix_, &mat0);
+    kmMat4Multiply(&mat0, &saturationMatrix_, &mat1);
+    kmMat4Multiply(&mat1, &brightnessMatrix_, &mat0);
+    kmMat4Multiply(&mat0, &contrastMatrix_, &mat1);
+    [[self shaderProgram] setUniformLocation:hsvLocation_
+                               withMatrix4fv:mat0.mat
+                                       count:1];
 }
 
 - (void) updateHueMatrix {
-    kmMat4 mat;
-    hueRotation(&mat, [self hue]);
-    [[self shaderProgram] setUniformLocation:hueLocation_
-                               withMatrix4fv:mat.mat
-                                       count:1];
+    hueRotation(&hueMatrix_, [self hue]);
 }
 
 - (void) updateSaturationMatrix {
-    kmMat4 mat;
-    modifySaturation(&mat, [self saturation] * 0.01);
-    [[self shaderProgram] setUniformLocation:saturationLocation_
-                               withMatrix4fv:mat.mat
-                                       count:1];
+    modifySaturation(&saturationMatrix_, [self saturation]);
 }
 
 - (void) updateBrightnessMatrix {
-    kmMat4 mat;
-    CGFloat brightness = [self brightness] * 0.01;
-    changeBrightness(&mat, brightness, brightness, brightness);
-    [[self shaderProgram] setUniformLocation:brightnessLocation_
-                               withMatrix4fv:mat.mat
-                                       count:1];
+    CGFloat brightness = [self brightness];
+    offsetRGB(&brightnessMatrix_, brightness, brightness, brightness);
+}
+
+- (void) updateContrastMatrix {
+    CGFloat contrast = [self contrast];
+    kmMat4 scaleMatrix;
+    scaleRGB(&scaleMatrix, contrast, contrast, contrast);
+    
+    kmMat4 offsetMatrix;
+    CGFloat offset = (1 - contrast) / 2;
+    offsetRGB(&offsetMatrix, offset, offset, offset);
+    
+    kmMat4Multiply(&contrastMatrix_, &offsetMatrix, &scaleMatrix);
 }
 
 - (void) setHue:(CGFloat) hue {
     _hue = hue;
+    [self updateHueMatrix];
     [self updateColorMatrix];
 }
 
 - (void) setSaturation:(CGFloat) saturation {
     saturation = max(0, saturation);
     _saturation = saturation;
+    [self updateSaturationMatrix];
     [self updateColorMatrix];
 }
 
 - (void) setBrightness:(CGFloat) brightness {
-    brightness = max(0, brightness);
     _brightness = brightness;
+    [self updateBrightnessMatrix];
+    [self updateColorMatrix];
+}
+
+- (void) setContrast:(CGFloat) contrast {
+    _contrast = contrast;
+    [self updateContrastMatrix];
     [self updateColorMatrix];
 }
 
@@ -121,15 +134,21 @@
     varying vec2 v_texCoord;                                                 \n\
                                                                              \n\
     uniform sampler2D CC_Texture0;                                           \n\
-    uniform mat4 u_hue;                                                      \n\
-    uniform mat4 u_saturation;                                               \n\
-    uniform mat4 u_brightness;                                               \n\
+    uniform mat4 u_hsv;                                                      \n\
                                                                              \n\
     void main() {                                                            \n\
         vec4 pixelColor = texture2D(CC_Texture0, v_texCoord);                \n\
-        vec4 fragColor = u_hue * pixelColor;                                 \n\
-        fragColor = u_saturation * fragColor;                                \n\
-        fragColor = u_brightness * fragColor;                                \n\
+                                                                             \n\
+        // Store the original alpha.                                         \n\
+        float alpha = pixelColor.w;                                          \n\
+                                                                             \n\
+        // Reset alpha to 1.0.                                               \n\
+        pixelColor.w = 1.0;                                                  \n\
+        vec4 fragColor = u_hsv * pixelColor;                                 \n\
+                                                                             \n\
+        // Restore the original alpha.                                       \n\
+        fragColor.w = alpha;                                                 \n\
+                                                                             \n\
         gl_FragColor = fragColor * v_fragmentColor;                          \n\
     }                                                                        \n\
     ";

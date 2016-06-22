@@ -13,6 +13,7 @@
 /// http://graficaobscura.com/matrix/index.html
 /// https://gist.github.com/lprhodes/1872328
 /// http://opensource.apple.com//source/cups/cups-91/filter/image-colorspace.c
+/// https://docs.rainmeter.net/tips/colormatrix-guide/
 
 struct kmMat4;
 typedef struct kmMat4 kmMat4;
@@ -21,14 +22,16 @@ typedef struct kmMat4 kmMat4;
 kmMat4* xformRGB(kmMat4* m, float r, float g, float b, float* tr, float* tg,
                  float* tb);
 
-/// Change brightness.
-kmMat4* changeBrightness(kmMat4* m, float rscale, float gscale, float bscale);
+/// Changes constrast.
+kmMat4* scaleRGB(kmMat4* m, float rscale, float gscale, float bscale);
 
-/// Convert to luminance.
+/// Converts to luminance.
 kmMat4* convertToLuminance(kmMat4* m);
 
+/// Changes saturation.
 kmMat4* modifySaturation(kmMat4* m, float s);
 
+/// Changes contrast.
 kmMat4* offsetRGB(kmMat4* m, float r, float g, float b);
 
 /// Rotates the hue components by @c r degrees.

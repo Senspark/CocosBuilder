@@ -33,7 +33,7 @@ kmMat4* xformRGB(kmMat4* m, float r, float g, float b, float* tr, float* tg,
     return m;
 }
 
-kmMat4* changeBrightness(kmMat4* m, float rscale, float gscale, float bscale) {
+kmMat4* scaleRGB(kmMat4* m, float rscale, float gscale, float bscale) {
     memset(m->mat, 0, sizeof(m->mat));
     m->mat[0] = rscale;
     m->mat[5] = gscale;
