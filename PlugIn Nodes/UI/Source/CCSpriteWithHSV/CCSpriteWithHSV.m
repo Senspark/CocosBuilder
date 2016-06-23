@@ -29,6 +29,7 @@
     }
     
     [self initShader];
+    [self setHue:0];
     [self setSaturation:1];
     [self setBrightness:0];
     [self setContrast:1];
