@@ -40,8 +40,8 @@
         return self;
     }
     
+    areRenderersInitialized_ = NO;
     _renderScale = 1.0;
-    [self initRenderers];
     
     return self;
 }
@@ -99,6 +99,13 @@
     [self addChild:verticalRenderer_ z:-1];
 }
 
+- (void) lazyInitRenderers {
+    if (horizontalRenderer_ == nil) {
+        [self initRenderers];
+        areRenderersInitialized_ = YES;
+    }
+}
+
 - (void) resetRenderers {
     [horizontalRenderer_ removeFromParent];
     [verticalRenderer_ removeFromParent];
@@ -110,8 +117,10 @@
         return;
     }
     
-    [self resetRenderers];
-    [self initRenderers];
+    if (areRenderersInitialized_) {
+        [self resetRenderers];
+        [self initRenderers];
+    }
 }
 
 - (CCNode*) rootNode {
@@ -130,17 +139,18 @@
     }
     _renderScale = scale;
     
-    [self resetRenderers];
-    [self initRenderers];
+    if (areRenderersInitialized_) {
+        [self resetRenderers];
+        [self initRenderers];
+    }
 }
 
 - (void) visit {
     if ([self visible]) {
+        [self lazyInitRenderers];
         [self adaptSceneSize];
         
         [self setVisible:NO];
-        [verticalRenderer_ setVisible:NO];
-        
         [horizontalRenderer_ beginWithClear:0 g:0 b:0 a:0];
         
         CCNode* rootNode = [self rootNode];
@@ -151,10 +161,8 @@
         [rootNode setScale:originalScale];
         
         [horizontalRenderer_ end];
-        
-        [verticalRenderer_ setVisible:YES];
         [self setVisible:YES];
-        
+
         [verticalRenderer_ beginWithClear:0 g:0 b:0 a:0];
         [[horizontalRenderer_ sprite] visit];
         [verticalRenderer_ end];

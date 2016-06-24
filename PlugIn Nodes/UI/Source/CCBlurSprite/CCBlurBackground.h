@@ -27,6 +27,7 @@
 @class CCRenderTexture;
 
 @interface CCBlurBackground : CCNodeV3 {
+    BOOL areRenderersInitialized_;
     CGSize sceneSize_;
     
     CCRenderTexture* verticalRenderer_;
