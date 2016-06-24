@@ -53,6 +53,7 @@
 		6F8F5BEC1CF2E8950023C07F /* TransformConstraintData.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F8F5BD01CF2E8950023C07F /* TransformConstraintData.c */; };
 		6F8F5BF21CF2F6AD0023C07F /* InspectorListBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F8F5BF01CF2F6AD0023C07F /* InspectorListBox.m */; };
 		6F8F5BF31CF2F6AD0023C07F /* InspectorListBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F8F5BF11CF2F6AD0023C07F /* InspectorListBox.xib */; };
+		6FB731BB1D1BF15A000B7397 /* CCBlurSprite.ccbPlugNode in Copy PlugIns */ = {isa = PBXBuildFile; fileRef = 6FB731BA1D1BF150000B7397 /* CCBlurSprite.ccbPlugNode */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6FBF61741D17D81A00257791 /* CCSpriteWithHSV.ccbPlugNode in Copy PlugIns */ = {isa = PBXBuildFile; fileRef = 6FBF61731D17D80600257791 /* CCSpriteWithHSV.ccbPlugNode */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6FC19AC01CF835790002D68B /* CCCheckBox.ccbPlugNode in Copy PlugIns */ = {isa = PBXBuildFile; fileRef = 6FC19ABF1CF835790002D68B /* CCCheckBox.ccbPlugNode */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6FC1BD981CD9AD5700DE717C /* libcocos2d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FC1BD851CD9AD4400DE717C /* libcocos2d.a */; };
@@ -638,6 +639,20 @@
 			remoteGlobalIDString = 6F843E4C1CDB994C008B2EC4;
 			remoteInfo = CCText;
 		};
+		6FB731AB1D1BF150000B7397 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6FC2417F1CDB5896009A3AAD /* UI.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6FB7319C1D1BF0B1000B7397;
+			remoteInfo = CCBlurSprite;
+		};
+		6FB731B91D1BF150000B7397 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6FC2417F1CDB5896009A3AAD /* UI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6FB731A71D1BF0B1000B7397;
+			remoteInfo = CCBlurSprite;
+		};
 		6FBF61641D17D80600257791 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6FC2417F1CDB5896009A3AAD /* UI.xcodeproj */;
@@ -981,6 +996,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				6FB731BB1D1BF15A000B7397 /* CCBlurSprite.ccbPlugNode in Copy PlugIns */,
 				6FBF61741D17D81A00257791 /* CCSpriteWithHSV.ccbPlugNode in Copy PlugIns */,
 				6FC19AC01CF835790002D68B /* CCCheckBox.ccbPlugNode in Copy PlugIns */,
 				6F17FB431CF2AC0B00CFCD14 /* CCSkeletonAnimation.ccbPlugNode in Copy PlugIns */,
@@ -2224,6 +2240,7 @@
 				6FD294331CE1A131009ECBFA /* CCNodeV3.ccbPlugNode */,
 				6F17FAD21CF2A5F000CFCD14 /* CCSkeletonAnimation.ccbPlugNode */,
 				6FBF61731D17D80600257791 /* CCSpriteWithHSV.ccbPlugNode */,
+				6FB731BA1D1BF150000B7397 /* CCBlurSprite.ccbPlugNode */,
 				6FD2944B1CE1B8B8009ECBFA /* libcocos2d-ui.a */,
 			);
 			name = Products;
@@ -3937,6 +3954,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				6FB731AC1D1BF150000B7397 /* PBXTargetDependency */,
 				6FBF61651D17D80600257791 /* PBXTargetDependency */,
 				6FC19ACC1CF835860002D68B /* PBXTargetDependency */,
 				6F17FAC41CF2A5F000CFCD14 /* PBXTargetDependency */,
@@ -4329,6 +4347,13 @@
 			fileType = wrapper.cfbundle;
 			path = CCText.ccbPlugNode;
 			remoteRef = 6F843E5F1CDB99C2008B2EC4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6FB731BA1D1BF150000B7397 /* CCBlurSprite.ccbPlugNode */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CCBlurSprite.ccbPlugNode;
+			remoteRef = 6FB731B91D1BF150000B7397 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		6FBF61731D17D80600257791 /* CCSpriteWithHSV.ccbPlugNode */ = {
@@ -5286,6 +5311,11 @@
 			isa = PBXTargetDependency;
 			name = CCText;
 			targetProxy = 6F843E6C1CDB99CC008B2EC4 /* PBXContainerItemProxy */;
+		};
+		6FB731AC1D1BF150000B7397 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CCBlurSprite;
+			targetProxy = 6FB731AB1D1BF150000B7397 /* PBXContainerItemProxy */;
 		};
 		6FBF61651D17D80600257791 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
