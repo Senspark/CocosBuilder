@@ -27,7 +27,9 @@
 @class CCRenderTexture;
 
 @interface CCBlurBackground : CCNodeV3 {
-    BOOL areRenderersInitialized_;
+    BOOL rendererDirty_;
+    BOOL rendererInitialized_;
+    
     CGSize sceneSize_;
     
     CCRenderTexture* verticalRenderer_;
@@ -35,5 +37,7 @@
 }
 
 @property (nonatomic) CGFloat renderScale;
+@property (nonatomic) CGFloat sigma;
+@property (nonatomic) NSInteger blurRadius;
 
 @end

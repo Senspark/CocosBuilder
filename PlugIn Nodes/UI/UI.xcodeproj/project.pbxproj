@@ -11,6 +11,7 @@
 		6F17FAB71CF2A52000CFCD14 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FC2419C1CDB5922009A3AAD /* InfoPlist.strings */; };
 		6F17FAC21CF2A56600CFCD14 /* CCBPProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F17FABE1CF2A54C00CFCD14 /* CCBPProperties.plist */; };
 		6F17FB421CF2A9E300CFCD14 /* CCSkeletonAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F17FAC01CF2A54C00CFCD14 /* CCSkeletonAnimation.m */; };
+		6F1A741C1D2064BB000B0540 /* BlurUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F1A741B1D2064BB000B0540 /* BlurUtils.m */; };
 		6F6776C81D18F7F100D0F111 /* ColorUtils.c in Sources */ = {isa = PBXBuildFile; fileRef = 6FAFD4DF1D18CE550031045D /* ColorUtils.c */; };
 		6F6776C91D18F88B00D0F111 /* CCSpriteWithHSV.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FBF61521D17D3B900257791 /* CCSpriteWithHSV.m */; };
 		6F7752741CDC9A8800BF74AF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3DEFB1314FFD66C00B98586 /* Cocoa.framework */; };
@@ -54,6 +55,8 @@
 		6F17FABE1CF2A54C00CFCD14 /* CCBPProperties.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = CCBPProperties.plist; path = CCSkeletonAnimation/CCBPProperties.plist; sourceTree = "<group>"; };
 		6F17FABF1CF2A54C00CFCD14 /* CCSkeletonAnimation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCSkeletonAnimation.h; path = CCSkeletonAnimation/CCSkeletonAnimation.h; sourceTree = "<group>"; };
 		6F17FAC01CF2A54C00CFCD14 /* CCSkeletonAnimation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CCSkeletonAnimation.m; path = CCSkeletonAnimation/CCSkeletonAnimation.m; sourceTree = "<group>"; };
+		6F1A741B1D2064BB000B0540 /* BlurUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlurUtils.m; path = CCBlurBackground/BlurUtils.m; sourceTree = "<group>"; };
+		6F1A741D1D2064D2000B0540 /* BlurUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BlurUtils.h; path = CCBlurBackground/BlurUtils.h; sourceTree = "<group>"; };
 		6F375FB11CDCAF9F00D17533 /* CCBPProperties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CCBPProperties.plist; path = CCLayout/CCBPProperties.plist; sourceTree = "<group>"; };
 		6F77526E1CDC9A8200BF74AF /* CCLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CCLayout.m; path = CCLayout/CCLayout.m; sourceTree = "<group>"; };
 		6F77527D1CDC9A8800BF74AF /* CCLayout.ccbPlugNode */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CCLayout.ccbPlugNode; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,9 +74,9 @@
 		6F843E811CDBCBD0008B2EC4 /* CCWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCWidget.m; sourceTree = "<group>"; };
 		6FAFD4DE1D18CE440031045D /* ColorUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ColorUtils.h; path = CCSpriteWithHSV/ColorUtils.h; sourceTree = "<group>"; };
 		6FAFD4DF1D18CE550031045D /* ColorUtils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ColorUtils.c; path = CCSpriteWithHSV/ColorUtils.c; sourceTree = "<group>"; };
-		6FB731991D1BF0A9000B7397 /* CCBlurBackground.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCBlurBackground.h; path = CCBlurSprite/CCBlurBackground.h; sourceTree = "<group>"; };
-		6FB7319A1D1BF0A9000B7397 /* CCBlurBackground.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CCBlurBackground.m; path = CCBlurSprite/CCBlurBackground.m; sourceTree = "<group>"; };
-		6FB7319B1D1BF0A9000B7397 /* CCBPProperties.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = CCBPProperties.plist; path = CCBlurSprite/CCBPProperties.plist; sourceTree = "<group>"; };
+		6FB731991D1BF0A9000B7397 /* CCBlurBackground.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCBlurBackground.h; path = CCBlurBackground/CCBlurBackground.h; sourceTree = "<group>"; };
+		6FB7319A1D1BF0A9000B7397 /* CCBlurBackground.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CCBlurBackground.m; path = CCBlurBackground/CCBlurBackground.m; sourceTree = "<group>"; };
+		6FB7319B1D1BF0A9000B7397 /* CCBPProperties.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = CCBPProperties.plist; path = CCBlurBackground/CCBPProperties.plist; sourceTree = "<group>"; };
 		6FB731A71D1BF0B1000B7397 /* CCBlurBackground.ccbPlugNode */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CCBlurBackground.ccbPlugNode; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FBF61521D17D3B900257791 /* CCSpriteWithHSV.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CCSpriteWithHSV.m; path = CCSpriteWithHSV/CCSpriteWithHSV.m; sourceTree = "<group>"; };
 		6FBF61531D17D3DE00257791 /* CCSpriteWithHSV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCSpriteWithHSV.h; path = CCSpriteWithHSV/CCSpriteWithHSV.h; sourceTree = "<group>"; };
@@ -341,6 +344,8 @@
 				6FB731991D1BF0A9000B7397 /* CCBlurBackground.h */,
 				6FB7319A1D1BF0A9000B7397 /* CCBlurBackground.m */,
 				6FB7319B1D1BF0A9000B7397 /* CCBPProperties.plist */,
+				6F1A741B1D2064BB000B0540 /* BlurUtils.m */,
+				6F1A741D1D2064D2000B0540 /* BlurUtils.h */,
 			);
 			name = CCBlurSprite;
 			sourceTree = "<group>";
@@ -1208,6 +1213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F1A741C1D2064BB000B0540 /* BlurUtils.m in Sources */,
 				6FD2944D1CE1B8E2009ECBFA /* CCUIScrollView.m in Sources */,
 				6F6776C81D18F7F100D0F111 /* ColorUtils.c in Sources */,
 				6FD294501CE1B8E2009ECBFA /* CCButton.m in Sources */,
