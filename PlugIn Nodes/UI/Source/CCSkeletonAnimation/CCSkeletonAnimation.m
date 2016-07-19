@@ -30,6 +30,7 @@ NSString* const kNoAnimation = @"None";
 
 @implementation CCSkeletonAnimation
 
+@synthesize skeleton = skeleton_;
 @synthesize animationList = availableAnimations_;
 @synthesize skinList = availableSkins_;
 
@@ -56,6 +57,9 @@ NSString* const kNoAnimation = @"None";
     _animation = kNoAnimation;
     _skin = nil;
     
+    _debugSlotsEnabled = NO;
+    _debugBonesEnabled = NO;
+    
     return self;
 }
 
@@ -80,8 +84,10 @@ NSString* const kNoAnimation = @"None";
         
         // Keep time scale.
         [skeleton_ setTimeScale:[self timeScale]];
+        [skeleton_ setDebugBones:[self debugBonesEnabled]];
+        [skeleton_ setDebugSlots:[self debugBonesEnabled]];
         
-        [self addChild:skeleton_];
+        [self addChild:skeleton_ z:-1];
         
         if (cleanUp) {
             // Update json or atlas.
@@ -118,9 +124,11 @@ NSString* const kNoAnimation = @"None";
         skeleton_ = [SkeletonAnimation skeletonWithFile:[self dataFile]
                                               atlasFile:[self atlasFile]
                                                   scale:[self animationScale]];
+        [skeleton_ setDebugBones:[self debugBonesEnabled]];
+        [skeleton_ setDebugSlots:[self debugBonesEnabled]];
         [skeleton_ setTimeScale:[self timeScale]];
         [skeleton_ setSkin:[self skin]];
-        [self addChild:skeleton_];
+        [self addChild:skeleton_ z:-1];
     } else {
         [self restartAnimation];
     }
@@ -216,6 +224,22 @@ NSString* const kNoAnimation = @"None";
     [_skin autorelease];
     _skin = [skin copy];
     [skeleton_ setSkin:_skin];
+}
+
+- (void) setDebugBonesEnabled:(BOOL) enabled {
+    if (_debugBonesEnabled == enabled) {
+        return;
+    }
+    _debugBonesEnabled = enabled;
+    [skeleton_ setDebugBones:enabled];
+}
+
+- (void) setDebugSlotsEnabled:(BOOL) enabled {
+    if (_debugSlotsEnabled == enabled) {
+        return;
+    }
+    _debugSlotsEnabled = enabled;
+    [skeleton_ setDebugSlots:enabled];
 }
 
 - (void) setValue:(id) value forUndefinedKey:(NSString*) key {

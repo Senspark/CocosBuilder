@@ -27,11 +27,13 @@
 @class SkeletonAnimation;
 
 @interface CCSkeletonAnimation : CCNodeV3 {
-    SkeletonAnimation* skeleton_;    
-    
+    SkeletonAnimation* skeleton_;
+
     NSMutableArray<NSString*>* availableSkins_;
     NSMutableArray<NSString*>* availableAnimations_;
 }
+
+@property (nonatomic, readonly) SkeletonAnimation* skeleton;
 
 @property (nonatomic, copy) NSString* dataFile;
 @property (nonatomic, copy) NSString* atlasFile;
@@ -44,5 +46,8 @@
 
 @property (nonatomic, readonly) NSArray<NSString*>* skinList;
 @property (nonatomic, copy) NSString* skin;
+
+@property (nonatomic) BOOL debugBonesEnabled;
+@property (nonatomic) BOOL debugSlotsEnabled;
 
 @end
