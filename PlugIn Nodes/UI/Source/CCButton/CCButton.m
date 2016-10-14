@@ -191,6 +191,14 @@ const NSInteger kTitleZOrder = -1;
 
 - (void) textureScaleChangedWithSize:(CCScale9Sprite*) button {
     [button setPreferedSize:[self contentSize]];
+    
+    CGFloat width = [self contentSize].width;
+    CGFloat height = [self contentSize].height;
+    [button setInsetTop:height / 3];
+    [button setInsetBottom:height / 3];
+    [button setInsetLeft:width / 3];
+    [button setInsetRight:width / 3];
+    
 //    [button setPosition:CGPointMake([self contentSize].width / 2,
 //                                    [self contentSize].height / 2)];
 }
