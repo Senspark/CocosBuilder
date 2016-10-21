@@ -151,6 +151,16 @@
 			<string>Check</string>
 		</dict>
 		<dict>
+			<key>default</key>
+			<integer>0</integer>
+			<key>displayName</key>
+			<string>Brightness</string>
+			<key>name</key>
+			<string>pressedSpriteFrameBrightness</string>
+			<key>type</key>
+			<string>Float</string>
+		</dict>
+		<dict>
 			<key>affectsProperties</key>
 			<array>
 				<string>contentSize</string>

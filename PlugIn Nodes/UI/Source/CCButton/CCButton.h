@@ -24,39 +24,41 @@
 
 #import "CCWidget.h"
 
+@class CCSpriteWithHSV;
 @class CCScale9Sprite;
+@class CCScale9SpriteWithHSV;
 @class CCLabelTTF;
 @class CCSpriteFrame;
 
 typedef NS_ENUM(NSInteger, CCButtonState) {
-    CCButtonStateNormal     = 1 << 1,
-    CCButtonStatePressed    = 1 << 2,
-    CCButtonStateDisabled   = 1 << 3
+    CCButtonStateNormal = 1 << 1,
+    CCButtonStatePressed = 1 << 2,
+    CCButtonStateDisabled = 1 << 3
 };
 
 @interface CCButton : CCWidget {
     CCLabelTTF* titleRenderer_;
-    
+
     CCScale9Sprite* buttonNormalRenderer_;
-    CCScale9Sprite* buttonPressedRenderer_;
+    CCScale9SpriteWithHSV* buttonPressedRenderer_;
     CCScale9Sprite* buttonDisabledRenderer_;
-    
+
     CCSpriteFrame* normalFrame_;
     CCSpriteFrame* pressedFrame_;
     CCSpriteFrame* disabledFrame_;
-    
+
     BOOL normalTextureAdaptDirty_;
     BOOL pressedTextureAdaptDirty_;
     BOOL disabledTextureAdaptDirty_;
-    
+
     CGSize normalTextureSize_;
     CGSize pressedTextureSize_;
     CGSize disabledTextureSize_;
-    
+
     BOOL normalTextureLoaded_;
     BOOL pressedTextureLoaded_;
     BOOL disabledTextureLoaded_;
-    
+
     BOOL prevIgnoreSize_;
 }
 
@@ -74,9 +76,11 @@ typedef NS_ENUM(NSInteger, CCButtonState) {
 @property (nonatomic) BOOL pressedSpriteFrameEnabled;
 @property (nonatomic) BOOL disabledSpriteFrameEnabled;
 
+@property (nonatomic) CGFloat pressedSpriteFrameBrightness;
+
 @property (nonatomic, readonly) CCLabelTTF* titleRenderer;
 @property (nonatomic, readonly) CCScale9Sprite* normalRenderer;
-@property (nonatomic, readonly) CCScale9Sprite* pressedRenderer;
+@property (nonatomic, readonly) CCScale9SpriteWithHSV* pressedRenderer;
 @property (nonatomic, readonly) CCScale9Sprite* disabledRenderer;
 
 @property (nonatomic, readonly) CGSize normalSize;

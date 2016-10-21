@@ -23,8 +23,12 @@
  */
 
 #import "CCButton.h"
-#import "CCScale9Sprite.h"
+#import "CCScale9SpriteWithHSV.h"
+#import "CCSpriteWithHSV.h"
+#import "ShaderUtils.h"
 #import "cocos2d.h"
+
+#include "ColorUtils.h"
 
 const NSInteger kBackgroundSpriteZOrder = -2;
 const NSInteger kTitleZOrder = -1;
@@ -35,56 +39,57 @@ const NSInteger kTitleZOrder = -1;
 @synthesize pressedRenderer = buttonPressedRenderer_;
 @synthesize disabledRenderer = buttonDisabledRenderer_;
 
-- (void) dealloc {
+- (void)dealloc {
     [super dealloc];
 }
 
-- (id) init {
+- (id)init {
     self = [super init];
     if (self == nil) {
         return self;
     }
-    
+
     _zoomScale = 0.1;
     prevIgnoreSize_ = YES;
     _scale9Enabled = NO;
     _pressedActionEnabled = NO;
-    
+
     normalTextureAdaptDirty_ = YES;
     pressedTextureAdaptDirty_ = YES;
     disabledTextureAdaptDirty_ = YES;
-    
+
     normalTextureLoaded_ = NO;
     pressedTextureLoaded_ = NO;
     disabledTextureLoaded_ = NO;
-    
+
     [self setTouchEnabled:YES];
     [self setSwallowTouches:YES];
-    
+
     [self createTitleRenderer];
-    
+
     return self;
 }
 
-- (void) initRenderer {
+- (void)initRenderer {
     buttonNormalRenderer_ = [[[CCScale9Sprite alloc] init] autorelease];
-    buttonPressedRenderer_ = [[[CCScale9Sprite alloc] init] autorelease];
+    buttonPressedRenderer_ = [[[CCScale9SpriteWithHSV alloc] init] autorelease];
     buttonDisabledRenderer_ = [[[CCScale9Sprite alloc] init] autorelease];
-    
+
+    [self setPressedSpriteFrameBrightness:0];
+
     [self addChild:buttonNormalRenderer_ z:kBackgroundSpriteZOrder];
     [self addChild:buttonPressedRenderer_ z:kBackgroundSpriteZOrder];
     [self addChild:buttonDisabledRenderer_ z:kBackgroundSpriteZOrder];
 }
 
-- (void) createTitleRenderer {
-    titleRenderer_ = [CCLabelTTF labelWithString:@"Title"
-                                        fontName:@"Helvetica"
-                                        fontSize:12];
+- (void)createTitleRenderer {
+    titleRenderer_ =
+        [CCLabelTTF labelWithString:@"Title" fontName:@"Helvetica" fontSize:12];
     [titleRenderer_ setAnchorPoint:CGPointMake(0.5, 0.5)];
     [self addChild:titleRenderer_ z:kTitleZOrder];
 }
 
-- (void) setupNormalTexture:(BOOL) textureLoaded {
+- (void)setupNormalTexture:(BOOL)textureLoaded {
     normalTextureSize_ = [buttonNormalRenderer_ contentSize];
     [self updateChildrenDisplayRGBA];
     if ([self unifySizeEnabled]) {
@@ -98,28 +103,28 @@ const NSInteger kTitleZOrder = -1;
     normalTextureAdaptDirty_ = YES;
 }
 
-- (void) setupPressedTexture:(BOOL) textureLoaded {
+- (void)setupPressedTexture:(BOOL)textureLoaded {
     pressedTextureSize_ = [buttonPressedRenderer_ contentSize];
     [self updateChildrenDisplayRGBA];
     pressedTextureLoaded_ = textureLoaded;
     pressedTextureAdaptDirty_ = YES;
 }
 
-- (void) setupDisabledTexture:(BOOL) textureLoaded {
+- (void)setupDisabledTexture:(BOOL)textureLoaded {
     disabledTextureSize_ = [buttonDisabledRenderer_ contentSize];
     [self updateChildrenDisplayRGBA];
     disabledTextureLoaded_ = textureLoaded;
     disabledTextureAdaptDirty_ = YES;
 }
 
-- (void) onPressStateChangedToNormal {
+- (void)onPressStateChangedToNormal {
     [buttonNormalRenderer_ setVisible:YES];
     [buttonPressedRenderer_ setVisible:NO];
     [buttonDisabledRenderer_ setVisible:NO];
     ///
 }
 
-- (void) onPressStateChangedToPressed {
+- (void)onPressStateChangedToPressed {
     if (pressedTextureLoaded_) {
         [buttonNormalRenderer_ setVisible:NO];
         [buttonPressedRenderer_ setVisible:YES];
@@ -131,7 +136,7 @@ const NSInteger kTitleZOrder = -1;
     }
 }
 
-- (void) onPressStateChangedToDisabled {
+- (void)onPressStateChangedToDisabled {
     if (disabledTextureLoaded_ == NO) {
         if (normalTextureLoaded_) {
             ///
@@ -143,13 +148,13 @@ const NSInteger kTitleZOrder = -1;
     [buttonPressedRenderer_ setVisible:NO];
 }
 
-- (void) updateTitleLocation {
+- (void)updateTitleLocation {
     CGFloat width = [self contentSize].width;
     CGFloat height = [self contentSize].height;
     [titleRenderer_ setPosition:CGPointMake(width / 2, height / 2)];
 }
 
-- (void) updateContentSize {
+- (void)updateContentSize {
     if ([self unifySizeEnabled]) {
         if ([self scale9Enabled]) {
             [super setContentSize_super:[self customSize]];
@@ -164,17 +169,17 @@ const NSInteger kTitleZOrder = -1;
     }
 }
 
-- (void) onSizeChanged {
+- (void)onSizeChanged {
     [super onSizeChanged];
     [self updateTitleLocation];
     normalTextureAdaptDirty_ = YES;
     pressedTextureAdaptDirty_ = YES;
     disabledTextureAdaptDirty_ = YES;
-    
+
     [self textureScaleChangedWithSize:buttonNormalRenderer_];
 }
 
-- (void) adaptRenderers {
+- (void)adaptRenderers {
     if (normalTextureAdaptDirty_) {
         [self textureScaleChangedWithSize:buttonNormalRenderer_];
         normalTextureAdaptDirty_ = NO;
@@ -189,21 +194,21 @@ const NSInteger kTitleZOrder = -1;
     }
 }
 
-- (void) textureScaleChangedWithSize:(CCScale9Sprite*) button {
+- (void)textureScaleChangedWithSize:(CCScale9Sprite*)button {
     [button setPreferedSize:[self contentSize]];
-    
+
     CGFloat width = [self contentSize].width;
     CGFloat height = [self contentSize].height;
     [button setInsetTop:height / 3];
     [button setInsetBottom:height / 3];
     [button setInsetLeft:width / 3];
     [button setInsetRight:width / 3];
-    
-//    [button setPosition:CGPointMake([self contentSize].width / 2,
-//                                    [self contentSize].height / 2)];
+
+    //    [button setPosition:CGPointMake([self contentSize].width / 2,
+    //                                    [self contentSize].height / 2)];
 }
 
-- (void) setTitleText:(NSString*) text {
+- (void)setTitleText:(NSString*)text {
     if ([text isEqualToString:[self titleText]]) {
         return;
     }
@@ -212,39 +217,39 @@ const NSInteger kTitleZOrder = -1;
     [self updateTitleLocation];
 }
 
-- (NSString*) titleText {
+- (NSString*)titleText {
     return [titleRenderer_ string];
 }
 
-- (void) setTitleColor:(ccColor3B) color {
+- (void)setTitleColor:(ccColor3B)color {
     [titleRenderer_ setColor:color];
 }
 
-- (ccColor3B) titleColor {
+- (ccColor3B)titleColor {
     return [titleRenderer_ color];
 }
 
-- (void) setTitleFontSize:(CGFloat) size {
+- (void)setTitleFontSize:(CGFloat)size {
     [titleRenderer_ setFontSize:size];
     [self updateContentSize];
 }
 
-- (CGFloat) titleFontSize {
+- (CGFloat)titleFontSize {
     return [titleRenderer_ fontSize];
 }
 
-- (void) setTitleFontName:(NSString*) fontName {
+- (void)setTitleFontName:(NSString*)fontName {
     if ([fontName length] > 0) {
         [titleRenderer_ setFontName:fontName];
         [self updateContentSize];
     }
 }
 
-- (NSString*) titleFontName {
+- (NSString*)titleFontName {
     return [titleRenderer_ fontName];
 }
 
-- (void) setIgnoreContentAdaptWithSize:(BOOL) ignore {
+- (void)setIgnoreContentAdaptWithSize:(BOOL)ignore {
     if ([self unifySizeEnabled]) {
         return [self updateContentSize];
     }
@@ -254,7 +259,7 @@ const NSInteger kTitleZOrder = -1;
     }
 }
 
-- (void) setScale9Enabled:(BOOL) enabled {
+- (void)setScale9Enabled:(BOOL)enabled {
     if ([self scale9Enabled] == enabled) {
         return;
     }
@@ -268,27 +273,27 @@ const NSInteger kTitleZOrder = -1;
     }
     brightStyle_ = CCWidgetBrightStyleNone;
     [self setBright:[self bright]];
-    
+
     normalTextureAdaptDirty_ = YES;
     pressedTextureAdaptDirty_ = YES;
     disabledTextureAdaptDirty_ = YES;
 }
 
-- (CCNode*) virtualRenderer {
+- (CCNode*)virtualRenderer {
     if ([self bright]) {
         switch (brightStyle_) {
-            case CCWidgetBrightStyleNormal:
-                return [self normalRenderer];
-            case CCWidgetBrightStyleHighlight:
-                return [self pressedRenderer];
-            default:
-                return nil;
+        case CCWidgetBrightStyleNormal:
+            return [self normalRenderer];
+        case CCWidgetBrightStyleHighlight:
+            return [self pressedRenderer];
+        default:
+            return nil;
         }
     }
     return [self disabledRenderer];
 }
 
-- (CGSize) virtualRendererSize {
+- (CGSize)virtualRendererSize {
     if ([self unifySizeEnabled]) {
         return [self normalSize];
     }
@@ -299,36 +304,36 @@ const NSInteger kTitleZOrder = -1;
     return normalTextureSize_;
 }
 
-- (void) resetNormalRenderer {
+- (void)resetNormalRenderer {
     normalTextureSize_ = CGSizeZero;
     normalTextureLoaded_ = NO;
     normalTextureAdaptDirty_ = NO;
 }
 
-- (void) resetPressedRenderer {
+- (void)resetPressedRenderer {
     pressedTextureSize_ = CGSizeZero;
     pressedTextureLoaded_ = NO;
     pressedTextureAdaptDirty_ = NO;
 }
 
-- (void) resetDisabledRenderer {
+- (void)resetDisabledRenderer {
     disabledTextureSize_ = CGSizeZero;
     disabledTextureLoaded_ = NO;
     disabledTextureAdaptDirty_ = NO;
 }
 
-- (CCLabelTTF*) titleRenderer {
+- (CCLabelTTF*)titleRenderer {
     return titleRenderer_;
 }
 
-- (CGSize) normalSize {
+- (CGSize)normalSize {
     CGSize titleSize = [titleRenderer_ contentSize];
     CGSize imageSize = [[self normalRenderer] contentSize];
     return CGSizeMake(max(titleSize.width, imageSize.width),
                       max(titleSize.height, imageSize.height));
 }
 
-- (void) setNormalSpriteFrameEnabled:(BOOL) enabled {
+- (void)setNormalSpriteFrameEnabled:(BOOL)enabled {
     _normalSpriteFrameEnabled = enabled;
     [buttonNormalRenderer_ setVisible:enabled];
     if (enabled) {
@@ -339,7 +344,7 @@ const NSInteger kTitleZOrder = -1;
     [self updateContentSize];
 }
 
-- (void) setPressedSpriteFrameEnabled:(BOOL) enabled {
+- (void)setPressedSpriteFrameEnabled:(BOOL)enabled {
     _pressedSpriteFrameEnabled = enabled;
     [buttonPressedRenderer_ setVisible:enabled];
     if (enabled) {
@@ -349,7 +354,7 @@ const NSInteger kTitleZOrder = -1;
     }
 }
 
-- (void) setDisabledSpriteFrameEnabled:(BOOL) enabled {
+- (void)setDisabledSpriteFrameEnabled:(BOOL)enabled {
     _disabledSpriteFrameEnabled = enabled;
     [buttonDisabledRenderer_ setVisible:enabled];
     if (enabled) {
@@ -359,7 +364,15 @@ const NSInteger kTitleZOrder = -1;
     }
 }
 
-- (void) setNormalSpriteFrame:(CCSpriteFrame*) frame {
+- (CGFloat)pressedSpriteFrameBrightness {
+    return [[self pressedRenderer] brightness];
+}
+
+- (void)setPressedSpriteFrameBrightness:(CGFloat)brightness {
+    [[self pressedRenderer] setBrightness:brightness];
+}
+
+- (void)setNormalSpriteFrame:(CCSpriteFrame*)frame {
     NSCAssert(frame != nil, @"...");
     [normalFrame_ autorelease];
     normalFrame_ = [frame retain];
@@ -368,7 +381,7 @@ const NSInteger kTitleZOrder = -1;
     [self setupNormalTexture:YES];
 }
 
-- (void) setPressedSpriteFrame:(CCSpriteFrame*) frame {
+- (void)setPressedSpriteFrame:(CCSpriteFrame*)frame {
     NSCAssert(frame != nil, @"...");
     [pressedFrame_ autorelease];
     pressedFrame_ = [frame retain];
@@ -377,7 +390,7 @@ const NSInteger kTitleZOrder = -1;
     [self setupPressedTexture:YES];
 }
 
-- (void) setDisabledSpriteFrame:(CCSpriteFrame*) frame {
+- (void)setDisabledSpriteFrame:(CCSpriteFrame*)frame {
     NSCAssert(frame != nil, @"...");
     [disabledFrame_ autorelease];
     disabledFrame_ = [frame retain];
@@ -386,11 +399,11 @@ const NSInteger kTitleZOrder = -1;
     [self setupDisabledTexture:YES];
 }
 
-- (void) setValue:(id) value forUndefinedKey:(NSString*) key {
+- (void)setValue:(id)value forUndefinedKey:(NSString*)key {
     [super setValue:value forUndefinedKey:key];
 }
 
-- (id) valueForUndefinedKey:(NSString*) key {
+- (id)valueForUndefinedKey:(NSString*)key {
     return [super valueForUndefinedKey:key];
 }
 

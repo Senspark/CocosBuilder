@@ -28,7 +28,7 @@
 
 #import "cocos2d.h"
 
-#include "BlurUtils.h"
+#import "ShaderUtils.h"
 
 @implementation CCBlurBackground
 
@@ -36,27 +36,27 @@
 @synthesize sigma = sigma_;
 @synthesize blurRadius = blurRadius_;
 
-- (void) dealloc {
+- (void)dealloc {
     [super dealloc];
 }
 
-- (id) init {
+- (id)init {
     self = [super init];
     if (self == nil) {
         return self;
     }
-    
+
     renderScale_ = 1.0;
     sigma_ = 2.0f;
     blurRadius_ = 4;
     rendererDirty_ = YES;
     rendererInitialized_ = NO;
-    
+
     [self scheduleUpdate];
     return self;
 }
 
-- (void) updateRenderders {
+- (void)updateRenderders {
     if (rendererDirty_) {
         rendererDirty_ = NO;
         [self resetRenderers];
@@ -64,63 +64,67 @@
     }
 }
 
-- (void) createRenderers {
+- (void)createRenderers {
     sceneSize_ = [[self rootNode] contentSize];
-    
+
     [self setContentSize:sceneSize_];
-    
+
     CGSize renderSize = CGSizeMake(sceneSize_.width * [self renderScale],
                                    sceneSize_.height * [self renderScale]);
-    
-    horizontalRenderer_ = [CCRenderTexture renderTextureWithWidth:renderSize.width
-                                                           height:renderSize.height];
-    
-    verticalRenderer_ = [CCRenderTexture renderTextureWithWidth:renderSize.width
-                                                         height:renderSize.height];
-    
+
+    horizontalRenderer_ =
+        [CCRenderTexture renderTextureWithWidth:renderSize.width
+                                         height:renderSize.height];
+
+    verticalRenderer_ =
+        [CCRenderTexture renderTextureWithWidth:renderSize.width
+                                         height:renderSize.height];
+
     [self configHorizontalRenderer];
     [self configVerticalRenderer];
-    
+
     [self addChild:horizontalRenderer_ z:-1];
     [self addChild:verticalRenderer_ z:-1];
+
+    rendererInitialized_ = YES;
 }
 
-- (void) configHorizontalRenderer {
+- (void)configHorizontalRenderer {
     [horizontalRenderer_ setVisible:NO];
-    
+
     CCSprite* sprite = [horizontalRenderer_ sprite];
     CCTexture2D* texture = [sprite texture];
-    
+
     CGFloat textureWidth = [texture contentSizeInPixels].width;
-    
+
     [sprite setShaderProgram:createHorizontalBlurProgram(textureWidth,
-                                                         (int) [self blurRadius],
+                                                         (int)[self blurRadius],
                                                          [self sigma])];
     [sprite setAnchorPoint:CGPointMake(0, 1)];
 }
 
-- (void) configVerticalRenderer {
+- (void)configVerticalRenderer {
     [verticalRenderer_ setScale:1 / [self renderScale]];
-    
+
     CCSprite* sprite = [verticalRenderer_ sprite];
     CCTexture2D* texture = [sprite texture];
-    
+
     if ([self renderScale] < 1.0) {
         [texture setAntiAliasTexParameters];
     } else {
         [texture setAliasTexParameters];
     }
-    
+
     CGFloat textureHeight = [texture contentSizeInPixels].height;
-    
+
     [sprite setShaderProgram:createVerticalBlurProgram(textureHeight,
-                                                       (int) [self blurRadius],
+                                                       (int)[self blurRadius],
                                                        [self sigma])];
-    
+
     [sprite setAnchorPoint:CGPointMake(0, 1)];
 }
 
-- (void) resetRenderers {
+- (void)resetRenderers {
     if (rendererInitialized_ == NO) {
         return;
     }
@@ -129,7 +133,7 @@
     rendererInitialized_ = NO;
 }
 
-- (void) updateSceneSize {
+- (void)updateSceneSize {
     CGSize currentSize = [[self rootNode] contentSize];
     if (CGSizeEqualToSize(currentSize, sceneSize_)) {
         return;
@@ -138,17 +142,17 @@
     rendererDirty_ = YES;
 }
 
-- (CCNode*) rootNode {
+- (CCNode*)rootNode {
     CCDirector* director = [CCDirector sharedDirector];
     CCScene* runningScene = [director runningScene];
-    
+
     CCLayer* cocosScene = [[runningScene children] objectAtIndex:0];
     CCNode* rootNode = [cocosScene valueForKey:@"rootNode"];
-    
+
     return rootNode;
 }
 
-- (void) setRenderScale:(CGFloat) scale {
+- (void)setRenderScale:(CGFloat)scale {
     if (renderScale_ == scale) {
         return;
     }
@@ -156,7 +160,11 @@
     rendererDirty_ = YES;
 }
 
-- (void) setSigma:(CGFloat) sigma {
+- (void)setSigma:(CGFloat)sigma {
+    if (sigma < fabsf(FLT_EPSILON)) {
+        // Sigma must be non zero.
+        return;
+    }
     if (sigma_ == sigma) {
         return;
     }
@@ -164,11 +172,11 @@
     rendererDirty_ = YES;
 }
 
-- (void) setBlurRadius:(NSInteger) radius {
+- (void)setBlurRadius:(NSInteger)radius {
     // Clamp radius.
     // Maximum the number of varying variables is 32.
     radius = clampf(radius, 1, 6);
-    
+
     if (blurRadius_ == radius) {
         return;
     }
@@ -176,31 +184,32 @@
     rendererDirty_ = YES;
 }
 
-- (void) update:(ccTime) delta {
+- (void)update:(ccTime)delta {
     if ([self visible]) {
         [self updateSceneSize];
         [self updateRenderders];
-        
+
         [self setVisible:NO];
         [horizontalRenderer_ beginWithClear:0 g:0 b:0 a:0];
-        
+
         CCNode* rootNode = [self rootNode];
-        
+
         CGFloat originalScale = [rootNode scale];
         [rootNode setScale:[self renderScale]];
         [rootNode visit];
         [rootNode setScale:originalScale];
-        
+
         [horizontalRenderer_ end];
-        [self setVisible:YES];
-        
+
         [verticalRenderer_ beginWithClear:0 g:0 b:0 a:0];
         [[horizontalRenderer_ sprite] visit];
         [verticalRenderer_ end];
+
+        [self setVisible:YES];
     }
 }
 
-- (void) visit {
+- (void)visit {
     [super visit];
 }
 

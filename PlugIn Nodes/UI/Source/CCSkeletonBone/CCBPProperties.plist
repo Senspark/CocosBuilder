@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>canBeRootNode</key>
+	<false/>
+	<key>canHaveChildren</key>
+	<string>YES</string>
+	<key>requireParentClass</key>
+	<string>CCSkeletonAnimation</string>
+	<key>className</key>
+	<string>CCSkeletonBone</string>
+	<key>editorClassName</key>
+	<string>CCSkeletonBone</string>
+	<key>inheritsFrom</key>
+	<string>CCNodeV3</string>
+	<key>properties</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>CCSkeletonBone</string>
+			<key>displayName</key>
+			<string>CCSkeletonBone</string>
+			<key>type</key>
+			<string>Separator</string>
+		</dict>
+		<dict>
+			<key>displayName</key>
+			<string>Bone name</string>
+			<key>name</key>
+			<string>bone|boneList</string>
+			<key>type</key>
+			<string>ListBox</string>
+		</dict>
+	</array>
+	<key>propertiesOverridden</key>
+	<array/>
+</dict>
+</plist>

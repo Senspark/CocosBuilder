@@ -9,6 +9,8 @@
 #ifndef CCB_COLOR_UTILS_H_
 #define CCB_COLOR_UTILS_H_
 
+#include <OpenGL/gltypes.h>
+
 /// Reference:
 /// http://graficaobscura.com/matrix/index.html
 /// https://gist.github.com/lprhodes/1872328
@@ -36,5 +38,7 @@ kmMat4* offsetRGB(kmMat4* m, float r, float g, float b);
 
 /// Rotates the hue components by @c r degrees.
 kmMat4* hueRotation(kmMat4* m, float r);
+
+GLchar* hsvFragmentShader(void);
 
 #endif /* CCB_COLOR_UTILS_H_ */

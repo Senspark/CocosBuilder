@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>canBeRootNode</key>
-	<false/>
+	<true/>
 	<key>canHaveChildren</key>
-	<string>NO</string>
+	<string>YES</string>
 	<key>className</key>
 	<string>CCSkeletonAnimation</string>
 	<key>editorClassName</key>
@@ -87,6 +87,28 @@
 			<string>timeScale</string>
 			<key>type</key>
 			<string>Float</string>
+		</dict>
+		<dict>
+			<key>displayName</key>
+			<string>Debug</string>
+			<key>type</key>
+			<string>SeparatorSub</string>
+		</dict>
+		<dict>
+			<key>displayName</key>
+			<string>Debug bones</string>
+			<key>name</key>
+			<string>debugBonesEnabled</string>
+			<key>type</key>
+			<string>Check</string>
+		</dict>
+		<dict>
+			<key>displayName</key>
+			<string>Debug slots</string>
+			<key>name</key>
+			<string>debugSlotsEnabled</string>
+			<key>type</key>
+			<string>Check</string>
 		</dict>
 	</array>
 	<key>propertiesOverridden</key>

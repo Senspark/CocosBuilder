@@ -6,9 +6,6 @@
 //
 //
 
-#ifndef BlurUtils_h
-#define BlurUtils_h
-
 @class CCGLProgram;
 
 CCGLProgram* createHorizontalBlurProgram(float width, int blurRadius,
@@ -17,4 +14,4 @@ CCGLProgram* createHorizontalBlurProgram(float width, int blurRadius,
 CCGLProgram* createVerticalBlurProgram(float height, int blurRadius,
                                        float sigma);
 
-#endif /* BlurUtils_h */
+CCGLProgram* createHsvProgram(void);

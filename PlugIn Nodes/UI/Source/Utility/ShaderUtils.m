@@ -8,8 +8,9 @@
 
 #include <string.h>
 
-#include "BlurUtils.h"
+#include "ColorUtils.h"
 
+#import "ShaderUtils.h"
 #import "cocos2d.h"
 
 static float gaussianFunction(float x, float sigma) {
@@ -165,7 +166,7 @@ static int createBlurFragmentShader(int blurRadius, float sigma, char* output) {
 static CCGLProgram* createBlurProgram(int isVertical, float dimension,
                                       int blurRadius, float sigma) {
     const int MaxShaderSize = 3000;
-    
+
     char vertexShader[MaxShaderSize];
     createBlurVertexShader(isVertical, dimension, blurRadius, sigma,
                            vertexShader);
@@ -215,4 +216,25 @@ CCGLProgram* createVerticalBlurProgram(float height, int blurRadius,
     }
 
     return program;
+}
+
+CCGLProgram* createHsvProgram(void) {
+    CCGLProgram* p = nil;
+    // Will be shared!
+    // [[CCShaderCache sharedShaderCache] programForKey:@"hsv_program"];
+    if (p == nil) {
+        p = [CCGLProgram
+            programWithVertexShaderByteArray:ccPositionTextureColor_vert
+                     fragmentShaderByteArray:hsvFragmentShader()];
+        [p addAttribute:kCCAttributeNamePosition
+                   index:kCCVertexAttrib_Position];
+        [p addAttribute:kCCAttributeNameColor index:kCCVertexAttrib_Color];
+        [p addAttribute:kCCAttributeNameTexCoord
+                   index:kCCVertexAttrib_TexCoords];
+        [p link];
+        [p updateUniforms];
+        // [[CCShaderCache sharedShaderCache] addProgram:p
+        // forKey:@"hsv_program"];
+    }
+    return p;
 }
