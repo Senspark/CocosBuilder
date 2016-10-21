@@ -3,10 +3,10 @@
 	url = https://github.com/vlidholt/ssziparchive
 [submodule "CocosBuilder/libs/Fragaria"]
 	path = CocosBuilder/libs/Fragaria
-	url = https://github.com/vlidholt/Fragaria.git
+url=https://github.com/Senspark/Fragaria
 [submodule "Examples/CocosBuilderExample/libs/CCBReader"]
 	path = Examples/CocosBuilderExample/libs/CCBReader
-	url = git://github.com/cocos2d/CCBReader.git
+url=https://github.com/Senspark/CCBReader
 [submodule "CocosBuilder/libs/cocos2d-iphone"]
 	path = CocosBuilder/libs/cocos2d-iphone
-	url = https://github.com/cocos2d/cocos2d-iphone-classic
+url=https://github.com/Senspark/cocos2d-iphone-classic
