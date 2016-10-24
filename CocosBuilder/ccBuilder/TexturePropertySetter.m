@@ -44,12 +44,16 @@
         {
             // Convert to absolute path
             spriteSheetFile = [[ResourceManager sharedManager] toAbsolutePath:spriteSheetFile];
-            
-            // To resolution independent image
-            spriteSheetFile = [CCBFileUtil toResolutionIndependentFile:spriteSheetFile];
-            
-            [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:spriteSheetFile];
-            
+
+            if (spriteSheetFile != nil) {
+                // To resolution independent image
+                spriteSheetFile =
+                    [CCBFileUtil toResolutionIndependentFile:spriteSheetFile];
+
+                [[CCSpriteFrameCache sharedSpriteFrameCache]
+                    addSpriteFramesWithFile:spriteSheetFile];
+            }
+
             spriteFrame = [[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:spriteFile];
         }
         @catch (NSException *exception) {

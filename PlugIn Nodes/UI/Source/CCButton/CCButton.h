@@ -40,7 +40,7 @@ typedef NS_ENUM(NSInteger, CCButtonState) {
     CCLabelTTF* titleRenderer_;
 
     CCScale9Sprite* buttonNormalRenderer_;
-    CCScale9SpriteWithHSV* buttonPressedRenderer_;
+    CCScale9Sprite* buttonPressedRenderer_;
     CCScale9Sprite* buttonDisabledRenderer_;
 
     CCSpriteFrame* normalFrame_;
@@ -76,11 +76,9 @@ typedef NS_ENUM(NSInteger, CCButtonState) {
 @property (nonatomic) BOOL pressedSpriteFrameEnabled;
 @property (nonatomic) BOOL disabledSpriteFrameEnabled;
 
-@property (nonatomic) CGFloat pressedSpriteFrameBrightness;
-
 @property (nonatomic, readonly) CCLabelTTF* titleRenderer;
 @property (nonatomic, readonly) CCScale9Sprite* normalRenderer;
-@property (nonatomic, readonly) CCScale9SpriteWithHSV* pressedRenderer;
+@property (nonatomic, readonly) CCScale9Sprite* pressedRenderer;
 @property (nonatomic, readonly) CCScale9Sprite* disabledRenderer;
 
 @property (nonatomic, readonly) CGSize normalSize;

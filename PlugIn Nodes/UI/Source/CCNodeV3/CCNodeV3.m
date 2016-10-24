@@ -42,12 +42,4 @@
     return self;
 }
 
-- (void) setValue:(id) value forUndefinedKey:(NSString*) key {
-    [super setValue:value forKey:key];
-}
-
-- (id) valueForUndefinedKey:(NSString*) key {
-    return [super valueForUndefinedKey:key];
-}
-
 @end

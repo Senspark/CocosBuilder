@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>canBeRootNode</key>
+	<true/>
+	<key>canHaveChildren</key>
+	<string>YES</string>
+	<key>className</key>
+	<string>EEButton</string>
+	<key>editorClassName</key>
+	<string>EEButton</string>
+	<key>inheritsFrom</key>
+	<string>CCButton</string>
+	<key>properties</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>EEButton</string>
+			<key>displayName</key>
+			<string>EEButton</string>
+			<key>type</key>
+			<string>Separator</string>
+		</dict>
+		<dict>
+			<key>default</key>
+			<integer>0</integer>
+			<key>displayName</key>
+			<string>Brightness</string>
+			<key>name</key>
+			<string>pressedSpriteFrameBrightness</string>
+			<key>type</key>
+			<string>Float</string>
+		</dict>
+	</array>
+	<key>propertiesOverridden</key>
+	<array/>
+</dict>
+</plist>

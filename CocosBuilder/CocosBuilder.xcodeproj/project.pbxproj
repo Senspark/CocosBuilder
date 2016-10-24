@@ -21,6 +21,7 @@
 		6F17FB481CF2B9F200CFCD14 /* InspectorAtlasFile.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F17FB461CF2B9F200CFCD14 /* InspectorAtlasFile.xib */; };
 		6F17FB4C1CF2B9FF00CFCD14 /* InspectorJsonFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F17FB4A1CF2B9FF00CFCD14 /* InspectorJsonFile.m */; };
 		6F17FB4D1CF2B9FF00CFCD14 /* InspectorJsonFile.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F17FB4B1CF2B9FF00CFCD14 /* InspectorJsonFile.xib */; };
+		6F6269821DBDC48900A93689 /* EEButton.ccbPlugNode in Copy PlugIns */ = {isa = PBXBuildFile; fileRef = 6F62697E1DBDC10B00A93689 /* EEButton.ccbPlugNode */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6F843E611CDB99C2008B2EC4 /* CCText.ccbPlugNode in Copy PlugIns */ = {isa = PBXBuildFile; fileRef = 6F843E601CDB99C2008B2EC4 /* CCText.ccbPlugNode */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6F879D751CD740C200116A8B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3A4747B16D43BF300DB0D61 /* AVFoundation.framework */; };
 		6F8F5BD11CF2E8950023C07F /* Animation.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F8F5BB41CF2E8950023C07F /* Animation.c */; };
@@ -626,6 +627,20 @@
 			remoteGlobalIDString = 6F17FABC1CF2A52000CFCD14;
 			remoteInfo = SkeletonAnimation;
 		};
+		6F62697D1DBDC10B00A93689 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6FC2417F1CDB5896009A3AAD /* UI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6F62696B1DBDC09F00A93689;
+			remoteInfo = EEButton;
+		};
+		6F6269801DBDC47800A93689 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6FC2417F1CDB5896009A3AAD /* UI.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6F6269601DBDC09F00A93689;
+			remoteInfo = EEButton;
+		};
 		6F843E5F1CDB99C2008B2EC4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6FC2417F1CDB5896009A3AAD /* UI.xcodeproj */;
@@ -1011,6 +1026,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				6F6269821DBDC48900A93689 /* EEButton.ccbPlugNode in Copy PlugIns */,
 				6FB6394A1D3DDBE1006CC1B6 /* CCSkeletonBone.ccbPlugNode in Copy PlugIns */,
 				6FB731BB1D1BF15A000B7397 /* CCBlurBackground.ccbPlugNode in Copy PlugIns */,
 				6FBF61741D17D81A00257791 /* CCSpriteWithHSV.ccbPlugNode in Copy PlugIns */,
@@ -2249,6 +2265,7 @@
 			children = (
 				6FC241BD1CDB5A7F009A3AAD /* CCWidget.ccbPlugNode */,
 				6FC241BF1CDB5A7F009A3AAD /* CCButton.ccbPlugNode */,
+				6F62697E1DBDC10B00A93689 /* EEButton.ccbPlugNode */,
 				6F843E601CDB99C2008B2EC4 /* CCText.ccbPlugNode */,
 				6FC19ABF1CF835790002D68B /* CCCheckBox.ccbPlugNode */,
 				6FD2942F1CE1A131009ECBFA /* CCLayout.ccbPlugNode */,
@@ -3971,6 +3988,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				6F6269811DBDC47800A93689 /* PBXTargetDependency */,
 				6FB639561D3DDBE9006CC1B6 /* PBXTargetDependency */,
 				6FB731AC1D1BF150000B7397 /* PBXTargetDependency */,
 				6FBF61651D17D80600257791 /* PBXTargetDependency */,
@@ -4358,6 +4376,13 @@
 			fileType = wrapper.cfbundle;
 			path = CCSkeletonAnimation.ccbPlugNode;
 			remoteRef = 6F17FAD11CF2A5F000CFCD14 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6F62697E1DBDC10B00A93689 /* EEButton.ccbPlugNode */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = EEButton.ccbPlugNode;
+			remoteRef = 6F62697D1DBDC10B00A93689 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		6F843E601CDB99C2008B2EC4 /* CCText.ccbPlugNode */ = {
@@ -5331,6 +5356,11 @@
 			isa = PBXTargetDependency;
 			name = SkeletonAnimation;
 			targetProxy = 6F17FAC31CF2A5F000CFCD14 /* PBXContainerItemProxy */;
+		};
+		6F6269811DBDC47800A93689 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = EEButton;
+			targetProxy = 6F6269801DBDC47800A93689 /* PBXContainerItemProxy */;
 		};
 		6F843E6D1CDB99CC008B2EC4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

@@ -31,16 +31,16 @@
 @synthesize positionPercent = positionPercent_;
 @synthesize customSize = customSize_;
 
-- (void) dealloc {
+- (void)dealloc {
     [super dealloc];
 }
 
-- (id) init {
+- (id)init {
     self = [super init];
     if (self == nil) {
         return self;
     }
-    
+
     _layoutComponentEnabled = NO;
     _unifySizeEnabled = NO;
     _enabled = YES;
@@ -53,53 +53,54 @@
     _sizeType = CCWidgetSizeTypeAbsolute;
     _positionType = CCWidgetPositionTypeAbsolute;
     customSize_ = CGSizeZero;
-    
+
     [self initRenderer];
     [self setBright:YES];
     [self setAnchorPoint:CGPointMake(0.5, 0.5)];
     [self setIgnoreContentAdaptWithSize:YES];
-    
+
     return self;
 }
 
-- (void) onEnter {
+- (void)onEnter {
     if ([self layoutComponentEnabled] == NO) {
         [self updateSizeAndPosition];
     }
     [super onEnter];
 }
 
-- (void) visit {
+- (void)visit {
     if ([self visible]) {
         [self adaptRenderers];
         [super visit];
     }
 }
 
-- (CCWidget*) getWidgetParent {
+- (CCWidget*)getWidgetParent {
     if ([[self parent] isKindOfClass:[CCWidget class]]) {
-        return (CCWidget*) [self parent];
+        return (CCWidget*)[self parent];
     }
     return nil;
 }
 
-- (void) setEnabled:(BOOL) enabled {
+- (void)setEnabled:(BOOL)enabled {
     _enabled = enabled;
     [self setBright:enabled];
 }
 
-- (void) initRenderer {}
+- (void)initRenderer {
+}
 
-- (void) setContentSize:(CGSize) contentSize {
+- (void)setContentSize:(CGSize)contentSize {
     CGSize previousSize = [super contentSize];
     if (CGSizeEqualToSize(previousSize, contentSize)) {
         return;
     }
     [super setContentSize:contentSize];
-    
+
     customSize_ = contentSize;
     if ([self unifySizeEnabled]) {
-        
+
     } else if ([self ignoreContentAdaptWithSize]) {
         [super setContentSize:[self virtualRendererSize]];
     } else if ([self layoutComponentEnabled] == NO && [self isRunning]) {
@@ -124,7 +125,7 @@
     [self onSizeChanged];
 }
 
-- (void) setSizePercent:(CGPoint) percent {
+- (void)setSizePercent:(CGPoint)percent {
     if ([self layoutComponentEnabled]) {
         // Not yet supported.
     } else {
@@ -133,11 +134,13 @@
         if ([self isRunning]) {
             CCWidget* widgetParent = [self getWidgetParent];
             if (widgetParent != nil) {
-                cSize = CGSizeMake([widgetParent contentSize].width * percent.x,
-                                   [widgetParent contentSize].height * percent.y);
+                cSize =
+                    CGSizeMake([widgetParent contentSize].width * percent.x,
+                               [widgetParent contentSize].height * percent.y);
             } else {
-                cSize = CGSizeMake([[self parent] contentSize].width * percent.x,
-                                   [[self parent] contentSize].height * percent.y);
+                cSize =
+                    CGSizeMake([[self parent] contentSize].width * percent.x,
+                               [[self parent] contentSize].height * percent.y);
             }
         }
         if ([self ignoreContentAdaptWithSize]) {
@@ -149,71 +152,71 @@
     }
 }
 
-- (void) updateSizeAndPosition {
+- (void)updateSizeAndPosition {
     CGSize pSize = [[self parent] contentSize];
     [self updateSizeAndPositionWithParentSize:pSize];
 }
 
-- (void) updateSizeAndPositionWithParentSize:(CGSize) parentSize {
+- (void)updateSizeAndPositionWithParentSize:(CGSize)parentSize {
     switch ([self sizeType]) {
-        case CCWidgetSizeTypeAbsolute: {
-            if ([self ignoreContentAdaptWithSize]) {
-                [self setContentSize:[self virtualRendererSize]];
-            } else {
-                [self setContentSize:[self customSize]];
-            }
-            CGFloat spx = 0;
-            CGFloat spy = 0;
-            if (parentSize.width > 0) {
-                spx = [self customSize].width / parentSize.width;
-            }
-            if (parentSize.height > 0) {
-                spy = [self customSize].height / parentSize.height;
-            }
-            sizePercent_.x = spx;
-            sizePercent_.y = spy;
-            break;
+    case CCWidgetSizeTypeAbsolute: {
+        if ([self ignoreContentAdaptWithSize]) {
+            [self setContentSize:[self virtualRendererSize]];
+        } else {
+            [self setContentSize:[self customSize]];
         }
-        case CCWidgetSizeTypePercent: {
-            CGSize cSize = CGSizeMake(parentSize.width * [self sizePercent].x,
-                                      parentSize.height * [self sizePercent].y);
-            if ([self ignoreContentAdaptWithSize]) {
-                [self setContentSize:[self virtualRendererSize]];
-            } else {
-                [self setContentSize:cSize];
-            }
-            customSize_ = cSize;
-            break;
+        CGFloat spx = 0;
+        CGFloat spy = 0;
+        if (parentSize.width > 0) {
+            spx = [self customSize].width / parentSize.width;
         }
+        if (parentSize.height > 0) {
+            spy = [self customSize].height / parentSize.height;
+        }
+        sizePercent_.x = spx;
+        sizePercent_.y = spy;
+        break;
+    }
+    case CCWidgetSizeTypePercent: {
+        CGSize cSize = CGSizeMake(parentSize.width * [self sizePercent].x,
+                                  parentSize.height * [self sizePercent].y);
+        if ([self ignoreContentAdaptWithSize]) {
+            [self setContentSize:[self virtualRendererSize]];
+        } else {
+            [self setContentSize:cSize];
+        }
+        customSize_ = cSize;
+        break;
+    }
     }
     CGPoint absPos = [self position];
     switch ([self positionType]) {
-        case CCWidgetPositionTypeAbsolute: {
-            if (parentSize.width <= 0 || parentSize.height <= 0) {
-                positionPercent_ = CGPointZero;
-            } else {
-                positionPercent_ = CGPointMake(absPos.x / parentSize.width,
-                                               absPos.y / parentSize.height);
-            }
-            break;
+    case CCWidgetPositionTypeAbsolute: {
+        if (parentSize.width <= 0 || parentSize.height <= 0) {
+            positionPercent_ = CGPointZero;
+        } else {
+            positionPercent_ = CGPointMake(absPos.x / parentSize.width,
+                                           absPos.y / parentSize.height);
         }
-        case CCWidgetPositionTypePercent: {
-            absPos = CGPointMake(parentSize.width * [self positionPercent].x,
-                                 parentSize.height * [self positionPercent].y);
-            break;
-        }
+        break;
+    }
+    case CCWidgetPositionTypePercent: {
+        absPos = CGPointMake(parentSize.width * [self positionPercent].x,
+                             parentSize.height * [self positionPercent].y);
+        break;
+    }
     }
     [self setPosition:absPos];
 }
 
-- (void) setSizeType:(CCWidgetSizeType) type {
+- (void)setSizeType:(CCWidgetSizeType)type {
     _sizeType = type;
     if ([self layoutComponentEnabled]) {
         // ...
     }
 }
 
-- (void) setIgnoreContentAdaptWithSize:(BOOL) ignore {
+- (void)setIgnoreContentAdaptWithSize:(BOOL)ignore {
     if (_unifySizeEnabled) {
         return [self setContentSize:[self customSize]];
     }
@@ -229,33 +232,33 @@
     }
 }
 
-- (CGPoint) sizePercent {
+- (CGPoint)sizePercent {
     if ([self layoutComponentEnabled]) {
         ///
     }
     return sizePercent_;
 }
 
-- (CCNode*) virtualRenderer {
+- (CCNode*)virtualRenderer {
     return self;
 }
 
-- (void) onSizeChanged {
+- (void)onSizeChanged {
     if ([self layoutComponentEnabled] == NO) {
         for (CCNode* child in [self children]) {
             if ([child isKindOfClass:[CCWidget class]]) {
-                CCWidget* widgetChild = (CCWidget*) child;
+                CCWidget* widgetChild = (CCWidget*)child;
                 [widgetChild updateSizeAndPosition];
             }
         }
     }
 }
 
-- (CGSize) virtualRendererSize {
+- (CGSize)virtualRendererSize {
     return [self contentSize];
 }
 
-- (void) updateContentSizeWithTextureSize:(CGSize) size {
+- (void)updateContentSizeWithTextureSize:(CGSize)size {
     if ([self unifySizeEnabled]) {
         return [self setContentSize:size];
     }
@@ -266,16 +269,16 @@
     }
 }
 
-- (void) updateChildrenDisplayRGBA {
+- (void)updateChildrenDisplayRGBA {
     [self setColor:[self color]];
     [self setOpacity:[self opacity]];
 }
 
-- (void) setHighlighted:(BOOL) highlighted {
+- (void)setHighlighted:(BOOL)highlighted {
     if (highlighted == [self highlighted]) {
         return;
     }
-    
+
     _highlighted = highlighted;
     if ([self bright]) {
         if ([self highlighted]) {
@@ -288,7 +291,7 @@
     }
 }
 
-- (void) setBright:(BOOL) bright {
+- (void)setBright:(BOOL)bright {
     _bright = bright;
     if ([self bright]) {
         brightStyle_ = CCWidgetBrightStyleNone;
@@ -298,30 +301,33 @@
     }
 }
 
-- (void) setBrightStyle:(CCWidgetBrightStyle) style {
+- (void)setBrightStyle:(CCWidgetBrightStyle)style {
     if (brightStyle_ == style) {
         return;
     }
     brightStyle_ = style;
     switch (brightStyle_) {
-        case CCWidgetBrightStyleNormal:
-            [self onPressStateChangedToNormal];
-            break;
-        case CCWidgetBrightStyleHighlight:
-            [self onPressStateChangedToPressed];
-            break;
-        default:
-            break;
+    case CCWidgetBrightStyleNormal:
+        [self onPressStateChangedToNormal];
+        break;
+    case CCWidgetBrightStyleHighlight:
+        [self onPressStateChangedToPressed];
+        break;
+    default:
+        break;
     }
 }
 
-- (void) onPressStateChangedToNormal {}
+- (void)onPressStateChangedToNormal {
+}
 
-- (void) onPressStateChangedToPressed {}
+- (void)onPressStateChangedToPressed {
+}
 
-- (void) onPressStateChangedToDisabled {}
+- (void)onPressStateChangedToDisabled {
+}
 
-- (void) setPosition:(CGPoint) position {
+- (void)setPosition:(CGPoint)position {
     if ([self layoutComponentEnabled] == NO && [self isRunning]) {
         CCWidget* widgetParent = [self getWidgetParent];
         if (widgetParent != nil) {
@@ -337,7 +343,7 @@
     [super setPosition:position];
 }
 
-- (void) setPositionPercent:(CGPoint) percent {
+- (void)setPositionPercent:(CGPoint)percent {
     if ([self layoutComponentEnabled]) {
         ///
     } else {
@@ -346,40 +352,34 @@
             CCWidget* widgetParent = [self getWidgetParent];
             if (widgetParent != nil) {
                 CGSize parentSize = [widgetParent contentSize];
-                CGPoint absPos = CGPointMake(parentSize.width * [self positionPercent].x,
-                                             parentSize.height * [self positionPercent].y);
+                CGPoint absPos =
+                    CGPointMake(parentSize.width * [self positionPercent].x,
+                                parentSize.height * [self positionPercent].y);
                 [self setPosition:absPos];
             }
         }
     }
 }
 
-- (CGPoint) positionPercent {
+- (CGPoint)positionPercent {
     if ([self layoutComponentEnabled]) {
         ///
     }
     return positionPercent_;
 }
 
-- (void) setPositionType:(CCWidgetPositionType) type {
+- (void)setPositionType:(CCWidgetPositionType)type {
     _positionType = type;
     if ([self layoutComponentEnabled]) {
         ///
     }
 }
 
-- (void) adaptRenderers {}
+- (void)adaptRenderers {
+}
 
-- (void) setContentSize_super:(CGSize) size {
+- (void)setContentSize_super:(CGSize)size {
     [super setContentSize:size];
-}
-
-- (void) setValue:(id) value forUndefinedKey:(NSString*) key {
-    [super setValue:value forKey:key];
-}
-
-- (id) valueForUndefinedKey:(NSString*) key {
-    return [super valueForUndefinedKey:key];
 }
 
 @end

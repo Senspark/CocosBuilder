@@ -18,6 +18,11 @@
 		6F2A49801DBA1DC7006D766B /* ColorUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F2A497C1DBA1DC7006D766B /* ColorUtils.h */; };
 		6F2A49821DBA22D5006D766B /* CCScale9SpriteWithHSV.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2A49811DBA22D5006D766B /* CCScale9SpriteWithHSV.m */; };
 		6F2A49841DBA22E1006D766B /* CCScale9SpriteWithHSV.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F2A49831DBA22DE006D766B /* CCScale9SpriteWithHSV.h */; };
+		6F62695E1DBDBE5F00A93689 /* EEButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F62695C1DBDBE5F00A93689 /* EEButton.m */; };
+		6F62695F1DBDBE5F00A93689 /* EEButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F62695D1DBDBE5F00A93689 /* EEButton.h */; };
+		6F6269631DBDC09F00A93689 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3DEFB1314FFD66C00B98586 /* Cocoa.framework */; };
+		6F6269661DBDC09F00A93689 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FC2419C1CDB5922009A3AAD /* InfoPlist.strings */; };
+		6F6269831DBDC4C300A93689 /* CCBPProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F62696D1DBDC0D400A93689 /* CCBPProperties.plist */; };
 		6F6776C91D18F88B00D0F111 /* CCSpriteWithHSV.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FBF61521D17D3B900257791 /* CCSpriteWithHSV.m */; };
 		6F7752741CDC9A8800BF74AF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3DEFB1314FFD66C00B98586 /* Cocoa.framework */; };
 		6F7752781CDC9A8800BF74AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FC2419C1CDB5922009A3AAD /* InfoPlist.strings */; };
@@ -73,6 +78,11 @@
 		6F2A49811DBA22D5006D766B /* CCScale9SpriteWithHSV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCScale9SpriteWithHSV.m; sourceTree = "<group>"; };
 		6F2A49831DBA22DE006D766B /* CCScale9SpriteWithHSV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCScale9SpriteWithHSV.h; sourceTree = "<group>"; };
 		6F375FB11CDCAF9F00D17533 /* CCBPProperties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CCBPProperties.plist; path = CCLayout/CCBPProperties.plist; sourceTree = "<group>"; };
+		6F62695C1DBDBE5F00A93689 /* EEButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEButton.m; path = EEButton/EEButton.m; sourceTree = "<group>"; };
+		6F62695D1DBDBE5F00A93689 /* EEButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEButton.h; path = EEButton/EEButton.h; sourceTree = "<group>"; };
+		6F62696B1DBDC09F00A93689 /* EEButton.ccbPlugNode */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EEButton.ccbPlugNode; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F62696C1DBDC09F00A93689 /* CCWidget copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "CCWidget copy-Info.plist"; path = "/Volumes/Setup/Android/projects/CocosBuilder/PlugIn Nodes/UI/CCWidget copy-Info.plist"; sourceTree = "<absolute>"; };
+		6F62696D1DBDC0D400A93689 /* CCBPProperties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CCBPProperties.plist; path = EEButton/CCBPProperties.plist; sourceTree = "<group>"; };
 		6F77526E1CDC9A8200BF74AF /* CCLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CCLayout.m; path = CCLayout/CCLayout.m; sourceTree = "<group>"; };
 		6F77527D1CDC9A8800BF74AF /* CCLayout.ccbPlugNode */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CCLayout.ccbPlugNode; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F77528D1CDC9A9B00BF74AF /* CCScrollView.ccbPlugNode */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CCScrollView.ccbPlugNode; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,6 +244,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6F6269621DBDC09F00A93689 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F6269631DBDC09F00A93689 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6F7752731CDC9A8800BF74AF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -343,6 +361,16 @@
 				6F2A497C1DBA1DC7006D766B /* ColorUtils.h */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		6F62695B1DBDBE4300A93689 /* EEButton */ = {
+			isa = PBXGroup;
+			children = (
+				6F62695D1DBDBE5F00A93689 /* EEButton.h */,
+				6F62695C1DBDBE5F00A93689 /* EEButton.m */,
+				6F62696D1DBDC0D400A93689 /* CCBPProperties.plist */,
+			);
+			name = EEButton;
 			sourceTree = "<group>";
 		};
 		6F77526D1CDC9A6A00BF74AF /* CCLayout */ = {
@@ -461,6 +489,7 @@
 				E3DEFB1214FFD66C00B98586 /* Frameworks */,
 				E3DEFB2614FFD74500B98586 /* libs */,
 				E3DEFB1114FFD66C00B98586 /* Products */,
+				6F62696C1DBDC09F00A93689 /* CCWidget copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -479,6 +508,7 @@
 				6FBF615F1D17D3E800257791 /* CCSpriteWithHSV.ccbPlugNode */,
 				6FB731A71D1BF0B1000B7397 /* CCBlurBackground.ccbPlugNode */,
 				6FB639361D3DD4C6006CC1B6 /* CCSkeletonBone.ccbPlugNode */,
+				6F62696B1DBDC09F00A93689 /* EEButton.ccbPlugNode */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -515,6 +545,7 @@
 				6F7752901CDC9FC700BF74AF /* CCUIScrollView */,
 				6F77526D1CDC9A6A00BF74AF /* CCLayout */,
 				6F843E471CDB98FC008B2EC4 /* CCText */,
+				6F62695B1DBDBE4300A93689 /* EEButton */,
 				6FC241931CDB5922009A3AAD /* CCButton */,
 				6FC241971CDB5922009A3AAD /* CCWidget */,
 				6FC2419B1CDB5922009A3AAD /* en.lproj */,
@@ -719,6 +750,7 @@
 				6F2A49761DBA1D4C006D766B /* CCSpriteWithHSV.h in Headers */,
 				6F2A49801DBA1DC7006D766B /* ColorUtils.h in Headers */,
 				6FB639291D3DD4C0006CC1B6 /* CCSkeletonBone.h in Headers */,
+				6F62695F1DBDBE5F00A93689 /* EEButton.h in Headers */,
 				6F2A497D1DBA1DC7006D766B /* ShaderUtils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -742,6 +774,24 @@
 			name = CCSkeletonAnimation;
 			productName = CCRotatingSprite;
 			productReference = 6F17FABC1CF2A52000CFCD14 /* CCSkeletonAnimation.ccbPlugNode */;
+			productType = "com.apple.product-type.bundle";
+		};
+		6F6269601DBDC09F00A93689 /* EEButton */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6F6269681DBDC09F00A93689 /* Build configuration list for PBXNativeTarget "EEButton" */;
+			buildPhases = (
+				6F6269611DBDC09F00A93689 /* Sources */,
+				6F6269621DBDC09F00A93689 /* Frameworks */,
+				6F6269641DBDC09F00A93689 /* Resources */,
+				6F6269671DBDC09F00A93689 /* Copy Plug-in to CocosBuilder's PlugIns folder */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EEButton;
+			productName = CCRotatingSprite;
+			productReference = 6F62696B1DBDC09F00A93689 /* EEButton.ccbPlugNode */;
 			productType = "com.apple.product-type.bundle";
 		};
 		6F77526F1CDC9A8800BF74AF /* CCLayout */ = {
@@ -968,6 +1018,7 @@
 			targets = (
 				E3DEFB0F14FFD66C00B98586 /* CCWidget */,
 				6FC241851CDB58D5009A3AAD /* CCButton */,
+				6F6269601DBDC09F00A93689 /* EEButton */,
 				6F843E4C1CDB994C008B2EC4 /* CCText */,
 				6FC19AA91CF80BF70002D68B /* CCCheckBox */,
 				6F77526F1CDC9A8800BF74AF /* CCLayout */,
@@ -989,6 +1040,15 @@
 			files = (
 				6F17FAC21CF2A56600CFCD14 /* CCBPProperties.plist in Resources */,
 				6F17FAB71CF2A52000CFCD14 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6F6269641DBDC09F00A93689 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F6269661DBDC09F00A93689 /* InfoPlist.strings in Resources */,
+				6F6269831DBDC4C300A93689 /* CCBPProperties.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1085,6 +1145,20 @@
 
 /* Begin PBXShellScriptBuildPhase section */
 		6F17FAB81CF2A52000CFCD14 /* Copy Plug-in to CocosBuilder's PlugIns folder */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Plug-in to CocosBuilder's PlugIns folder";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+		6F6269671DBDC09F00A93689 /* Copy Plug-in to CocosBuilder's PlugIns folder */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1248,6 +1322,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6F6269611DBDC09F00A93689 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6F7752701CDC9A8800BF74AF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1328,6 +1409,7 @@
 				6FD2944C1CE1B8E2009ECBFA /* CCNodeV3.m in Sources */,
 				6FD294511CE1B8E2009ECBFA /* CCWidget.m in Sources */,
 				6FB6392A1D3DD4C0006CC1B6 /* CCSkeletonBone.m in Sources */,
+				6F62695E1DBDBE5F00A93689 /* EEButton.m in Sources */,
 				6FD2944F1CE1B8E2009ECBFA /* CCText.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1366,6 +1448,30 @@
 			name = Debug;
 		};
 		6F17FABB1CF2A52000CFCD14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Source/PlugIn-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../Examples/CocosBuilderExample/libs/CCBReader/**";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = ccbPlugNode;
+			};
+			name = Release;
+		};
+		6F6269691DBDC09F00A93689 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Source/PlugIn-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../Examples/CocosBuilderExample/libs/CCBReader/**";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = ccbPlugNode;
+			};
+			name = Debug;
+		};
+		6F62696A1DBDC09F00A93689 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1758,6 +1864,15 @@
 			buildConfigurations = (
 				6F17FABA1CF2A52000CFCD14 /* Debug */,
 				6F17FABB1CF2A52000CFCD14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6F6269681DBDC09F00A93689 /* Build configuration list for PBXNativeTarget "EEButton" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6F6269691DBDC09F00A93689 /* Debug */,
+				6F62696A1DBDC09F00A93689 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

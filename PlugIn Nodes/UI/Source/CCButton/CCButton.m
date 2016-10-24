@@ -23,8 +23,7 @@
  */
 
 #import "CCButton.h"
-#import "CCScale9SpriteWithHSV.h"
-#import "CCSpriteWithHSV.h"
+#import "CCScale9Sprite.h"
 #import "ShaderUtils.h"
 #import "cocos2d.h"
 
@@ -72,10 +71,8 @@ const NSInteger kTitleZOrder = -1;
 
 - (void)initRenderer {
     buttonNormalRenderer_ = [[[CCScale9Sprite alloc] init] autorelease];
-    buttonPressedRenderer_ = [[[CCScale9SpriteWithHSV alloc] init] autorelease];
+    buttonPressedRenderer_ = [[[CCScale9Sprite alloc] init] autorelease];
     buttonDisabledRenderer_ = [[[CCScale9Sprite alloc] init] autorelease];
-
-    [self setPressedSpriteFrameBrightness:0];
 
     [self addChild:buttonNormalRenderer_ z:kBackgroundSpriteZOrder];
     [self addChild:buttonPressedRenderer_ z:kBackgroundSpriteZOrder];
@@ -364,14 +361,6 @@ const NSInteger kTitleZOrder = -1;
     }
 }
 
-- (CGFloat)pressedSpriteFrameBrightness {
-    return [[self pressedRenderer] brightness];
-}
-
-- (void)setPressedSpriteFrameBrightness:(CGFloat)brightness {
-    [[self pressedRenderer] setBrightness:brightness];
-}
-
 - (void)setNormalSpriteFrame:(CCSpriteFrame*)frame {
     NSCAssert(frame != nil, @"...");
     [normalFrame_ autorelease];
@@ -397,14 +386,6 @@ const NSInteger kTitleZOrder = -1;
     [buttonDisabledRenderer_ setSpriteFrame:frame];
     [buttonDisabledRenderer_ setVisible:[self disabledSpriteFrameEnabled]];
     [self setupDisabledTexture:YES];
-}
-
-- (void)setValue:(id)value forUndefinedKey:(NSString*)key {
-    [super setValue:value forUndefinedKey:key];
-}
-
-- (id)valueForUndefinedKey:(NSString*)key {
-    return [super valueForUndefinedKey:key];
 }
 
 @end
