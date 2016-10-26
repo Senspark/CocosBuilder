@@ -192,14 +192,29 @@ const NSInteger kTitleZOrder = -1;
 }
 
 - (void)textureScaleChangedWithSize:(CCScale9Sprite*)button {
-    [button setPreferedSize:[self contentSize]];
-
     CGFloat width = [self contentSize].width;
     CGFloat height = [self contentSize].height;
-    [button setInsetTop:height / 3];
-    [button setInsetBottom:height / 3];
-    [button setInsetLeft:width / 3];
-    [button setInsetRight:width / 3];
+
+    CGFloat originalWidth = [button originalSize].width;
+    CGFloat originalHeight = [button originalSize].height;
+
+    if (originalWidth < width) {
+        [button setInsetLeft:originalWidth / 3];
+        [button setInsetRight:originalWidth / 3];
+    } else {
+        [button setInsetLeft:width / 3];
+        [button setInsetRight:width / 3];
+    }
+
+    if (originalHeight < height) {
+        [button setInsetTop:originalHeight / 3];
+        [button setInsetBottom:originalHeight / 3];
+    } else {
+        [button setInsetTop:height / 3];
+        [button setInsetBottom:height / 3];
+    }
+
+    [button setPreferedSize:[self contentSize]];
 
     //    [button setPosition:CGPointMake([self contentSize].width / 2,
     //                                    [self contentSize].height / 2)];
