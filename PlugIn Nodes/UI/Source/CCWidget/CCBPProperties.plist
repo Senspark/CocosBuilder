@@ -70,6 +70,26 @@
 		</dict>
 		<dict>
 			<key>displayName</key>
+			<string>Size type</string>
+			<key>type</key>
+			<string>IntegerLabeled</string>
+			<key>name</key>
+			<string>sizeType</string>
+			<key>extra</key>
+			<string>Absolute|0|Percent|1</string>
+		</dict>
+		<dict>
+			<key>displayName</key>
+			<string>Position type</string>
+			<key>type</key>
+			<string>IntegerLabeled</string>
+			<key>name</key>
+			<string>positionType</string>
+			<key>extra</key>
+			<string>Absolute|0|Percent|1</string>
+		</dict>
+		<dict>
+			<key>displayName</key>
 			<string>Touch listener</string>
 			<key>type</key>
 			<string>SeparatorSub</string>

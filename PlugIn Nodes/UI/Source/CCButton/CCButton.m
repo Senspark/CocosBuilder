@@ -235,6 +235,14 @@ const NSInteger kTitleZOrder = -1;
     return [titleRenderer_ fontSize];
 }
 
+- (void)setTitleAnchorPoint:(CGPoint)anchorPoint {
+    [titleRenderer_ setAnchorPoint:anchorPoint];
+}
+
+- (CGPoint)titleAnchorPoint {
+    return [titleRenderer_ anchorPoint];
+}
+
 - (void)setTitleFontName:(NSString*)fontName {
     if ([fontName length] > 0) {
         [titleRenderer_ setFontName:fontName];

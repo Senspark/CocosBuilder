@@ -68,6 +68,7 @@ typedef NS_ENUM(NSInteger, CCButtonState) {
 @property (nonatomic, assign) NSString* titleText;
 @property (nonatomic) ccColor3B titleColor;
 @property (nonatomic) CGFloat titleFontSize;
+@property (nonatomic) CGPoint titleAnchorPoint;
 @property (nonatomic, assign) NSString* fontName;
 
 @property (nonatomic) BOOL scale9Enabled;

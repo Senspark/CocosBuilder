@@ -158,6 +158,9 @@
 }
 
 - (void)updateSizeAndPositionWithParentSize:(CGSize)parentSize {
+    // Ignore CCWidgetSizeTypePercent.
+    CCWidgetSizeType prevSizeType = [self sizeType];
+    [self setSizeType:CCWidgetSizeTypeAbsolute];
     switch ([self sizeType]) {
     case CCWidgetSizeTypeAbsolute: {
         if ([self ignoreContentAdaptWithSize]) {
@@ -189,6 +192,10 @@
         break;
     }
     }
+    [self setSizeType:prevSizeType];
+    // Ignore CCWidgetPositionTypePercent.
+    CCWidgetPositionType prevPositionType = [self positionType];
+    [self setPositionType:CCWidgetPositionTypeAbsolute];
     CGPoint absPos = [self position];
     switch ([self positionType]) {
     case CCWidgetPositionTypeAbsolute: {
@@ -206,6 +213,7 @@
         break;
     }
     }
+    [self setPositionType:prevPositionType];
     [self setPosition:absPos];
 }
 
