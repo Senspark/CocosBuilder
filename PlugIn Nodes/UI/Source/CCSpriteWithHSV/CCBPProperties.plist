@@ -54,6 +54,14 @@
 			<key>type</key>
 			<string>Float</string>
 		</dict>
+		<dict>
+			<key>displayName</key>
+			<string>Cascade hsv enabled</string>
+			<key>name</key>
+			<string>cascadeHsvEnabled</string>
+			<key>type</key>
+			<string>Check</string>
+		</dict>
 	</array>
 	<key>propertiesOverridden</key>
 	<array/>
