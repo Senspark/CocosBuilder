@@ -11,19 +11,19 @@
 		6F17FAB71CF2A52000CFCD14 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FC2419C1CDB5922009A3AAD /* InfoPlist.strings */; };
 		6F17FAC21CF2A56600CFCD14 /* CCBPProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F17FABE1CF2A54C00CFCD14 /* CCBPProperties.plist */; };
 		6F17FB421CF2A9E300CFCD14 /* CCSkeletonAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F17FAC01CF2A54C00CFCD14 /* CCSkeletonAnimation.m */; };
-		6F2A49761DBA1D4C006D766B /* CCSpriteWithHSV.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FBF61531D17D3DE00257791 /* CCSpriteWithHSV.h */; };
+		6F2A49761DBA1D4C006D766B /* CCSpriteWithHsv.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FBF61531D17D3DE00257791 /* CCSpriteWithHsv.h */; };
 		6F2A497D1DBA1DC7006D766B /* ShaderUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F2A49791DBA1DC7006D766B /* ShaderUtils.h */; };
 		6F2A497E1DBA1DC7006D766B /* ShaderUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2A497A1DBA1DC7006D766B /* ShaderUtils.m */; };
 		6F2A497F1DBA1DC7006D766B /* ColorUtils.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F2A497B1DBA1DC7006D766B /* ColorUtils.c */; };
 		6F2A49801DBA1DC7006D766B /* ColorUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F2A497C1DBA1DC7006D766B /* ColorUtils.h */; };
-		6F2A49821DBA22D5006D766B /* CCScale9SpriteWithHSV.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2A49811DBA22D5006D766B /* CCScale9SpriteWithHSV.m */; };
-		6F2A49841DBA22E1006D766B /* CCScale9SpriteWithHSV.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F2A49831DBA22DE006D766B /* CCScale9SpriteWithHSV.h */; };
+		6F45480A1DC9E16600894079 /* CCScale9SpriteWithHsv.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F4548081DC9E16600894079 /* CCScale9SpriteWithHsv.h */; };
+		6F45480C1DC9E1D600894079 /* CCScale9SpriteWithHsv.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4548091DC9E16600894079 /* CCScale9SpriteWithHsv.m */; };
 		6F62695E1DBDBE5F00A93689 /* EEButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F62695C1DBDBE5F00A93689 /* EEButton.m */; };
 		6F62695F1DBDBE5F00A93689 /* EEButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F62695D1DBDBE5F00A93689 /* EEButton.h */; };
 		6F6269631DBDC09F00A93689 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3DEFB1314FFD66C00B98586 /* Cocoa.framework */; };
 		6F6269661DBDC09F00A93689 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FC2419C1CDB5922009A3AAD /* InfoPlist.strings */; };
 		6F6269831DBDC4C300A93689 /* CCBPProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F62696D1DBDC0D400A93689 /* CCBPProperties.plist */; };
-		6F6776C91D18F88B00D0F111 /* CCSpriteWithHSV.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FBF61521D17D3B900257791 /* CCSpriteWithHSV.m */; };
+		6F6776C91D18F88B00D0F111 /* CCSpriteWithHsv.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FBF61521D17D3B900257791 /* CCSpriteWithHsv.m */; };
 		6F7752741CDC9A8800BF74AF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3DEFB1314FFD66C00B98586 /* Cocoa.framework */; };
 		6F7752781CDC9A8800BF74AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FC2419C1CDB5922009A3AAD /* InfoPlist.strings */; };
 		6F7752841CDC9A9B00BF74AF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3DEFB1314FFD66C00B98586 /* Cocoa.framework */; };
@@ -75,9 +75,10 @@
 		6F2A497A1DBA1DC7006D766B /* ShaderUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShaderUtils.m; sourceTree = "<group>"; };
 		6F2A497B1DBA1DC7006D766B /* ColorUtils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ColorUtils.c; sourceTree = "<group>"; };
 		6F2A497C1DBA1DC7006D766B /* ColorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorUtils.h; sourceTree = "<group>"; };
-		6F2A49811DBA22D5006D766B /* CCScale9SpriteWithHSV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCScale9SpriteWithHSV.m; sourceTree = "<group>"; };
-		6F2A49831DBA22DE006D766B /* CCScale9SpriteWithHSV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCScale9SpriteWithHSV.h; sourceTree = "<group>"; };
 		6F375FB11CDCAF9F00D17533 /* CCBPProperties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CCBPProperties.plist; path = CCLayout/CCBPProperties.plist; sourceTree = "<group>"; };
+		6F4547EE1DC9CE3200894079 /* CCHsvProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CCHsvProtocol.h; sourceTree = "<group>"; };
+		6F4548081DC9E16600894079 /* CCScale9SpriteWithHsv.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCScale9SpriteWithHsv.h; sourceTree = "<group>"; };
+		6F4548091DC9E16600894079 /* CCScale9SpriteWithHsv.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCScale9SpriteWithHsv.m; sourceTree = "<group>"; };
 		6F62695C1DBDBE5F00A93689 /* EEButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EEButton.m; path = EEButton/EEButton.m; sourceTree = "<group>"; };
 		6F62695D1DBDBE5F00A93689 /* EEButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EEButton.h; path = EEButton/EEButton.h; sourceTree = "<group>"; };
 		6F62696B1DBDC09F00A93689 /* EEButton.ccbPlugNode */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EEButton.ccbPlugNode; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,8 +106,8 @@
 		6FB7319A1D1BF0A9000B7397 /* CCBlurBackground.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CCBlurBackground.m; path = CCBlurBackground/CCBlurBackground.m; sourceTree = "<group>"; };
 		6FB7319B1D1BF0A9000B7397 /* CCBPProperties.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = CCBPProperties.plist; path = CCBlurBackground/CCBPProperties.plist; sourceTree = "<group>"; };
 		6FB731A71D1BF0B1000B7397 /* CCBlurBackground.ccbPlugNode */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CCBlurBackground.ccbPlugNode; sourceTree = BUILT_PRODUCTS_DIR; };
-		6FBF61521D17D3B900257791 /* CCSpriteWithHSV.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CCSpriteWithHSV.m; path = CCSpriteWithHSV/CCSpriteWithHSV.m; sourceTree = "<group>"; };
-		6FBF61531D17D3DE00257791 /* CCSpriteWithHSV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCSpriteWithHSV.h; path = CCSpriteWithHSV/CCSpriteWithHSV.h; sourceTree = "<group>"; };
+		6FBF61521D17D3B900257791 /* CCSpriteWithHsv.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CCSpriteWithHsv.m; path = CCSpriteWithHSV/CCSpriteWithHsv.m; sourceTree = "<group>"; };
+		6FBF61531D17D3DE00257791 /* CCSpriteWithHsv.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCSpriteWithHsv.h; path = CCSpriteWithHSV/CCSpriteWithHsv.h; sourceTree = "<group>"; };
 		6FBF615F1D17D3E800257791 /* CCSpriteWithHSV.ccbPlugNode */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CCSpriteWithHSV.ccbPlugNode; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FBF61621D17D75C00257791 /* CCBPProperties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CCBPProperties.plist; path = CCSpriteWithHSV/CCBPProperties.plist; sourceTree = "<group>"; };
 		6FC19AB41CF80BF70002D68B /* CCCheckBox.ccbPlugNode */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CCCheckBox.ccbPlugNode; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -359,8 +360,18 @@
 				6F2A497A1DBA1DC7006D766B /* ShaderUtils.m */,
 				6F2A497B1DBA1DC7006D766B /* ColorUtils.c */,
 				6F2A497C1DBA1DC7006D766B /* ColorUtils.h */,
+				6F4547EE1DC9CE3200894079 /* CCHsvProtocol.h */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		6F4548071DC9E16600894079 /* CCScale9SpriteWithHsv */ = {
+			isa = PBXGroup;
+			children = (
+				6F4548081DC9E16600894079 /* CCScale9SpriteWithHsv.h */,
+				6F4548091DC9E16600894079 /* CCScale9SpriteWithHsv.m */,
+			);
+			path = CCScale9SpriteWithHsv;
 			sourceTree = "<group>";
 		};
 		6F62695B1DBDBE4300A93689 /* EEButton */ = {
@@ -422,14 +433,14 @@
 			name = CCBlurSprite;
 			sourceTree = "<group>";
 		};
-		6FBF61511D17D37500257791 /* CCSpriteWIthHSV */ = {
+		6FBF61511D17D37500257791 /* CCSpriteWIthHsv */ = {
 			isa = PBXGroup;
 			children = (
 				6FBF61621D17D75C00257791 /* CCBPProperties.plist */,
-				6FBF61531D17D3DE00257791 /* CCSpriteWithHSV.h */,
-				6FBF61521D17D3B900257791 /* CCSpriteWithHSV.m */,
+				6FBF61531D17D3DE00257791 /* CCSpriteWithHsv.h */,
+				6FBF61521D17D3B900257791 /* CCSpriteWithHsv.m */,
 			);
-			name = CCSpriteWIthHSV;
+			name = CCSpriteWIthHsv;
 			sourceTree = "<group>";
 		};
 		6FC19AA81CF80BEA0002D68B /* CCCheckBox */ = {
@@ -447,8 +458,6 @@
 			children = (
 				6F843E7D1CDBCBC9008B2EC4 /* CCButton.h */,
 				6F843E7E1CDBCBC9008B2EC4 /* CCButton.m */,
-				6F2A49811DBA22D5006D766B /* CCScale9SpriteWithHSV.m */,
-				6F2A49831DBA22DE006D766B /* CCScale9SpriteWithHSV.h */,
 				6FC241941CDB5922009A3AAD /* CCBPProperties.plist */,
 			);
 			path = CCButton;
@@ -537,7 +546,8 @@
 			children = (
 				6F2A49781DBA1DC7006D766B /* Utility */,
 				6FB731981D1BF073000B7397 /* CCBlurSprite */,
-				6FBF61511D17D37500257791 /* CCSpriteWIthHSV */,
+				6FBF61511D17D37500257791 /* CCSpriteWIthHsv */,
+				6F4548071DC9E16600894079 /* CCScale9SpriteWithHsv */,
 				6FC19AA81CF80BEA0002D68B /* CCCheckBox */,
 				6F17FAB01CF2A4EA00CFCD14 /* CCSkeletonAnimation */,
 				6FB639251D3DD4C0006CC1B6 /* CCSkeletonBone */,
@@ -745,9 +755,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F2A49841DBA22E1006D766B /* CCScale9SpriteWithHSV.h in Headers */,
 				6FB639571D3DDC16006CC1B6 /* CCSkeletonAnimation.h in Headers */,
-				6F2A49761DBA1D4C006D766B /* CCSpriteWithHSV.h in Headers */,
+				6F2A49761DBA1D4C006D766B /* CCSpriteWithHsv.h in Headers */,
+				6F45480A1DC9E16600894079 /* CCScale9SpriteWithHsv.h in Headers */,
 				6F2A49801DBA1DC7006D766B /* ColorUtils.h in Headers */,
 				6FB639291D3DD4C0006CC1B6 /* CCSkeletonBone.h in Headers */,
 				6F62695F1DBDBE5F00A93689 /* EEButton.h in Headers */,
@@ -1404,8 +1414,8 @@
 				6F2A497F1DBA1DC7006D766B /* ColorUtils.c in Sources */,
 				6F17FB421CF2A9E300CFCD14 /* CCSkeletonAnimation.m in Sources */,
 				6FC19ABB1CF80CAA0002D68B /* CCCheckBox.m in Sources */,
-				6F6776C91D18F88B00D0F111 /* CCSpriteWithHSV.m in Sources */,
-				6F2A49821DBA22D5006D766B /* CCScale9SpriteWithHSV.m in Sources */,
+				6F6776C91D18F88B00D0F111 /* CCSpriteWithHsv.m in Sources */,
+				6F45480C1DC9E1D600894079 /* CCScale9SpriteWithHsv.m in Sources */,
 				6FD2944C1CE1B8E2009ECBFA /* CCNodeV3.m in Sources */,
 				6FD294511CE1B8E2009ECBFA /* CCWidget.m in Sources */,
 				6FB6392A1D3DD4C0006CC1B6 /* CCSkeletonBone.m in Sources */,

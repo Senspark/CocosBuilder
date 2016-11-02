@@ -12,4 +12,7 @@
 
 @property (nonatomic) CGFloat pressedSpriteFrameBrightness;
 
+@property (nonatomic, getter=isPressedSpriteFrameCascadeHsvEnabled)
+    BOOL pressedSpriteFrameCascadeHsvEnabled;
+
 @end

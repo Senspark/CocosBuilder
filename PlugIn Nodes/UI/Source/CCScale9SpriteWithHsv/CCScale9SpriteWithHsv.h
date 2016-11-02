@@ -7,12 +7,14 @@
 //
 
 #import "CCScale9Sprite.h"
+#import "CCHsvProtocol.h"
 
-@interface CCScale9SpriteWithHSV : CCScale9Sprite {
+@interface CCScale9SpriteWithHsv : CCScale9Sprite <CCHsvProtocol> {
     GLuint hsvLocation_;
     kmMat4 brightnessMatrix_;
-}
 
-@property (nonatomic) CGFloat brightness;
+    BOOL matrixDirty_;
+    BOOL brightnessMatrixDirty_;
+}
 
 @end

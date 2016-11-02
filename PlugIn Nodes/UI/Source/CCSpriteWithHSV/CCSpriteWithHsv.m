@@ -8,7 +8,7 @@
 
 // Reference: http://graficaobscura.com/matrix/index.html
 
-#import "CCSpriteWithHSV.h"
+#import "CCSpriteWithHsv.h"
 
 #import "cocos2d.h"
 #import "ShaderUtils.h"
@@ -21,7 +21,7 @@
 
 @end
 
-@implementation CCSpriteWithHSV
+@implementation CCSpriteWithHsv
 
 @synthesize hue = hue_;
 @synthesize saturation = saturation_;
@@ -152,12 +152,12 @@
     matrixDirty_ = contrastMatrixDirty_ = YES;
 }
 
-- (void)setCascadeHsvEnabled:(BOOL)cascadeHsvEnabled {
-    if (cascadeHsvEnabled == [self isCascadeHsvEnabled]) {
+- (void)setCascadeHsvEnabled:(BOOL)enabled {
+    if (enabled == [self isCascadeHsvEnabled]) {
         return;
     }
-    cascadeHsvEnabled_ = cascadeHsvEnabled;
-    if (cascadeHsvEnabled) {
+    cascadeHsvEnabled_ = enabled;
+    if (enabled) {
         [self updateCascadeBrightness];
     } else {
         [self disableCascadeBrightness];

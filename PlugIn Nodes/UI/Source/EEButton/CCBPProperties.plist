@@ -23,6 +23,12 @@
 			<string>Separator</string>
 		</dict>
 		<dict>
+			<key>displayName</key>
+			<string>Pressed state</string>
+			<key>type</key>
+			<string>SeparatorSub</string>
+		</dict>
+		<dict>
 			<key>default</key>
 			<integer>0</integer>
 			<key>displayName</key>
@@ -31,6 +37,14 @@
 			<string>pressedSpriteFrameBrightness</string>
 			<key>type</key>
 			<string>Float</string>
+		</dict>
+		<dict>
+			<key>displayName</key>
+			<string>Cascade hsv enabled</string>
+			<key>name</key>
+			<string>pressedSpriteFrameCascadeHsvEnabled</string>
+			<key>type</key>
+			<string>Check</string>
 		</dict>
 	</array>
 	<key>propertiesOverridden</key>

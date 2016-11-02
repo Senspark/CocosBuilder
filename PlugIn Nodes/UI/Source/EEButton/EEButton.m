@@ -7,15 +7,15 @@
 //
 
 #import "EEButton.h"
-#import "CCScale9SpriteWithHSV.h"
+#import "CCScale9SpriteWithHsv.h"
 
 @implementation EEButton
 
 - (void)initRenderer {
-    buttonNormalRenderer_ = [[[CCScale9SpriteWithHSV alloc] init] autorelease];
-    buttonPressedRenderer_ = [[[CCScale9SpriteWithHSV alloc] init] autorelease];
+    buttonNormalRenderer_ = [[[CCScale9SpriteWithHsv alloc] init] autorelease];
+    buttonPressedRenderer_ = [[[CCScale9SpriteWithHsv alloc] init] autorelease];
     buttonDisabledRenderer_ =
-        [[[CCScale9SpriteWithHSV alloc] init] autorelease];
+        [[[CCScale9SpriteWithHsv alloc] init] autorelease];
 
     [self addChild:buttonNormalRenderer_ z:-2];
     [self addChild:buttonPressedRenderer_ z:-2];
@@ -23,11 +23,11 @@
 }
 
 - (CGFloat)pressedSpriteFrameBrightness {
-    return [(CCScale9SpriteWithHSV*)[self pressedRenderer] brightness];
+    return [(CCScale9SpriteWithHsv*)[self pressedRenderer] brightness];
 }
 
 - (void)setPressedSpriteFrameBrightness:(CGFloat)brightness {
-    [(CCScale9SpriteWithHSV*)[self pressedRenderer] setBrightness:brightness];
+    [(CCScale9SpriteWithHsv*)[self pressedRenderer] setBrightness:brightness];
 }
 
 @end

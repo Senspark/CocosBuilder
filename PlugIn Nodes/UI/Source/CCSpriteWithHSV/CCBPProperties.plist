@@ -7,18 +7,18 @@
 	<key>canHaveChildren</key>
 	<string>YES</string>
 	<key>className</key>
-	<string>CCSpriteWithHSV</string>
+	<string>CCSpriteWithHsv</string>
 	<key>editorClassName</key>
-	<string>CCSpriteWithHSV</string>
+	<string>CCSpriteWithHsv</string>
 	<key>inheritsFrom</key>
 	<string>CCSprite</string>
 	<key>properties</key>
 	<array>
 		<dict>
 			<key>name</key>
-			<string>CCSpriteWithHSV</string>
+			<string>CCSpriteWithHsv</string>
 			<key>displayName</key>
-			<string>CCSpriteWithHSV</string>
+			<string>CCSpriteWithHsv</string>
 			<key>type</key>
 			<string>Separator</string>
 		</dict>

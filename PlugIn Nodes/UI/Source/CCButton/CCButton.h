@@ -24,9 +24,7 @@
 
 #import "CCWidget.h"
 
-@class CCSpriteWithHSV;
 @class CCScale9Sprite;
-@class CCScale9SpriteWithHSV;
 @class CCLabelTTF;
 @class CCSpriteFrame;
 

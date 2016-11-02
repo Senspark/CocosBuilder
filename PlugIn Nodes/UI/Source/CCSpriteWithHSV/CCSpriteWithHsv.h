@@ -9,13 +9,13 @@
 #import "CCSprite.h"
 #import "CCHsvProtocol.h"
 
-@interface CCSpriteWithHSV : CCSprite<CCHsvProtocol> {
+@interface CCSpriteWithHsv : CCSprite <CCHsvProtocol> {
     GLuint hsvLocation_;
     kmMat4 hueMatrix_;
     kmMat4 saturationMatrix_;
     kmMat4 brightnessMatrix_;
     kmMat4 contrastMatrix_;
-    
+
     BOOL matrixDirty_;
     BOOL hueMatrixDirty_;
     BOOL saturationMatrixDirty_;
