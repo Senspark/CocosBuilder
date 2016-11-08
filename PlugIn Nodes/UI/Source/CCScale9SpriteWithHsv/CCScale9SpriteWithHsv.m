@@ -59,6 +59,7 @@
                        rotated:rotated
                      capInsets:capInsets];
     [self initShader];
+    matrixDirty_ = YES;
 }
 
 - (void)updateMatrix {
