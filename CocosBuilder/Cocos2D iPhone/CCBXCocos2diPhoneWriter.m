@@ -848,11 +848,17 @@
     // Write class
     NSString* class = [node objectForKey:@"customClass"];
     if (jsControlled) class = @"";
-    
+
+    NSString* baseClass = [node objectForKey:@"baseClass"];
+    if ([baseClass isEqualToString:@"CCBFile"]) {
+        // Fix issue where CCBFile custom properties are not written.
+        class = baseClass;
+    }
+
     BOOL hasCustomClass = YES;
     if (!class || [class isEqualToString:@""])
     {
-        class = [node objectForKey:@"baseClass"];
+        class = baseClass;
         hasCustomClass = NO;
     }
     [self writeCachedString:class isPath:NO];
