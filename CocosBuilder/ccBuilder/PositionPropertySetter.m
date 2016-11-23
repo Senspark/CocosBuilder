@@ -100,7 +100,16 @@
         {
             // Reload ccbFiles
             NSString* ccbFile = [NodeGraphPropertySetter nodeGraphNameForNode:child andProperty:prop];
+            
+            // Custom properties of CCBFile will be lost.
+            // Save old custom properties.
+            NSMutableArray* customProperties =
+                [NSMutableArray arrayWithArray:[child customProperties]];
+
             [NodeGraphPropertySetter setNodeGraphForNode:child andProperty:prop withFile:ccbFile parentSize:node.contentSize];
+            
+            // Load old custom properties.
+            [child setCustomProperties:customProperties];
         }
     }
 }

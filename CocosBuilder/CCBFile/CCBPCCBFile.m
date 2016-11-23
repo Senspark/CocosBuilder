@@ -82,4 +82,11 @@
     return [ccbFile customProperties];
 }
 
+- (void)setCustomProperties:(NSMutableArray*)customProperties {
+    if (ccbFile == nil) {
+        [super setCustomProperties:customProperties];
+    }
+    [ccbFile setCustomProperties:customProperties];
+}
+
 @end
