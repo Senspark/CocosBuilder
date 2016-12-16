@@ -50,7 +50,7 @@
     ccColor3B c;
     [colorValue getValue:&c];
     
-    return [NSColor colorWithCalibratedRed:c.r/255.0 green:c.g/255.0 blue:c.b/255.0 alpha:1];
+    return [NSColor colorWithDeviceRed:c.r/255.0 green:c.g/255.0 blue:c.b/255.0 alpha:1];
 }
 
 @end
