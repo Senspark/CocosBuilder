@@ -25,7 +25,7 @@
 #import "CCSkeletonBone.h"
 #import "CCSkeletonAnimation.h"
 
-#import "spine/spine-cocos2d-iphone.h"
+#import "spine/spine-cocos2d-objc.h"
 
 @implementation CCSkeletonBone
 
@@ -77,9 +77,9 @@
     
     spBone* bone = [[parentSkeleton_ skeleton] findBone:[self bone]];
     [self setPosition:CGPointMake(bone->worldX, bone->worldY)];
-    [self setRotation:bone->worldRotation];
-    [self setScaleX:bone->worldScaleX];
-    [self setScaleY:bone->worldScaleY];
+    [self setRotation:spBone_getWorldRotationX(bone)];
+    [self setScaleX:spBone_getWorldScaleX(bone)];
+    [self setScaleY:spBone_getWorldScaleY(bone)];
 }
 
 - (void) updateAvailableBones {

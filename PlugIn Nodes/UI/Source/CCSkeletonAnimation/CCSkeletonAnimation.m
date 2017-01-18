@@ -24,7 +24,7 @@
 
 #import "CCSkeletonAnimation.h"
 
-#import "spine/spine-cocos2d-iphone.h"
+#import "spine/spine-cocos2d-objc.h"
 
 NSString* const kNoAnimation = @"None";
 

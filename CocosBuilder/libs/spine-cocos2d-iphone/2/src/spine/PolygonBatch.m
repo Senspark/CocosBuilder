@@ -30,7 +30,7 @@
  *****************************************************************************/
 
 #import <spine/PolygonBatch.h>
-#import <spine/spine-cocos2d-iphone.h>
+#import <spine/spine-cocos2d-objc.h>
 #import <spine/extension.h>
 
 @implementation spPolygonBatch
@@ -61,7 +61,7 @@
 }
 
 - (void) add:(CCTexture2D*)addTexture vertices:(const float*)addVertices uvs:(const float*)uvs
-	verticesCount:(int)addVerticesCount triangles:(const int*)addTriangles trianglesCount:(int)addTrianglesCount
+	verticesCount:(int)addVerticesCount triangles:(const unsigned short*)addTriangles trianglesCount:(int)addTrianglesCount
 	color:(ccColor4B*)color {
 
 	if (

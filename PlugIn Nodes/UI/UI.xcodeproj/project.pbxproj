@@ -144,7 +144,7 @@
 		E3DEFB3E14FFD74500B98586 /* CCActionTween.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCActionTween.h; sourceTree = "<group>"; };
 		E3DEFB4014FFD74500B98586 /* CCAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAnimation.h; sourceTree = "<group>"; };
 		E3DEFB4214FFD74500B98586 /* CCAnimationCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAnimationCache.h; sourceTree = "<group>"; };
-		E3DEFB4414FFD74500B98586 /* CCAtlasNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAtlasNode.h; sourceTree = "<group>"; };
+		E3DEFB4414FFD74500B98586 /* CCAtlasNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCAtlasNode.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		E3DEFB4614FFD74500B98586 /* CCCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCCamera.h; sourceTree = "<group>"; };
 		E3DEFB4814FFD74500B98586 /* ccConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ccConfig.h; sourceTree = "<group>"; };
 		E3DEFB4914FFD74500B98586 /* CCConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCConfiguration.h; sourceTree = "<group>"; };
@@ -1807,6 +1807,7 @@
 					dynamic_lookup,
 				);
 				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = libs/kazmath/include;
 			};
 			name = Debug;
@@ -1838,6 +1839,7 @@
 					dynamic_lookup,
 				);
 				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = libs/kazmath/include;
 			};
 			name = Release;

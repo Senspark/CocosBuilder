@@ -29,7 +29,7 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *****************************************************************************/
 
-#import <spine/spine-cocos2d-iphone.h>
+#import <spine/spine-cocos2d-objc.h>
 
 @interface spPolygonBatch : NSObject {
 	int _capacity;
@@ -45,7 +45,7 @@
 - (id) initWithCapacity:(int)capacity;
 
 - (void) add:(CCTexture2D*)texture vertices:(const float*)vertices uvs:(const float*)uvs
-	verticesCount:(int)verticesCount triangles:(const int*)triangles trianglesCount:(int)trianglesCount
+	verticesCount:(int)verticesCount triangles:(const unsigned short*)triangles trianglesCount:(int)trianglesCount
 	color:(ccColor4B*)color;
 - (void) flush;
 
