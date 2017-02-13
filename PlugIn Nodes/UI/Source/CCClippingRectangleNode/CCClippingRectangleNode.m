@@ -45,7 +45,9 @@
     glGetIntegerv(GL_SCISSOR_BOX, previousScissorRect);
 
     if ([self clippingEnabled]) {
-        glEnable(GL_SCISSOR_TEST);
+        if (scissorEnabled == NO) {
+            glEnable(GL_SCISSOR_TEST);
+        }
         float scaleX = [self scaleX];
         float scaleY = [self scaleY];
         CCNode* parent = [self parent];
@@ -66,9 +68,10 @@
     [super visit];
 
     if ([self clippingEnabled]) {
-        glScissor(previousScissorRect[0], previousScissorRect[1],
-                  previousScissorRect[2], previousScissorRect[3]);
-        if (scissorEnabled == NO) {
+        if (scissorEnabled) {
+            glScissor(previousScissorRect[0], previousScissorRect[1],
+                      previousScissorRect[2], previousScissorRect[3]);
+        } else {
             glDisable(GL_SCISSOR_TEST);
         }
     }
