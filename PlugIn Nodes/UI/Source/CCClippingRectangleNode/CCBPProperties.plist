@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>canBeRootNode</key>
+	<true/>
+	<key>canHaveChildren</key>
+	<string>YES</string>
+	<key>className</key>
+	<string>CCClippingRectangleNode</string>
+	<key>editorClassName</key>
+	<string>CCClippingRectangleNode</string>
+	<key>inheritsFrom</key>
+	<string>CCNodeV3</string>
+	<key>properties</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>CCClippingRectangleNode</string>
+			<key>displayName</key>
+			<string>CCClippingRectangleNode</string>
+			<key>type</key>
+			<string>Separator</string>
+		</dict>
+		<dict>
+			<key>displayName</key>
+			<string>Clipping Enabled</string>
+			<key>name</key>
+			<string>clippingEnabled</string>
+			<key>type</key>
+			<string>Check</string>
+		</dict>
+	</array>
+</dict>
+</plist>
