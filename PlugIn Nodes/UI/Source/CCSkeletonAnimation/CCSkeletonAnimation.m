@@ -150,6 +150,8 @@ NSString* const kNoAnimation = @"None";
     for (int i = 0; i < [skeleton_ skeleton]->data->animationsCount; ++i) {
         [availableAnimations_ addObject:@([skeleton_ skeleton]->data->animations[i]->name)];
     }
+    
+    [self setAnimation:kNoAnimation];
 }
 
 - (void) updateAvailableSkins {
@@ -165,6 +167,10 @@ NSString* const kNoAnimation = @"None";
     for (NSInteger i = (ignoreDefaultSkin ? 1 : 0); i < skinsCount; ++i) {
         [availableSkins_ addObject:@([skeleton_ skeleton]->data->skins[i]->name)];
     }
+    
+    // Temporarily reset the current skin.
+    _skin = nil;
+    
     [self setSkin:[availableSkins_ objectAtIndex:0]];
 }
 
