@@ -151,7 +151,17 @@ NSString* const kNoAnimation = @"None";
         [availableAnimations_ addObject:@([skeleton_ skeleton]->data->animations[i]->name)];
     }
     
-    [self setAnimation:kNoAnimation];
+    // Try to use the existing animation.
+    NSInteger index = [availableAnimations_ indexOfObject:_animation];
+    if (index == NSNotFound) {
+        // Reset.
+        [self setAnimation:kNoAnimation];
+    } else {
+        // Bypass the string comparison.
+        NSString* holder = _animation;
+        _animation = nil;
+        [self setAnimation:holder];
+    }
 }
 
 - (void) updateAvailableSkins {
@@ -168,10 +178,20 @@ NSString* const kNoAnimation = @"None";
         [availableSkins_ addObject:@([skeleton_ skeleton]->data->skins[i]->name)];
     }
     
-    // Temporarily reset the current skin.
-    _skin = nil;
+    // try to use the existing skin.
+    NSInteger index = [availableSkins_ indexOfObject:_skin];
+    if (index == NSNotFound) {
+        // Temporarily reset the current skin.
+        [_skin release];
+        _skin = nil;
     
-    [self setSkin:[availableSkins_ objectAtIndex:0]];
+        [self setSkin:[availableSkins_ objectAtIndex:0]];
+    } else {
+        // Bypass the string comparison.
+        NSString* holder = _skin;
+        _skin = nil;
+        [self setSkin:holder];
+    }
 }
 
 - (void) setDataFile:(NSString*) dataFile {
