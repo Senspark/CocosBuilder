@@ -266,13 +266,93 @@
     // Check if file should be converted
     NSString* srcExt = [[srcFile pathExtension] lowercaseString];
     NSString* dstExt = [[dstFile pathExtension] lowercaseString];
-    if ([srcExt isEqualToString:dstExt])
-    {
-        // Just copy the file and update the modification date
-        [fm copyItemAtPath:srcFile toPath:dstFile error:NULL];
-    }
-    else if ([srcExt isEqualToString:@"wav"])
-    {
+    if ([srcExt isEqualToString:dstExt]) {
+        BOOL shouldCopy = YES;
+        do {
+            if (![srcExt isEqualToString:@"png"]) {
+                // Only pack png.
+                break;
+            }
+
+            NSString* contentProtectionKey =
+                [projectSettings contentProtectionKey];
+            if ([contentProtectionKey length] == 0) {
+                // Missing content protection key.
+                break;
+            }
+
+            NSString* const texturePackerPath = @"/usr/local/bin/texturepacker";
+            if (![fm isExecutableFileAtPath: texturePackerPath]) {
+                // Texture Packer command line is not installed.
+                break;
+            }
+
+            NSString* temporaryPvrCczFile =
+                [dstFile stringByAppendingPathExtension:@"pvr.ccz"];
+
+            // Attempt to pack the image (for encryption) using texture packer.
+            NSTask* task = [[[NSTask alloc] init] autorelease];
+            [task setCurrentDirectoryPath:
+                      [srcFile stringByDeletingLastPathComponent]];
+            [task setLaunchPath:texturePackerPath];
+
+            NSArray* arguments = @[
+                @"--format",
+                @"cocos2d",
+                @"--texture-format",
+                @"pvr2ccz",
+                @"--content-protection",
+                contentProtectionKey,
+                @"--disable-rotation",
+                @"--size-constraints",
+                @"AnySize",
+                @"--opt",
+                @"RGBA8888",
+                @"--trim-mode",
+                @"None",
+                @"--border-padding",
+                @"0",
+                @"--shape-padding",
+                @"0",
+                @"--inner-padding",
+                @"0",
+                @"--sheet",
+                temporaryPvrCczFile,
+                srcFile
+            ];
+            [task setArguments:arguments];
+
+            NSPipe* outputPipe = [NSPipe pipe];
+            [task setStandardError:outputPipe];
+            [task launch];
+            [task waitUntilExit];
+
+            NSData* outputData =
+                [[outputPipe fileHandleForReading] readDataToEndOfFile];
+            NSString* outputError = [[[NSString alloc]
+                initWithData:outputData
+                    encoding:NSUTF8StringEncoding] autorelease];
+
+            if ([outputError length] > 0) {
+                [warnings addWarningWithDescription:outputError isFatal:NO];
+            }
+
+            NSError* error = nil;
+            [fm moveItemAtPath:temporaryPvrCczFile toPath:dstFile error:&error];
+            if (error != nil) {
+                [warnings addWarningWithDescription:[error description]
+                                            isFatal:YES];
+                break;
+            }
+
+            shouldCopy = NO;
+        } while (false);
+
+        if (shouldCopy) {
+            // Just copy the file and update the modification date
+            [fm copyItemAtPath:srcFile toPath:dstFile error:NULL];
+        }
+    } else if ([srcExt isEqualToString:@"wav"]) {
         // TODO: Also convert to m4a/mp3 and possibly other formats, also make custom settings
         if ([dstExt isEqualToString:@"caf"])
         {
