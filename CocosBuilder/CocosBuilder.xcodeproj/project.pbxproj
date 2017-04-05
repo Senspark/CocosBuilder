@@ -57,6 +57,7 @@
 		6F843E611CDB99C2008B2EC4 /* CCText.ccbPlugNode in Copy PlugIns */ = {isa = PBXBuildFile; fileRef = 6F843E601CDB99C2008B2EC4 /* CCText.ccbPlugNode */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6F84607A1E51702100DB7FB3 /* CCClippingRectangleNode.ccbPlugNode in Copy PlugIns */ = {isa = PBXBuildFile; fileRef = 6F8460791E51702100DB7FB3 /* CCClippingRectangleNode.ccbPlugNode */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6F879D751CD740C200116A8B /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3A4747B16D43BF300DB0D61 /* AVFoundation.framework */; };
+		6F89A0A41E94F61600ED92E8 /* TexturePackerUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F89A0A21E94F61600ED92E8 /* TexturePackerUtils.m */; };
 		6F8F5BF21CF2F6AD0023C07F /* InspectorListBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F8F5BF01CF2F6AD0023C07F /* InspectorListBox.m */; };
 		6F8F5BF31CF2F6AD0023C07F /* InspectorListBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F8F5BF11CF2F6AD0023C07F /* InspectorListBox.xib */; };
 		6FB6394A1D3DDBE1006CC1B6 /* CCSkeletonBone.ccbPlugNode in Copy PlugIns */ = {isa = PBXBuildFile; fileRef = 6FB639491D3DDBE1006CC1B6 /* CCSkeletonBone.ccbPlugNode */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -1177,6 +1178,8 @@
 		6F3542AB1E2F1FC8006B3A1A /* VertexAttachment.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = VertexAttachment.c; path = "libs/spine-c/src/spine/VertexAttachment.c"; sourceTree = SOURCE_ROOT; };
 		6F3542CF1E2F2562006B3A1A /* PolygonBatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PolygonBatch.h; path = "spine-cocos2d-iphone/2/src/spine/PolygonBatch.h"; sourceTree = "<group>"; };
 		6F3542D01E2F2562006B3A1A /* PolygonBatch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PolygonBatch.m; path = "spine-cocos2d-iphone/2/src/spine/PolygonBatch.m"; sourceTree = "<group>"; };
+		6F89A0A21E94F61600ED92E8 /* TexturePackerUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TexturePackerUtils.m; sourceTree = "<group>"; };
+		6F89A0A31E94F61600ED92E8 /* TexturePackerUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TexturePackerUtils.h; sourceTree = "<group>"; };
 		6F8F5BEF1CF2F6AD0023C07F /* InspectorListBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectorListBox.h; sourceTree = "<group>"; };
 		6F8F5BF01CF2F6AD0023C07F /* InspectorListBox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectorListBox.m; sourceTree = "<group>"; };
 		6F8F5BF11CF2F6AD0023C07F /* InspectorListBox.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InspectorListBox.xib; sourceTree = "<group>"; };
@@ -2292,6 +2295,15 @@
 			path = spine;
 			sourceTree = "<group>";
 		};
+		6F89A0961E94F5FB00ED92E8 /* Texture Packer */ = {
+			isa = PBXGroup;
+			children = (
+				6F89A0A21E94F61600ED92E8 /* TexturePackerUtils.m */,
+				6F89A0A31E94F61600ED92E8 /* TexturePackerUtils.h */,
+			);
+			name = "Texture Packer";
+			sourceTree = "<group>";
+		};
 		6FC1BD781CD9AD4400DE717C /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -2769,6 +2781,7 @@
 				776041E21498F5A70078095D /* Util */,
 				776041EE1498FC320078095D /* GUI Util */,
 				7789ABC9133AA82000CEFCC7 /* Supporting Files */,
+				6F89A0961E94F5FB00ED92E8 /* Texture Packer */,
 			);
 			name = CocosBuilder;
 			path = ccBuilder;
@@ -5144,6 +5157,7 @@
 				E398C03314FB86D20078E771 /* PlugInExport.m in Sources */,
 				E398C03814FB8A430078E771 /* CCBX.m in Sources */,
 				E398C04314FBCA620078E771 /* PublishTypeAccessoryView.m in Sources */,
+				6F89A0A41E94F61600ED92E8 /* TexturePackerUtils.m in Sources */,
 				E3C5C1A41504D17E000CF6F3 /* ResourceManager.m in Sources */,
 				6F3542C31E2F1FC8006B3A1A /* SkeletonBounds.c in Sources */,
 				E3C5C1AC1504D30C000CF6F3 /* SCEvent.m in Sources */,

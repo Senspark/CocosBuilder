@@ -32,6 +32,8 @@
 #import "ResolutionSetting.h"
 #import "ProjectSettings.h"
 #import "CCBFileUtil.h"
+#import "TexturePackerUtils.h"
+
 #import <CoreGraphics/CGImage.h>
 
 #pragma mark RMSpriteFrame
@@ -895,76 +897,86 @@
     float srcScale = [CocosBuilderAppDelegate appDelegate].projectSettings.resourceAutoScaleFactor;
     
     float scaleFactor = dstScale/srcScale;
-    
-    // Load src image
-    CGDataProviderRef dataProvider = CGDataProviderCreateWithFilename([autoFile UTF8String]);
-    
-    CGImageRef imageSrc;
-    BOOL isPng = [[autoFile lowercaseString] hasSuffix:@"png"];
-    //If it'a png file, use png dataprovider, or use jpg dataprovider
-    if (isPng) {
-        imageSrc= CGImageCreateWithPNGDataProvider(dataProvider, NULL, NO, kCGRenderingIntentDefault);
-    }else{
-        imageSrc = CGImageCreateWithJPEGDataProvider(dataProvider, NULL, NO, kCGRenderingIntentDefault);
-    }
-    
-    int wSrc = CGImageGetWidth(imageSrc);
-    int hSrc = CGImageGetHeight(imageSrc);
-    
-    int wDst = wSrc * scaleFactor;
-    int hDst = hSrc * scaleFactor;
-    
-    BOOL save8BitPNG = NO;
-    
-    CGColorSpaceRef colorSpace = CGImageGetColorSpace(imageSrc);
-    if (CGColorSpaceGetModel(colorSpace) == kCGColorSpaceModelIndexed)
-    {
-        colorSpace = CGColorSpaceCreateDeviceRGB();
-        save8BitPNG = YES;
-    }
-    
-    // Create new, scaled image
-    CGContextRef newContext = CGBitmapContextCreate(NULL, wDst, hDst, 8, wDst*32, colorSpace, kCGImageAlphaPremultipliedLast);
-    
-    // Enable anti-aliasing
-    CGContextSetInterpolationQuality(newContext, kCGInterpolationHigh);
-    CGContextSetShouldAntialias(newContext, TRUE);
-    
-    CGContextDrawImage(newContext, CGContextGetClipBoundingBox(newContext), imageSrc);
-    
-    CGImageRef imageDst = CGBitmapContextCreateImage(newContext);
-    
-    // Create destination directory
-    [[NSFileManager defaultManager] createDirectoryAtPath:[dstFile stringByDeletingLastPathComponent] withIntermediateDirectories:YES attributes:NULL error:NULL];
-    
-    // Save the image
-    CFURLRef url = (CFURLRef)[NSURL fileURLWithPath:dstFile];
-    CGImageDestinationRef destination = CGImageDestinationCreateWithURL(url, isPng ? kUTTypePNG : kUTTypeJPEG, 1, NULL);
-    CGImageDestinationAddImage(destination, imageDst, nil);
-    
-    if (!CGImageDestinationFinalize(destination)) {
-        NSLog(@"Failed to write image to %@", dstFile);
-    }
-    
-    // Release created objects
-    CFRelease(destination);
-    CGImageRelease(imageSrc);
-    CFRelease(dataProvider);
-    CFRelease(newContext);
-    
-    // Convert file to 8 bit if original uses indexed colors
-    if (save8BitPNG)
-    {
-        CFRelease(colorSpace);
+
+    ProjectSettings* projectSettings =
+        [[CocosBuilderAppDelegate appDelegate] projectSettings];
+    if ([TexturePackerUtils pack:autoFile
+                     destination:dstFile
+            contentProtectionKey:[projectSettings contentProtectionKey]
+                           scale:scaleFactor
+                    errorMessage:nil]) {
+        // OK.
+    } else {
+        // Load src image
+        CGDataProviderRef dataProvider = CGDataProviderCreateWithFilename([autoFile UTF8String]);
         
-        NSTask* pngTask = [[NSTask alloc] init];
-        [pngTask setLaunchPath:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"pngquant"]];
-        NSMutableArray* args = [NSMutableArray arrayWithObjects:
-                                @"--force", @"--ext", @".png", dstFile, nil];
-        [pngTask setArguments:args];
-        [pngTask launch];
-        [pngTask waitUntilExit];
-        [pngTask release];
+        CGImageRef imageSrc;
+        BOOL isPng = [[autoFile lowercaseString] hasSuffix:@"png"];
+        //If it'a png file, use png dataprovider, or use jpg dataprovider
+        if (isPng) {
+            imageSrc= CGImageCreateWithPNGDataProvider(dataProvider, NULL, NO, kCGRenderingIntentDefault);
+        }else{
+            imageSrc = CGImageCreateWithJPEGDataProvider(dataProvider, NULL, NO, kCGRenderingIntentDefault);
+        }
+        
+        int wSrc = CGImageGetWidth(imageSrc);
+        int hSrc = CGImageGetHeight(imageSrc);
+        
+        int wDst = wSrc * scaleFactor;
+        int hDst = hSrc * scaleFactor;
+        
+        BOOL save8BitPNG = NO;
+        
+        CGColorSpaceRef colorSpace = CGImageGetColorSpace(imageSrc);
+        if (CGColorSpaceGetModel(colorSpace) == kCGColorSpaceModelIndexed)
+        {
+            colorSpace = CGColorSpaceCreateDeviceRGB();
+            save8BitPNG = YES;
+        }
+        
+        // Create new, scaled image
+        CGContextRef newContext = CGBitmapContextCreate(NULL, wDst, hDst, 8, wDst*32, colorSpace, kCGImageAlphaPremultipliedLast);
+        
+        // Enable anti-aliasing
+        CGContextSetInterpolationQuality(newContext, kCGInterpolationHigh);
+        CGContextSetShouldAntialias(newContext, TRUE);
+        
+        CGContextDrawImage(newContext, CGContextGetClipBoundingBox(newContext), imageSrc);
+        
+        CGImageRef imageDst = CGBitmapContextCreateImage(newContext);
+        
+        // Create destination directory
+        [[NSFileManager defaultManager] createDirectoryAtPath:[dstFile stringByDeletingLastPathComponent] withIntermediateDirectories:YES attributes:NULL error:NULL];
+        
+        // Save the image
+        CFURLRef url = (CFURLRef)[NSURL fileURLWithPath:dstFile];
+        CGImageDestinationRef destination = CGImageDestinationCreateWithURL(url, isPng ? kUTTypePNG : kUTTypeJPEG, 1, NULL);
+        CGImageDestinationAddImage(destination, imageDst, nil);
+        
+        if (!CGImageDestinationFinalize(destination)) {
+            NSLog(@"Failed to write image to %@", dstFile);
+        }
+        
+        // Release created objects
+        CFRelease(destination);
+        CGImageRelease(imageSrc);
+        CFRelease(dataProvider);
+        CFRelease(newContext);
+        
+        // Convert file to 8 bit if original uses indexed colors
+        if (save8BitPNG)
+        {
+            CFRelease(colorSpace);
+            
+            NSTask* pngTask = [[NSTask alloc] init];
+            [pngTask setLaunchPath:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"pngquant"]];
+            NSMutableArray* args = [NSMutableArray arrayWithObjects:
+                                    @"--force", @"--ext", @".png", dstFile, nil];
+            [pngTask setArguments:args];
+            [pngTask launch];
+            [pngTask waitUntilExit];
+            [pngTask release];
+        }
     }
     
     // Update modification time to match original file
