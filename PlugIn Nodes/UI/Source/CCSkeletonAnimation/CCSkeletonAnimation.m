@@ -121,15 +121,18 @@ NSString* const kNoAnimation = @"None";
     
     if ([[self animation] isEqualToString:kNoAnimation]) {
         [self removeChild:skeleton_];
-        skeleton_ = [SkeletonAnimation skeletonWithFile:[self dataFile]
-                                              atlasFile:[self atlasFile]
-                                                  scale:[self animationScale]];
-        if (skeleton_ != nil) {
-            [skeleton_ setDebugBones:[self debugBonesEnabled]];
-            [skeleton_ setDebugSlots:[self debugBonesEnabled]];
-            [skeleton_ setTimeScale:[self timeScale]];
-            [skeleton_ setSkin:[self skin]];
-            [self addChild:skeleton_ z:-1];
+        if ([self dataFile] != nil && [self atlasFile] != nil) {
+            skeleton_ =
+                [SkeletonAnimation skeletonWithFile:[self dataFile]
+                                          atlasFile:[self atlasFile]
+                                              scale:[self animationScale]];
+            if (skeleton_ != nil) {
+                [skeleton_ setDebugBones:[self debugBonesEnabled]];
+                [skeleton_ setDebugSlots:[self debugBonesEnabled]];
+                [skeleton_ setTimeScale:[self timeScale]];
+                [skeleton_ setSkin:[self skin]];
+                [self addChild:skeleton_ z:-1];
+            }
         }
     } else {
         [self restartAnimation];
