@@ -904,11 +904,12 @@
     }
     
     // Publish resources and ccb-files
-    for (NSString* dir in [projectSettings publishAbsoluteResourcePaths])
-    {
-        if (![self publishDirectory:dir subPath:NULL]) return NO;
+    for (NSString* dir in [projectSettings publishAbsoluteResourcePaths]) {
+        if (![self publishDirectory:dir subPath:[dir lastPathComponent]]) {
+            return NO;
+        }
     }
-    
+
     // Publish generated files
     [self publishGeneratedFiles];
     
