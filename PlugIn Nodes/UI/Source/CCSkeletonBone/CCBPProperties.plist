@@ -34,6 +34,37 @@
 		</dict>
 	</array>
 	<key>propertiesOverridden</key>
-	<array/>
+	<array>
+		<dict>
+			<key>readOnly</key>
+			<true/>
+			<key>type</key>
+			<string>Degrees</string>
+			<key>name</key>
+			<string>rotation</string>
+			<key>displayName</key>
+			<string>Rotation</string>
+		</dict>
+		<dict>
+			<key>readOnly</key>
+			<true/>
+			<key>displayName</key>
+			<string>Position</string>
+			<key>type</key>
+			<string>Position</string>
+			<key>name</key>
+			<string>position</string>
+		</dict>
+		<dict>
+			<key>readOnly</key>
+			<true/>
+			<key>type</key>
+			<string>ScaleLock</string>
+			<key>name</key>
+			<string>scale</string>
+			<key>displayName</key>
+			<string>Scale</string>
+		</dict>
+	</array>
 </dict>
 </plist>
