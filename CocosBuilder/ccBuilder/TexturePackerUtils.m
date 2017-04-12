@@ -34,7 +34,7 @@
     }
 
     NSString* currentDir =
-        [[NSFileManager defaultManager] currentDirectoryPath];
+        [[[NSBundle mainBundle] bundlePath] stringByDeletingLastPathComponent];
 
     NSString* dummyDataFile =
         [[currentDir stringByAppendingPathComponent:@".texture_packer_data"]
