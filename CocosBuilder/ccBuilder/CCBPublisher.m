@@ -246,7 +246,11 @@
             if ([srcDate isEqualToDate:dstDate]) return YES;
             
             // Copy auto file and resize
-            [[ResourceManager sharedManager] createCachedImageFromAuto:srcAutoFile saveAs:dstFile forResolution:resolution];
+            [[ResourceManager sharedManager]
+                createCachedImageFromAuto:srcAutoFile
+                                   saveAs:dstFile
+                            forResolution:resolution
+                                     pack:YES];
             return YES;
         }
         else

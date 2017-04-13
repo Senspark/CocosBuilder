@@ -876,8 +876,10 @@
     return dir.dirPath;
 }
 
-- (void) createCachedImageFromAuto:(NSString*)autoFile saveAs:(NSString*)dstFile forResolution:(NSString*)res
-{
+- (void)createCachedImageFromAuto:(NSString*)autoFile
+                           saveAs:(NSString*)dstFile
+                    forResolution:(NSString*)res
+                             pack:(BOOL)pack {
     // Calculate the scale factor
     float dstScale = 1;
     if ([res isEqualToString:@"iphone"]) dstScale = 1;
@@ -900,11 +902,11 @@
 
     ProjectSettings* projectSettings =
         [[CocosBuilderAppDelegate appDelegate] projectSettings];
-    if ([TexturePackerUtils pack:autoFile
-                     destination:dstFile
-            contentProtectionKey:[projectSettings contentProtectionKey]
-                           scale:scaleFactor
-                    errorMessage:nil]) {
+    if (pack && [TexturePackerUtils pack:autoFile
+                             destination:dstFile
+                    contentProtectionKey:[projectSettings contentProtectionKey]
+                                   scale:scaleFactor
+                            errorMessage:nil]) {
         // OK.
     } else {
         // Load src image
@@ -1066,7 +1068,10 @@
                 if (!cachedFileExists || !datesMatch)
                 {
                     // Not yet cached, create file
-                    [self createCachedImageFromAuto:autoFile saveAs:cachedFile forResolution:ext];
+                    [self createCachedImageFromAuto:autoFile
+                                             saveAs:cachedFile
+                                      forResolution:ext
+                                               pack:NO];
                 }
                 return cachedFile;
             }

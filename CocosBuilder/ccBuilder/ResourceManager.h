@@ -163,7 +163,10 @@ enum
 - (NSArray*) resIndependentExts;
 - (NSArray*) resIndependentDirs;
 
-- (void) createCachedImageFromAuto:(NSString*)autoFile saveAs:(NSString*)dstFile forResolution:(NSString*)res;
+- (void)createCachedImageFromAuto:(NSString*)autoFile
+                           saveAs:(NSString*)dstFile
+                    forResolution:(NSString*)res
+                             pack:(BOOL)pack;
 
 - (void) notifyResourceObserversResourceListUpdated;
 
