@@ -5,7 +5,7 @@
 	<key>inheritsFrom</key>
 	<string>CCNode</string>
 	<key>canHaveChildren</key>
-	<false/>
+	<true/>
 	<key>className</key>
 	<string>CCScale9Sprite</string>
 	<key>editorClassName</key>
