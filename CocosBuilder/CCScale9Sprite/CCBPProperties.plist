@@ -63,7 +63,6 @@
 				<string>insetBottom</string>
 				<string>preferedSize</string>
 				<string>contentSize</string>
-				<string>blendFunc</string>
 			</array>
 			<key>displayName</key>
 			<string>Sprite frame</string>
