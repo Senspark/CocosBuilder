@@ -76,10 +76,14 @@
     }
     
     spBone* bone = [[parentSkeleton_ skeleton] findBone:[self bone]];
-    [self setPosition:CGPointMake(bone->worldX, bone->worldY)];
-    [self setRotation:spBone_getWorldRotationX(bone)];
-    [self setScaleX:spBone_getWorldScaleX(bone)];
-    [self setScaleY:spBone_getWorldScaleY(bone)];
+    if (bone == NULL) {
+        // Invalid skeleton.
+    } else {
+        [self setPosition:CGPointMake(bone->worldX, bone->worldY)];
+        [self setRotation:spBone_getWorldRotationX(bone)];
+        [self setScaleX:spBone_getWorldScaleX(bone)];
+        [self setScaleY:spBone_getWorldScaleY(bone)];
+    }
 }
 
 - (void) updateAvailableBones {
@@ -90,9 +94,14 @@
     
     [availableBones_ release];
     availableBones_ = [[NSMutableArray alloc] init];
-    
-    for (int i = 0; i < [[parentSkeleton_ skeleton] skeleton]->data->bonesCount; ++i) {
-        [availableBones_ addObject:@([[parentSkeleton_ skeleton] skeleton]->data->bones[i]->name)];
+
+    spSkeleton* skeleton = [[parentSkeleton_ skeleton] skeleton];
+    if (skeleton == NULL) {
+        // Invalid skeleton.
+    } else {
+        for (int i = 0; i < skeleton->data->bonesCount; ++i) {
+            [availableBones_ addObject:@(skeleton->data->bones[i]->name)];
+        }
     }
 }
 
