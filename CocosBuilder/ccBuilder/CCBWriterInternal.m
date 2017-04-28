@@ -235,6 +235,8 @@
             continue;
         }
         
+        BOOL canSkip = YES;
+        
         // Handle different type of properties
         if ([plugIn dontSetInEditorProperty:name])
         {
@@ -360,6 +362,10 @@
             ccBlendFunc bf;
             [blendValue getValue:&bf];
             serializedValue = [CCBWriterInternal serializeBlendFunc:bf];
+            
+            // Cocos2d can (automatically) change the blend mode of sprites.
+            // We should not skip saving this property.
+            canSkip = NO;
         }
         else if ([type isEqualToString:@"FntFile"])
         {
@@ -427,11 +433,11 @@
         }
         
         // Skip default values
-        if ([serializedValue isEqual:defaultSerialization] && !hasKeyframes)
-        {
+        if (canSkip && [serializedValue isEqual:defaultSerialization] &&
+            !hasKeyframes) {
             continue;
         }
-        
+
         NSMutableDictionary* prop = [NSMutableDictionary dictionary];
         
         [prop setValue:type forKey:@"type"];
