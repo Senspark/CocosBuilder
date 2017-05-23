@@ -24,6 +24,7 @@
  */
 
 #import "CCBSpriteSheetParser.h"
+#import <ZipUtils.h>
 
 static NSInteger strSort(id num1, id num2, void *context)
 {
@@ -108,14 +109,28 @@ static NSInteger strSort(id num1, id num2, void *context)
     NSString* absImgFile = [NSString stringWithFormat:@"%@/%@", assetsPath,imgFile];
     
     NSImage* tex;
-            
-    NSImageRep* imgRep = [NSImageRep imageRepWithContentsOfFile:absImgFile];
     
-    if (![imgRep isKindOfClass:[NSBitmapImageRep class]]) return NULL;
-    NSBitmapImageRep* bitmapRep = (NSBitmapImageRep*) imgRep;
-            
-    tex = [[NSImage alloc] initWithSize:NSMakeSize([bitmapRep pixelsWide], [bitmapRep pixelsHigh])];
-    [tex addRepresentation:bitmapRep];
+    NSString* pathExt = [absImgFile pathExtension];
+    
+    // Support displaying sprite frame in *.pvr.ccz
+    if ([pathExt isEqualToString:@"ccz"]) {
+        unsigned char *pvrdata = NULL;
+		NSInteger pvrlen = 0;
+
+        pvrlen = ccInflateCCZFile( [absImgFile UTF8String], &pvrdata );
+        NSData* data = [NSData dataWithBytes:pvrdata length:pvrlen];
+        
+        tex = [[NSImage alloc] initWithData:data];
+    } else {
+        NSImageRep* imgRep = [NSImageRep imageRepWithContentsOfFile:absImgFile];
+        
+        if (![imgRep isKindOfClass:[NSBitmapImageRep class]]) return NULL;
+        NSBitmapImageRep* bitmapRep = (NSBitmapImageRep*) imgRep;
+                
+        tex = [[NSImage alloc] initWithSize:NSMakeSize([bitmapRep pixelsWide], [bitmapRep pixelsHigh])];
+        [tex addRepresentation:bitmapRep];
+    }
+    
     [tex setFlipped:YES];
     [tex autorelease];
     
