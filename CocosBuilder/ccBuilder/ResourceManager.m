@@ -152,9 +152,9 @@
             NSInteger pvrlen = 0;
 
             pvrlen = ccInflateCCZFile( [absImgFile UTF8String], &pvrdata );
-            NSData* data = [NSData dataWithBytes:pvrdata length:pvrlen];
+            NSData* fileData = [NSData dataWithBytes:pvrdata length:pvrlen];
             
-            img = [[NSImage alloc] initWithData:data];
+            img = [[NSImage alloc] initWithData:fileData];
         } else {
             img = [[[NSImage alloc] initWithContentsOfFile:filePath] autorelease];
         }
