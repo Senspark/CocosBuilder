@@ -134,6 +134,31 @@
             img = [[[NSImage alloc] initWithContentsOfFile:filePath] autorelease];
         }
         return img;
+    } else if (type == kCCBResTypeSpriteSheet) {
+        NSString* dirPath = [filePath stringByDeletingLastPathComponent];
+    
+        NSMutableDictionary* dict = [NSMutableDictionary dictionaryWithContentsOfFile:filePath];
+    
+        NSString* imgFile = [[dict objectForKey:@"metadata"] objectForKey:@"textureFileName"];
+        
+        NSString* absImgFile = [NSString stringWithFormat:@"%@/%@", dirPath,imgFile];
+        
+        NSString* pathExt = [absImgFile pathExtension];
+        
+        NSImage* img;
+        
+        if ([pathExt isEqualToString:@"ccz"]) {
+            unsigned char *pvrdata = NULL;
+            NSInteger pvrlen = 0;
+
+            pvrlen = ccInflateCCZFile( [absImgFile UTF8String], &pvrdata );
+            NSData* data = [NSData dataWithBytes:pvrdata length:pvrlen];
+            
+            img = [[NSImage alloc] initWithData:data];
+        } else {
+            img = [[[NSImage alloc] initWithContentsOfFile:filePath] autorelease];
+        }
+        return img;
     }
     
     return NULL;
