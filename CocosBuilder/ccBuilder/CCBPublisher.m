@@ -913,14 +913,22 @@
         NSFileManager *fm = [NSFileManager defaultManager];
         NSString* publishDir;
         
-        publishDir = [projectSettings.publishDirectory absolutePathFromBaseDirPath:[projectSettings.projectPath stringByDeletingLastPathComponent]];
-        [fm removeItemAtPath:publishDir error:NULL];
+        if (![projectSettings.publishDirectory isEqualToString:@""])
+        {
+            publishDir = [projectSettings.publishDirectory absolutePathFromBaseDirPath:[projectSettings.projectPath stringByDeletingLastPathComponent]];
+            [fm removeItemAtPath:publishDir error:NULL];
+        }
         
-        publishDir = [projectSettings.publishDirectoryAndroid absolutePathFromBaseDirPath:[projectSettings.projectPath stringByDeletingLastPathComponent]];
-        [fm removeItemAtPath:publishDir error:NULL];
+        if (![projectSettings.publishDirectoryAndroid isEqualToString:@""])
+        {
+            publishDir = [projectSettings.publishDirectoryAndroid absolutePathFromBaseDirPath:[projectSettings.projectPath stringByDeletingLastPathComponent]];
+            [fm removeItemAtPath:publishDir error:NULL];
+        }
         
-        publishDir = [projectSettings.publishDirectoryHTML5 absolutePathFromBaseDirPath:[projectSettings.projectPath stringByDeletingLastPathComponent]];
-        [fm removeItemAtPath:publishDir error:NULL];
+        if (![projectSettings.publishDirectoryHTML5 isEqualToString:@""]) {
+            publishDir = [projectSettings.publishDirectoryHTML5 absolutePathFromBaseDirPath:[projectSettings.projectPath stringByDeletingLastPathComponent]];
+            [fm removeItemAtPath:publishDir error:NULL];
+        }
     }
     
     if (!runAfterPublishing)
