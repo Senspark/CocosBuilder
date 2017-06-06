@@ -98,6 +98,10 @@
 
 #import <ExceptionHandling/NSExceptionHandler.h>
 
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+#import <Crashlytics/Answers.h>
+
 
 @implementation CocosBuilderAppDelegate
 
@@ -276,6 +280,7 @@ static CocosBuilderAppDelegate* sharedAppDelegate;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    [Fabric with:@[[Crashlytics class], [Answers class]]];
     [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:@"ApplePersistenceIgnoreState"];
     [self.window center];
     
