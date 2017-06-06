@@ -1,0 +1,148 @@
+# Uncomment the next line to define a global platform for your project
+platform :osx, '10.7'
+
+target 'CCBFile' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for CCBFile
+
+end
+
+target 'ccbpublish' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for ccbpublish
+
+end
+
+target 'CCControl' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for CCControl
+
+end
+
+target 'CCControlButton' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for CCControlButton
+
+end
+
+target 'CCLabelBMFont' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for CCLabelBMFont
+
+end
+
+target 'CCLabelTTF' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for CCLabelTTF
+
+end
+
+target 'CCLayer' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for CCLayer
+
+end
+
+target 'CCLayerColor' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for CCLayerColor
+
+end
+
+target 'CCLayerGradient' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for CCLayerGradient
+
+end
+
+target 'CCMenu' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for CCMenu
+
+end
+
+target 'CCMenuItemImage' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for CCMenuItemImage
+
+end
+
+target 'CCNode' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for CCNode
+
+end
+
+target 'CCParticleSystem' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for CCParticleSystem
+
+end
+
+target 'CCScale9Sprite' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for CCScale9Sprite
+
+end
+
+target 'CCScrollView' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for CCScrollView
+
+end
+
+target 'CCSprite' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for CCSprite
+
+end
+
+target 'Cocos2D iPhone' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for Cocos2D iPhone
+
+end
+
+target 'CocosBuilder' do
+  # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
+  # use_frameworks!
+
+  # Pods for CocosBuilder
+	pod 'Fabric'
+    pod 'Crashlytics'
+
+end
