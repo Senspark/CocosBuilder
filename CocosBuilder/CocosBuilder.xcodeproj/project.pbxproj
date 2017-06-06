@@ -7,11 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		142C3BC833E89991DFCD9D8D /* libPods-CCBFile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF1CCAE9CAC1757058506D49 /* libPods-CCBFile.a */; };
+		2B8CC7F1F51F17CEA1EB12D3 /* libPods-CCParticleSystem.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E117FE98DE0C0AA568D8EBD0 /* libPods-CCParticleSystem.a */; };
+		366D1CF6FCB54C0193AF6887 /* libPods-CCControlButton.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFA800C9AEEFE3603B220724 /* libPods-CCControlButton.a */; };
+		4DA186FD53870D03622102BA /* libPods-ccbpublish.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EB51CD313787EE315E71293 /* libPods-ccbpublish.a */; };
+		51E1DF1A7B2021A7BDE49EA2 /* libPods-CCMenuItemImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6682C2C30559EA62DDC01048 /* libPods-CCMenuItemImage.a */; };
 		581130601639C52500A86D70 /* seq-startmarker.png in Resources */ = {isa = PBXBuildFile; fileRef = 5811305F1639C52000A86D70 /* seq-startmarker.png */; };
 		581BCFE8162DADE7007DE600 /* CCBSplitHorizontalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 581BCFE7162DADE7007DE600 /* CCBSplitHorizontalView.m */; };
 		58FA2034162D73F3006B8856 /* TB_bottomPanel.png in Resources */ = {isa = PBXBuildFile; fileRef = 58FA2031162D73F3006B8856 /* TB_bottomPanel.png */; };
 		58FA2035162D73F3006B8856 /* TB_leftPanel.png in Resources */ = {isa = PBXBuildFile; fileRef = 58FA2032162D73F3006B8856 /* TB_leftPanel.png */; };
 		58FA2036162D73F3006B8856 /* TB_rightPanel.png in Resources */ = {isa = PBXBuildFile; fileRef = 58FA2033162D73F3006B8856 /* TB_rightPanel.png */; };
+		61F2818C7EFB7B0290166C9B /* libPods-CCNode.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BCE6B7F3585E4D2A73154DC /* libPods-CCNode.a */; };
+		6ABBB1B1DA3118DBD8140EC6 /* libPods-CocosBuilder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 692823765E696B08A3E1F3EF /* libPods-CocosBuilder.a */; };
 		6F17FB431CF2AC0B00CFCD14 /* CCSkeletonAnimation.ccbPlugNode in Copy PlugIns */ = {isa = PBXBuildFile; fileRef = 6F17FAD21CF2A5F000CFCD14 /* CCSkeletonAnimation.ccbPlugNode */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6F17FB471CF2B9F200CFCD14 /* InspectorAtlasFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F17FB451CF2B9F200CFCD14 /* InspectorAtlasFile.m */; };
 		6F17FB481CF2B9F200CFCD14 /* InspectorAtlasFile.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6F17FB461CF2B9F200CFCD14 /* InspectorAtlasFile.xib */; };
@@ -188,9 +195,17 @@
 		835DB0C6171563A8003A2F7B /* About.txt in Resources */ = {isa = PBXBuildFile; fileRef = 835DB0C3171563A8003A2F7B /* About.txt */; };
 		835DB0C9171563E1003A2F7B /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 835DB0C5171563A8003A2F7B /* GCDAsyncSocket.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		835DB0CB17156421003A2F7B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 835DB0CA17156421003A2F7B /* Security.framework */; };
+		858A3F7F1F587D240F6A7B31 /* libPods-CCLayerGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8C1C0FC208779990CC4F3D5 /* libPods-CCLayerGradient.a */; };
+		8DF2991B083384F23815DFC4 /* libPods-CCLabelBMFont.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A185D7B70B0B90507A714CA9 /* libPods-CCLabelBMFont.a */; };
+		9DBA917EBB7A2C72479E1EDE /* libPods-CCMenu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B8ACE427EAD3D4CDF2484B2 /* libPods-CCMenu.a */; };
 		A09AB6F714E993AA009C8B91 /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = A09AB6F614E993AA009C8B91 /* fps_images.png */; };
 		A77EF590171FD30E00451DA4 /* cwebp in Resources */ = {isa = PBXBuildFile; fileRef = A77EF58F171FD30E00451DA4 /* cwebp */; };
 		A77EF594171FD3B200451DA4 /* cwebp in Resources */ = {isa = PBXBuildFile; fileRef = A77EF58F171FD30E00451DA4 /* cwebp */; };
+		B0560BAA92EC10E594DB03F9 /* libPods-CCLabelTTF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 66684D94DB18BFA72465F51D /* libPods-CCLabelTTF.a */; };
+		BC75DDFC6D36E7C8FCABC9ED /* libPods-CCSprite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76B23C157CA352108649B940 /* libPods-CCSprite.a */; };
+		CF0C50C516171060D885D5EF /* libPods-CCLayerColor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61784F9B259DAA0E0C3D8487 /* libPods-CCLayerColor.a */; };
+		D2E325AFFED2DE03C9D5CB27 /* libPods-CCLayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FEF85138FE7DA5FF5CD135B2 /* libPods-CCLayer.a */; };
+		D9C9990592C6C014A36E77E5 /* libPods-Cocos2D iPhone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A002BFD25CDE3C1055598E7A /* libPods-Cocos2D iPhone.a */; };
 		E3127AA516C1D8E600D09AA4 /* CCBDirectoryComparer.m in Sources */ = {isa = PBXBuildFile; fileRef = E3127AA416C1D8E600D09AA4 /* CCBDirectoryComparer.m */; };
 		E312972E16CC33B200A09155 /* SequencerPopoverBlock.xib in Resources */ = {isa = PBXBuildFile; fileRef = E312972D16CC33B200A09155 /* SequencerPopoverBlock.xib */; };
 		E312973316CC377700A09155 /* SequencerPopoverBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = E312973216CC377700A09155 /* SequencerPopoverBlock.m */; };
@@ -610,12 +625,15 @@
 		E3FEA8BB14E4989A00119FBE /* InspectorDegrees.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3FEA8BA14E4989900119FBE /* InspectorDegrees.xib */; };
 		E3FEA8BE14E498B700119FBE /* InspectorDegrees.m in Sources */ = {isa = PBXBuildFile; fileRef = E3FEA8BD14E498B700119FBE /* InspectorDegrees.m */; };
 		E3FEA8C014E49D8300119FBE /* InspectorInteger.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3FEA8BF14E49D8300119FBE /* InspectorInteger.xib */; };
+		F6BB2116162D16634264B595 /* libPods-CCScrollView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DBDE52E1D86727CDB257BD7 /* libPods-CCScrollView.a */; };
 		FA98CFC4154E7D1C006E58C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA98CFC3154E7D1C006E58C5 /* Foundation.framework */; };
 		FA98CFC7154E7D1C006E58C5 /* ccbpublish.m in Sources */ = {isa = PBXBuildFile; fileRef = FA98CFC6154E7D1C006E58C5 /* ccbpublish.m */; };
 		FA98CFD1154E7F7D006E58C5 /* CCBX.m in Sources */ = {isa = PBXBuildFile; fileRef = E398C03614FB8A430078E771 /* CCBX.m */; };
 		FA98CFD7154E828E006E58C5 /* PlugInManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B7AEDC14E3246100DFD402 /* PlugInManager.m */; };
 		FA98CFD9154E828E006E58C5 /* PlugInExport.m in Sources */ = {isa = PBXBuildFile; fileRef = E398C03214FB86D20078E771 /* PlugInExport.m */; };
 		FA98CFDB154E8D16006E58C5 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA98CFDA154E8D16006E58C5 /* CoreServices.framework */; };
+		FDD1DDD24C03406E0ABDD5B8 /* libPods-CCScale9Sprite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F002CBACA72CBAACCE8D13F5 /* libPods-CCScale9Sprite.a */; };
+		FDD49AD41849C25827081AB3 /* libPods-CCControl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AE1540C892E7C2943AA1ED57 /* libPods-CCControl.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1091,6 +1109,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0BCE6B7F3585E4D2A73154DC /* libPods-CCNode.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CCNode.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AA5F6BB452BB83189C76B96 /* Pods-CCMenuItemImage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCMenuItemImage.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCMenuItemImage/Pods-CCMenuItemImage.debug.xcconfig"; sourceTree = "<group>"; };
+		1B782F6FF91E3D108355ECB5 /* Pods-CCLayerColor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCLayerColor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCLayerColor/Pods-CCLayerColor.debug.xcconfig"; sourceTree = "<group>"; };
+		2114D1C7906FA9F4E6A3C816 /* Pods-CCNode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCNode.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCNode/Pods-CCNode.debug.xcconfig"; sourceTree = "<group>"; };
+		2461DE31DBAB93F95823530D /* Pods-CCControl.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCControl.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCControl/Pods-CCControl.release.xcconfig"; sourceTree = "<group>"; };
+		2E6C3C8C8688EA39F942DE5F /* Pods-CCScale9Sprite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCScale9Sprite.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCScale9Sprite/Pods-CCScale9Sprite.debug.xcconfig"; sourceTree = "<group>"; };
+		3A885D34D9664CC237DCF444 /* Pods-CCMenu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCMenu.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCMenu/Pods-CCMenu.release.xcconfig"; sourceTree = "<group>"; };
+		3E64221AFFD5CE642FBDD0EF /* Pods-CCScrollView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCScrollView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCScrollView/Pods-CCScrollView.debug.xcconfig"; sourceTree = "<group>"; };
+		41882CE0A53923361BCBDF3B /* Pods-CCLayer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCLayer.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCLayer/Pods-CCLayer.release.xcconfig"; sourceTree = "<group>"; };
+		4D8533957205581576691902 /* Pods-CCLabelBMFont.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCLabelBMFont.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCLabelBMFont/Pods-CCLabelBMFont.debug.xcconfig"; sourceTree = "<group>"; };
+		50681C4F519ADD3B354E3B38 /* Pods-CCMenuItemImage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCMenuItemImage.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCMenuItemImage/Pods-CCMenuItemImage.release.xcconfig"; sourceTree = "<group>"; };
+		52C1A43AE7B80B416B723F5E /* Pods-CCControl.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCControl.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCControl/Pods-CCControl.debug.xcconfig"; sourceTree = "<group>"; };
 		5811305E1639BF1200A86D70 /* SequencerTimelineDrawDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SequencerTimelineDrawDelegate.h; sourceTree = "<group>"; };
 		5811305F1639C52000A86D70 /* seq-startmarker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "seq-startmarker.png"; sourceTree = "<group>"; };
 		581BCFE6162DADE7007DE600 /* CCBSplitHorizontalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBSplitHorizontalView.h; sourceTree = "<group>"; };
@@ -1098,6 +1128,20 @@
 		58FA2031162D73F3006B8856 /* TB_bottomPanel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TB_bottomPanel.png; sourceTree = "<group>"; };
 		58FA2032162D73F3006B8856 /* TB_leftPanel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TB_leftPanel.png; sourceTree = "<group>"; };
 		58FA2033162D73F3006B8856 /* TB_rightPanel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TB_rightPanel.png; sourceTree = "<group>"; };
+		5C355DEED193979617EC4F80 /* Pods-CCLabelTTF.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCLabelTTF.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCLabelTTF/Pods-CCLabelTTF.release.xcconfig"; sourceTree = "<group>"; };
+		5DBDE52E1D86727CDB257BD7 /* libPods-CCScrollView.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CCScrollView.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EB51CD313787EE315E71293 /* libPods-ccbpublish.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ccbpublish.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5FA3BFF40F6AAE284B669E22 /* Pods-CCSprite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCSprite.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCSprite/Pods-CCSprite.release.xcconfig"; sourceTree = "<group>"; };
+		61784F9B259DAA0E0C3D8487 /* libPods-CCLayerColor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CCLayerColor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		61940E3B0C5E1CC5DC580514 /* Pods-CocosBuilder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocosBuilder.release.xcconfig"; path = "Pods/Target Support Files/Pods-CocosBuilder/Pods-CocosBuilder.release.xcconfig"; sourceTree = "<group>"; };
+		64B7B87907E3C31259C11663 /* Pods-CCBFile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCBFile.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCBFile/Pods-CCBFile.debug.xcconfig"; sourceTree = "<group>"; };
+		66684D94DB18BFA72465F51D /* libPods-CCLabelTTF.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CCLabelTTF.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6682C2C30559EA62DDC01048 /* libPods-CCMenuItemImage.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CCMenuItemImage.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		67925DE612FB05914CC7D064 /* Pods-CCLayerGradient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCLayerGradient.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCLayerGradient/Pods-CCLayerGradient.release.xcconfig"; sourceTree = "<group>"; };
+		67BE2189C2B664B810845E99 /* Pods-CCLabelTTF.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCLabelTTF.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCLabelTTF/Pods-CCLabelTTF.debug.xcconfig"; sourceTree = "<group>"; };
+		692823765E696B08A3E1F3EF /* libPods-CocosBuilder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CocosBuilder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A647E0DDC1EFCD504C7330A /* Pods-CCScale9Sprite.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCScale9Sprite.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCScale9Sprite/Pods-CCScale9Sprite.release.xcconfig"; sourceTree = "<group>"; };
+		6DAE2BE70239099F346F7527 /* Pods-ccbpublish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ccbpublish.release.xcconfig"; path = "Pods/Target Support Files/Pods-ccbpublish/Pods-ccbpublish.release.xcconfig"; sourceTree = "<group>"; };
 		6F17FB441CF2B9F200CFCD14 /* InspectorAtlasFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectorAtlasFile.h; sourceTree = "<group>"; };
 		6F17FB451CF2B9F200CFCD14 /* InspectorAtlasFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectorAtlasFile.m; sourceTree = "<group>"; };
 		6F17FB461CF2B9F200CFCD14 /* InspectorAtlasFile.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InspectorAtlasFile.xib; sourceTree = "<group>"; };
@@ -1185,6 +1229,7 @@
 		6F8F5BF11CF2F6AD0023C07F /* InspectorListBox.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InspectorListBox.xib; sourceTree = "<group>"; };
 		6FC1BD771CD9AD4400DE717C /* cocos2d-osx.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "cocos2d-osx.xcodeproj"; path = "libs/cocos2d-iphone/cocos2d-osx.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		6FC2417F1CDB5896009A3AAD /* UI.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = UI.xcodeproj; path = "../PlugIn Nodes/UI/UI.xcodeproj"; sourceTree = "<group>"; };
+		76B23C157CA352108649B940 /* libPods-CCSprite.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CCSprite.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		77055FB313D0E5CA009DD63A /* logo-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-icon.png"; sourceTree = "<group>"; };
 		77055FB413D0E5CA009DD63A /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		77156DAF137F0351005EF746 /* CCBSpriteSheetParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBSpriteSheetParser.h; sourceTree = "<group>"; };
@@ -1307,6 +1352,7 @@
 		77E7D04A138F777A00E8EE67 /* CCBModalSheetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBModalSheetController.m; sourceTree = "<group>"; };
 		77E7D04D138F78F600E8EE67 /* StageSizeWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StageSizeWindow.h; sourceTree = "<group>"; };
 		77E7D04E138F78F600E8EE67 /* StageSizeWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StageSizeWindow.m; sourceTree = "<group>"; };
+		783D2EE3AC4BF44555C12A27 /* Pods-CCBFile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCBFile.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCBFile/Pods-CCBFile.release.xcconfig"; sourceTree = "<group>"; };
 		835DAF3F17156161003A2F7B /* CCBHTTPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBHTTPServer.h; sourceTree = "<group>"; };
 		835DAF4017156161003A2F7B /* CCBHTTPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBHTTPServer.m; sourceTree = "<group>"; };
 		835DAF81171561B7003A2F7B /* DDData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDData.h; sourceTree = "<group>"; };
@@ -1367,8 +1413,30 @@
 		835DB0C4171563A8003A2F7B /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
 		835DB0C5171563A8003A2F7B /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
 		835DB0CA17156421003A2F7B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		87B2F0C679A90D846A8DBB91 /* Pods-Cocos2D iPhone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cocos2D iPhone.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cocos2D iPhone/Pods-Cocos2D iPhone.release.xcconfig"; sourceTree = "<group>"; };
+		8A2292BE6AA7CE0E8C0D57C6 /* Pods-CCLayer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCLayer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCLayer/Pods-CCLayer.debug.xcconfig"; sourceTree = "<group>"; };
+		8B8ACE427EAD3D4CDF2484B2 /* libPods-CCMenu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CCMenu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DCCE549FD99AB12AE5AB9F6 /* Pods-ccbpublish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ccbpublish.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ccbpublish/Pods-ccbpublish.debug.xcconfig"; sourceTree = "<group>"; };
+		8E5647CBD6980CD3D640C447 /* Pods-CCLayerGradient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCLayerGradient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCLayerGradient/Pods-CCLayerGradient.debug.xcconfig"; sourceTree = "<group>"; };
+		94919F4E917F55FFFE38A1C1 /* Pods-CocosBuilder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocosBuilder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CocosBuilder/Pods-CocosBuilder.debug.xcconfig"; sourceTree = "<group>"; };
+		992C933381FDB35C325BA1B0 /* Pods-CCMenu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCMenu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCMenu/Pods-CCMenu.debug.xcconfig"; sourceTree = "<group>"; };
+		9C7EE19DB739A9A1F07681C2 /* Pods-CCNode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCNode.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCNode/Pods-CCNode.release.xcconfig"; sourceTree = "<group>"; };
+		A002BFD25CDE3C1055598E7A /* libPods-Cocos2D iPhone.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cocos2D iPhone.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A09AB6F614E993AA009C8B91 /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fps_images.png; path = "libs/cocos2d-iphone/Resources/Fonts/fps_images.png"; sourceTree = SOURCE_ROOT; };
+		A185D7B70B0B90507A714CA9 /* libPods-CCLabelBMFont.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CCLabelBMFont.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A703413E6356F59914FBF72D /* Pods-CCLayerColor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCLayerColor.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCLayerColor/Pods-CCLayerColor.release.xcconfig"; sourceTree = "<group>"; };
 		A77EF58F171FD30E00451DA4 /* cwebp */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = cwebp; sourceTree = "<group>"; };
+		A894F0F7493B8D461890A51C /* Pods-CCControlButton.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCControlButton.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCControlButton/Pods-CCControlButton.release.xcconfig"; sourceTree = "<group>"; };
+		AE1540C892E7C2943AA1ED57 /* libPods-CCControl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CCControl.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B820EFAA3A0AA68BEDC5846F /* Pods-CCParticleSystem.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCParticleSystem.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCParticleSystem/Pods-CCParticleSystem.release.xcconfig"; sourceTree = "<group>"; };
+		BFA800C9AEEFE3603B220724 /* libPods-CCControlButton.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CCControlButton.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4E1EAC2A873F39A81615C90 /* Pods-CCControlButton.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCControlButton.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCControlButton/Pods-CCControlButton.debug.xcconfig"; sourceTree = "<group>"; };
+		C586C7FECF9AD59C31A9FA45 /* Pods-CCSprite.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCSprite.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCSprite/Pods-CCSprite.debug.xcconfig"; sourceTree = "<group>"; };
+		C8C1C0FC208779990CC4F3D5 /* libPods-CCLayerGradient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CCLayerGradient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9246E96EE7EB52E875D75E2 /* Pods-CCLabelBMFont.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCLabelBMFont.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCLabelBMFont/Pods-CCLabelBMFont.release.xcconfig"; sourceTree = "<group>"; };
+		CEF5F6D4189158F69D502A58 /* Pods-Cocos2D iPhone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cocos2D iPhone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cocos2D iPhone/Pods-Cocos2D iPhone.debug.xcconfig"; sourceTree = "<group>"; };
+		DF1CCAE9CAC1757058506D49 /* libPods-CCBFile.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CCBFile.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E117FE98DE0C0AA568D8EBD0 /* libPods-CCParticleSystem.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CCParticleSystem.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3127AA316C1D8E600D09AA4 /* CCBDirectoryComparer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBDirectoryComparer.h; sourceTree = "<group>"; };
 		E3127AA416C1D8E600D09AA4 /* CCBDirectoryComparer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBDirectoryComparer.m; sourceTree = "<group>"; };
 		E312972D16CC33B200A09155 /* SequencerPopoverBlock.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SequencerPopoverBlock.xib; sourceTree = "<group>"; };
@@ -1794,6 +1862,7 @@
 		E3B9AF4C153C48E300489438 /* CCBTransparentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBTransparentView.h; sourceTree = "<group>"; };
 		E3B9AF4D153C48E300489438 /* CCBTransparentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBTransparentView.m; sourceTree = "<group>"; };
 		E3BF89D8156D36B6001A24CE /* CocosBuilderProjectIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = CocosBuilderProjectIcon.icns; sourceTree = "<group>"; };
+		E3C0858E9363E651E5F17384 /* Pods-CCParticleSystem.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCParticleSystem.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCParticleSystem/Pods-CCParticleSystem.debug.xcconfig"; sourceTree = "<group>"; };
 		E3C12B19171DD386001EEDDB /* NSWindow+CCBAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWindow+CCBAccessoryView.h"; sourceTree = "<group>"; };
 		E3C12B1A171DD386001EEDDB /* NSWindow+CCBAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+CCBAccessoryView.m"; sourceTree = "<group>"; };
 		E3C12B1E171E0DE7001EEDDB /* editor-check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "editor-check.png"; sourceTree = "<group>"; };
@@ -1980,11 +2049,14 @@
 		E3FEA8BC14E498B600119FBE /* InspectorDegrees.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectorDegrees.h; sourceTree = "<group>"; };
 		E3FEA8BD14E498B700119FBE /* InspectorDegrees.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectorDegrees.m; sourceTree = "<group>"; };
 		E3FEA8BF14E49D8300119FBE /* InspectorInteger.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InspectorInteger.xib; sourceTree = "<group>"; };
+		F002CBACA72CBAACCE8D13F5 /* libPods-CCScale9Sprite.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CCScale9Sprite.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA98CFC1154E7D1C006E58C5 /* ccbpublish */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ccbpublish; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA98CFC3154E7D1C006E58C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FA98CFC6154E7D1C006E58C5 /* ccbpublish.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ccbpublish.m; sourceTree = "<group>"; };
 		FA98CFC9154E7D1C006E58C5 /* ccbpublish-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ccbpublish-Prefix.pch"; sourceTree = "<group>"; };
 		FA98CFDA154E8D16006E58C5 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		FC5DBD735704181BFC93E462 /* Pods-CCScrollView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCScrollView.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCScrollView/Pods-CCScrollView.release.xcconfig"; sourceTree = "<group>"; };
+		FEF85138FE7DA5FF5CD135B2 /* libPods-CCLayer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CCLayer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2013,6 +2085,7 @@
 				E33BC1971510B8D0009AE29A /* Sparkle.framework in Frameworks */,
 				E3AF6CDF15F0CF8B0048DB2A /* libMMMarkdown-Mac.a in Frameworks */,
 				E380B2511642FC3C0006D31C /* libPVRTC.a in Frameworks */,
+				6ABBB1B1DA3118DBD8140EC6 /* libPods-CocosBuilder.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2021,6 +2094,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E325F65B14F65C8E00D29BCF /* Cocoa.framework in Frameworks */,
+				51E1DF1A7B2021A7BDE49EA2 /* libPods-CCMenuItemImage.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2029,6 +2103,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E35392781518D78D00471721 /* Cocoa.framework in Frameworks */,
+				FDD1DDD24C03406E0ABDD5B8 /* libPods-CCScale9Sprite.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2037,6 +2112,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E35DBB6914F21E7D0070A6E4 /* Cocoa.framework in Frameworks */,
+				D2E325AFFED2DE03C9D5CB27 /* libPods-CCLayer.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2045,6 +2121,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E35DBB8114F225D30070A6E4 /* Cocoa.framework in Frameworks */,
+				CF0C50C516171060D885D5EF /* libPods-CCLayerColor.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2053,6 +2130,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E35DBB9914F244BC0070A6E4 /* Cocoa.framework in Frameworks */,
+				858A3F7F1F587D240F6A7B31 /* libPods-CCLayerGradient.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2061,6 +2139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E35DBBAE14F2781D0070A6E4 /* Cocoa.framework in Frameworks */,
+				9DBA917EBB7A2C72479E1EDE /* libPods-CCMenu.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2069,6 +2148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E35DBBCD14F2AA360070A6E4 /* Cocoa.framework in Frameworks */,
+				8DF2991B083384F23815DFC4 /* libPods-CCLabelBMFont.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2077,6 +2157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E35DBBEA14F3E2390070A6E4 /* Cocoa.framework in Frameworks */,
+				B0560BAA92EC10E594DB03F9 /* libPods-CCLabelTTF.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2085,6 +2166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E35DBC0A14F4D72B0070A6E4 /* Cocoa.framework in Frameworks */,
+				2B8CC7F1F51F17CEA1EB12D3 /* libPods-CCParticleSystem.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2093,6 +2175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E398C02314FB81A30078E771 /* Cocoa.framework in Frameworks */,
+				D9C9990592C6C014A36E77E5 /* libPods-Cocos2D iPhone.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2101,6 +2184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3B7AEC614E3193500DFD402 /* Cocoa.framework in Frameworks */,
+				61F2818C7EFB7B0290166C9B /* libPods-CCNode.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2109,6 +2193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3B84C3A151A2C02004B743C /* Cocoa.framework in Frameworks */,
+				366D1CF6FCB54C0193AF6887 /* libPods-CCControlButton.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2117,6 +2202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3C365EC14E9E4D1007CD5FF /* Cocoa.framework in Frameworks */,
+				BC75DDFC6D36E7C8FCABC9ED /* libPods-CCSprite.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2125,6 +2211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3C65117151BB89500D639C0 /* Cocoa.framework in Frameworks */,
+				FDD49AD41849C25827081AB3 /* libPods-CCControl.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2133,6 +2220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3D59122150F5367004180CA /* Cocoa.framework in Frameworks */,
+				142C3BC833E89991DFCD9D8D /* libPods-CCBFile.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2141,6 +2229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E3FCE8671524856D0028E8E7 /* Cocoa.framework in Frameworks */,
+				F6BB2116162D16634264B595 /* libPods-CCScrollView.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2150,12 +2239,56 @@
 			files = (
 				FA98CFDB154E8D16006E58C5 /* CoreServices.framework in Frameworks */,
 				FA98CFC4154E7D1C006E58C5 /* Foundation.framework in Frameworks */,
+				4DA186FD53870D03622102BA /* libPods-ccbpublish.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6BBE5A3673E6FE222E1487A9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				64B7B87907E3C31259C11663 /* Pods-CCBFile.debug.xcconfig */,
+				783D2EE3AC4BF44555C12A27 /* Pods-CCBFile.release.xcconfig */,
+				52C1A43AE7B80B416B723F5E /* Pods-CCControl.debug.xcconfig */,
+				2461DE31DBAB93F95823530D /* Pods-CCControl.release.xcconfig */,
+				C4E1EAC2A873F39A81615C90 /* Pods-CCControlButton.debug.xcconfig */,
+				A894F0F7493B8D461890A51C /* Pods-CCControlButton.release.xcconfig */,
+				4D8533957205581576691902 /* Pods-CCLabelBMFont.debug.xcconfig */,
+				C9246E96EE7EB52E875D75E2 /* Pods-CCLabelBMFont.release.xcconfig */,
+				67BE2189C2B664B810845E99 /* Pods-CCLabelTTF.debug.xcconfig */,
+				5C355DEED193979617EC4F80 /* Pods-CCLabelTTF.release.xcconfig */,
+				8A2292BE6AA7CE0E8C0D57C6 /* Pods-CCLayer.debug.xcconfig */,
+				41882CE0A53923361BCBDF3B /* Pods-CCLayer.release.xcconfig */,
+				1B782F6FF91E3D108355ECB5 /* Pods-CCLayerColor.debug.xcconfig */,
+				A703413E6356F59914FBF72D /* Pods-CCLayerColor.release.xcconfig */,
+				8E5647CBD6980CD3D640C447 /* Pods-CCLayerGradient.debug.xcconfig */,
+				67925DE612FB05914CC7D064 /* Pods-CCLayerGradient.release.xcconfig */,
+				992C933381FDB35C325BA1B0 /* Pods-CCMenu.debug.xcconfig */,
+				3A885D34D9664CC237DCF444 /* Pods-CCMenu.release.xcconfig */,
+				1AA5F6BB452BB83189C76B96 /* Pods-CCMenuItemImage.debug.xcconfig */,
+				50681C4F519ADD3B354E3B38 /* Pods-CCMenuItemImage.release.xcconfig */,
+				2114D1C7906FA9F4E6A3C816 /* Pods-CCNode.debug.xcconfig */,
+				9C7EE19DB739A9A1F07681C2 /* Pods-CCNode.release.xcconfig */,
+				E3C0858E9363E651E5F17384 /* Pods-CCParticleSystem.debug.xcconfig */,
+				B820EFAA3A0AA68BEDC5846F /* Pods-CCParticleSystem.release.xcconfig */,
+				2E6C3C8C8688EA39F942DE5F /* Pods-CCScale9Sprite.debug.xcconfig */,
+				6A647E0DDC1EFCD504C7330A /* Pods-CCScale9Sprite.release.xcconfig */,
+				3E64221AFFD5CE642FBDD0EF /* Pods-CCScrollView.debug.xcconfig */,
+				FC5DBD735704181BFC93E462 /* Pods-CCScrollView.release.xcconfig */,
+				C586C7FECF9AD59C31A9FA45 /* Pods-CCSprite.debug.xcconfig */,
+				5FA3BFF40F6AAE284B669E22 /* Pods-CCSprite.release.xcconfig */,
+				CEF5F6D4189158F69D502A58 /* Pods-Cocos2D iPhone.debug.xcconfig */,
+				87B2F0C679A90D846A8DBB91 /* Pods-Cocos2D iPhone.release.xcconfig */,
+				94919F4E917F55FFFE38A1C1 /* Pods-CocosBuilder.debug.xcconfig */,
+				61940E3B0C5E1CC5DC580514 /* Pods-CocosBuilder.release.xcconfig */,
+				8DCCE549FD99AB12AE5AB9F6 /* Pods-ccbpublish.debug.xcconfig */,
+				6DAE2BE70239099F346F7527 /* Pods-ccbpublish.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		6F17FAD41CF2A83A00CFCD14 /* spine */ = {
 			isa = PBXGroup;
 			children = (
@@ -2692,6 +2825,7 @@
 				FA98CFC5154E7D1C006E58C5 /* ccbpublish */,
 				7789ABC1133AA82000CEFCC7 /* Frameworks */,
 				7789ABBF133AA82000CEFCC7 /* Products */,
+				6BBE5A3673E6FE222E1487A9 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2738,6 +2872,24 @@
 				7789ABC2133AA82000CEFCC7 /* Cocoa.framework */,
 				FA98CFC3154E7D1C006E58C5 /* Foundation.framework */,
 				7789ABC4133AA82000CEFCC7 /* Other Frameworks */,
+				DF1CCAE9CAC1757058506D49 /* libPods-CCBFile.a */,
+				AE1540C892E7C2943AA1ED57 /* libPods-CCControl.a */,
+				BFA800C9AEEFE3603B220724 /* libPods-CCControlButton.a */,
+				A185D7B70B0B90507A714CA9 /* libPods-CCLabelBMFont.a */,
+				66684D94DB18BFA72465F51D /* libPods-CCLabelTTF.a */,
+				FEF85138FE7DA5FF5CD135B2 /* libPods-CCLayer.a */,
+				61784F9B259DAA0E0C3D8487 /* libPods-CCLayerColor.a */,
+				C8C1C0FC208779990CC4F3D5 /* libPods-CCLayerGradient.a */,
+				8B8ACE427EAD3D4CDF2484B2 /* libPods-CCMenu.a */,
+				6682C2C30559EA62DDC01048 /* libPods-CCMenuItemImage.a */,
+				0BCE6B7F3585E4D2A73154DC /* libPods-CCNode.a */,
+				E117FE98DE0C0AA568D8EBD0 /* libPods-CCParticleSystem.a */,
+				F002CBACA72CBAACCE8D13F5 /* libPods-CCScale9Sprite.a */,
+				5DBDE52E1D86727CDB257BD7 /* libPods-CCScrollView.a */,
+				76B23C157CA352108649B940 /* libPods-CCSprite.a */,
+				A002BFD25CDE3C1055598E7A /* libPods-Cocos2D iPhone.a */,
+				692823765E696B08A3E1F3EF /* libPods-CocosBuilder.a */,
+				5EB51CD313787EE315E71293 /* libPods-ccbpublish.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -4047,6 +4199,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7789ABDC133AA82000CEFCC7 /* Build configuration list for PBXNativeTarget "CocosBuilder" */;
 			buildPhases = (
+				FC2906E332BD74655321041B /* [CP] Check Pods Manifest.lock */,
 				7789ABBA133AA82000CEFCC7 /* Sources */,
 				7789ABBB133AA82000CEFCC7 /* Frameworks */,
 				7789ABBC133AA82000CEFCC7 /* Resources */,
@@ -4054,6 +4207,9 @@
 				E3B7AED414E31E5D00DFD402 /* Copy PlugIns */,
 				E3E086E315663928008F1FDB /* Copy Player */,
 				E33BC1931510B2BD009AE29A /* Copy Built Product to Local Repository Directory */,
+				A2C13797CB6ECCB7A9E2E80E /* [CP] Embed Pods Frameworks */,
+				31B33FBCBEA895C5CF50BE7A /* [CP] Copy Pods Resources */,
+				955218651EE6A14B00BD75A6 /* Fabric */,
 			);
 			buildRules = (
 			);
@@ -4100,9 +4256,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E325F66314F65C8F00D29BCF /* Build configuration list for PBXNativeTarget "CCMenuItemImage" */;
 			buildPhases = (
+				9D69D1D4961701482DB0F587 /* [CP] Check Pods Manifest.lock */,
 				E325F65614F65C8E00D29BCF /* Sources */,
 				E325F65714F65C8E00D29BCF /* Frameworks */,
 				E325F65814F65C8E00D29BCF /* Resources */,
+				3D4DEE67ADBFDB9FFF513188 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4117,9 +4275,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E35392801518D78D00471721 /* Build configuration list for PBXNativeTarget "CCScale9Sprite" */;
 			buildPhases = (
+				E3EE71E1EAC157CAF555CAAA /* [CP] Check Pods Manifest.lock */,
 				E35392731518D78D00471721 /* Sources */,
 				E35392741518D78D00471721 /* Frameworks */,
 				E35392751518D78D00471721 /* Resources */,
+				352F95DF6C3DFE87466D7595 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4134,9 +4294,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E35DBB7314F21E7D0070A6E4 /* Build configuration list for PBXNativeTarget "CCLayer" */;
 			buildPhases = (
+				AD19CDCA33819960C6B741CC /* [CP] Check Pods Manifest.lock */,
 				E35DBB6414F21E7D0070A6E4 /* Sources */,
 				E35DBB6514F21E7D0070A6E4 /* Frameworks */,
 				E35DBB6614F21E7D0070A6E4 /* Resources */,
+				BA3A295D2111A38D94C8FF57 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4151,9 +4313,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E35DBB8914F225D30070A6E4 /* Build configuration list for PBXNativeTarget "CCLayerColor" */;
 			buildPhases = (
+				9AA9D01BA4F2E67B0E20F941 /* [CP] Check Pods Manifest.lock */,
 				E35DBB7C14F225D30070A6E4 /* Sources */,
 				E35DBB7D14F225D30070A6E4 /* Frameworks */,
 				E35DBB7E14F225D30070A6E4 /* Resources */,
+				DF114734FAB1627ACD574C69 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4168,9 +4332,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E35DBBA114F244BC0070A6E4 /* Build configuration list for PBXNativeTarget "CCLayerGradient" */;
 			buildPhases = (
+				09CD24F4028AA41B2DCA8FF3 /* [CP] Check Pods Manifest.lock */,
 				E35DBB9414F244BB0070A6E4 /* Sources */,
 				E35DBB9514F244BB0070A6E4 /* Frameworks */,
 				E35DBB9614F244BB0070A6E4 /* Resources */,
+				74B42A39E7E6E10152554A0C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4185,9 +4351,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E35DBBB614F2781E0070A6E4 /* Build configuration list for PBXNativeTarget "CCMenu" */;
 			buildPhases = (
+				759D2209080981DE1A591279 /* [CP] Check Pods Manifest.lock */,
 				E35DBBA914F2781D0070A6E4 /* Sources */,
 				E35DBBAA14F2781D0070A6E4 /* Frameworks */,
 				E35DBBAB14F2781D0070A6E4 /* Resources */,
+				9652D45764E3565645D5D36A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4202,9 +4370,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E35DBBD514F2AA360070A6E4 /* Build configuration list for PBXNativeTarget "CCLabelBMFont" */;
 			buildPhases = (
+				3EEF087D8BF29DDC5F758AE7 /* [CP] Check Pods Manifest.lock */,
 				E35DBBC814F2AA350070A6E4 /* Sources */,
 				E35DBBC914F2AA350070A6E4 /* Frameworks */,
 				E35DBBCA14F2AA350070A6E4 /* Resources */,
+				1CA9C6061ED54BD2B19AF7E6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4219,9 +4389,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E35DBBF214F3E2390070A6E4 /* Build configuration list for PBXNativeTarget "CCLabelTTF" */;
 			buildPhases = (
+				2AF8CE49B1E053BCBBBF94A7 /* [CP] Check Pods Manifest.lock */,
 				E35DBBE514F3E2390070A6E4 /* Sources */,
 				E35DBBE614F3E2390070A6E4 /* Frameworks */,
 				E35DBBE714F3E2390070A6E4 /* Resources */,
+				604469BFFD6678018E4689AF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4236,9 +4408,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E35DBC1214F4D72C0070A6E4 /* Build configuration list for PBXNativeTarget "CCParticleSystem" */;
 			buildPhases = (
+				74BC82504E1DB4A68C18D442 /* [CP] Check Pods Manifest.lock */,
 				E35DBC0514F4D72B0070A6E4 /* Sources */,
 				E35DBC0614F4D72B0070A6E4 /* Frameworks */,
 				E35DBC0714F4D72B0070A6E4 /* Resources */,
+				D37D42E85F4CED9605F811F0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4253,9 +4427,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E398C02B14FB81A30078E771 /* Build configuration list for PBXNativeTarget "Cocos2D iPhone" */;
 			buildPhases = (
+				DED2871335DCACAC207498CB /* [CP] Check Pods Manifest.lock */,
 				E398C01E14FB81A30078E771 /* Sources */,
 				E398C01F14FB81A30078E771 /* Frameworks */,
 				E398C02014FB81A30078E771 /* Resources */,
+				6BE6DDAEEA056797F1EC6F24 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4270,9 +4446,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E3B7AECE14E3193500DFD402 /* Build configuration list for PBXNativeTarget "CCNode" */;
 			buildPhases = (
+				9270A38E2C01B7FA96137EF9 /* [CP] Check Pods Manifest.lock */,
 				E3B7AEC114E3193500DFD402 /* Sources */,
 				E3B7AEC214E3193500DFD402 /* Frameworks */,
 				E3B7AEC314E3193500DFD402 /* Resources */,
+				0FF79971AE30AB86592B74E5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4287,9 +4465,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E3B84C44151A2C02004B743C /* Build configuration list for PBXNativeTarget "CCControlButton" */;
 			buildPhases = (
+				8A639E34F4878F921BA62177 /* [CP] Check Pods Manifest.lock */,
 				E3B84C35151A2C02004B743C /* Sources */,
 				E3B84C36151A2C02004B743C /* Frameworks */,
 				E3B84C37151A2C02004B743C /* Resources */,
+				4CF02BB0FFE215FE81003ED8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4304,9 +4484,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E3C365F414E9E4D1007CD5FF /* Build configuration list for PBXNativeTarget "CCSprite" */;
 			buildPhases = (
+				24416D8E9C677D53B48A8B41 /* [CP] Check Pods Manifest.lock */,
 				E3C365E714E9E4D1007CD5FF /* Sources */,
 				E3C365E814E9E4D1007CD5FF /* Frameworks */,
 				E3C365E914E9E4D1007CD5FF /* Resources */,
+				1FC8BA29FDB0E72B6952CFE8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4321,9 +4503,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E3C6511F151BB89600D639C0 /* Build configuration list for PBXNativeTarget "CCControl" */;
 			buildPhases = (
+				34BC8399FEB7A529F4C15BF2 /* [CP] Check Pods Manifest.lock */,
 				E3C65112151BB89500D639C0 /* Sources */,
 				E3C65113151BB89500D639C0 /* Frameworks */,
 				E3C65114151BB89500D639C0 /* Resources */,
+				1E5DC021EA2A39DA7E6A109A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4338,9 +4522,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E3D5912A150F5367004180CA /* Build configuration list for PBXNativeTarget "CCBFile" */;
 			buildPhases = (
+				98EF294F8A5F5946FF9BFAA7 /* [CP] Check Pods Manifest.lock */,
 				E3D5911D150F5367004180CA /* Sources */,
 				E3D5911E150F5367004180CA /* Frameworks */,
 				E3D5911F150F5367004180CA /* Resources */,
+				836ACA0A161FA95648C123D5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4355,9 +4541,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E3FCE86F1524856D0028E8E7 /* Build configuration list for PBXNativeTarget "CCScrollView" */;
 			buildPhases = (
+				20A361CA460484CBCC5E6C94 /* [CP] Check Pods Manifest.lock */,
 				E3FCE8621524856D0028E8E7 /* Sources */,
 				E3FCE8631524856D0028E8E7 /* Frameworks */,
 				E3FCE8641524856D0028E8E7 /* Resources */,
+				C09607F3DE177EF0C7CD5558 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4372,8 +4560,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA98CFCE154E7D1C006E58C5 /* Build configuration list for PBXNativeTarget "ccbpublish" */;
 			buildPhases = (
+				EFA14A85983A40B3716AFDC1 /* [CP] Check Pods Manifest.lock */,
 				FA98CFBD154E7D1C006E58C5 /* Sources */,
 				FA98CFBE154E7D1C006E58C5 /* Frameworks */,
+				63EF1967F62A3A8757DE0717 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -4391,6 +4581,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0450;
+				TargetAttributes = {
+					7789ABBD133AA82000CEFCC7 = {
+						DevelopmentTeam = 3P4Y2KDTFU;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = 7789ABB8133AA82000CEFCC7 /* Build configuration list for PBXProject "CocosBuilder" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -4428,9 +4624,9 @@
 				E35DBBAC14F2781D0070A6E4 /* CCMenu */,
 				E35DBBCB14F2AA350070A6E4 /* CCLabelBMFont */,
 				E35DBBE814F3E2390070A6E4 /* CCLabelTTF */,
-				E35DBC0814F4D72B0070A6E4 /* CCParticleSystem */,
 				E325F65914F65C8E00D29BCF /* CCMenuItemImage */,
 				E3D59120150F5367004180CA /* CCBFile */,
+				E35DBC0814F4D72B0070A6E4 /* CCParticleSystem */,
 				E35392761518D78D00471721 /* CCScale9Sprite */,
 				E3C65115151BB89500D639C0 /* CCControl */,
 				E3B84C38151A2C02004B743C /* CCControlButton */,
@@ -5031,6 +5227,530 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		09CD24F4028AA41B2DCA8FF3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		0FF79971AE30AB86592B74E5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCNode/Pods-CCNode-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1CA9C6061ED54BD2B19AF7E6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCLabelBMFont/Pods-CCLabelBMFont-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1E5DC021EA2A39DA7E6A109A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCControl/Pods-CCControl-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1FC8BA29FDB0E72B6952CFE8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCSprite/Pods-CCSprite-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		20A361CA460484CBCC5E6C94 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		24416D8E9C677D53B48A8B41 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2AF8CE49B1E053BCBBBF94A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		31B33FBCBEA895C5CF50BE7A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CocosBuilder/Pods-CocosBuilder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		34BC8399FEB7A529F4C15BF2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		352F95DF6C3DFE87466D7595 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCScale9Sprite/Pods-CCScale9Sprite-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3D4DEE67ADBFDB9FFF513188 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCMenuItemImage/Pods-CCMenuItemImage-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3EEF087D8BF29DDC5F758AE7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4CF02BB0FFE215FE81003ED8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCControlButton/Pods-CCControlButton-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		604469BFFD6678018E4689AF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCLabelTTF/Pods-CCLabelTTF-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		63EF1967F62A3A8757DE0717 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ccbpublish/Pods-ccbpublish-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6BE6DDAEEA056797F1EC6F24 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cocos2D iPhone/Pods-Cocos2D iPhone-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		74B42A39E7E6E10152554A0C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCLayerGradient/Pods-CCLayerGradient-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		74BC82504E1DB4A68C18D442 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		759D2209080981DE1A591279 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		836ACA0A161FA95648C123D5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCBFile/Pods-CCBFile-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A639E34F4878F921BA62177 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9270A38E2C01B7FA96137EF9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		955218651EE6A14B00BD75A6 /* Fabric */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Fabric;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 7338aad2658fbc45436d2a40a84543bc0b8dd780 20226c17c60d35a294dd0a85cd80dc37fa4b12e4132a69e012d5cb80e7321d0e";
+		};
+		9652D45764E3565645D5D36A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCMenu/Pods-CCMenu-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98EF294F8A5F5946FF9BFAA7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9AA9D01BA4F2E67B0E20F941 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9D69D1D4961701482DB0F587 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A2C13797CB6ECCB7A9E2E80E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CocosBuilder/Pods-CocosBuilder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD19CDCA33819960C6B741CC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BA3A295D2111A38D94C8FF57 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCLayer/Pods-CCLayer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C09607F3DE177EF0C7CD5558 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCScrollView/Pods-CCScrollView-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D37D42E85F4CED9605F811F0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCParticleSystem/Pods-CCParticleSystem-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DED2871335DCACAC207498CB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DF114734FAB1627ACD574C69 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCLayerColor/Pods-CCLayerColor-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E33BC1931510B2BD009AE29A /* Copy Built Product to Local Repository Directory */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -5044,6 +5764,51 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "./../scripts/CopyBuiltProduct.sh $CONFIGURATION_BUILD_DIR/ $SRCROOT/../build/ $PRODUCT_NAME.app 1";
+		};
+		E3EE71E1EAC157CAF555CAAA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EFA14A85983A40B3716AFDC1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FC2906E332BD74655321041B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -5782,6 +6547,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
@@ -5801,10 +6567,13 @@
 		};
 		7789ABDD133AA82000CEFCC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94919F4E917F55FFFE38A1C1 /* Pods-CocosBuilder.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = 3P4Y2KDTFU;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -5819,6 +6588,7 @@
 					"COCOS2D_DEBUG=1",
 					"CC_ENABLE_GL_STATE_CACHE=1",
 					DEBUG,
+					"$(inherited)",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5835,8 +6605,13 @@
 					"\"$(SRCROOT)/libs/Tupac\"",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_CODE_SIGN_FLAGS = "--deep";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+				);
 				PRODUCT_NAME = CocosBuilder;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = app;
 			};
@@ -5844,11 +6619,14 @@
 		};
 		7789ABDE133AA82000CEFCC7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61940E3B0C5E1CC5DC580514 /* Pods-CocosBuilder.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 3P4Y2KDTFU;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -5862,6 +6640,7 @@
 					NDEBUG,
 					NS_BLOCK_ASSERTIONS,
 					"CC_ENABLE_GL_STATE_CACHE=1",
+					"$(inherited)",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -5878,8 +6657,13 @@
 					"\"$(SRCROOT)/libs/Tupac\"",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_CODE_SIGN_FLAGS = "--deep";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+				);
 				PRODUCT_NAME = CocosBuilder;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = NO;
 				WRAPPER_EXTENSION = app;
 			};
@@ -5887,6 +6671,7 @@
 		};
 		E325F66414F65C8F00D29BCF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AA5F6BB452BB83189C76B96 /* Pods-CCMenuItemImage.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -5906,6 +6691,7 @@
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ccbPlugNode;
@@ -5914,6 +6700,7 @@
 		};
 		E325F66514F65C8F00D29BCF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50681C4F519ADD3B354E3B38 /* Pods-CCMenuItemImage.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -5929,6 +6716,7 @@
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ccbPlugNode;
@@ -5937,6 +6725,7 @@
 		};
 		E35392811518D78D00471721 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E6C3C8C8688EA39F942DE5F /* Pods-CCScale9Sprite.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -5956,6 +6745,7 @@
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ccbPlugNode;
@@ -5964,6 +6754,7 @@
 		};
 		E35392821518D78D00471721 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A647E0DDC1EFCD504C7330A /* Pods-CCScale9Sprite.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -5979,6 +6770,7 @@
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ccbPlugNode;
@@ -5987,6 +6779,7 @@
 		};
 		E35DBB7114F21E7D0070A6E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A2292BE6AA7CE0E8C0D57C6 /* Pods-CCLayer.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -6006,6 +6799,7 @@
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ccbPlugNode;
@@ -6014,6 +6808,7 @@
 		};
 		E35DBB7214F21E7D0070A6E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41882CE0A53923361BCBDF3B /* Pods-CCLayer.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -6029,6 +6824,7 @@
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ccbPlugNode;
@@ -6037,6 +6833,7 @@
 		};
 		E35DBB8A14F225D30070A6E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B782F6FF91E3D108355ECB5 /* Pods-CCLayerColor.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -6056,6 +6853,7 @@
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ccbPlugNode;
@@ -6064,6 +6862,7 @@
 		};
 		E35DBB8B14F225D30070A6E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A703413E6356F59914FBF72D /* Pods-CCLayerColor.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -6079,6 +6878,7 @@
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ccbPlugNode;
@@ -6087,6 +6887,7 @@
 		};
 		E35DBBA214F244BC0070A6E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E5647CBD6980CD3D640C447 /* Pods-CCLayerGradient.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -6106,6 +6907,7 @@
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ccbPlugNode;
@@ -6114,6 +6916,7 @@
 		};
 		E35DBBA314F244BC0070A6E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67925DE612FB05914CC7D064 /* Pods-CCLayerGradient.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -6129,6 +6932,7 @@
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ccbPlugNode;
@@ -6137,6 +6941,7 @@
 		};
 		E35DBBB714F2781E0070A6E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 992C933381FDB35C325BA1B0 /* Pods-CCMenu.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -6156,6 +6961,7 @@
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ccbPlugNode;
@@ -6164,6 +6970,7 @@
 		};
 		E35DBBB814F2781E0070A6E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A885D34D9664CC237DCF444 /* Pods-CCMenu.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -6179,6 +6986,7 @@
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ccbPlugNode;
@@ -6187,6 +6995,7 @@
 		};
 		E35DBBD614F2AA360070A6E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D8533957205581576691902 /* Pods-CCLabelBMFont.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -6206,6 +7015,15 @@
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
+					9704,
+					0607,
+					7458,
+					9695,
+					9704,
+					0607,
+					7458,
+					9695,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ccbPlugNode;
@@ -6214,6 +7032,7 @@
 		};
 		E35DBBD714F2AA360070A6E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9246E96EE7EB52E875D75E2 /* Pods-CCLabelBMFont.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -6229,6 +7048,15 @@
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
+					9704,
+					0607,
+					7458,
+					9695,
+					9704,
+					0607,
+					7458,
+					9695,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ccbPlugNode;
@@ -6237,6 +7065,7 @@
 		};
 		E35DBBF314F3E2390070A6E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67BE2189C2B664B810845E99 /* Pods-CCLabelTTF.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -6256,6 +7085,7 @@
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ccbPlugNode;
@@ -6264,6 +7094,7 @@
 		};
 		E35DBBF414F3E2390070A6E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C355DEED193979617EC4F80 /* Pods-CCLabelTTF.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -6279,6 +7110,7 @@
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ccbPlugNode;
@@ -6287,6 +7119,7 @@
 		};
 		E35DBC1314F4D72C0070A6E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3C0858E9363E651E5F17384 /* Pods-CCParticleSystem.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -6306,6 +7139,7 @@
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ccbPlugNode;
@@ -6314,6 +7148,7 @@
 		};
 		E35DBC1414F4D72C0070A6E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B820EFAA3A0AA68BEDC5846F /* Pods-CCParticleSystem.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -6329,6 +7164,7 @@
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ccbPlugNode;
@@ -6337,6 +7173,7 @@
 		};
 		E398C02C14FB81A30078E771 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEF5F6D4189158F69D502A58 /* Pods-Cocos2D iPhone.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -6356,6 +7193,7 @@
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ccbPlugExport;
@@ -6364,6 +7202,7 @@
 		};
 		E398C02D14FB81A30078E771 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87B2F0C679A90D846A8DBB91 /* Pods-Cocos2D iPhone.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -6379,6 +7218,7 @@
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ccbPlugExport;
@@ -6387,6 +7227,7 @@
 		};
 		E3B7AECF14E3193500DFD402 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2114D1C7906FA9F4E6A3C816 /* Pods-CCNode.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -6407,6 +7248,7 @@
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ccbPlugNode;
@@ -6415,6 +7257,7 @@
 		};
 		E3B7AED014E3193500DFD402 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C7EE19DB739A9A1F07681C2 /* Pods-CCNode.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -6431,6 +7274,7 @@
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ccbPlugNode;
@@ -6439,6 +7283,7 @@
 		};
 		E3B84C42151A2C02004B743C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4E1EAC2A873F39A81615C90 /* Pods-CCControlButton.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -6458,6 +7303,7 @@
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ccbPlugNode;
@@ -6466,6 +7312,7 @@
 		};
 		E3B84C43151A2C02004B743C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A894F0F7493B8D461890A51C /* Pods-CCControlButton.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -6481,6 +7328,7 @@
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ccbPlugNode;
@@ -6489,6 +7337,7 @@
 		};
 		E3C365F514E9E4D1007CD5FF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C586C7FECF9AD59C31A9FA45 /* Pods-CCSprite.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -6508,6 +7357,7 @@
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ccbPlugNode;
@@ -6516,6 +7366,7 @@
 		};
 		E3C365F614E9E4D1007CD5FF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FA3BFF40F6AAE284B669E22 /* Pods-CCSprite.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -6531,6 +7382,7 @@
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ccbPlugNode;
@@ -6539,6 +7391,7 @@
 		};
 		E3C65120151BB89600D639C0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52C1A43AE7B80B416B723F5E /* Pods-CCControl.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -6558,6 +7411,7 @@
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ccbPlugNode;
@@ -6566,6 +7420,7 @@
 		};
 		E3C65121151BB89600D639C0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2461DE31DBAB93F95823530D /* Pods-CCControl.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -6581,6 +7436,7 @@
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ccbPlugNode;
@@ -6589,6 +7445,7 @@
 		};
 		E3D5912B150F5367004180CA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64B7B87907E3C31259C11663 /* Pods-CCBFile.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -6608,6 +7465,7 @@
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ccbPlugNode;
@@ -6616,6 +7474,7 @@
 		};
 		E3D5912C150F5367004180CA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 783D2EE3AC4BF44555C12A27 /* Pods-CCBFile.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -6631,6 +7490,7 @@
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ccbPlugNode;
@@ -6639,6 +7499,7 @@
 		};
 		E3FCE8701524856D0028E8E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E64221AFFD5CE642FBDD0EF /* Pods-CCScrollView.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -6658,6 +7519,7 @@
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ccbPlugNode;
@@ -6666,6 +7528,7 @@
 		};
 		E3FCE8711524856D0028E8E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC5DBD735704181BFC93E462 /* Pods-CCScrollView.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
@@ -6681,6 +7544,7 @@
 				OTHER_LDFLAGS = (
 					"-undefined",
 					dynamic_lookup,
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = ccbPlugNode;
@@ -6689,6 +7553,7 @@
 		};
 		FA98CFCC154E7D1C006E58C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DCCE549FD99AB12AE5AB9F6 /* Pods-ccbpublish.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
@@ -6707,6 +7572,7 @@
 					NS_BLOCK_ASSERTIONS,
 					"CC_ENABLE_GL_STATE_CACHE=1",
 					"CCB_BUILDING_COMMANDLINE=1",
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -6714,6 +7580,7 @@
 		};
 		FA98CFCD154E7D1C006E58C5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DAE2BE70239099F346F7527 /* Pods-ccbpublish.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
@@ -6732,6 +7599,7 @@
 					NS_BLOCK_ASSERTIONS,
 					"CC_ENABLE_GL_STATE_CACHE=1",
 					"CCB_BUILDING_COMMANDLINE=1",
+					"$(inherited)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
