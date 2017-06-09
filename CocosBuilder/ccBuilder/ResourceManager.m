@@ -159,6 +159,43 @@
             img = [[[NSImage alloc] initWithContentsOfFile:filePath] autorelease];
         }
         return img;
+    } else if (type == kCCBResTypeTTF) {
+        /// see https://stackoverflow.com/questions/2703085/how-can-you-load-a-font-ttf-from-a-file-using-core-text
+        /// for dynamically loading a file into a CFFontRef
+        
+        CFURLRef url = CFURLCreateWithFileSystemPath(kCFAllocatorDefault, (__bridge CFStringRef) filePath, kCFURLPOSIXPathStyle, false);
+        CGDataProviderRef dataProvider = CGDataProviderCreateWithURL(url);
+        CGFontRef theCGFont = CGFontCreateWithDataProvider(dataProvider);
+        CTFontRef theCTFont = CTFontCreateWithGraphicsFont(theCGFont, 20, NULL, NULL);
+        CFRelease(theCGFont);
+        CFRelease(dataProvider);
+        CFRelease(url);
+        
+        NSImage* anImage = [[NSImage alloc] initWithSize:NSMakeSize(200,  200)];
+        [anImage lockFocus];
+        
+        NSString* previewString = @"ABCDEFGHIJKLM   \
+        NOPQRSTUVWXYZ   \
+        abcdefghijklm   \
+        nopqrstuvwxyz   \
+        0123456789";
+        NSMutableParagraphStyle *style = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+        style.alignment = NSTextAlignmentCenter;
+        
+        /// see https://stackoverflow.com/questions/17227348/nsstring-to-cfstringref-and-cfstringref-to-nsstring-in-arc
+        /// for convert a CTFontRef object into NSFont object
+        NSFont* font =(__bridge NSFont*) theCTFont;
+        NSDictionary *attr = @{
+            NSParagraphStyleAttributeName: style,
+            NSFontAttributeName: font
+        };
+    
+        [previewString drawInRect:NSMakeRect(0, 0, 200, 200) withAttributes:attr];
+        
+        [anImage unlockFocus];
+        
+        CFRelease(theCTFont);
+        return anImage;
     }
     
     return NULL;
