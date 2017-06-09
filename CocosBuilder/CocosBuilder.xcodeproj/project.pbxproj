@@ -1419,6 +1419,7 @@
 		8DCCE549FD99AB12AE5AB9F6 /* Pods-ccbpublish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ccbpublish.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ccbpublish/Pods-ccbpublish.debug.xcconfig"; sourceTree = "<group>"; };
 		8E5647CBD6980CD3D640C447 /* Pods-CCLayerGradient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCLayerGradient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCLayerGradient/Pods-CCLayerGradient.debug.xcconfig"; sourceTree = "<group>"; };
 		94919F4E917F55FFFE38A1C1 /* Pods-CocosBuilder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocosBuilder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CocosBuilder/Pods-CocosBuilder.debug.xcconfig"; sourceTree = "<group>"; };
+		95850DE81EE6B098009D8A71 /* scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = scripts; path = ../scripts; sourceTree = "<group>"; };
 		992C933381FDB35C325BA1B0 /* Pods-CCMenu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCMenu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCMenu/Pods-CCMenu.debug.xcconfig"; sourceTree = "<group>"; };
 		9C7EE19DB739A9A1F07681C2 /* Pods-CCNode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCNode.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCNode/Pods-CCNode.release.xcconfig"; sourceTree = "<group>"; };
 		A002BFD25CDE3C1055598E7A /* libPods-Cocos2D iPhone.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cocos2D iPhone.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2810,6 +2811,7 @@
 		7789ABB3133AA82000CEFCC7 = {
 			isa = PBXGroup;
 			children = (
+				95850DE81EE6B098009D8A71 /* scripts */,
 				E3D08A321524581100E55891 /* README.md */,
 				E3D59118150F50D1004180CA /* AUTHORS */,
 				E395DC7D1511FDF70075979E /* CHANGELOG */,
@@ -4200,6 +4202,7 @@
 			buildConfigurationList = 7789ABDC133AA82000CEFCC7 /* Build configuration list for PBXNativeTarget "CocosBuilder" */;
 			buildPhases = (
 				FC2906E332BD74655321041B /* [CP] Check Pods Manifest.lock */,
+				95850E151EE7C0EA009D8A71 /* Version */,
 				7789ABBA133AA82000CEFCC7 /* Sources */,
 				7789ABBB133AA82000CEFCC7 /* Frameworks */,
 				7789ABBC133AA82000CEFCC7 /* Resources */,
@@ -5585,6 +5588,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" 7338aad2658fbc45436d2a40a84543bc0b8dd780 20226c17c60d35a294dd0a85cd80dc37fa4b12e4132a69e012d5cb80e7321d0e";
+		};
+		95850E151EE7C0EA009D8A71 /* Version */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Version;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "plist_path=\"$INFOPLIST_FILE\"\nshort_version=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" $plist_path)\nversion=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" $plist_path)\ntime=$(date +\"%y%m%d.%H%M\")\nversion=\"$short_version.$time\"\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $version\" $plist_path";
 		};
 		9652D45764E3565645D5D36A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
