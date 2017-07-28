@@ -45,14 +45,26 @@
     [super windowDidLoad];
     
     // Load version file into version text field
+    /*
     NSString* versionPath = [[NSBundle mainBundle] pathForResource:@"Version" ofType:@"txt" inDirectory:@"version"];
     
     NSString* version = [NSString stringWithContentsOfFile:versionPath encoding:NSUTF8StringEncoding error:NULL];
-    
-    if (version)
-    {
+
+    if (version) {
         [txtVersion setStringValue:version];
     }
+     */
+
+    // https://stackoverflow.com/questions/16888780/ios-app-programmatically-get-build-version
+    NSString* version = [[[NSBundle mainBundle] infoDictionary]
+        objectForKey:@"CFBundleShortVersionString"];
+
+    NSString* build = [[[NSBundle mainBundle] infoDictionary]
+        objectForKey:(NSString*)kCFBundleVersionKey];
+
+    [txtVersion
+        setStringValue:[NSString stringWithFormat:@"Version %@ build %@",
+                                                  version, build]];
 }
 
 @end
