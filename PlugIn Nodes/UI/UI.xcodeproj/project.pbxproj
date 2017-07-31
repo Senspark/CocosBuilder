@@ -10,20 +10,14 @@
 		6F17FAB41CF2A52000CFCD14 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3DEFB1314FFD66C00B98586 /* Cocoa.framework */; };
 		6F17FAB71CF2A52000CFCD14 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FC2419C1CDB5922009A3AAD /* InfoPlist.strings */; };
 		6F17FAC21CF2A56600CFCD14 /* CCBPProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F17FABE1CF2A54C00CFCD14 /* CCBPProperties.plist */; };
-		6F17FB421CF2A9E300CFCD14 /* CCSkeletonAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F17FAC01CF2A54C00CFCD14 /* CCSkeletonAnimation.m */; };
 		6F2A49761DBA1D4C006D766B /* CCSpriteWithHsv.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FBF61531D17D3DE00257791 /* CCSpriteWithHsv.h */; };
 		6F2A497D1DBA1DC7006D766B /* ShaderUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F2A49791DBA1DC7006D766B /* ShaderUtils.h */; };
-		6F2A497E1DBA1DC7006D766B /* ShaderUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2A497A1DBA1DC7006D766B /* ShaderUtils.m */; };
-		6F2A497F1DBA1DC7006D766B /* ColorUtils.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F2A497B1DBA1DC7006D766B /* ColorUtils.c */; };
 		6F2A49801DBA1DC7006D766B /* ColorUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F2A497C1DBA1DC7006D766B /* ColorUtils.h */; };
 		6F45480A1DC9E16600894079 /* CCScale9SpriteWithHsv.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F4548081DC9E16600894079 /* CCScale9SpriteWithHsv.h */; };
-		6F45480C1DC9E1D600894079 /* CCScale9SpriteWithHsv.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F4548091DC9E16600894079 /* CCScale9SpriteWithHsv.m */; };
-		6F62695E1DBDBE5F00A93689 /* EEButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F62695C1DBDBE5F00A93689 /* EEButton.m */; };
 		6F62695F1DBDBE5F00A93689 /* EEButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F62695D1DBDBE5F00A93689 /* EEButton.h */; };
 		6F6269631DBDC09F00A93689 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3DEFB1314FFD66C00B98586 /* Cocoa.framework */; };
 		6F6269661DBDC09F00A93689 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FC2419C1CDB5922009A3AAD /* InfoPlist.strings */; };
 		6F6269831DBDC4C300A93689 /* CCBPProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F62696D1DBDC0D400A93689 /* CCBPProperties.plist */; };
-		6F6776C91D18F88B00D0F111 /* CCSpriteWithHsv.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FBF61521D17D3B900257791 /* CCSpriteWithHsv.m */; };
 		6F7752741CDC9A8800BF74AF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3DEFB1314FFD66C00B98586 /* Cocoa.framework */; };
 		6F7752781CDC9A8800BF74AF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FC2419C1CDB5922009A3AAD /* InfoPlist.strings */; };
 		6F7752841CDC9A9B00BF74AF /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3DEFB1314FFD66C00B98586 /* Cocoa.framework */; };
@@ -35,16 +29,13 @@
 		6F8460691E516E5000DB7FB3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FC2419C1CDB5922009A3AAD /* InfoPlist.strings */; };
 		6F8460731E516E6E00DB7FB3 /* CCBPProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F8460701E516E6A00DB7FB3 /* CCBPProperties.plist */; };
 		6F8460741E516EB000DB7FB3 /* CCClippingRectangleNode.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F8460711E516E6A00DB7FB3 /* CCClippingRectangleNode.h */; };
-		6F8460751E516EB000DB7FB3 /* CCClippingRectangleNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F8460721E516E6A00DB7FB3 /* CCClippingRectangleNode.m */; };
 		6FB639291D3DD4C0006CC1B6 /* CCSkeletonBone.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FB639271D3DD4C0006CC1B6 /* CCSkeletonBone.h */; };
-		6FB6392A1D3DD4C0006CC1B6 /* CCSkeletonBone.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FB639281D3DD4C0006CC1B6 /* CCSkeletonBone.m */; };
 		6FB6392E1D3DD4C6006CC1B6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3DEFB1314FFD66C00B98586 /* Cocoa.framework */; };
 		6FB639311D3DD4C6006CC1B6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FC2419C1CDB5922009A3AAD /* InfoPlist.strings */; };
 		6FB639391D3DD4D0006CC1B6 /* CCBPProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6FB639261D3DD4C0006CC1B6 /* CCBPProperties.plist */; };
 		6FB639571D3DDC16006CC1B6 /* CCSkeletonAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F17FABF1CF2A54C00CFCD14 /* CCSkeletonAnimation.h */; };
 		6FB7319F1D1BF0B1000B7397 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3DEFB1314FFD66C00B98586 /* Cocoa.framework */; };
 		6FB731A21D1BF0B1000B7397 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FC2419C1CDB5922009A3AAD /* InfoPlist.strings */; };
-		6FB731A91D1BF13A000B7397 /* CCBlurBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FB7319A1D1BF0A9000B7397 /* CCBlurBackground.m */; };
 		6FB731AA1D1BF13C000B7397 /* CCBPProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6FB7319B1D1BF0A9000B7397 /* CCBPProperties.plist */; };
 		6FBF61571D17D3E800257791 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3DEFB1314FFD66C00B98586 /* Cocoa.framework */; };
 		6FBF61591D17D3E800257791 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FC2419C1CDB5922009A3AAD /* InfoPlist.strings */; };
@@ -52,7 +43,6 @@
 		6FC19AAC1CF80BF70002D68B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3DEFB1314FFD66C00B98586 /* Cocoa.framework */; };
 		6FC19AAF1CF80BF70002D68B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FC2419C1CDB5922009A3AAD /* InfoPlist.strings */; };
 		6FC19AB71CF80C2C0002D68B /* CCBPProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6FC19AB61CF80C2C0002D68B /* CCBPProperties.plist */; };
-		6FC19ABB1CF80CAA0002D68B /* CCCheckBox.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC19AB81CF80C3F0002D68B /* CCCheckBox.m */; };
 		6FC241891CDB58D5009A3AAD /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3DEFB1314FFD66C00B98586 /* Cocoa.framework */; };
 		6FC241A11CDB5922009A3AAD /* CCBPProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6FC241941CDB5922009A3AAD /* CCBPProperties.plist */; };
 		6FC241A41CDB5922009A3AAD /* CCBPProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6FC241981CDB5922009A3AAD /* CCBPProperties.plist */; };
@@ -60,12 +50,6 @@
 		6FC241A91CDB5922009A3AAD /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FC2419C1CDB5922009A3AAD /* InfoPlist.strings */; };
 		6FD294151CE1A10F009ECBFA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3DEFB1314FFD66C00B98586 /* Cocoa.framework */; };
 		6FD294181CE1A10F009ECBFA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FC2419C1CDB5922009A3AAD /* InfoPlist.strings */; };
-		6FD2944C1CE1B8E2009ECBFA /* CCNodeV3.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD294081CE19DFE009ECBFA /* CCNodeV3.m */; };
-		6FD2944D1CE1B8E2009ECBFA /* CCUIScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F7752911CDC9FF000BF74AF /* CCUIScrollView.m */; };
-		6FD2944E1CE1B8E2009ECBFA /* CCLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F77526E1CDC9A8200BF74AF /* CCLayout.m */; };
-		6FD2944F1CE1B8E2009ECBFA /* CCText.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F843E7B1CDBCBC1008B2EC4 /* CCText.m */; };
-		6FD294501CE1B8E2009ECBFA /* CCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F843E7E1CDBCBC9008B2EC4 /* CCButton.m */; };
-		6FD294511CE1B8E2009ECBFA /* CCWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F843E811CDBCBD0008B2EC4 /* CCWidget.m */; };
 		6FD294741CE1BC07009ECBFA /* CCBPProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6FD294061CE19DFE009ECBFA /* CCBPProperties.plist */; };
 		6FD2947E1CE1CE66009ECBFA /* CCBPProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F375FB11CDCAF9F00D17533 /* CCBPProperties.plist */; };
 		E3DEFB1414FFD66C00B98586 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3DEFB1314FFD66C00B98586 /* Cocoa.framework */; };
@@ -92,7 +76,7 @@
 		6F77527D1CDC9A8800BF74AF /* CCLayout.ccbPlugNode */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CCLayout.ccbPlugNode; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F77528D1CDC9A9B00BF74AF /* CCScrollView.ccbPlugNode */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CCScrollView.ccbPlugNode; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F77528F1CDC9AE400BF74AF /* CCLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCLayout.h; path = CCLayout/CCLayout.h; sourceTree = "<group>"; };
-		6F7752911CDC9FF000BF74AF /* CCUIScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCUIScrollView.m; path = CCScrollView/CCUIScrollView.m; sourceTree = "<group>"; };
+		6F7752911CDC9FF000BF74AF /* CCUIScrollView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CCUIScrollView.cpp; path = CCScrollView/CCUIScrollView.cpp; sourceTree = "<group>"; };
 		6F7752931CDCA00300BF74AF /* CCUIScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CCUIScrollView.h; path = CCScrollView/CCUIScrollView.h; sourceTree = "<group>"; };
 		6F843E4A1CDB9940008B2EC4 /* CCBPProperties.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = CCBPProperties.plist; path = CCText/CCBPProperties.plist; sourceTree = "<group>"; };
 		6F843E5A1CDB994C008B2EC4 /* CCText.ccbPlugNode */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CCText.ccbPlugNode; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -414,7 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				6F7752931CDCA00300BF74AF /* CCUIScrollView.h */,
-				6F7752911CDC9FF000BF74AF /* CCUIScrollView.m */,
+				6F7752911CDC9FF000BF74AF /* CCUIScrollView.cpp */,
 			);
 			name = CCUIScrollView;
 			sourceTree = "<group>";
@@ -1483,22 +1467,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6FD2944D1CE1B8E2009ECBFA /* CCUIScrollView.m in Sources */,
-				6F2A497E1DBA1DC7006D766B /* ShaderUtils.m in Sources */,
-				6FD294501CE1B8E2009ECBFA /* CCButton.m in Sources */,
-				6FD2944E1CE1B8E2009ECBFA /* CCLayout.m in Sources */,
-				6FB731A91D1BF13A000B7397 /* CCBlurBackground.m in Sources */,
-				6F2A497F1DBA1DC7006D766B /* ColorUtils.c in Sources */,
-				6F17FB421CF2A9E300CFCD14 /* CCSkeletonAnimation.m in Sources */,
-				6FC19ABB1CF80CAA0002D68B /* CCCheckBox.m in Sources */,
-				6F6776C91D18F88B00D0F111 /* CCSpriteWithHsv.m in Sources */,
-				6F45480C1DC9E1D600894079 /* CCScale9SpriteWithHsv.m in Sources */,
-				6FD2944C1CE1B8E2009ECBFA /* CCNodeV3.m in Sources */,
-				6F8460751E516EB000DB7FB3 /* CCClippingRectangleNode.m in Sources */,
-				6FD294511CE1B8E2009ECBFA /* CCWidget.m in Sources */,
-				6FB6392A1D3DD4C0006CC1B6 /* CCSkeletonBone.m in Sources */,
-				6F62695E1DBDBE5F00A93689 /* EEButton.m in Sources */,
-				6FD2944F1CE1B8E2009ECBFA /* CCText.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1900,6 +1868,7 @@
 					"$(SRCROOT)/../../Examples/CocosBuilderExample/libs/CCBReader/**",
 					"$(SRCROOT)/../../CocosBuilder/libs/spine-cocos2d-iphone/2/src",
 					"$(SRCROOT)/../../CocosBuilder/libs/spine-c/include",
+					"$(SRCROOT)/../../CocosBuilder/libs/cocos2d/cocos",
 				);
 				INFOPLIST_FILE = Source/Info.plist;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
@@ -1933,6 +1902,7 @@
 					"$(SRCROOT)/../../Examples/CocosBuilderExample/libs/CCBReader/**",
 					"$(SRCROOT)/../../CocosBuilder/libs/spine-cocos2d-iphone/2/src",
 					"$(SRCROOT)/../../CocosBuilder/libs/spine-c/include",
+					"$(SRCROOT)/../../CocosBuilder/libs/cocos2d/cocos",
 				);
 				INFOPLIST_FILE = Source/Info.plist;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
