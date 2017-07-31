@@ -7,6 +7,3 @@ url=https://github.com/Senspark/Fragaria
 [submodule "Examples/CocosBuilderExample/libs/CCBReader"]
 	path = Examples/CocosBuilderExample/libs/CCBReader
 url=https://github.com/Senspark/CCBReader
-[submodule "CocosBuilder/libs/cocos2d-iphone"]
-	path = CocosBuilder/libs/cocos2d-iphone
-url=https://github.com/Senspark/cocos2d-iphone-classic
