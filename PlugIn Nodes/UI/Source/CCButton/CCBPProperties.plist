@@ -107,6 +107,44 @@
 		</dict>
 		<dict>
 			<key>displayName</key>
+			<string>Insets</string>
+			<key>type</key>
+			<string>SeparatorSub</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>Float</string>
+			<key>name</key>
+			<string>insetLeft</string>
+			<key>displayName</key>
+			<string>Left</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>Float</string>
+			<key>name</key>
+			<string>insetTop</string>
+			<key>displayName</key>
+			<string>Top</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>Float</string>
+			<key>name</key>
+			<string>insetRight</string>
+			<key>displayName</key>
+			<string>Right</string>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>Float</string>
+			<key>name</key>
+			<string>insetBottom</string>
+			<key>displayName</key>
+			<string>Bottom</string>
+		</dict>
+		<dict>
+			<key>displayName</key>
 			<string>Normal state</string>
 			<key>type</key>
 			<string>SeparatorSub</string>

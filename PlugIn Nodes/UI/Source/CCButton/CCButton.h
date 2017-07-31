@@ -70,6 +70,10 @@ typedef NS_ENUM(NSInteger, CCButtonState) {
 @property (nonatomic, assign) NSString* fontName;
 
 @property (nonatomic) BOOL scale9Enabled;
+@property (nonatomic) CGFloat insetLeft;
+@property (nonatomic) CGFloat insetTop;
+@property (nonatomic) CGFloat insetRight;
+@property (nonatomic) CGFloat insetBottom;
 
 @property (nonatomic) BOOL normalSpriteFrameEnabled;
 @property (nonatomic) BOOL pressedSpriteFrameEnabled;

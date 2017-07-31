@@ -53,6 +53,11 @@ const NSInteger kTitleZOrder = -1;
     _scale9Enabled = NO;
     _pressedActionEnabled = NO;
 
+    [self setInsetLeft:0];
+    [self setInsetTop:0];
+    [self setInsetRight:0];
+    [self setInsetBottom:0];
+
     normalTextureAdaptDirty_ = YES;
     pressedTextureAdaptDirty_ = YES;
     disabledTextureAdaptDirty_ = YES;
@@ -299,6 +304,65 @@ const NSInteger kTitleZOrder = -1;
     disabledTextureAdaptDirty_ = YES;
 }
 
+- (void)setInsetLeft:(CGFloat)inset {
+    _insetLeft = inset;
+    if ([self normalSpriteFrameEnabled]) {
+        [buttonNormalRenderer_ setInsetLeft:inset];
+    }
+    if ([self pressedSpriteFrameEnabled]) {
+        [buttonPressedRenderer_ setInsetLeft:inset];
+    }
+    if ([self disabledSpriteFrameEnabled]) {
+        [buttonDisabledRenderer_ setInsetLeft:inset];
+    }
+}
+
+- (void)setInsetTop:(CGFloat)inset {
+    _insetTop = inset;
+    if ([self normalSpriteFrameEnabled]) {
+        [buttonNormalRenderer_ setInsetTop:inset];
+    }
+    if ([self pressedSpriteFrameEnabled]) {
+        [buttonPressedRenderer_ setInsetTop:inset];
+    }
+    if ([self disabledSpriteFrameEnabled]) {
+        [buttonDisabledRenderer_ setInsetTop:inset];
+    }
+}
+
+- (void)setInsetRight:(CGFloat)inset {
+    _insetRight = inset;
+    if ([self normalSpriteFrameEnabled]) {
+        [buttonNormalRenderer_ setInsetRight:inset];
+    }
+    if ([self pressedSpriteFrameEnabled]) {
+        [buttonPressedRenderer_ setInsetRight:inset];
+    }
+    if ([self disabledSpriteFrameEnabled]) {
+        [buttonDisabledRenderer_ setInsetRight:inset];
+    }
+}
+
+- (void)setInsetBottom:(CGFloat)inset {
+    _insetBottom = inset;
+    if ([self normalSpriteFrameEnabled]) {
+        [buttonNormalRenderer_ setInsetBottom:inset];
+    }
+    if ([self pressedSpriteFrameEnabled]) {
+        [buttonPressedRenderer_ setInsetBottom:inset];
+    }
+    if ([self disabledSpriteFrameEnabled]) {
+        [buttonDisabledRenderer_ setInsetBottom:inset];
+    }
+}
+
+- (void)updateInsets:(CCScale9Sprite*)renderer {
+    [renderer setInsetLeft:[self insetLeft]];
+    [renderer setInsetTop:[self insetTop]];
+    [renderer setInsetRight:[self insetRight]];
+    [renderer setInsetBottom:[self insetBottom]];
+}
+
 - (CCNode*)virtualRenderer {
     if ([self bright]) {
         switch (brightStyle_) {
@@ -390,6 +454,7 @@ const NSInteger kTitleZOrder = -1;
     normalFrame_ = [frame retain];
     [buttonNormalRenderer_ setSpriteFrame:frame];
     [buttonNormalRenderer_ setVisible:[self normalSpriteFrameEnabled]];
+    [self updateInsets:buttonNormalRenderer_];
     [self setupNormalTexture:YES];
 }
 
@@ -399,6 +464,7 @@ const NSInteger kTitleZOrder = -1;
     pressedFrame_ = [frame retain];
     [buttonPressedRenderer_ setSpriteFrame:frame];
     [buttonPressedRenderer_ setVisible:[self pressedSpriteFrameEnabled]];
+    [self updateInsets:buttonPressedRenderer_];
     [self setupPressedTexture:YES];
 }
 
@@ -408,6 +474,7 @@ const NSInteger kTitleZOrder = -1;
     disabledFrame_ = [frame retain];
     [buttonDisabledRenderer_ setSpriteFrame:frame];
     [buttonDisabledRenderer_ setVisible:[self disabledSpriteFrameEnabled]];
+    [self updateInsets:buttonDisabledRenderer_];
     [self setupDisabledTexture:YES];
 }
 
