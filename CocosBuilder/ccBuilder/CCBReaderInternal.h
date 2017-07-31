@@ -29,12 +29,19 @@
 
 @interface CCBReaderInternal : NSObject
 
-+ (ccColor3B) deserializeColor3:(id) val;
++ (cocos2d::Color3B)deserializeColor3:(id)val;
 
-//+ (CCNode*) nodeGraphFromDictionary:(NSDictionary*) dict;
-+ (CCNode*) nodeGraphFromDictionary:(NSDictionary*) dict parentSize:(CGSize)parentSize;
-//+ (CCNode*) nodeGraphFromDocumentDictionary:(NSDictionary*) dict;
-+ (CCNode*) nodeGraphFromDocumentDictionary:(NSDictionary *)dict parentSize:(CGSize) parentSize;
-//+ (void) setProp:(NSString*)name ofType:(NSString*)type toValue:(id)serializedValue forNode:(CCNode*)node;
-+ (void) setProp:(NSString*)name ofType:(NSString*)type toValue:(id)serializedValue forNode:(CCNode*)node parentSize:(CGSize)parentSize;
+//+ (cocos2d::Node*) nodeGraphFromDictionary:(NSDictionary*) dict;
++ (cocos2d::Node*)nodeGraphFromDictionary:(NSDictionary*)dict
+                               parentSize:(CGSize)parentSize;
+//+ (cocos2d::Node*) nodeGraphFromDocumentDictionary:(NSDictionary*) dict;
++ (cocos2d::Node*)nodeGraphFromDocumentDictionary:(NSDictionary*)dict
+                                       parentSize:(CGSize)parentSize;
+//+ (void) setProp:(NSString*)name ofType:(NSString*)type
+// toValue:(id)serializedValue forNode:(cocos2d::Node*)node;
++ (void)setProp:(NSString*)name
+         ofType:(NSString*)type
+        toValue:(id)serializedValue
+        forNode:(cocos2d::Node*)node
+     parentSize:(CGSize)parentSize;
 @end

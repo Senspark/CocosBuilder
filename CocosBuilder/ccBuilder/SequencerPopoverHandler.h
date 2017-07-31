@@ -29,7 +29,7 @@
 
 @interface SequencerPopoverHandler : NSViewController
 
-+ (void) popoverNode:(CCNode*) node property: (NSString*) prop overView:(NSView*) parent kfBounds:(NSRect) kfBounds;
++ (void) popoverNode:(cocos2d::Node*) node property: (NSString*) prop overView:(NSView*) parent kfBounds:(NSRect) kfBounds;
 
 + (void) popoverChannelKeyframes:(NSArray*)kfs kfBounds:(NSRect)kfBounds overView:(NSView*) parent;
 

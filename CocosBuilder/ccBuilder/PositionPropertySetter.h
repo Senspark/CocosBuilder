@@ -25,8 +25,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-enum
-{
+enum {
     kCCBPositionTypeRelativeBottomLeft,
     kCCBPositionTypeRelativeTopLeft,
     kCCBPositionTypeRelativeTopRight,
@@ -35,8 +34,7 @@ enum
     kCCBPositionTypeMultiplyResolution,
 };
 
-enum
-{
+enum {
     kCCBSizeTypeAbsolute,
     kCCBSizeTypePercent,
     kCCBSizeTypeRelativeContainer,
@@ -45,52 +43,97 @@ enum
     kCCBSizeTypeMultiplyResolution,
 };
 
-enum
-{
-    kCCBScaleTypeAbsolute,
-    kCCBScaleTypeMultiplyResolution
-};
+enum { kCCBScaleTypeAbsolute, kCCBScaleTypeMultiplyResolution };
 
 @interface PositionPropertySetter : NSObject
 
-+ (CGSize) getParentSize:(CCNode*) node;
++ (cocos2d::Size)getParentSize:(cocos2d::Node*)node;
 
 // Setting/getting positions
-+ (void) setPosition:(NSPoint)pos type:(int)type forNode:(CCNode*) node prop:(NSString*)prop;
-+ (void) setPosition:(NSPoint)pos type:(int)type forNode:(CCNode*) node prop:(NSString*)prop parentSize:(CGSize)parentSize;
-+ (void) setPosition:(NSPoint)pos forNode:(CCNode *)node prop:(NSString *)prop;
-+ (void) setPositionType:(int)type forNode:(CCNode*)node prop:(NSString*)prop;
-+ (NSPoint) positionForNode:(CCNode*)node prop:(NSString*)prop;
-+ (int) positionTypeForNode:(CCNode*)node prop:(NSString*)prop;
-+ (void) addPositionKeyframeForNode:(CCNode*)node;
++ (void)setPosition:(NSPoint)pos
+               type:(int)type
+            forNode:(cocos2d::Node*)node
+               prop:(NSString*)prop;
+
++ (void)setPosition:(NSPoint)pos
+               type:(int)type
+            forNode:(cocos2d::Node*)node
+               prop:(NSString*)prop
+         parentSize:(CGSize)parentSize;
+
++ (void)setPosition:(NSPoint)pos
+            forNode:(cocos2d::Node*)node
+               prop:(NSString*)prop;
+
++ (void)setPositionType:(int)type
+                forNode:(cocos2d::Node*)node
+                   prop:(NSString*)prop;
+
++ (NSPoint)positionForNode:(cocos2d::Node*)node prop:(NSString*)prop;
+
++ (int)positionTypeForNode:(cocos2d::Node*)node prop:(NSString*)prop;
+
++ (void)addPositionKeyframeForNode:(cocos2d::Node*)node;
 
 // Positioning helpers
-+ (NSPoint) calcAbsolutePositionFromRelative:(NSPoint)pos type:(int)type parentSize:(CGSize) parentSize;
-+ (NSPoint) calcRelativePositionFromAbsolute:(NSPoint)pos type:(int)type parentSize:(CGSize)parentSize;
-+ (NSPoint) convertPosition:(NSPoint)pos fromType:(int)fromType toType:(int)toType forNode:(CCNode*) node;
-
++ (NSPoint)calcAbsolutePositionFromRelative:(NSPoint)pos
+                                       type:(int)type
+                                 parentSize:(CGSize)parentSize;
++ (NSPoint)calcRelativePositionFromAbsolute:(NSPoint)pos
+                                       type:(int)type
+                                 parentSize:(CGSize)parentSize;
++ (NSPoint)convertPosition:(NSPoint)pos
+                  fromType:(int)fromType
+                    toType:(int)toType
+                   forNode:(cocos2d::Node*)node;
 
 // Setting/getting sizes
-+ (void) setSize:(NSSize)size type:(int)type forNode:(CCNode*)node prop:(NSString*)prop;
-+ (void) setSize:(NSSize)size type:(int)type forNode:(CCNode*)node prop:(NSString*)prop parentSize:(CGSize)parentSize;
-+ (void) setSize:(NSSize)size forNode:(CCNode *)node prop:(NSString *)prop;
-+ (NSSize) sizeForNode:(CCNode*)node prop:(NSString*)prop;
-+ (int) sizeTypeForNode:(CCNode*)node prop:(NSString*)prop;
-+ (void) setSizeType:(int)type forNode:(CCNode*)node prop:(NSString*)prop;
-+ (void) refreshSizeForNode:(CCNode*)node prop:(NSString*)prop;
++ (void)setSize:(NSSize)size
+           type:(int)type
+        forNode:(cocos2d::Node*)node
+           prop:(NSString*)prop;
+
++ (void)setSize:(NSSize)size
+           type:(int)type
+        forNode:(cocos2d::Node*)node
+           prop:(NSString*)prop
+     parentSize:(CGSize)parentSize;
+
++ (void)setSize:(NSSize)size forNode:(cocos2d::Node*)node prop:(NSString*)prop;
+
++ (NSSize)sizeForNode:(cocos2d::Node*)node prop:(NSString*)prop;
+
++ (int)sizeTypeForNode:(cocos2d::Node*)node prop:(NSString*)prop;
+
++ (void)setSizeType:(int)type forNode:(cocos2d::Node*)node prop:(NSString*)prop;
+
++ (void)refreshSizeForNode:(cocos2d::Node*)node prop:(NSString*)prop;
 
 // Setting/getting scale
-+ (void) setScaledX:(float)scaleX Y:(float)scaleY type:(int)type forNode:(CCNode*)node prop:(NSString*)prop;
-+ (float) scaleXForNode:(CCNode*)node prop:(NSString*)prop;
-+ (float) scaleYForNode:(CCNode*)node prop:(NSString*)prop;
-+ (int) scaledFloatTypeForNode:(CCNode*)node prop:(NSString*)prop;
++ (void)setScaledX:(float)scaleX
+                 Y:(float)scaleY
+              type:(int)type
+           forNode:(cocos2d::Node*)node
+              prop:(NSString*)prop;
 
-+ (void) setFloatScale:(float)f type:(int)type forNode:(CCNode*)node prop:(NSString*)prop;
-+ (float) floatScaleForNode:(CCNode*)node prop:(NSString*)prop;
-+ (int) floatScaleTypeForNode:(CCNode*)node prop:(NSString*)prop;
++ (float)scaleXForNode:(cocos2d::Node*)node prop:(NSString*)prop;
+
++ (float)scaleYForNode:(cocos2d::Node*)node prop:(NSString*)prop;
+
++ (int)scaledFloatTypeForNode:(cocos2d::Node*)node prop:(NSString*)prop;
+
++ (void)setFloatScale:(float)f
+                 type:(int)type
+              forNode:(cocos2d::Node*)node
+                 prop:(NSString*)prop;
+
++ (float)floatScaleForNode:(cocos2d::Node*)node prop:(NSString*)prop;
+
++ (int)floatScaleTypeForNode:(cocos2d::Node*)node prop:(NSString*)prop;
 
 // Refreshing positions
-+ (void) refreshPositionsForChildren:(CCNode*)node;
-+ (void) refreshAllPositions;
++ (void)refreshPositionsForChildren:(cocos2d::Node*)node;
+
++ (void)refreshAllPositions;
 
 @end

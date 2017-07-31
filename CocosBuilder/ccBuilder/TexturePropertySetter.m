@@ -32,7 +32,7 @@
 
 @implementation TexturePropertySetter
 
-+ (void) setSpriteFrameForNode:(CCNode*)node andProperty:(NSString*) prop withFile:(NSString*)spriteFile andSheetFile:(NSString*)spriteSheetFile
++ (void) setSpriteFrameForNode:(cocos2d::Node*)node andProperty:(NSString*) prop withFile:(NSString*)spriteFile andSheetFile:(NSString*)spriteSheetFile
 {
     CCSpriteFrame* spriteFrame = NULL;
     
@@ -95,7 +95,7 @@
     [node setValue:spriteFrame forKey:prop];
 }
 
-+ (void) setTextureForNode:(CCNode*)node andProperty:(NSString*) prop withFile:(NSString*) spriteFile
++ (void) setTextureForNode:(cocos2d::Node*)node andProperty:(NSString*) prop withFile:(NSString*) spriteFile
 {
     CCTexture2D* texture = NULL;
     
@@ -118,7 +118,7 @@
     [node setValue:texture forKey:prop];
 }
 
-+ (void) setFontForNode:(CCNode*)node andProperty:(NSString*) prop withFile:(NSString*) fontFile
++ (void) setFontForNode:(cocos2d::Node*)node andProperty:(NSString*) prop withFile:(NSString*) fontFile
 {
     NSString* absPath = NULL;
     
@@ -145,14 +145,14 @@
     [node setExtraProp:fontFile forKey:prop];
 }
 
-+ (NSString*) fontForNode:(CCNode*)node andProperty:(NSString*) prop
++ (NSString*) fontForNode:(cocos2d::Node*)node andProperty:(NSString*) prop
 {
     NSString* fntFile = [node extraPropForKey:prop];
     if ([fntFile isEqualToString:@"missing-font.fnt"]) return NULL;
     return fntFile;
 }
 
-+ (void) setTtfForNode:(CCNode*)node andProperty:(NSString*) prop withFont:(NSString*) fontName
++ (void) setTtfForNode:(cocos2d::Node*)node andProperty:(NSString*) prop withFont:(NSString*) fontName
 {
     NSString* fullName = fontName;
     if ([[fontName lowercaseString] hasSuffix:@".ttf"])
@@ -167,7 +167,7 @@
     [node setExtraProp:fontName forKey:prop];
 }
 
-+ (NSString*) ttfForNode:(CCNode*)node andProperty:(NSString*) prop
++ (NSString*) ttfForNode:(cocos2d::Node*)node andProperty:(NSString*) prop
 {
     NSString* fntFile = [node extraPropForKey:prop];
     if ([fntFile isEqualToString:@""]) return NULL;

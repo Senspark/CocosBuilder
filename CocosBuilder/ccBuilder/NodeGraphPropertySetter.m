@@ -33,7 +33,7 @@
 
 @implementation NodeGraphPropertySetter
 
-+ (void) setNodeGraphForNode:(CCNode*)node andProperty:(NSString*) prop withFile:(NSString*) ccbFileName parentSize:(CGSize)parentSize
++ (void) setNodeGraphForNode:(cocos2d::Node*)node andProperty:(NSString*) prop withFile:(NSString*) ccbFileName parentSize:(CGSize)parentSize
 {
     CCNode* ccbFile = NULL;
     NSMutableArray* sequences = [NSMutableArray array];
@@ -83,7 +83,7 @@
     [ccbFile setExtraProp:[NSNumber numberWithInt: startSequence] forKey:@"*startSequence"];
 }
 
-+ (NSString*) nodeGraphNameForNode:(CCNode*)node andProperty:(NSString*)prop
++ (NSString*) nodeGraphNameForNode:(cocos2d::Node*)node andProperty:(NSString*)prop
 {
     NSString* ccbFileName = [node extraPropForKey:prop];
     if ([ccbFileName isEqualToString:@""]) ccbFileName = NULL;

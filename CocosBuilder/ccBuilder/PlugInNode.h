@@ -70,10 +70,10 @@
 
 - (id) initWithBundle:(NSBundle*) b;
 
-- (NSArray*) readablePropertiesForType:(NSString*)type node:(CCNode*)node;
-- (NSArray*) animatablePropertiesForNode:(CCNode*)node;
-- (NSString*) propertyTypeForProperty:(NSString*)property;
+- (NSArray*)readablePropertiesForType:(NSString*)type node:(cocos2d::Node*)node;
+- (NSArray*)animatablePropertiesForNode:(cocos2d::Node*)node;
+- (NSString*)propertyTypeForProperty:(NSString*)property;
 
-- (BOOL) isAnimatableProperty:(NSString*)prop node:(CCNode*)node;
+- (BOOL)isAnimatableProperty:(NSString*)prop node:(cocos2d::Node*)node;
 
 @end

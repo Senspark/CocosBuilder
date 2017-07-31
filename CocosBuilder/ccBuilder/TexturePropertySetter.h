@@ -27,15 +27,25 @@
 
 @interface TexturePropertySetter : NSObject
 
-+ (void) setSpriteFrameForNode:(CCNode*)node andProperty:(NSString*) prop withFile:(NSString*)spriteFile andSheetFile:(NSString*)spriteSheetFile;
++ (void)setSpriteFrameForNode:(cocos2d::Node*)node
+                  andProperty:(NSString*)prop
+                     withFile:(NSString*)spriteFile
+                 andSheetFile:(NSString*)spriteSheetFile;
 
-+ (void) setTextureForNode:(CCNode*)node andProperty:(NSString*) prop withFile:(NSString*) spriteFile;
++ (void)setTextureForNode:(cocos2d::Node*)node
+              andProperty:(NSString*)prop
+                 withFile:(NSString*)spriteFile;
 
-+ (void) setFontForNode:(CCNode*)node andProperty:(NSString*) prop withFile:(NSString*) fontFile;
++ (void)setFontForNode:(cocos2d::Node*)node
+           andProperty:(NSString*)prop
+              withFile:(NSString*)fontFile;
 
-+ (NSString*) fontForNode:(CCNode*)node andProperty:(NSString*) prop;
++ (NSString*)fontForNode:(cocos2d::Node*)node andProperty:(NSString*)prop;
 
-+ (void) setTtfForNode:(CCNode*)node andProperty:(NSString*) prop withFont:(NSString*) fontName;
-+ (NSString*) ttfForNode:(CCNode*)node andProperty:(NSString*) prop;
++ (void)setTtfForNode:(cocos2d::Node*)node
+          andProperty:(NSString*)prop
+             withFont:(NSString*)fontName;
+
++ (NSString*)ttfForNode:(cocos2d::Node*)node andProperty:(NSString*)prop;
 
 @end

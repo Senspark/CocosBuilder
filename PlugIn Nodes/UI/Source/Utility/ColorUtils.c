@@ -11,7 +11,7 @@
 
 #include "ColorUtils.h"
 
-#include "mat4.h"
+#include <math/Mat4.h>
 
 const float rwgt = 0.3086;
 const float gwgt = 0.6094;

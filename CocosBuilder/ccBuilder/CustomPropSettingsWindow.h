@@ -33,6 +33,6 @@
 
 @property (nonatomic,retain) NSMutableArray* settings;
 
-- (void) copySettingsForNode:(CCNode*)n;
+- (void) copySettingsForNode:(cocos2d::Node*)n;
 
 @end

@@ -45,14 +45,14 @@
 @synthesize inPopoverWindow;
 @synthesize textFieldOriginalValue;
 
-+ (id) inspectorOfType:(NSString*) t withSelection:(CCNode*)s andPropertyName:(NSString*)pn andDisplayName:(NSString*) dn andExtra:(NSString*)e
++ (id) inspectorOfType:(NSString*) t withSelection:(cocos2d::Node*)s andPropertyName:(NSString*)pn andDisplayName:(NSString*) dn andExtra:(NSString*)e
 {
     NSString* inspectorClassName = [NSString stringWithFormat:@"Inspector%@",t];
     
     return [[[NSClassFromString(inspectorClassName) alloc] initWithSelection:s andPropertyName:pn andDisplayName:dn andExtra:e] autorelease];
 }
 
-- (id) initWithSelection:(CCNode*)s andPropertyName:(NSString*)pn andDisplayName:(NSString*) dn andExtra:(NSString*)e;
+- (id) initWithSelection:(cocos2d::Node*)s andPropertyName:(NSString*)pn andDisplayName:(NSString*) dn andExtra:(NSString*)e;
 {
     self = [super init];
     if (!self) return NULL;

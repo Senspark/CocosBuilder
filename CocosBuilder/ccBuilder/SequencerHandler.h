@@ -72,7 +72,7 @@
 
 - (id) initWithOutlineView:(NSOutlineView*)view;
 - (void) updateOutlineViewSelection;
-- (void) updateExpandedForNode:(CCNode*)node;
+- (void) updateExpandedForNode:(cocos2d::Node*)node;
 - (void) toggleSeqExpanderForRow:(int)row;
 
 - (void) redrawTimeline:(BOOL) reload;

@@ -28,18 +28,15 @@
 
 @synthesize serializedProjectSettings;
 
-- (NSString*) extension
-{
+- (NSString*)extension {
     return NULL;
 }
 
-- (NSData*) exportDocument:(NSDictionary *)doc flattenPaths:(BOOL) flattenPaths
-{
+- (NSData*)exportDocument:(NSDictionary*)doc flattenPaths:(BOOL)flattenPaths {
     return NULL;
 }
 
-- (void) dealloc
-{
+- (void)dealloc {
     [serializedProjectSettings release];
     [super dealloc];
 }

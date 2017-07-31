@@ -38,7 +38,7 @@
 @property (nonatomic,readonly) int type;
 @property (nonatomic,readonly) NSString* propName;
 
-- (id) initWithProperty:(NSString*) name node:(CCNode*)n;
+- (id) initWithProperty:(NSString*) name node:(cocos2d::Node*)n;
 - (id) initWithChannel:(SequencerChannel*)c;
 - (id) initWithSerialization: (id) ser;
 

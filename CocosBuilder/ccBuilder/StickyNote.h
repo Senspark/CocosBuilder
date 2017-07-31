@@ -22,7 +22,8 @@
  * THE SOFTWARE.
  */
 
-#import "cocos2d.h"
+#include <cocos2d.h>
+#include <ui/UIScale9Sprite.h>
 
 #define kCCBNoteDefaultWidth 150
 #define kCCBNoteDefaultHeight 150
@@ -30,28 +31,32 @@
 #define kCCBNoteLblInsetTop 10
 #define kCCBNoteLblInsetBot 20
 
-@class CCScale9Sprite;
+enum { kCCBStickyNoteHitNone, kCCBStickyNoteHitNote, kCCBStickyNoteHitResize };
 
-enum
-{
-    kCCBStickyNoteHitNone,
-    kCCBStickyNoteHitNote,
-    kCCBStickyNoteHitResize
+class StickyNote : public cocos2d::Node {
+private:
+    using Super = cocos2d::Node;
+
+public:
+    int hitAreaFromPt(const cocos2d::Point& pt);
+    void updatePos();
+    void setDocPos(const cocos2d::Point& p);
+    void setNoteText(const std::string& text);
+    void setLabelVisible(bool visible);
+    bool labelVisible() const;
+
+    virtual void setContentSize(const cocos2d::Size& size) override;
+
+protected:
+    virtual bool init() override;
+
+private:
+    cocos2d::ui::Scale9Sprite* bg_;
+    cocos2d::Label* lbl_;
+    cocos2d::Point docPos_;
+    std::string noteText_;
 };
 
-@interface StickyNote : CCNode
-{
-    CCScale9Sprite* bg;
-    CCLabelTTF* lbl;
-    CGPoint docPos;
-    NSString* noteText;
-}
-
-@property (nonatomic,assign) CGPoint docPos;
-@property (nonatomic,copy) NSString* noteText;
-@property (nonatomic,assign) BOOL labelVisible;
-
-- (int) hitAreaFromPt:(CGPoint)pt;
-- (void) updatePos;
-
-@end
+//@property (nonatomic, assign) CGPoint docPos;
+//@property (nonatomic, copy) NSString* noteText;
+//@property (nonatomic, assign) BOOL labelVisible;

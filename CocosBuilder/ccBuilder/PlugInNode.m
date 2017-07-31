@@ -169,7 +169,7 @@
     return @"position";
 }
 
-- (NSArray*) readablePropertiesForType:(NSString*)type node:(CCNode*)node
+- (NSArray*) readablePropertiesForType:(NSString*)type node:(cocos2d::Node*)node
 {
     BOOL useFlashSkew = [node usesFlashSkew];
     
@@ -188,7 +188,7 @@
     return props;
 }
 
-- (NSArray*) animatablePropertiesForNode:(CCNode*)node
+- (NSArray*) animatablePropertiesForNode:(cocos2d::Node*)node
 {
     BOOL useFlashSkew = [node usesFlashSkew];
     
@@ -215,7 +215,7 @@
     return props;
 }
 
-- (BOOL) isAnimatableProperty:(NSString*)prop node:(CCNode*)node
+- (BOOL) isAnimatableProperty:(NSString*)prop node:(cocos2d::Node*)node
 {
     for (NSString* animProp in [self animatablePropertiesForNode:node])
     {

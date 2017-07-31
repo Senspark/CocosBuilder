@@ -38,7 +38,7 @@
 
 @implementation PositionPropertySetter
 
-+ (CGSize) getParentSize:(CCNode*) node
++ (CGSize) getParentSize:(cocos2d::Node*) node
 {
     CocosScene* cs = [CocosScene cocosScene];
     
@@ -62,7 +62,7 @@
     return parentSize;
 }
 
-+ (void) refreshPositionsForChildren:(CCNode*)node
++ (void) refreshPositionsForChildren:(cocos2d::Node*)node
 {
     NodeInfo* info = node.userObject;
     PlugInNode* plugIn = info.plugIn;
@@ -231,12 +231,12 @@
 }
 
 
-+ (void) setPosition:(NSPoint)pos type:(int)type forNode:(CCNode*) node prop:(NSString*)prop
++ (void) setPosition:(NSPoint)pos type:(int)type forNode:(cocos2d::Node*) node prop:(NSString*)prop
 {
     [PositionPropertySetter setPosition:pos type:type forNode:node prop:prop parentSize:[PositionPropertySetter getParentSize:node]];
 }
 
-+ (void) setPosition:(NSPoint)pos type:(int)type forNode:(CCNode*) node prop:(NSString*)prop parentSize:(CGSize)parentSize
++ (void) setPosition:(NSPoint)pos type:(int)type forNode:(cocos2d::Node*) node prop:(NSString*)prop parentSize:(CGSize)parentSize
 {
     NSPoint absPos = [PositionPropertySetter calcAbsolutePositionFromRelative:pos type:type parentSize:parentSize];
     
@@ -248,7 +248,7 @@
     [node setExtraProp:[NSNumber numberWithInt:type] forKey:[NSString stringWithFormat:@"%@Type", prop]];
 }
 
-+ (void) addPositionKeyframeForNode:(CCNode*)node
++ (void) addPositionKeyframeForNode:(cocos2d::Node*)node
 {
     NSPoint newPos = [PositionPropertySetter positionForNode:node prop:@"position"];
     
@@ -290,24 +290,24 @@
     [PositionPropertySetter setPosition:pos type:type forNode:node prop:prop];
 }
 
-+ (void) setPositionType:(int)type forNode:(CCNode*)node prop:(NSString*)prop
++ (void) setPositionType:(int)type forNode:(cocos2d::Node*)node prop:(NSString*)prop
 {
     NSPoint oldAbsPos = [[node valueForKey:prop] pointValue];
     NSPoint relPos = [PositionPropertySetter calcRelativePositionFromAbsolute:oldAbsPos type:type parentSize:[PositionPropertySetter getParentSize:node]];
     [PositionPropertySetter setPosition:relPos type:type forNode:node prop:prop];
 }
 
-+ (NSPoint) positionForNode:(CCNode*)node prop:(NSString*)prop
++ (NSPoint) positionForNode:(cocos2d::Node*)node prop:(NSString*)prop
 {
     return [[node extraPropForKey:prop] pointValue];
 }
 
-+ (int) positionTypeForNode:(CCNode*)node prop:(NSString*)prop
++ (int) positionTypeForNode:(cocos2d::Node*)node prop:(NSString*)prop
 {
     return [[node extraPropForKey:[NSString stringWithFormat:@"%@Type", prop]] intValue];
 }
 
-+ (NSPoint) convertPosition:(NSPoint)pos fromType:(int)fromType toType:(int)toType forNode:(CCNode*) node
++ (NSPoint) convertPosition:(NSPoint)pos fromType:(int)fromType toType:(int)toType forNode:(cocos2d::Node*) node
 {
     if (fromType == toType) return pos;
     
@@ -317,12 +317,12 @@
     return [PositionPropertySetter calcRelativePositionFromAbsolute:absPos type:toType parentSize:parentSize];
 }
 
-+ (void) setSize:(NSSize)size type:(int)type forNode:(CCNode*)node prop:(NSString*)prop
++ (void) setSize:(NSSize)size type:(int)type forNode:(cocos2d::Node*)node prop:(NSString*)prop
 {
     [PositionPropertySetter setSize:size type:type forNode:node prop:prop parentSize:[PositionPropertySetter getParentSize:node]];
 }
 
-+ (void) setSize:(NSSize)size type:(int)type forNode:(CCNode*)node prop:(NSString*)prop parentSize:(CGSize)parentSize;
++ (void) setSize:(NSSize)size type:(int)type forNode:(cocos2d::Node*)node prop:(NSString*)prop parentSize:(CGSize)parentSize;
 {
     // Calculate absolute size
     NSSize absSize = NSMakeSize(0, 0);
@@ -371,7 +371,7 @@
     [PositionPropertySetter refreshPositionsForChildren:node];
 }
 
-+ (void) setSizeType:(int)type forNode:(CCNode*)node prop:(NSString*)prop
++ (void) setSizeType:(int)type forNode:(cocos2d::Node*)node prop:(NSString*)prop
 {
     NSSize absSize = [[node valueForKey:prop] sizeValue];
     NSSize relSize = NSZeroSize;
@@ -428,7 +428,7 @@
     [PositionPropertySetter setSize:size type:type forNode:node prop:prop];
 }
 
-+ (NSSize) sizeForNode:(CCNode*)node prop:(NSString*)prop
++ (NSSize) sizeForNode:(cocos2d::Node*)node prop:(NSString*)prop
 {
     NSValue* sizeValue = [node extraPropForKey:prop];
     
@@ -436,12 +436,12 @@
     else return [[node valueForKey:prop] sizeValue];
 }
 
-+ (int) sizeTypeForNode:(CCNode*)node prop:(NSString*)prop
++ (int) sizeTypeForNode:(cocos2d::Node*)node prop:(NSString*)prop
 {
     return [[node extraPropForKey:[NSString stringWithFormat:@"%@Type", prop]] intValue];
 }
 
-+ (void) refreshSizeForNode:(CCNode*)node prop:(NSString*)prop
++ (void) refreshSizeForNode:(cocos2d::Node*)node prop:(NSString*)prop
 {
     int type = [PositionPropertySetter sizeTypeForNode:node prop:prop];
     if (type == kCCBSizeTypeAbsolute)
@@ -451,7 +451,7 @@
     }
 }
 
-+ (void) setScaledX:(float)scaleX Y:(float)scaleY type:(int)type forNode:(CCNode*)node prop:(NSString*)prop
++ (void) setScaledX:(float)scaleX Y:(float)scaleY type:(int)type forNode:(cocos2d::Node*)node prop:(NSString*)prop
 {
     CocosBuilderAppDelegate* ad = [CocosBuilderAppDelegate appDelegate];
     int currentResolution = ad.currentDocument.currentResolution;
@@ -478,26 +478,26 @@
     [node setExtraProp:[NSNumber numberWithInt:type] forKey:[NSString stringWithFormat:@"%@Type", prop]];
 }
 
-+ (float) scaleXForNode:(CCNode*)node prop:(NSString*)prop
++ (float) scaleXForNode:(cocos2d::Node*)node prop:(NSString*)prop
 {
     NSNumber* scale = [node extraPropForKey:[prop stringByAppendingString:@"X"]];
     if (!scale) return 1;
     return [scale floatValue];
 }
 
-+ (float) scaleYForNode:(CCNode*)node prop:(NSString*)prop
++ (float) scaleYForNode:(cocos2d::Node*)node prop:(NSString*)prop
 {
     NSNumber* scale = [node extraPropForKey:[prop stringByAppendingString:@"Y"]];
     if (!scale) return 1;
     return [scale floatValue];
 }
 
-+ (int) scaledFloatTypeForNode:(CCNode*)node prop:(NSString*)prop
++ (int) scaledFloatTypeForNode:(cocos2d::Node*)node prop:(NSString*)prop
 {
     return [[node extraPropForKey:[NSString stringWithFormat:@"%@Type", prop]] intValue];
 }
 
-+ (void) setFloatScale:(float)f type:(int)type forNode:(CCNode*)node prop:(NSString*)prop
++ (void) setFloatScale:(float)f type:(int)type forNode:(cocos2d::Node*)node prop:(NSString*)prop
 {
     CocosBuilderAppDelegate* ad = [CocosBuilderAppDelegate appDelegate];
     int currentResolution = ad.currentDocument.currentResolution;
@@ -515,14 +515,14 @@
     [node setExtraProp:[NSNumber numberWithInt:type] forKey:[prop stringByAppendingString:@"Type"]];
 }
 
-+ (float) floatScaleForNode:(CCNode*)node prop:(NSString*)prop
++ (float) floatScaleForNode:(cocos2d::Node*)node prop:(NSString*)prop
 {
     NSNumber* scale = [node extraPropForKey:prop];
     if (!scale) return [[node valueForKey:prop] floatValue];
     return [scale floatValue];
 }
 
-+ (int) floatScaleTypeForNode:(CCNode*)node prop:(NSString*)prop
++ (int) floatScaleTypeForNode:(cocos2d::Node*)node prop:(NSString*)prop
 {
     return [[node extraPropForKey:[NSString stringWithFormat:@"%@Type", prop]] intValue];
 }

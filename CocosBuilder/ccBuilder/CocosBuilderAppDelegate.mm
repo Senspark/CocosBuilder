@@ -511,7 +511,7 @@ static CocosBuilderAppDelegate* sharedAppDelegate;
     if (currentDocument) currentDocument.lastEditedProperty = NULL;
 }
 
-- (CCNode*) selectedNode
+- (cocos2d::Node*) selectedNode
 {
     if (selectedNodes.count == 1)
     {
@@ -1655,7 +1655,7 @@ static BOOL hideAllToNextSeparator;
 
 #pragma mark Menu options
 
-- (BOOL) addCCObject:(CCNode *)obj toParent:(CCNode*)parent atIndex:(int)index
+- (BOOL) addCCObject:(CCNode *)obj toParent:(cocos2d::Node*)parent atIndex:(int)index
 {
     if (!obj || !parent) return NO;
     
@@ -1724,7 +1724,7 @@ static BOOL hideAllToNextSeparator;
     return [self addCCObject:obj toParent:parent atIndex:-1];
 }
 
-- (BOOL) addCCObject:(CCNode*)obj asChild:(BOOL)asChild
+- (BOOL) addCCObject:(cocos2d::Node*)obj asChild:(BOOL)asChild
 {
     CCBGlobals* g = [CCBGlobals globals];
     
@@ -1762,7 +1762,7 @@ static BOOL hideAllToNextSeparator;
     }
 }
 
-- (void) dropAddSpriteNamed:(NSString*)spriteFile inSpriteSheet:(NSString*)spriteSheetFile at:(CGPoint)pt parent:(CCNode*)parent
+- (void) dropAddSpriteNamed:(NSString*)spriteFile inSpriteSheet:(NSString*)spriteSheetFile at:(CGPoint)pt parent:(cocos2d::Node*)parent
 {
     NodeInfo* info = parent.userObject;
     PlugInNode* plugIn = info.plugIn;
@@ -1815,7 +1815,7 @@ static BOOL hideAllToNextSeparator;
     }
 }
 
-- (void) dropAddCCBFileNamed:(NSString*)ccbFile at:(CGPoint)pt parent:(CCNode*)parent
+- (void) dropAddCCBFileNamed:(NSString*)ccbFile at:(CGPoint)pt parent:(cocos2d::Node*)parent
 {
     if (!parent)
     {
@@ -2011,7 +2011,7 @@ static BOOL hideAllToNextSeparator;
     [self doPasteAsChild:YES];
 }
 
-- (void) deleteNode:(CCNode*)node
+- (void) deleteNode:(cocos2d::Node*)node
 {
     CCBGlobals* g = [CCBGlobals globals];
     

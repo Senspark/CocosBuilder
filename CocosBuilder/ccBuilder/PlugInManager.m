@@ -169,7 +169,7 @@
     return [plugInsNode objectForKey:name];
 }
 
-- (CCNode*) createDefaultNodeOfType:(NSString*)name
+- (cocos2d::Node*) createDefaultNodeOfType:(NSString*)name
 {
     PlugInNode* plugin = [self plugInNodeNamed:name];
     if (!plugin) return NULL;

@@ -24,7 +24,8 @@
  */
 
 #import "CCBSpriteSheetParser.h"
-#import <ZipUtils.h>
+
+#include <base/ZipUtils.h>
 
 static NSInteger strSort(id num1, id num2, void *context)
 {

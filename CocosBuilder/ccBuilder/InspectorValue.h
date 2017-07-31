@@ -56,9 +56,9 @@
 @property (nonatomic,assign) BOOL inPopoverWindow;
 @property (nonatomic,retain) NSString* textFieldOriginalValue;
 
-+ (id) inspectorOfType:(NSString*) t withSelection:(CCNode*)s andPropertyName:(NSString*)pn andDisplayName:(NSString*) dn andExtra:(NSString*)e;
++ (id) inspectorOfType:(NSString*) t withSelection:(cocos2d::Node*)s andPropertyName:(NSString*)pn andDisplayName:(NSString*) dn andExtra:(NSString*)e;
 
-- (id) initWithSelection:(CCNode*)s andPropertyName:(NSString*)pn andDisplayName:(NSString*) dn andExtra:(NSString*)e;
+- (id) initWithSelection:(cocos2d::Node*)s andPropertyName:(NSString*)pn andDisplayName:(NSString*) dn andExtra:(NSString*)e;
 
 - (void) refresh;
 

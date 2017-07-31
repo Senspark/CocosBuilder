@@ -35,35 +35,34 @@
 @synthesize customProperties;
 @synthesize transformStartPosition;
 
-+ (id) nodeInfoWithPlugIn:(PlugInNode*)pin
-{
++ (id)nodeInfoWithPlugIn:(PlugInNode*)pin {
     NodeInfo* info = [[[NodeInfo alloc] init] autorelease];
     info.plugIn = pin;
     return info;
 }
 
-- (id) init
-{
+- (id)init {
     self = [super init];
-    if (!self) return NULL;
-    
+    if (!self)
+        return NULL;
+
     extraProps = [[NSMutableDictionary alloc] init];
-    
+
     [extraProps setObject:@"" forKey:@"customClass"];
     [extraProps setObject:[NSNumber numberWithBool:YES] forKey:@"isExpanded"];
-    [extraProps setObject:[NSNumber numberWithInt:0] forKey:@"memberVarAssignmentType"];
+    [extraProps setObject:[NSNumber numberWithInt:0]
+                   forKey:@"memberVarAssignmentType"];
     [extraProps setObject:@"" forKey:@"memberVarAssignmentName"];
-    
+
     self.animatableProperties = [NSMutableDictionary dictionary];
     baseValues = [[NSMutableDictionary alloc] init];
-    
+
     self.customProperties = [NSMutableArray array];
-    
+
     return self;
 }
 
-- (void) dealloc
-{
+- (void)dealloc {
     [extraProps release];
     self.animatableProperties = NULL;
     self.displayName = NULL;
@@ -73,3 +72,22 @@
 }
 
 @end
+
+NodeInfoV3* NodeInfoV3::create() {
+    auto result = new NodeInfoV3();
+    result->autorelease();
+    return result;
+}
+
+NodeInfoV3::~NodeInfoV3() {
+    [wrappee_ release];
+}
+
+void NodeInfoV3::setInfo(NodeInfo* info) {
+    [wrappee_ autorelease];
+    wrappee_ = [info retain];
+}
+
+NodeInfo* NodeInfoV3::getInfo() const {
+    return wrappee_;
+}

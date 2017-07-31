@@ -265,7 +265,7 @@ static SequencerHandler* sharedSequencerHandler;
     if ([[CCBGlobals globals] rootNode] == NULL) return 0;
     if (item == nil) return 3;
     
-    CCNode* node = (CCNode*)item;
+    CCNode* node = (cocos2d::Node*)item;
     
     NSInteger result = 0;
     for (CCNode* child in [node children]) {
@@ -288,7 +288,7 @@ static SequencerHandler* sharedSequencerHandler;
         return NO;
     }
     
-    CCNode* node = (CCNode*)item;
+    CCNode* node = (cocos2d::Node*)item;
     CCArray* arr = [node children];
     NodeInfo* info = node.userObject;
     PlugInNode* plugIn = info.plugIn;
@@ -334,7 +334,7 @@ static SequencerHandler* sharedSequencerHandler;
         }
     }
     
-    CCNode* node = (CCNode*)item;
+    CCNode* node = (cocos2d::Node*)item;
     for (CCNode* child in [node children]) {
         if ([child zOrder] >= 0) {
             // Only process children with non-negative z-order.
@@ -458,7 +458,7 @@ static SequencerHandler* sharedSequencerHandler;
     if (nodeData)
     {
         NSDictionary* clipDict = [NSKeyedUnarchiver unarchiveObjectWithData:nodeData];
-        CCNode* draggedNode = (CCNode*)[[clipDict objectForKey:@"srcNode"] longLongValue];
+        CCNode* draggedNode = (cocos2d::Node*)[[clipDict objectForKey:@"srcNode"] longLongValue];
         
         CCNode* node = item;
         CCNode* parent = [node parent];
@@ -487,7 +487,7 @@ static SequencerHandler* sharedSequencerHandler;
         if (![appDelegate addCCObject:clipNode toParent:item atIndex:index]) return NO;
         
         // Remove old node
-        CCNode* draggedNode = (CCNode*)[[clipDict objectForKey:@"srcNode"] longLongValue];
+        CCNode* draggedNode = (cocos2d::Node*)[[clipDict objectForKey:@"srcNode"] longLongValue];
         [appDelegate deleteNode:draggedNode];
         
         [appDelegate setSelectedNodes:[NSArray arrayWithObject: clipNode]];
@@ -609,7 +609,7 @@ static SequencerHandler* sharedSequencerHandler;
     }
 }
 
-- (void) updateExpandedForNode:(CCNode*)node
+- (void) updateExpandedForNode:(cocos2d::Node*)node
 {
     if ([self outlineView:outlineHierarchy isItemExpandable:node])
     {
@@ -686,7 +686,7 @@ static SequencerHandler* sharedSequencerHandler;
     [[CocosBuilderAppDelegate appDelegate] updateTimelineMenu];
 }
 
-- (void) deselectKeyframesForNode:(CCNode*)node
+- (void) deselectKeyframesForNode:(cocos2d::Node*)node
 {
     [node deselectAllKeyframes];
     
@@ -752,7 +752,7 @@ static SequencerHandler* sharedSequencerHandler;
     }
 }
 
-- (void) addSelectedKeyframesForNode:(CCNode*)node toArray:(NSMutableArray*)keyframes
+- (void) addSelectedKeyframesForNode:(cocos2d::Node*)node toArray:(NSMutableArray*)keyframes
 {
     [node addSelectedKeyframesToArray:keyframes];
     
@@ -783,7 +783,7 @@ static SequencerHandler* sharedSequencerHandler;
     return NULL;
 }
 
-- (void) updatePropertiesToTimelinePositionForNode:(CCNode*)node sequenceId:(int)seqId localTime:(float)time
+- (void) updatePropertiesToTimelinePositionForNode:(cocos2d::Node*)node sequenceId:(int)seqId localTime:(float)time
 {
     [node updatePropertiesTime:time sequenceId:seqId];
     

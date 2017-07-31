@@ -27,12 +27,10 @@
 
 #define kCCBUseRegularFile @"Use regular file"
 
-@interface CCBWriterInternal : NSObject {
-@private
-    
-}
-+ (NSMutableDictionary*) dictionaryFromCCObject: (CCNode*) node;
+@interface CCBWriterInternal : NSObject
 
-+ (id) serializeColor3:(ccColor3B)c;
++ (NSMutableDictionary*)dictionaryFromCCObject:(cocos2d::Node*)node;
+
++ (id)serializeColor3:(cocos2d::Color3B)c;
 
 @end

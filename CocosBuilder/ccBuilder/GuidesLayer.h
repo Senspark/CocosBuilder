@@ -26,31 +26,26 @@
 
 #define kCCBGuideNone -1
 
-enum
-{
-    kCCBGuideOrientationHorizontal,
-    kCCBGuideOrientationVertical
-};
+enum { kCCBGuideOrientationHorizontal, kCCBGuideOrientationVertical };
 
-@interface GuidesLayer : CCLayer
-{
+class GuidesLayer : public cocos2d::Layer {
+public:
+    - (BOOL)mouseDown:(CGPoint)pt event:(NSEvent*)event;
+    - (BOOL)mouseDragged:(CGPoint)pt event:(NSEvent*)event;
+    - (BOOL)mouseUp:(CGPoint)pt event:(NSEvent*)event;
+    - (void)updateWithSize:(CGSize)ws stageOrigin:(CGPoint)so zoom:(float)zm;
+
+    - (id)serializeGuides;
+    - (void)loadSerializedGuides:(id)ser;
+    - (void)removeAllGuides;
+
+    // Snaps to a point in view coordinates
+    - (CGPoint)snapPoint:(CGPoint)pt;
+
     NSMutableArray* guides;
     int draggingGuide;
-    
-    CGSize winSize;
-    CGPoint stageOrigin;
-    float zoom;
+
+    cocos2d::Size winSize_;
+    cocos2d::Point stageOrigin_;
+    float zoom_;
 }
-
-- (BOOL) mouseDown:(CGPoint)pt event:(NSEvent*)event;
-- (BOOL) mouseDragged:(CGPoint)pt event:(NSEvent*)event;
-- (BOOL) mouseUp:(CGPoint)pt event:(NSEvent*)event;
-- (void) updateWithSize:(CGSize)ws stageOrigin:(CGPoint)so zoom:(float)zm;
-
-- (id) serializeGuides;
-- (void) loadSerializedGuides:(id)ser;
-- (void) removeAllGuides;
-
-// Snaps to a point in view coordinates
-- (CGPoint) snapPoint:(CGPoint)pt;
-@end

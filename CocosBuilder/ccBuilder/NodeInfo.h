@@ -24,11 +24,12 @@
 
 #import <Foundation/Foundation.h>
 
+#include <cocos2d.h>
+
 @class PlugInNode;
 @class SequencerNodeProperty;
 
-@interface NodeInfo : NSObject
-{
+@interface NodeInfo : NSObject {
     PlugInNode* plugIn;
     NSMutableDictionary* extraProps;
     NSMutableDictionary* animatableProperties;
@@ -38,14 +39,28 @@
     NSString* displayName;
 }
 
-@property (nonatomic,assign) PlugInNode* plugIn;
-@property (nonatomic,readonly) NSMutableDictionary* extraProps;
-@property (nonatomic,retain) NSMutableDictionary* animatableProperties;
-@property (nonatomic,readonly) NSMutableDictionary* baseValues;
-@property (nonatomic,copy) NSString* displayName;
-@property (nonatomic,retain) NSMutableArray* customProperties;
-@property (nonatomic,assign) CGPoint transformStartPosition;
+@property (nonatomic, assign) PlugInNode* plugIn;
+@property (nonatomic, readonly) NSMutableDictionary* extraProps;
+@property (nonatomic, retain) NSMutableDictionary* animatableProperties;
+@property (nonatomic, readonly) NSMutableDictionary* baseValues;
+@property (nonatomic, copy) NSString* displayName;
+@property (nonatomic, retain) NSMutableArray* customProperties;
+@property (nonatomic, assign) CGPoint transformStartPosition;
 
-+ (id) nodeInfoWithPlugIn:(PlugInNode*)pin;
++ (id)nodeInfoWithPlugIn:(PlugInNode*)pin;
 
 @end
+
+class NodeInfoV3 : public cocos2d::Ref {
+public:
+    static NodeInfoV3* create();
+
+    void setInfo(NodeInfo* info);
+
+    NodeInfo* getInfo() const;
+
+private:
+    ~NodeInfoV3();
+
+    NodeInfo* wrappee_;
+};

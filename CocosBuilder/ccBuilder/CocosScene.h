@@ -23,7 +23,8 @@
  * THE SOFTWARE.
  */
 
-#import "cocos2d.h"
+#include <cocos2d.h>
+
 @class CocosBuilderAppDelegate;
 @class CCBTemplateNode;
 @class RulersLayer;
@@ -53,28 +54,33 @@ enum {
     kCCBTransformHandleAnchorPoint,
 };
 
-enum {
-    kCCBToolSelection = 0,
-    kCCBToolGrab
-};
+enum { kCCBToolSelection = 0, kCCBToolGrab };
 
-@interface CocosScene : CCLayer
-{
-    CCLayerColor* bgLayer;
-    CCLayerColor* stageBgLayer;
-    CCLayer* contentLayer;
-    CCLayer* selectionLayer;
-    CCLayer* borderLayer;
+class CocosScene : public cocos2d::Layer {
+public:
+    static CocosScene* getInstance();
+
+    // Converts to document coordinates from view coordinates
+    cocos2d::Point convertToDocSpace(const cocos2d::Point& viewPt) const;
+
+    // Converst to view coordinates from document coordinates
+    cocos2d::Point convertToViewSpace(const cocos2d::Point& docPt) const;
+
+    cocos2d::LayerColor* bgLayer;
+    cocos2d::LayerColor* stageBgLayer;
+    cocos2d::Layer* contentLayer;
+    cocos2d::Layer* selectionLayer;
+    cocos2d::Layer* borderLayer;
     RulersLayer* rulerLayer;
     GuidesLayer* guideLayer;
     NotesLayer* notesLayer;
-    CCNode* rootNode;
-    CCRenderTexture* renderedScene;
+    cocos2d::Node* rootNode;
+    cocos2d::RenderTexture* renderedScene;
     CocosBuilderAppDelegate* appDelegate;
     CGSize winSize;
-    
+
     NSTrackingArea* trackingArea;
-    
+
     // Mouse handling
     BOOL mouseInside;
     CGPoint mousePos;
@@ -82,76 +88,70 @@ enum {
     float transformStartRotation;
     float transformStartScaleX;
     float transformStartScaleY;
-    CCNode* transformScalingNode;
-    //CGPoint transformStartPosition;
+    cocos2d::Node* transformScalingNode;
+    // CGPoint transformStartPosition;
     int currentMouseTransform;
     BOOL isMouseTransforming;
     BOOL isPanning;
     CGPoint scrollOffset;
     CGPoint panningStartScrollOffset;
-    
+
     // Origin position in screen coordinates
     CGPoint origin;
-    
+
     // Selection
     NSMutableArray* nodesAtSelectionPt;
     int currentNodeAtSelectionPtIdx;
-    
-    CCLayerColor* borderBottom;
-    CCLayerColor* borderTop;
-    CCLayerColor* borderLeft;
-    CCLayerColor* borderRight;
-    CCSprite* borderDevice;
-    
+
+    cocos2d::LayerColor* borderBottom;
+    cocos2d::LayerColor* borderTop;
+    cocos2d::LayerColor* borderLeft;
+    cocos2d::LayerColor* borderRight;
+    cocos2d::Sprite* borderDevice;
+
     int stageBorderType;
     float stageZoom;
-    
+
     int currentTool;
-}
+};
 
-@property (nonatomic,assign) CCNode* rootNode;
-@property (nonatomic,readonly) BOOL isMouseTransforming;
-@property (nonatomic,assign) CGPoint scrollOffset;
-
-@property (nonatomic,assign) int currentTool;
-
-@property (nonatomic,readonly) GuidesLayer* guideLayer;
-@property (nonatomic,readonly) RulersLayer* rulerLayer;
-@property (nonatomic,readonly) NotesLayer* notesLayer;
-
-// Used to creat the scene
-+(id) sceneWithAppDelegate:(CocosBuilderAppDelegate*)app;
-
-// Used to retrieve the shared instance
-+ (CocosScene*) cocosScene;
-
--(id) initWithAppDelegate:(CocosBuilderAppDelegate*)app;
-
-- (void) scrollWheel:(NSEvent *)theEvent;
-
-- (void) setStageSize: (CGSize) size centeredOrigin:(BOOL)centeredOrigin;
-- (CGSize) stageSize;
-- (BOOL) centeredOrigin;
-- (void) setStageBorder:(int)type;
-- (int) stageBorder;
-
-- (void) setStageZoom:(float) zoom;
-- (float) stageZoom;
-
-- (void) replaceRootNodeWith:(CCNode*)node;
-
-- (void) updateSelection;
-- (void) selectBehind;
-
-// Event handling forwarded by view
-- (void)mouseMoved:(NSEvent *)event;
-- (void)mouseEntered:(NSEvent *)event;
-- (void)mouseExited:(NSEvent *)event;
-- (void)cursorUpdate:(NSEvent *)event;
-
-// Converts to document coordinates from view coordinates
-- (CGPoint) convertToDocSpace:(CGPoint)viewPt;
-// Converst to view coordinates from document coordinates
-- (CGPoint) convertToViewSpace:(CGPoint)docPt;
-
-@end
+//@property(nonatomic, assign) CCNode* rootNode;
+//@property (nonatomic, readonly) BOOL isMouseTransforming;
+//@property (nonatomic, assign) CGPoint scrollOffset;
+//
+//@property (nonatomic, assign) int currentTool;
+//
+//@property (nonatomic, readonly) GuidesLayer* guideLayer;
+//@property (nonatomic, readonly) RulersLayer* rulerLayer;
+//@property (nonatomic, readonly) NotesLayer* notesLayer;
+//
+//// Used to creat the scene
+//+ (id)sceneWithAppDelegate:(CocosBuilderAppDelegate*)app;
+//
+//// Used to retrieve the shared instance
+//+ (CocosScene*)cocosScene;
+//
+//- (id)initWithAppDelegate:(CocosBuilderAppDelegate*)app;
+//
+//- (void)scrollWheel:(NSEvent*)theEvent;
+//
+//- (void)setStageSize:(CGSize)size centeredOrigin:(BOOL)centeredOrigin;
+//- (CGSize)stageSize;
+//- (BOOL)centeredOrigin;
+//- (void)setStageBorder:(int)type;
+//- (int)stageBorder;
+//
+//- (void)setStageZoom:(float)zoom;
+//- (float)stageZoom;
+//
+//- (void)replaceRootNodeWith:(cocos2d::Node*)node;
+//
+//- (void)updateSelection;
+//- (void)selectBehind;
+//
+//// Event handling forwarded by view
+//- (void)mouseMoved:(NSEvent*)event;
+//- (void)mouseEntered:(NSEvent*)event;
+//- (void)mouseExited:(NSEvent*)event;
+//- (void)cursorUpdate:(NSEvent*)event;
+//

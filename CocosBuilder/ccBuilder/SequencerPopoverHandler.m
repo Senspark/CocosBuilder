@@ -32,7 +32,7 @@
 
 @implementation SequencerPopoverHandler
 
-+ (void) popoverNode:(CCNode*) node property: (NSString*) prop overView:(NSView*) parent kfBounds:(NSRect) kfBounds
++ (void) popoverNode:(cocos2d::Node*) node property: (NSString*) prop overView:(NSView*) parent kfBounds:(NSRect) kfBounds
 {
     // Get type of property, return if it cannot be found
     NodeInfo* info = node.userObject;

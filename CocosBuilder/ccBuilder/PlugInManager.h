@@ -52,7 +52,7 @@
 #if !CCB_BUILDING_COMMANDLINE
 // Plug-in node
 - (PlugInNode*) plugInNodeNamed:(NSString*)name;
-- (CCNode*) createDefaultNodeOfType:(NSString*)name;
+- (cocos2d::Node*) createDefaultNodeOfType:(NSString*)name;
 #endif
 
 // Plug-in export

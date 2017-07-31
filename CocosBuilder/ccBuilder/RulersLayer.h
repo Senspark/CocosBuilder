@@ -22,34 +22,40 @@
  * THE SOFTWARE.
  */
 
-#import "cocos2d.h"
-#import "CCScale9Sprite.h"
+#include <cocos2d.h>
+#include <ui/UIScale9Sprite.h>
 
-@interface RulersLayer : CCLayer
-{
-    CCScale9Sprite* bgHorizontal;
-    CCScale9Sprite* bgVertical;
-    
-    CCNode* marksVertical;
-    CCNode* marksHorizontal;
-    
-    CCSprite* mouseMarkHorizontal;
-    CCSprite* mouseMarkVertical;
-    
-    CGSize winSize;
-    CGPoint stageOrigin;
-    float zoom;
-    
-    CCLabelAtlas* lblX;
-    CCLabelAtlas* lblY;
-}
+class RulersLayer : public cocos2d::Layer {
+private:
+    using Super = cocos2d::Layer;
 
-- (void) updateWithSize:(CGSize)winSize stageOrigin:(CGPoint)stageOrigin zoom:(float)zoom;
+public:
+    void updateWithSize(const cocos2d::Size& winSize,
+                        const cocos2d::Point& stageOrigin, float zoom);
 
-- (void)mouseEntered:(NSEvent *)event;
+    void mouseEntered();
 
-- (void)mouseExited:(NSEvent *)event;
+    void mouseExited();
 
-- (void)updateMousePos:(CGPoint)pos;
+    void updateMousePos(const cocos2d::Point& pos);
 
-@end
+protected:
+    virtual bool init() override;
+
+private:
+    cocos2d::ui::Scale9Sprite* bgHorizontal_;
+    cocos2d::ui::Scale9Sprite* bgVertical_;
+
+    cocos2d::Node* marksVertical_;
+    cocos2d::Node* marksHorizontal_;
+
+    cocos2d::Sprite* mouseMarkHorizontal_;
+    cocos2d::Sprite* mouseMarkVertical_;
+
+    cocos2d::Size winSize_;
+    cocos2d::Point stageOrigin_;
+    float zoom_;
+
+    cocos2d::Label* lblX_;
+    cocos2d::Label* lblY_;
+};

@@ -333,7 +333,7 @@ static CocosScene* sharedCocosScene;
 
 #pragma mark Extra properties
 
-- (void) setupExtraPropsForNode:(CCNode*) node
+- (void) setupExtraPropsForNode:(cocos2d::Node*) node
 {
     [node setExtraProp:[NSNumber numberWithInt:-1] forKey:@"tag"];
     [node setExtraProp:[NSNumber numberWithBool:YES] forKey:@"lockedScaleRatio"];
@@ -347,7 +347,7 @@ static CocosScene* sharedCocosScene;
 
 #pragma mark Replacing content
 
-- (void) replaceRootNodeWith:(CCNode*)node
+- (void) replaceRootNodeWith:(cocos2d::Node*)node
 {
     CCBGlobals* g = [CCBGlobals globals];
     
@@ -556,7 +556,7 @@ static CocosScene* sharedCocosScene;
     return kCCBTransformHandleNone;
 }
 
-- (void) nodesUnderPt:(CGPoint)pt rootNode:(CCNode*) node nodes:(NSMutableArray*)nodes
+- (void) nodesUnderPt:(CGPoint)pt rootNode:(cocos2d::Node*) node nodes:(NSMutableArray*)nodes
 {
     if (!node) return;
     
@@ -596,7 +596,7 @@ static CocosScene* sharedCocosScene;
     }
 }
 
-- (BOOL) isLocalCoordinateSystemFlipped:(CCNode*)node
+- (BOOL) isLocalCoordinateSystemFlipped:(cocos2d::Node*)node
 {
     // TODO: Can this be done more efficiently?
     BOOL isMirroredX = NO;

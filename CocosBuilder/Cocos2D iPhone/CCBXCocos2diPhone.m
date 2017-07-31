@@ -27,23 +27,21 @@
 
 @implementation CCBXCocos2diPhone
 
-- (NSString*) extension
-{
+- (NSString*)extension {
     return @"ccbi";
 }
 
-- (NSData*) exportDocument:(NSDictionary *)doc flattenPaths:(BOOL) flattenPaths
-{
-    CCBXCocos2diPhoneWriter* writer = [[[CCBXCocos2diPhoneWriter alloc] init] autorelease];
+- (NSData*)exportDocument:(NSDictionary*)doc flattenPaths:(BOOL)flattenPaths {
+    CCBXCocos2diPhoneWriter* writer =
+        [[[CCBXCocos2diPhoneWriter alloc] init] autorelease];
     writer.flattenPaths = flattenPaths;
     writer.serializedProjectSettings = serializedProjectSettings;
     [writer writeDocument:doc];
-    
+
     return [[writer.data copy] autorelease];
 }
 
-- (void) dealloc
-{
+- (void)dealloc {
     [super dealloc];
 }
 

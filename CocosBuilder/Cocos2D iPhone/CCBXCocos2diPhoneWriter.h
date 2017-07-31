@@ -36,33 +36,28 @@ enum {
     kCCBXFloatFull
 };
 
-enum {
-    kCCBXPlatformAll = 0,
-    kCCBXPlatformIOS,
-    kCCBXPlatformMac
-};
+enum { kCCBXPlatformAll = 0, kCCBXPlatformIOS, kCCBXPlatformMac };
 
-@interface CCBXCocos2diPhoneWriter : NSObject
-{
+@interface CCBXCocos2diPhoneWriter : NSObject {
     BOOL flattenPaths;
     BOOL jsControlled;
     NSDictionary* serializedProjectSettings;
-    
+
     NSMutableData* data;
-    
+
     NSMutableArray* propTypes;
     NSMutableDictionary* stringCacheLookup;
     NSMutableArray* stringCache;
-    
+
     char temp[kCCBXTempBufferSize];
     int tempBit;
     int tempByte;
 }
 
-@property (nonatomic,readonly) NSMutableData* data;
-@property (nonatomic,assign) BOOL flattenPaths;
-@property (nonatomic,retain) NSDictionary* serializedProjectSettings;
+@property (nonatomic, readonly) NSMutableData* data;
+@property (nonatomic, assign) BOOL flattenPaths;
+@property (nonatomic, retain) NSDictionary* serializedProjectSettings;
 
-- (void) writeDocument:(NSDictionary*)doc;
+- (void)writeDocument:(NSDictionary*)doc;
 
 @end

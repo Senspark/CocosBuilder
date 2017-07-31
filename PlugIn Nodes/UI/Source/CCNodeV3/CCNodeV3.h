@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  */
 
-#import "CCNode.h"
+#import <2d/CCNode.h>
 
 @interface CCNodeV3 : CCNodeRGBA
 

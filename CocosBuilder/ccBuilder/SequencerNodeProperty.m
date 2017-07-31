@@ -36,7 +36,7 @@
 @synthesize type;
 @synthesize propName;
 
-- (id) initWithProperty:(NSString*) name node:(CCNode*)n
+- (id) initWithProperty:(NSString*) name node:(cocos2d::Node*)n
 {
     self = [super init];
     if (!self) return NULL;
@@ -458,7 +458,7 @@
 }
 
 /*
-- (void) updateNode:(CCNode*)node toTime:(float)time
+- (void) updateNode:(cocos2d::Node*)node toTime:(float)time
 {
     id value = [self valueAtTime:time];
     NSAssert(value, @"Failed to fetch value!");

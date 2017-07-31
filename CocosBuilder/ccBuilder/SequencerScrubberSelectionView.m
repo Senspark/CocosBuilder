@@ -326,7 +326,7 @@
     }
 }
 
-- (NSString*) propNameForNode:(CCNode*) node subRow:(int)sub
+- (NSString*) propNameForNode:(cocos2d::Node*) node subRow:(int)sub
 {
     NSArray* props = [node.plugIn animatablePropertiesForNode:node];
     

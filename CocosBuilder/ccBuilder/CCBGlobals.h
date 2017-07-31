@@ -24,30 +24,22 @@
  */
 
 #import <Foundation/Foundation.h>
+
 #import "cocos2d.h"
 #import "CocosScene.h"
 
-@class CocosBuilderAppDelegate;
+class CCBGlobals {
+public:
+    static CCBGlobals& getInstance();
 
-@interface CCBGlobals : NSObject
-{
-    CCNode* rootNode;
-    
+    cocos2d::Node* getRootNode();
+
+    void writeSettings();
+
+private:
+    cocos2d::Node* rootNode_;
+
     // Settings
-    int numRuns;
-    BOOL hasDonated;
-@private
-    
-}
-
-@property (nonatomic,retain) CCNode* rootNode;
-
-// Settings
-@property (nonatomic,assign) int numRuns;
-@property (nonatomic,assign) BOOL hasDonated;
-
-+ (CCBGlobals*) globals;
-
-- (void) writeSettings;
-
-@end
+    int numRuns_;
+    BOOL hasDonated_;
+};
