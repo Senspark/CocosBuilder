@@ -72,7 +72,11 @@
 }
 
 - (void)removeChild:(CCNode*)child cleanup:(BOOL)cleanup {
-    [container_ removeChild:child cleanup:cleanup];
+    if (child == container_) {
+        [super removeChild:child cleanup:cleanup];
+    } else {
+        [container_ removeChild:child cleanup:cleanup];
+    }
 }
 
 - (void)removeChildByTag:(NSInteger)tag cleanup:(BOOL)cleanup {
@@ -80,7 +84,13 @@
 }
 
 - (void)removeAllChildrenWithCleanup:(BOOL)cleanup {
-    [container_ removeAllChildrenWithCleanup:cleanup];
+    [super removeAllChildrenWithCleanup:cleanup];
+    // [container_ removeAllChildrenWithCleanup:cleanup];
+}
+
+- (void)sortAllChildren {
+    [super sortAllChildren];
+    [container_ sortAllChildren];
 }
 
 - (CCArray*)children {
@@ -132,6 +142,9 @@
         MAX(0, parentSize.width - [self insetLeft] - [self insetRight]),
         MAX(0, parentSize.height - [self insetTop] - [self insetBottom]));
     [container_ setContentSize:size];
+
+    // Force to refresh children position.
+    [PositionPropertySetter refreshPositionsForChildren:self];
 }
 
 - (void)onSizeChanged {
