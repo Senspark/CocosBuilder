@@ -105,33 +105,29 @@
 
 - (void)setInsetLeft:(NSInteger)inset {
     insetLeft_ = inset;
-    [self _updateInset:[self contentSize]];
+    [self _updateInset];
 }
 
 - (void)setInsetTop:(NSInteger)inset {
     insetTop_ = inset;
-    [self _updateInset:[self contentSize]];
+    [self _updateInset];
 }
 
 - (void)setInsetRight:(NSInteger)inset {
     insetRight_ = inset;
-    [self _updateInset:[self contentSize]];
+    [self _updateInset];
 }
 
 - (void)setInsetBottom:(NSInteger)inset {
     insetBottom_ = inset;
-    [self _updateInset:[self contentSize]];
+    [self _updateInset];
 }
 
-- (void)setContentSize:(CGSize)contentSize {
-    [self _updateInset:contentSize];
-    [super setContentSize:contentSize];
-}
-
-- (void)_updateInset:(CGSize)parentSize {
+- (void)_updateInset {
     CGPoint position = CGPointMake([self insetLeft], [self insetBottom]);
     [container_ setPosition:position];
 
+    CGSize parentSize = [self contentSize];
     CGSize size = CGSizeMake(
         MAX(0, parentSize.width - [self insetLeft] - [self insetRight]),
         MAX(0, parentSize.height - [self insetTop] - [self insetBottom]));
@@ -139,8 +135,8 @@
 }
 
 - (void)onSizeChanged {
-    [self _updateInset:_contentSize];
     [super onSizeChanged];
+    [self _updateInset];
 }
 
 @end
