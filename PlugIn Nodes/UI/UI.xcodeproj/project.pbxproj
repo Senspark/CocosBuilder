@@ -12,8 +12,6 @@
 		6F17FAC21CF2A56600CFCD14 /* CCBPProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F17FABE1CF2A54C00CFCD14 /* CCBPProperties.plist */; };
 		6F17FB421CF2A9E300CFCD14 /* CCSkeletonAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F17FAC01CF2A54C00CFCD14 /* CCSkeletonAnimation.m */; };
 		6F2A49761DBA1D4C006D766B /* CCSpriteWithHsv.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FBF61531D17D3DE00257791 /* CCSpriteWithHsv.h */; };
-		6F2A497D1DBA1DC7006D766B /* ShaderUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F2A49791DBA1DC7006D766B /* ShaderUtils.h */; };
-		6F2A497E1DBA1DC7006D766B /* ShaderUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2A497A1DBA1DC7006D766B /* ShaderUtils.m */; };
 		6F2A497F1DBA1DC7006D766B /* ColorUtils.c in Sources */ = {isa = PBXBuildFile; fileRef = 6F2A497B1DBA1DC7006D766B /* ColorUtils.c */; };
 		6F2A49801DBA1DC7006D766B /* ColorUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F2A497C1DBA1DC7006D766B /* ColorUtils.h */; };
 		6F45480A1DC9E16600894079 /* CCScale9SpriteWithHsv.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F4548081DC9E16600894079 /* CCScale9SpriteWithHsv.h */; };
@@ -68,6 +66,14 @@
 		6FD294511CE1B8E2009ECBFA /* CCWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F843E811CDBCBD0008B2EC4 /* CCWidget.m */; };
 		6FD294741CE1BC07009ECBFA /* CCBPProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6FD294061CE19DFE009ECBFA /* CCBPProperties.plist */; };
 		6FD2947E1CE1CE66009ECBFA /* CCBPProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F375FB11CDCAF9F00D17533 /* CCBPProperties.plist */; };
+		AD5F64D920C25B9900A545B8 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3DEFB1314FFD66C00B98586 /* Cocoa.framework */; };
+		AD5F64DC20C25B9900A545B8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6FC2419C1CDB5922009A3AAD /* InfoPlist.strings */; };
+		AD5F64E620C25C0E00A545B8 /* CCBPProperties.plist in Resources */ = {isa = PBXBuildFile; fileRef = AD5F64E420C25C0700A545B8 /* CCBPProperties.plist */; };
+		AD5F64E720C25C1400A545B8 /* EEWidget.h in Headers */ = {isa = PBXBuildFile; fileRef = AD5F64E520C25C0700A545B8 /* EEWidget.h */; };
+		AD5F64E820C25C1400A545B8 /* EEWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = AD5F64E320C25C0700A545B8 /* EEWidget.m */; };
+		AD5F64F020C25D5A00A545B8 /* CCHsvProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F4547EE1DC9CE3200894079 /* CCHsvProtocol.h */; };
+		AD5F64F120C25D5D00A545B8 /* ShaderUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 6F2A49791DBA1DC7006D766B /* ShaderUtils.h */; };
+		AD5F64F220C25D6000A545B8 /* ShaderUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F2A497A1DBA1DC7006D766B /* ShaderUtils.m */; };
 		E3DEFB1414FFD66C00B98586 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3DEFB1314FFD66C00B98586 /* Cocoa.framework */; };
 /* End PBXBuildFile section */
 
@@ -133,6 +139,10 @@
 		6FD294081CE19DFE009ECBFA /* CCNodeV3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCNodeV3.m; path = CCNodeV3/CCNodeV3.m; sourceTree = "<group>"; };
 		6FD2941D1CE1A10F009ECBFA /* CCNodeV3.ccbPlugNode */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CCNodeV3.ccbPlugNode; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FD294401CE1B8A2009ECBFA /* libcocos2d-ui.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libcocos2d-ui.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD5F64E120C25B9900A545B8 /* EEWidget.ccbPlugNode */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EEWidget.ccbPlugNode; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD5F64E320C25C0700A545B8 /* EEWidget.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = EEWidget.m; path = EEWidget/EEWidget.m; sourceTree = "<group>"; };
+		AD5F64E420C25C0700A545B8 /* CCBPProperties.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = CCBPProperties.plist; path = EEWidget/CCBPProperties.plist; sourceTree = "<group>"; };
+		AD5F64E520C25C0700A545B8 /* EEWidget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = EEWidget.h; path = EEWidget/EEWidget.h; sourceTree = "<group>"; };
 		E3DEFB1014FFD66C00B98586 /* CCWidget.ccbPlugNode */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CCWidget.ccbPlugNode; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3DEFB1314FFD66C00B98586 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E3DEFB1614FFD66C00B98586 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -348,6 +358,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AD5F64D820C25B9900A545B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD5F64D920C25B9900A545B8 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E3DEFB0D14FFD66C00B98586 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -517,6 +535,16 @@
 			name = CCNodeV3;
 			sourceTree = "<group>";
 		};
+		AD5F64D520C25B1500A545B8 /* EEWidget */ = {
+			isa = PBXGroup;
+			children = (
+				AD5F64E420C25C0700A545B8 /* CCBPProperties.plist */,
+				AD5F64E520C25C0700A545B8 /* EEWidget.h */,
+				AD5F64E320C25C0700A545B8 /* EEWidget.m */,
+			);
+			name = EEWidget;
+			sourceTree = "<group>";
+		};
 		E3DEFB0514FFD66C00B98586 = {
 			isa = PBXGroup;
 			children = (
@@ -544,6 +572,7 @@
 				6FB639361D3DD4C6006CC1B6 /* CCSkeletonBone.ccbPlugNode */,
 				6F62696B1DBDC09F00A93689 /* EEButton.ccbPlugNode */,
 				6F84606E1E516E5000DB7FB3 /* CCClippingRectangleNode.ccbPlugNode */,
+				AD5F64E120C25B9900A545B8 /* EEWidget.ccbPlugNode */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -571,6 +600,7 @@
 			isa = PBXGroup;
 			children = (
 				6F2A49781DBA1DC7006D766B /* Utility */,
+				AD5F64D520C25B1500A545B8 /* EEWidget */,
 				6F8460621E516DEE00DB7FB3 /* CCClippingRectangleNode */,
 				6FB731981D1BF073000B7397 /* CCBlurSprite */,
 				6FBF61511D17D37500257791 /* CCSpriteWIthHsv */,
@@ -782,14 +812,16 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD5F64E720C25C1400A545B8 /* EEWidget.h in Headers */,
 				6FB639571D3DDC16006CC1B6 /* CCSkeletonAnimation.h in Headers */,
+				AD5F64F020C25D5A00A545B8 /* CCHsvProtocol.h in Headers */,
 				6F2A49761DBA1D4C006D766B /* CCSpriteWithHsv.h in Headers */,
 				6F45480A1DC9E16600894079 /* CCScale9SpriteWithHsv.h in Headers */,
+				AD5F64F120C25D5D00A545B8 /* ShaderUtils.h in Headers */,
 				6F2A49801DBA1DC7006D766B /* ColorUtils.h in Headers */,
 				6FB639291D3DD4C0006CC1B6 /* CCSkeletonBone.h in Headers */,
 				6F62695F1DBDBE5F00A93689 /* EEButton.h in Headers */,
 				6F8460741E516EB000DB7FB3 /* CCClippingRectangleNode.h in Headers */,
-				6F2A497D1DBA1DC7006D766B /* ShaderUtils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1029,6 +1061,24 @@
 			productReference = 6FD294401CE1B8A2009ECBFA /* libcocos2d-ui.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		AD5F64D620C25B9900A545B8 /* EEWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD5F64DE20C25B9900A545B8 /* Build configuration list for PBXNativeTarget "EEWidget" */;
+			buildPhases = (
+				AD5F64D720C25B9900A545B8 /* Sources */,
+				AD5F64D820C25B9900A545B8 /* Frameworks */,
+				AD5F64DA20C25B9900A545B8 /* Resources */,
+				AD5F64DD20C25B9900A545B8 /* Copy Plug-in to CocosBuilder's PlugIns folder */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EEWidget;
+			productName = CCRotatingSprite;
+			productReference = AD5F64E120C25B9900A545B8 /* EEWidget.ccbPlugNode */;
+			productType = "com.apple.product-type.bundle";
+		};
 		E3DEFB0F14FFD66C00B98586 /* CCWidget */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E3DEFB2214FFD66C00B98586 /* Build configuration list for PBXNativeTarget "CCWidget" */;
@@ -1075,6 +1125,7 @@
 				E3DEFB0F14FFD66C00B98586 /* CCWidget */,
 				6FC241851CDB58D5009A3AAD /* CCButton */,
 				6F6269601DBDC09F00A93689 /* EEButton */,
+				AD5F64D620C25B9900A545B8 /* EEWidget */,
 				6F843E4C1CDB994C008B2EC4 /* CCText */,
 				6FC19AA91CF80BF70002D68B /* CCCheckBox */,
 				6F77526F1CDC9A8800BF74AF /* CCLayout */,
@@ -1195,6 +1246,15 @@
 			files = (
 				6FD294741CE1BC07009ECBFA /* CCBPProperties.plist in Resources */,
 				6FD294181CE1A10F009ECBFA /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD5F64DA20C25B9900A545B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD5F64DC20C25B9900A545B8 /* InfoPlist.strings in Resources */,
+				AD5F64E620C25C0E00A545B8 /* CCBPProperties.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1378,6 +1438,20 @@
 			shellPath = /bin/sh;
 			shellScript = "";
 		};
+		AD5F64DD20C25B9900A545B8 /* Copy Plug-in to CocosBuilder's PlugIns folder */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Plug-in to CocosBuilder's PlugIns folder";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
 		E33BC1A51510CA52009AE29A /* Copy Plug-in to CocosBuilder's PlugIns folder */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1484,10 +1558,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FD2944D1CE1B8E2009ECBFA /* CCUIScrollView.m in Sources */,
-				6F2A497E1DBA1DC7006D766B /* ShaderUtils.m in Sources */,
 				6FD294501CE1B8E2009ECBFA /* CCButton.m in Sources */,
 				6FD2944E1CE1B8E2009ECBFA /* CCLayout.m in Sources */,
 				6FB731A91D1BF13A000B7397 /* CCBlurBackground.m in Sources */,
+				AD5F64F220C25D6000A545B8 /* ShaderUtils.m in Sources */,
+				AD5F64E820C25C1400A545B8 /* EEWidget.m in Sources */,
 				6F2A497F1DBA1DC7006D766B /* ColorUtils.c in Sources */,
 				6F17FB421CF2A9E300CFCD14 /* CCSkeletonAnimation.m in Sources */,
 				6FC19ABB1CF80CAA0002D68B /* CCCheckBox.m in Sources */,
@@ -1499,6 +1574,13 @@
 				6FB6392A1D3DD4C0006CC1B6 /* CCSkeletonBone.m in Sources */,
 				6F62695E1DBDBE5F00A93689 /* EEButton.m in Sources */,
 				6FD2944F1CE1B8E2009ECBFA /* CCText.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD5F64D720C25B9900A545B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1875,6 +1957,30 @@
 			};
 			name = Release;
 		};
+		AD5F64DF20C25B9900A545B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Source/PlugIn-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../Examples/CocosBuilderExample/libs/CCBReader/**";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = ccbPlugNode;
+			};
+			name = Debug;
+		};
+		AD5F64E020C25B9900A545B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Source/PlugIn-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../../Examples/CocosBuilderExample/libs/CCBReader/**";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = ccbPlugNode;
+			};
+			name = Release;
+		};
 		E3DEFB2014FFD66C00B98586 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1898,8 +2004,10 @@
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/Source/**",
 					"$(SRCROOT)/../../Examples/CocosBuilderExample/libs/CCBReader/**",
+					"$(SRCROOT)/../../Examples/CocosBuilderExample/libs/CCBReader/CCControlExtension/**",
 					"$(SRCROOT)/../../CocosBuilder/libs/spine-cocos2d-iphone/2/src",
 					"$(SRCROOT)/../../CocosBuilder/libs/spine-c/include",
+					"$(SRCROOT)/../../CocosBuilder/ccBuilder",
 				);
 				INFOPLIST_FILE = Source/Info.plist;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
@@ -1931,8 +2039,10 @@
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/Source/**",
 					"$(SRCROOT)/../../Examples/CocosBuilderExample/libs/CCBReader/**",
+					"$(SRCROOT)/../../Examples/CocosBuilderExample/libs/CCBReader/CCControlExtension/**",
 					"$(SRCROOT)/../../CocosBuilder/libs/spine-cocos2d-iphone/2/src",
 					"$(SRCROOT)/../../CocosBuilder/libs/spine-c/include",
+					"$(SRCROOT)/../../CocosBuilder/ccBuilder",
 				);
 				INFOPLIST_FILE = Source/Info.plist;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
@@ -2086,6 +2196,15 @@
 			buildConfigurations = (
 				6FD294471CE1B8A2009ECBFA /* Debug */,
 				6FD294481CE1B8A2009ECBFA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD5F64DE20C25B9900A545B8 /* Build configuration list for PBXNativeTarget "EEWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD5F64DF20C25B9900A545B8 /* Debug */,
+				AD5F64E020C25B9900A545B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

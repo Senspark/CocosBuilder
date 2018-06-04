@@ -201,6 +201,7 @@
 		A09AB6F714E993AA009C8B91 /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = A09AB6F614E993AA009C8B91 /* fps_images.png */; };
 		A77EF590171FD30E00451DA4 /* cwebp in Resources */ = {isa = PBXBuildFile; fileRef = A77EF58F171FD30E00451DA4 /* cwebp */; };
 		A77EF594171FD3B200451DA4 /* cwebp in Resources */ = {isa = PBXBuildFile; fileRef = A77EF58F171FD30E00451DA4 /* cwebp */; };
+		AD5F64EF20C25C2C00A545B8 /* EEWidget.ccbPlugNode in Copy PlugIns */ = {isa = PBXBuildFile; fileRef = AD5F64EE20C25C2400A545B8 /* EEWidget.ccbPlugNode */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B0560BAA92EC10E594DB03F9 /* libPods-CCLabelTTF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 66684D94DB18BFA72465F51D /* libPods-CCLabelTTF.a */; };
 		BC75DDFC6D36E7C8FCABC9ED /* libPods-CCSprite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 76B23C157CA352108649B940 /* libPods-CCSprite.a */; };
 		CF0C50C516171060D885D5EF /* libPods-CCLayerColor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61784F9B259DAA0E0C3D8487 /* libPods-CCLayerColor.a */; };
@@ -903,6 +904,20 @@
 			remoteGlobalIDString = 6F77526F1CDC9A8800BF74AF;
 			remoteInfo = CCLayout;
 		};
+		AD5F64E920C25C2400A545B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6FC2417F1CDB5896009A3AAD /* UI.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AD5F64D620C25B9900A545B8;
+			remoteInfo = EEWidget;
+		};
+		AD5F64ED20C25C2400A545B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6FC2417F1CDB5896009A3AAD /* UI.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = AD5F64E120C25B9900A545B8;
+			remoteInfo = EEWidget;
+		};
 		E325F66814F6611300D29BCF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7789ABB5133AA82000CEFCC7 /* Project object */;
@@ -1064,6 +1079,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				AD5F64EF20C25C2C00A545B8 /* EEWidget.ccbPlugNode in Copy PlugIns */,
 				6F84607A1E51702100DB7FB3 /* CCClippingRectangleNode.ccbPlugNode in Copy PlugIns */,
 				6F6269821DBDC48900A93689 /* EEButton.ccbPlugNode in Copy PlugIns */,
 				6FB6394A1D3DDBE1006CC1B6 /* CCSkeletonBone.ccbPlugNode in Copy PlugIns */,
@@ -2468,6 +2484,7 @@
 				6FC241BD1CDB5A7F009A3AAD /* CCWidget.ccbPlugNode */,
 				6FC241BF1CDB5A7F009A3AAD /* CCButton.ccbPlugNode */,
 				6F62697E1DBDC10B00A93689 /* EEButton.ccbPlugNode */,
+				AD5F64EE20C25C2400A545B8 /* EEWidget.ccbPlugNode */,
 				6F843E601CDB99C2008B2EC4 /* CCText.ccbPlugNode */,
 				6FC19ABF1CF835790002D68B /* CCCheckBox.ccbPlugNode */,
 				6FD2942F1CE1A131009ECBFA /* CCLayout.ccbPlugNode */,
