@@ -28,6 +28,8 @@
 #import <PositionPropertySetter.h>
 
 @implementation EEWidget {
+    BOOL magic_;
+    BOOL insetDirty_;
     CCWidget* container_;
     NSInteger insetLeft_;
     NSInteger insetTop_;
@@ -40,6 +42,8 @@
     if (self == nil) {
         return self;
     }
+    magic_ = NO;
+    insetDirty_ = NO;
     container_ = [[[CCWidget alloc] init] autorelease];
     [container_ setAnchorPoint:CGPointZero];
     [super addChild:container_ z:0 tag:0];
@@ -52,15 +56,23 @@
 
 - (void)onEnter {
     [super onEnter];
-
-    // Force to refresh children position.
-    [PositionPropertySetter refreshPositionsForChildren:self];
 }
 
 - (void)visit {
     if ([self visible]) {
+        if (insetDirty_) {
+            insetDirty_ = NO;
+            [self _updateInset];
+        }
         [super visit];
     }
+}
+
+- (CGSize)contentSize {
+    if (magic_) {
+        return [container_ contentSize];
+    }
+    return [super contentSize];
 }
 
 - (CCNode*)getChildByTag:(NSInteger)tag {
@@ -115,22 +127,22 @@
 
 - (void)setInsetLeft:(NSInteger)inset {
     insetLeft_ = inset;
-    [self _updateInset];
+    insetDirty_ = YES;
 }
 
 - (void)setInsetTop:(NSInteger)inset {
     insetTop_ = inset;
-    [self _updateInset];
+    insetDirty_ = YES;
 }
 
 - (void)setInsetRight:(NSInteger)inset {
     insetRight_ = inset;
-    [self _updateInset];
+    insetDirty_ = YES;
 }
 
 - (void)setInsetBottom:(NSInteger)inset {
     insetBottom_ = inset;
-    [self _updateInset];
+    insetDirty_ = YES;
 }
 
 - (void)_updateInset {
@@ -143,13 +155,18 @@
         MAX(0, parentSize.height - [self insetTop] - [self insetBottom]));
     [container_ setContentSize:size];
 
-    // Force to refresh children position.
-    [PositionPropertySetter refreshPositionsForChildren:self];
+    [self _alignChildren];
 }
 
 - (void)onSizeChanged {
     [super onSizeChanged];
-    [self _updateInset];
+    insetDirty_ = YES;
+}
+
+- (void)_alignChildren {
+    magic_ = YES;
+    [PositionPropertySetter refreshPositionsForChildren:self];
+    magic_ = NO;
 }
 
 @end
