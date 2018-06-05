@@ -136,8 +136,8 @@
     
     if (type == kCCBPositionTypePercent)
     {
-        absPos.x = roundf(pos.x * parentSize.width * 0.01f);
-        absPos.y = roundf(pos.y * parentSize.height * 0.01f);
+        absPos.x = pos.x * parentSize.width * 0.01f;
+        absPos.y = pos.y * parentSize.height * 0.01f;
     }
     else if (type == kCCBPositionTypeRelativeBottomLeft)
     {
