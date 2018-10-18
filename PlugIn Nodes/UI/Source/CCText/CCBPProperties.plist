@@ -87,6 +87,16 @@
 		</dict>
 		<dict>
 			<key>displayName</key>
+			<string>Overflow</string>
+			<key>type</key>
+			<string>IntegerLabeled</string>
+			<key>name</key>
+			<string>overflow</string>
+			<key>extra</key>
+			<string>None|0|Clamp|1|Shink|2|ResizeHeight|3</string>
+		</dict>
+		<dict>
+			<key>displayName</key>
 			<string>Touch scale change enabled</string>
 			<key>name</key>
 			<string>touchScaleChangeEnabled</string>

@@ -12,6 +12,8 @@
 
 @implementation CCText
 
+@synthesize overflow = overflow_;
+
 - (void) dealloc {
     [super dealloc];
 }

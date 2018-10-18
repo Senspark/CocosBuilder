@@ -10,6 +10,13 @@
 
 @class CCLabelTTF;
 
+typedef enum {
+    CCTextOverflowNone,
+    CCTextOverflowClamp,
+    CCTextOverflowShrink,
+    CCTextOverflowResizeHeight,
+} CCTextOverflow;
+
 @interface CCText : CCWidget {
     CCLabelTTF* labelRenderer_;
     
@@ -26,6 +33,7 @@
 
 @property (nonatomic) CCTextAlignment textHorizontalAlignment;
 @property (nonatomic) CCVerticalTextAlignment textVerticalAlignment;
+@property (nonatomic) CCTextOverflow overflow;
 
 @property (nonatomic) ccColor3B textColor;
 
